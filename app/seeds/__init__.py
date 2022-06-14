@@ -10,10 +10,10 @@ seed_commands = AppGroup('seed')
 @seed_commands.command('all')
 def seed():
     seed_users()
-    seed_products()
-    seed_reviews()
-    seed_cart()
-    seed_product_cart()
+    # seed_products()
+    # seed_reviews()
+    # seed_cart()
+    # seed_product_cart()
     # Add other seed functions here
 
 
@@ -21,8 +21,8 @@ def seed():
 @seed_commands.command('undo')
 def undo():
     undo_users()
-    undo_products()
-    undo_reviews()
-    undo_cart()
-    undo_product_cart()
+    # undo_products()
+    # undo_reviews()
+    # undo_cart()
+    # undo_product_cart()
     # Add other undo functions here
