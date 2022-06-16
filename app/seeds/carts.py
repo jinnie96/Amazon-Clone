@@ -1,16 +1,16 @@
 from app.models import db, Cart
 
 def seed_cart():
-    review1 = Cart(
+    cart1 = Cart(
         user_id=2, product_id=2)
-    review2 = Cart(
+    cart2 = Cart(
         user_id=1, product_id=1)
-    review3 = Cart(
+    cart3 = Cart(
         user_id=3, product_id=3)
 
-    db.session.add(review1)
-    db.session.add(review2)
-    db.session.add(review3)
+    db.session.add(cart1)
+    db.session.add(cart2)
+    db.session.add(cart3)
 
     db.session.commit()
 
