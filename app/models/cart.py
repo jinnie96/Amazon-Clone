@@ -1,4 +1,5 @@
 from .db import db
+from sqlalchemy.orm import relationship
 
 class Cart(db.Model):
     __tablename__ = 'cart'
@@ -6,6 +7,9 @@ class Cart(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, nullable=False)
     product_id = db.Column(db.Integer, nullable=False)
+
+    users = relationship("User", foreign_keys=[user_id], back_populates="cart")
+    products = relationship("Product", foreign_keys=[product_id], back_populates="cart")
 
     def to_dict(self):
         return {
