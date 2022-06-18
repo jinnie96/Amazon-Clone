@@ -13,6 +13,9 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
 
+    carts = relationship("Cart", foreign_keys="Cart.user_id", back_populates='users')
+    reviews = relationship("Review", foreign_keys="Review.reviewer_id", back_populates='users')
+
     @property
     def password(self):
         return self.hashed_password
