@@ -10,6 +10,7 @@ class Cart(db.Model):
 
     users = relationship("User", foreign_keys=[user_id], back_populates="cart")
     products = relationship("Product", foreign_keys=[product_id], back_populates="cart")
+    product_cart = relationship("product_cart", foreign_keys="Product_Cart.cart_id", back_populates='cart')
 
     def to_dict(self):
         return {
