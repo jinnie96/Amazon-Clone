@@ -21,5 +21,5 @@ def seed_product_cart():
 # resets the auto incrementing primary key, CASCADE deletes any
 # dependent entities
 def undo_product_cart():
-    db.session.execute('TRUNCATE users RESTART IDENTITY CASCADE;')
+    db.session.execute('TRUNCATE product_cart RESTART IDENTITY CASCADE;')
     db.session.commit()
