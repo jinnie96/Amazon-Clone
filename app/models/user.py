@@ -14,7 +14,7 @@ class User(db.Model, UserMixin):
     hashed_password = db.Column(db.String(255), nullable=False)
 
     cart = relationship("Cart", foreign_keys="Cart.user_id", back_populates='users')
-    reviews = relationship("Review", foreign_keys="Review.reviewer_id", back_populates='users')
+    review = relationship("Review", foreign_keys="Review.reviewer_id", back_populates='users')
 
     @property
     def password(self):

@@ -13,7 +13,7 @@ class Review(db.Model):
     rating = db.Column(db.Integer, nullable=False)
 
     users = relationship("User", foreign_keys=[reviewer_id], back_populates="review")
-    products = relationship("Product", foreign_keys=[product_id], back_populates="review")
+    product = relationship("Product", foreign_keys=[product_id], back_populates="review")
 
 
     def to_dict(self):
