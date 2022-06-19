@@ -9,9 +9,9 @@ class Product(db.Model):
     description = db.Column(db.String(500), nullable=False)
     price = db.Column(db.Numeric(4,2), nullable=False)
 
-    reviews = relationship("Review", foreign_keys="Review.product_id", back_populates='product')
+    review = relationship("Review", foreign_keys="Review.product_id", back_populates='product')
     cart = relationship("Cart", foreign_keys="Cart.product_id", back_populates='product')
-    product_cart = relationship("product_cart", foreign_keys="Product_Cart.product_id", back_populates='product')
+    product_cart = relationship("Product_Cart", foreign_keys="Product_Cart.product_id", back_populates='product')
 
 
     def to_dict(self):
