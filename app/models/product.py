@@ -10,7 +10,7 @@ class Product(db.Model):
     price = db.Column(db.Numeric(4,2), nullable=False)
 
     reviews = relationship("Review", foreign_keys="Review.product_id", back_populates='product')
-    carts = relationship("Cart", foreign_keys="Cart.product_id", back_populates='product')
+    cart = relationship("Cart", foreign_keys="Cart.product_id", back_populates='product')
     product_cart = relationship("product_cart", foreign_keys="Product_Cart.product_id", back_populates='product')
 
 
