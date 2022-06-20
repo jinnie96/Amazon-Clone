@@ -1,12 +1,20 @@
 from flask import Blueprint, jsonify
 from app.models import Product
+# import simplejson as json
 
 product_routes = Blueprint('products', __name__)
 
 @product_routes.route('/')
 def products():
+    print("hi")
     products = Product.query.all()
-    return {'products': [product.to_dict() for product in products]}
+    print("PROD", products)
+    productsObj = {}
+    for product in products:
+        print(product.to_dict()["id"])
+        productsObj[product.to_dict()["id"]] = str(product.to_dict())
+    print(productsObj, "@@@@")
+    return productsObj
 
 @product_routes.route('/<int:id>')
 def oneProduct():
