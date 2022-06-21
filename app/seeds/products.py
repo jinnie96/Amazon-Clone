@@ -4,11 +4,11 @@ from app.models import db, Product
 # Adds a demo user, you can add other users here if you want
 def seed_products():
     XBOX = Product(
-        name='XBOX Series X', description='Introducing Xbox Series X, the fastest, most powerful Xbox ever. Play thousands of titles from four generations of consoles-all games look and play best on Xbox Series X.', price='399.99')
+        name='XBOX Series X', description='Introducing Xbox Series X, the fastest, most powerful Xbox ever. Play thousands of titles from four generations of consoles-all games look and play best on Xbox Series X.', price='399.99', photourl='https://m.media-amazon.com/images/I/61s248JDH+L._AC_SX522_.jpg')
     PS5 = Product(
-        name='PS5', description='Stunning Games - Marvel at incredible graphics and experience new PS5 features.', price='399.99')
+        name='PS5', description='Stunning Games - Marvel at incredible graphics and experience new PS5 features.', price='399.99', photourl='https://m.media-amazon.com/images/I/31JaiPXYI8L._AC_.jpg')
     OCULUS = Product(
-        name='Oculus Rift', description='Experience total immersion with 3D positional audio, hand tracking and haptic feedback, working together to make virtual worlds feel real.', price='299.99')
+        name='Oculus Rift', description='Experience total immersion with 3D positional audio, hand tracking and haptic feedback, working together to make virtual worlds feel real.', price='299.99', photourl='https://m.media-amazon.com/images/I/61iqsjK1JtL._AC_SX466_.jpg')
 
     db.session.add(XBOX)
     db.session.add(PS5)
