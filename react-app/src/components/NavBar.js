@@ -3,6 +3,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import DemoButton from './auth/DemoButton'
+import './NavBar.css'
 
 const NavBar = () => {
   return (
@@ -10,7 +11,7 @@ const NavBar = () => {
       <ul>
         <li>
           <NavLink to='/' exact={true} activeClassName='active'>
-            Home
+            <img id="logo" src='https://www.doorwaysva.org/wp-content/uploads/2019/06/amazon-logo.png'></img>
           </NavLink>
         </li>
         <li>

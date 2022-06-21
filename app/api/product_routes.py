@@ -8,13 +8,15 @@ product_routes = Blueprint('products', __name__)
 def products():
     print("hi")
     products = Product.query.all()
-    print("PROD", products)
-    productsObj = {}
-    for product in products:
-        print(product.to_dict(), "HEHEHEHE")
-        productsObj[product.to_dict()["id"]] = str(product.to_dict())
-    print(productsObj, "@@@@")
-    return productsObj
+    return {'products': [str(product.to_dict()) for product in products]}
+    # print("PROD", products)
+    # productsObj = {}
+    # for product in products:
+    #     print(product.to_dict(), "HEHEHEHE")
+    #     product.to_dict()['price'] = str(product.to_dict()['price'])
+    #     productsObj[product.to_dict()["id"]] = (product.to_dict())
+    # print(productsObj, "@@@@")
+    # return productsObj
 
 @product_routes.route('/<int:id>')
 def oneProduct():

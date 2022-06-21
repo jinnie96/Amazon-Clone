@@ -14,10 +14,11 @@ const getOneProduct = product => ({
 });
 
 // ------------------- Thunk creators ------------------- //
-export const getAllProducts = (id) => async dispatch => {
+export const getAllProducts = () => async dispatch => {
     const response = await fetch (`/api/products/`)
     if (response.ok) {
         const data = await response.json();
+        console.log(data)
         if (data.errors) {
             return;
         };
