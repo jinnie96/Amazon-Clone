@@ -20,5 +20,6 @@ class Product(db.Model):
             'id': self.id,
             'name': self.name,
             'description': self.description,
-            'price': self.price
+            'price': self.price,
+            'photourl': self.photourl
         }

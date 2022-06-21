@@ -11,7 +11,7 @@ def products():
     print("PROD", products)
     productsObj = {}
     for product in products:
-        print(product.to_dict()["id"])
+        print(product.to_dict(), "HEHEHEHE")
         productsObj[product.to_dict()["id"]] = str(product.to_dict())
     print(productsObj, "@@@@")
     return productsObj
