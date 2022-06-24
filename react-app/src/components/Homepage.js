@@ -4,15 +4,21 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getAllProducts } from '../store/products'
 
 function Homepage() {
-  const [products, setProducts] = useState([]);
-  const productsObj = {}
+  const [products, setProducts] = useState();
+  const productsArr = []
   const dispatch = useDispatch()
   const productsState = useSelector(state => state.products);
 
   useEffect(() => {
     async function fetchData() {
       const data = await dispatch(getAllProducts())
-      console.log(data)
+      setProducts(data)
+      console.log(((data)))
+      console.log(products)
+      for (let key in data) {
+          console.log(data[key].photourl)
+          productsArr.push(data[key].photourl)
+      }
     //   console.log(productsState.undefined[0])
     //   const photoArr = []
     //   productsState.undefined.map((product) => {
@@ -40,31 +46,32 @@ function Homepage() {
     //           [key]: responseData[key]
     //       })
     //   }
-        setProducts(productsObj.products)
-      console.log(products)
+      console.log(productsArr)
     }
     fetchData();
-  });
+  }, []);
 
-//   const productComponents = productsState.map((product, i) => {
-//     return (
-//         <h1>hi</h1>
-//     //   <li key={user.id}>
-//     //     <NavLink to={`/users/${user.id}`}>{user.username}</NavLink>
-//     //   </li>
-//     );
-//   });
+  const productComponents = productsArr.map((product, i) => {
+      console.log(product)
+    return (
+        // <h1>hi</h1>
+      <li key={product.id}>
+        <NavLink to={`/products/${product.id}`}>{product.photourl}</NavLink>
+      </li>
+    );
+  });
 
   return (
     <>
-      <h1>{productsState.undefined}</h1>
+      <h1>hi</h1>
       <p>
         <ul>
+            yo
             {
-                Object.keys(productsObj).map((key, i) => {
-                    console.log("!!!!!!!!!!!", productsObj[i])
+                productsArr.map((key, i) => {
+                    console.log("!!!!!!!!!!!", key)
                     return(
-                        <li key={i}>{productsObj[i]}</li>
+                        <li key={i}>hi</li>
                     )
                 })
             }
