@@ -18,7 +18,9 @@ function Homepage() {
       for (let key in data) {
           console.log(data[key].photourl)
           productsArr.push(data[key].photourl)
+          console.log(productsArr)
       }
+      console.log(productsArr)
     //   console.log(productsState.undefined[0])
     //   const photoArr = []
     //   productsState.undefined.map((product) => {
@@ -46,13 +48,14 @@ function Homepage() {
     //           [key]: responseData[key]
     //       })
     //   }
-      console.log(productsArr)
+      console.log(productsState)
     }
     fetchData();
   }, []);
 
   const productComponents = productsArr.map((product, i) => {
       console.log(product)
+      console.log(productsArr)
     return (
         // <h1>hi</h1>
       <li key={product.id}>
@@ -65,7 +68,9 @@ function Homepage() {
     <>
       <h1>hi</h1>
       <p>
+          {/* {productComponents} */}
         <ul>
+
             yo
             {
                 productsArr.map((key, i) => {
