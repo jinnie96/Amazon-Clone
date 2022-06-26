@@ -59,7 +59,7 @@ function Homepage() {
     return (
         // <h1>hi</h1>
       <li key={product.id}>
-        <NavLink to={`/products/${product.id}`}>{product.photourl}</NavLink>
+        <NavLink to={`/products/${product.id}`}>hi</NavLink>
       </li>
     );
   });
@@ -68,8 +68,8 @@ function Homepage() {
     <>
       <h1>hi</h1>
       <p>
-          {/* {productComponents} */}
         <ul>
+          {productComponents}
 
             yo
             {
