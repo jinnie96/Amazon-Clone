@@ -66,22 +66,11 @@ function Homepage() {
 
   return (
     <>
-      <h1>hi</h1>
-      <p>
         <ul>
-          {productComponents}
-
-            yo
-            {
-                productsArr.map((key, i) => {
-                    console.log("!!!!!!!!!!!", key)
-                    return(
-                        <li key={i}>hi</li>
-                    )
-                })
-            }
+            <img src='https://m.media-amazon.com/images/I/61s248JDH+L._AC_SX522_.jpg'></img>
+            <img src='https://m.media-amazon.com/images/I/31JaiPXYI8L._AC_.jpg'></img>
+            <img src='https://m.media-amazon.com/images/I/61iqsjK1JtL._AC_SX466_.jpg'></img>
         </ul>
-      </p>
       {/* <ul>{productComponents}</ul> */}
     </>
   );
