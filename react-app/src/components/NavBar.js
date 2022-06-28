@@ -38,19 +38,17 @@ const NavBar = () => {
           <div>
             <div>
               <NavLink to='/login' exact={true} activeClassName='active' id="navOptions">
-                Hello, Sign in
-              </NavLink>
-            </div>
-            <div>
-              <NavLink to='/sign-up' exact={true} activeClassName='active' id="navOptions">
-                Sign Up
+                Hello, {user.username}
               </NavLink>
             </div>
           </div>
         )}
+        <div className="searchBar">
+          <input className="search"></input>
+        </div>
         <div>
           <NavLink to='/orders' exact={true} activeClassName='active' id="navOptions">
-            Orders
+            Returns & Orders
           </NavLink>
         </div>
         <div>
