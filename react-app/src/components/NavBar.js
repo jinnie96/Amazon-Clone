@@ -3,9 +3,14 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import DemoButton from './auth/DemoButton'
+import { useDispatch, useSelector } from 'react-redux';
 import './NavBar.css'
+import User from './User';
+
 
 const NavBar = () => {
+  const user = useSelector(state => state.session.user)
+  console.log(user)
   return (
     <nav>
       <div className="navBar">
@@ -14,16 +19,35 @@ const NavBar = () => {
             <img id="logo" src='https://www.doorwaysva.org/wp-content/uploads/2019/06/amazon-logo.png'></img>
           </NavLink>
         </div>
-        <div>
-          <NavLink to='/login' exact={true} activeClassName='active' id="navOptions">
-            Login
-          </NavLink>
-        </div>
-        <div>
-          <NavLink to='/sign-up' exact={true} activeClassName='active' id="navOptions">
-            Sign Up
-          </NavLink>
-        </div>
+        {console.log(user), "HEHEHEHEH"}
+        {!user && (
+          <div>
+            <div>
+              <NavLink to='/login' exact={true} activeClassName='active' id="navOptions">
+                Hello, Sign in
+              </NavLink>
+            </div>
+            <div>
+              <NavLink to='/sign-up' exact={true} activeClassName='active' id="navOptions">
+                Sign Up
+              </NavLink>
+            </div>
+          </div>
+        )}
+        {user && (
+          <div>
+            <div>
+              <NavLink to='/login' exact={true} activeClassName='active' id="navOptions">
+                Hello, Sign in
+              </NavLink>
+            </div>
+            <div>
+              <NavLink to='/sign-up' exact={true} activeClassName='active' id="navOptions">
+                Sign Up
+              </NavLink>
+            </div>
+          </div>
+        )}
         <div>
           <NavLink to='/orders' exact={true} activeClassName='active' id="navOptions">
             Orders
