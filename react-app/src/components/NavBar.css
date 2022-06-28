@@ -5,3 +5,11 @@
 nav > div {
     display: flex;
 }
+
+.navBar {
+    background-color: #131921;
+}
+
+#navOptions {
+    color: white;
+}
