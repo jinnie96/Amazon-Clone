@@ -19,7 +19,10 @@ const NavBar = () => {
             <img id="logo" src='https://www.doorwaysva.org/wp-content/uploads/2019/06/amazon-logo.png'></img>
           </NavLink>
         </div>
-        {console.log(user), "HEHEHEHEH"}
+        <div className="searchBar">
+          <input className="search"></input>
+        </div>
+        <div className="rightSide">
         {!user && (
           <div>
             <div>
@@ -37,15 +40,12 @@ const NavBar = () => {
         {user && (
           <div>
             <div>
-              <NavLink to='/login' exact={true} activeClassName='active' id="navOptions">
+              <NavLink to='/' exact={true} activeClassName='active' id="navOptions">
                 Hello, {user.username}
               </NavLink>
             </div>
           </div>
         )}
-        <div className="searchBar">
-          <input className="search"></input>
-        </div>
         <div>
           <NavLink to='/orders' exact={true} activeClassName='active' id="navOptions">
             Returns & Orders
@@ -56,11 +56,16 @@ const NavBar = () => {
             Cart
           </NavLink>
         </div>
-        <div>
-          <LogoutButton />
-        </div>
-        <div>
+        {user && (
+          <div>
+            <LogoutButton />
+          </div>
+        )}
+        {!user && (
+          <div>
           <DemoButton />
+        </div>
+        )}
         </div>
       </div>
     </nav>

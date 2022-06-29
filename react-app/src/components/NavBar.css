@@ -8,8 +8,15 @@ nav > div {
 
 .navBar {
     background-color: #232F3F;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #navOptions {
     color: white;
+}
+
+.rightSide {
+    display: flex;
 }
