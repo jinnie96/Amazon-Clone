@@ -24,4 +24,21 @@ nav > div {
 
 .search {
     width: 500px;
+    border-radius: 50px;
+}
+
+input:focus {
+    border: color #FF9900;
+}
+
+.greeting {
+    margin-right: 5px;
+}
+
+.order {
+    margin-right: 5px;
+}
+
+.cart {
+    margin-right: 5px;
 }
