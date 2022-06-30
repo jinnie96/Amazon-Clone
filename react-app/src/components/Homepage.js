@@ -71,6 +71,26 @@ function Homepage() {
             <img src='https://m.media-amazon.com/images/I/31JaiPXYI8L._AC_.jpg'></img>
             <img src='https://m.media-amazon.com/images/I/61iqsjK1JtL._AC_SX466_.jpg'></img>
         </ul>
+        <div className="categories">
+            <div className="sports">
+
+            </div>
+            <div className="books">
+
+            </div>
+            <div className="games">
+
+            </div>
+            <div className="computers">
+
+            </div>
+            <div className="cellPhones">
+
+            </div>
+
+
+        </div>
+        <img src ="https://m.media-amazon.com/images/I/715lpDNhM1L._SX3000_.jpg"></img>
       {/* <ul>{productComponents}</ul> */}
     </>
   );
