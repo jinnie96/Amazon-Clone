@@ -24,7 +24,7 @@ const NavBar = () => {
         </div>
         <div className="rightSide">
         {!user && (
-          <div>
+          <div class="greeting">
             <div>
               <NavLink to='/login' exact={true} activeClassName='active' id="navOptions">
                 Hello, Sign in
@@ -38,7 +38,7 @@ const NavBar = () => {
           </div>
         )}
         {user && (
-          <div>
+          <div className="greeting">
             <div>
               <NavLink to='/' exact={true} activeClassName='active' id="navOptions">
                 Hello, {user.username}
@@ -46,12 +46,12 @@ const NavBar = () => {
             </div>
           </div>
         )}
-        <div>
+        <div className="order">
           <NavLink to='/orders' exact={true} activeClassName='active' id="navOptions">
             Returns & Orders
           </NavLink>
         </div>
-        <div>
+        <div className="cart">
           <NavLink to='/cart' exact={true} activeClassName='active' id="navOptions">
             Cart
           </NavLink>
