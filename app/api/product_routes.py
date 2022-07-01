@@ -9,20 +9,20 @@ def products():
     print("hi")
     products = Product.query.all()
     productsObj = {}
-    # for product in products:
-    #     temp = {}
-    #     print(product.to_dict(), "HEHEHEHE")
-    #     temp['id'] = (product.to_dict()['id'])
-    #     temp['name'] = (product.to_dict()['name'])
-    #     temp['description'] = (product.to_dict()['description'])
-    #     temp['price'] = str(product.to_dict()['price'])
-    #     print(product.to_dict()['photourl'])
-    #     temp['photourl'] = (product.to_dict()['photourl'])
-    #     print(product.to_dict()['id'])
-    #     productsObj[product.to_dict()['id']] = temp
-    #     print(productsObj, "UPDATED")
-    # print(productsObj)
-    return jsonify([product.to_dict() for product in products])
+    for product in products:
+        temp = {}
+        print(product.to_dict(), "HEHEHEHE")
+        temp['id'] = (product.to_dict()['id'])
+        temp['name'] = (product.to_dict()['name'])
+        temp['description'] = (product.to_dict()['description'])
+        temp['price'] = str(product.to_dict()['price'])
+        print(product.to_dict()['photourl'])
+        temp['photourl'] = (product.to_dict()['photourl'])
+        print(product.to_dict()['id'])
+        productsObj[product.to_dict()['id']] = temp
+        print(productsObj, "UPDATED")
+    print(productsObj)
+    return productsObj
 
 
     # return {'products': [(productsObj.to_dict()) for product in productsObj]}

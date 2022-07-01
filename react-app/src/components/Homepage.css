@@ -1,0 +1,16 @@
+#homePic {
+    height: 100%;
+    width: 100%
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    /* flex-direction: column; */
+}
+
+.sports {
+    grid-column: 1;
+    grid-row: 1;
+}
