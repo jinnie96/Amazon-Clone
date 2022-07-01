@@ -7,10 +7,26 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
+    gap: 55px;
     /* flex-direction: column; */
 }
 
 .sports {
     grid-column: 1;
     grid-row: 1;
+}
+
+.sports, .books, .games, .computers, .cellPhones, .clothing {
+    height: 420px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.sportsTitle, .booksTitle, .gamesTitle, .computersTitle, .cellPhoneTitle, .clothingTitle {
+    font-size: 21px;
+    font-weight: bolder;
+    font-family: sans-serif;
+    background-color: #F7FCFD;
+    height: 100%;
+    width: 100%;
 }
