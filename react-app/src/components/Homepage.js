@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllProducts } from '../store/products'
+import './Homepage.css'
 
 function Homepage() {
   const [products, setProducts] = useState();
@@ -66,31 +67,64 @@ function Homepage() {
 
   return (
     <>
-        <ul>
+        {/* <ul>
             <img src='https://m.media-amazon.com/images/I/61s248JDH+L._AC_SX522_.jpg'></img>
             <img src='https://m.media-amazon.com/images/I/31JaiPXYI8L._AC_.jpg'></img>
             <img src='https://m.media-amazon.com/images/I/61iqsjK1JtL._AC_SX466_.jpg'></img>
-        </ul>
+        </ul> */}
+        <div>
+            <img id="homePic" src ="https://m.media-amazon.com/images/I/715lpDNhM1L._SX3000_.jpg"></img>
+        </div>
         <div className="categories">
             <div className="sports">
+                <div className="sportsTitle">
+                    Sports
+                </div>
+                <div class="sportsPics">
 
+                </div>
             </div>
             <div className="books">
+                <div className="booksTitle">
+                    Books
+                </div>
+                <div class="booksPics">
 
+                </div>
             </div>
             <div className="games">
+                <div className="gamesTitle">
+                    Games
+                </div>
+                <div class="gamesPics">
 
+                </div>
             </div>
             <div className="computers">
+                <div className="computersTitle">
+                    Computers
+                </div>
+                <div class="computersPics">
 
+                </div>
             </div>
             <div className="cellPhones">
+                <div className="cellPhoneTitle">
+                    Cell Phones
+                </div>
+                <div class="cellPhonePics">
 
+                </div>
             </div>
+            <div className="clothing">
+                <div className="clothingTitle">
+                    Clothing
+                </div>
+                <div class="clothingPics">
 
-
+                </div>
+            </div>
         </div>
-        <img src ="https://m.media-amazon.com/images/I/715lpDNhM1L._SX3000_.jpg"></img>
       {/* <ul>{productComponents}</ul> */}
     </>
   );
