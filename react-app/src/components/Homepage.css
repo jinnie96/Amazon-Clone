@@ -32,9 +32,10 @@
     margin: 20px 20px;
 }
 
-.sportsPics {
+.sportsPics, .booksPics, .gamesPics, .computersPics, .cellPhonePics, .clothingPics {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
 
     width:90%;
     height: 400px;
@@ -42,6 +43,7 @@
     max-height: 100%; */
 }
 
-#football, #basketball, #tennisball, #soccerball {
-    height: 3%;
+.sportsPics *, .booksPics *, .gamesPics *, .cellPhonePics *, .computersPics *, .clothingPics * {
+    height: 100px;
+    width: 110px;
 }
