@@ -125,7 +125,10 @@ function Homepage() {
                     Cell Phones
                 </div>
                 <div class="cellPhonePics">
-
+                    <img id='iphone13' src='https://ss7.vzw.com/is/image/VerizonWireless/apple-iphone-13-midnight-09142021?hei=400'></img>
+                    <img id='galaxy20' src='https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6412/6412545cv11d.jpg'></img>
+                    <img id='galaxya13' src='https://image-us.samsung.com/SamsungUS/home/mobile/phones/pdp/galaxy-a13-5g/gallery/green/SM-A136ULGAATT-1.jpg?$product-details-jpg$'></img>
+                    <img id='oneplus' src='https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6457/6457034_sd.jpg;maxHeight=640;maxWidth=550'></img>
                 </div>
             </div>
             <div className="clothing">
@@ -133,7 +136,10 @@ function Homepage() {
                     Clothing
                 </div>
                 <div class="clothingPics">
-
+                    <img id='jeans' src='https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fba%2F9d%2Fba9d9c48e4847ae9e18b3ed23d10878f6c758e38.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]'></img>
+                    <img id='jacket' src='https://cache.mrporter.com/variants/images/13452677151412507/in/w560_q60.jpg'></img>
+                    <img id='tshirt' src='https://media.istockphoto.com/photos/front-back-and-34-views-of-white-tshirt-on-isolated-on-white-hip-hop-picture-id1225397516?k=20&m=1225397516&s=612x612&w=0&h=Ubp9vHi5pL2_8AyXgbpqM-kO17dpKsYBqzwG3VZ5cg8='></img>
+                    <img id='sweats' src='https://m.media-amazon.com/images/I/614cbwtCbML._AC_UX679_.jpg'></img>
                 </div>
             </div>
         </div>
