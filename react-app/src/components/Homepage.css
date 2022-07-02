@@ -46,4 +46,5 @@
 .sportsPics *, .booksPics *, .gamesPics *, .cellPhonePics *, .computersPics *, .clothingPics * {
     height: 100px;
     width: 110px;
+    cursor: pointer;
 }
