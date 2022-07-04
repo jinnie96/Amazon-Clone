@@ -9,3 +9,34 @@
     font-size: 13px;
     font-family: Arial,sans-serif;;
 }
+
+.bottom {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    background-color: #232F3E;
+    width: 100%;
+    color: white;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #3a4553;
+}
+
+#head {
+    font-weight: 700;
+    font-family: Arial,sans-serif;
+    margin: 6px 0 14px 0;
+    font-size:16px;
+}
+
+#amazonLogo {
+    height: 120px;
+
+}
+
+.logo {
+    background-color: #232F3E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

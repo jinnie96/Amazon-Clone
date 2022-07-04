@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="top">Back to top</div>
             <div className="bottom">
                <div className="get">
-                   <h1>Get to Know Us</h1>
+                   <h1 id="head">Get to Know Us</h1>
                    <div>
                        <p>Careers</p>
                        <p>Amazon Newsletter</p>
@@ -24,7 +24,7 @@ const Footer = () => {
                    </div>
                </div>
                <div className='make'>
-                    <h1>Make Money with Us</h1>
+                    <h1 id="head">Make Money with Us</h1>
                     <div>
                         <p>Sell products on Amazon</p>
                         <p>Sell apps on Amazon</p>
@@ -38,7 +38,7 @@ const Footer = () => {
                     </div>
                </div>
                <div className='amazon'>
-                    <h1>Amazon Payments Products</h1>
+                    <h1 id="head">Amazon Payments Products</h1>
                     <div>
                         <p>Amazon Rewards Visa Signature Cards</p>
                         <p>Amazon Store Card</p>
@@ -51,7 +51,7 @@ const Footer = () => {
                     </div>
                </div>
                <div className='let'>
-                    <h1>Let Us Help You</h1>
+                    <h1 id="head">Let Us Help You</h1>
                     <div>
                         <p>Amazon and COVID-19</p>
                         <p>Your Account</p>
@@ -64,6 +64,9 @@ const Footer = () => {
                         <p>Help</p>
                     </div>
                </div>
+            </div>
+            <div className="logo">
+                <img id='amazonLogo' src='https://www.doorwaysva.org/wp-content/uploads/2019/06/amazon-logo.png'></img>
             </div>
         </div>
 
