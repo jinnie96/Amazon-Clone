@@ -45,6 +45,9 @@ function App() {
         <ProtectedRoute path='/' exact={true} >
           <Homepage />
         </ProtectedRoute>
+        <ProtectedRoute path='/sports/:id' exact={true}>
+          <h1>hi</h1>
+        </ProtectedRoute>
       </Switch>
       <Footer />
     </BrowserRouter>
