@@ -4,10 +4,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import './Footer.css'
 
 const Footer = () => {
+    const scrollTop = function () {
+        window.scrollTo(0,0);
+    }
 
     return (
         <div>
-            <div className="top">Back to top</div>
+            <div className="top" onClick={scrollTop}>Back to top</div>
             <div className="bottom">
                <div className="get">
                    <h1 id="head">Get to Know Us</h1>
