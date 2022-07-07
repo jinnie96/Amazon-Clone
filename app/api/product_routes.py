@@ -33,5 +33,19 @@ def products():
 @product_routes.route('/<int:id>')
 def oneProduct(id):
     print(id,"ID!!!")
-    product = Product.query.filter(id == Product.id)
-    return {'id': product}
+    product = Product.query.get(id)
+    print(product.to_dict(), "PRODUCT@@@!!!")
+    productsObj = {}
+    temp = {}
+    print(product.to_dict(), "HEHEHEHE")
+    temp['id'] = (product.to_dict()['id'])
+    temp['name'] = (product.to_dict()['name'])
+    temp['description'] = (product.to_dict()['description'])
+    temp['price'] = str(product.to_dict()['price'])
+    print(product.to_dict()['photourl'])
+    temp['photourl'] = (product.to_dict()['photourl'])
+    print(product.to_dict()['id'])
+    productsObj[product.to_dict()['id']] = temp
+    print(productsObj, "UPDATED")
+    print(productsObj)
+    return productsObj
