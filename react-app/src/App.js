@@ -7,6 +7,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer'
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
+import ProductPage from './components/ProductPage'
 import User from './components/User';
 import Homepage from './components/Homepage';
 import { authenticate } from './store/session';
@@ -46,7 +47,7 @@ function App() {
           <Homepage />
         </ProtectedRoute>
         <ProtectedRoute path='/sports/:id' exact={true}>
-          <h1>hi</h1>
+          <ProductPage />
         </ProtectedRoute>
       </Switch>
       <Footer />

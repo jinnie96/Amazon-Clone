@@ -31,6 +31,7 @@ def products():
     # return productsObj
 
 @product_routes.route('/<int:id>')
-def oneProduct():
+def oneProduct(id):
+    print(id,"ID!!!")
     product = Product.query.filter(id == Product.id)
-    return {product}
+    return {'id': product}
