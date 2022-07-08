@@ -33,6 +33,7 @@ export const getSingleProduct = (productId) => async (dispatch) => {
 
     if (response.ok) {
         const data = await response.json();
+        console.log("DATA", data)
         if (data.errors) {
             return;
         };
@@ -46,6 +47,7 @@ export const getSingleProduct = (productId) => async (dispatch) => {
 const initialState = {}
 
 export default function productsReducer(state = initialState, action) {
+    console.log(action)
     let newState;
     switch(action.type) {
         case GET_PRODUCTS:
@@ -57,7 +59,8 @@ export default function productsReducer(state = initialState, action) {
         case GET_ONE_PRODUCT:
             newState = {
                 ...state,
-                [action.payload.post.id]: action.payload.post
+                'id': action.payload
+                // [action.payload.post.id]: action.payload.post
             };
             return newState;
 
