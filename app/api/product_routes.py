@@ -19,7 +19,8 @@ def products():
         print(product.to_dict()['photourl'])
         temp['photourl'] = (product.to_dict()['photourl'])
         print(product.to_dict()['id'])
-        productsObj[product.to_dict()['id']] = temp
+        print(temp, "@@@@")
+        productsObj['obj'] = temp
         print(productsObj, "UPDATED")
     print(productsObj)
     return productsObj
