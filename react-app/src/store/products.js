@@ -29,8 +29,9 @@ export const getAllProducts = () => async dispatch => {
 }
 
 export const getSingleProduct = (productId) => async (dispatch) => {
+    console.log("INSIDE")
     const response = await fetch(`/api/products/${productId}`);
-
+    console.log(response, "RES")
     if (response.ok) {
         const data = await response.json();
         console.log("DATA", data)
