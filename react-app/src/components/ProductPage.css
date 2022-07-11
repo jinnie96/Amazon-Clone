@@ -27,3 +27,23 @@ html {
 #buy {
     background-color: #FA8900;
 }
+
+.productDetails * {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+#prodImage {
+    height: 50%;
+}
+
+.image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#stock {
+    color: #007600;
+    font-size: 18px;
+}

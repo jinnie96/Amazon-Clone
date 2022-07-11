@@ -23,7 +23,7 @@ const ProductPage = () => {
     return (
         <div className='product'>
             <div className="image">
-                <img src={productObj.photourl}></img>
+                <img id='prodImage'src={productObj.photourl}></img>
             </div>
             <div className='productDetails'>
                 <h1>{productObj.name}</h1>
@@ -32,7 +32,7 @@ const ProductPage = () => {
             </div>
             <div className='price'>
                 <h1 id='price'>{productObj.price}</h1>
-                <h2>In Stock.</h2>
+                <h2 id='stock'>In Stock.</h2>
                 <button id='cartAdd'>Add to Cart</button>
                 <button id='buy'>Buy Now</button>
                 <h3>Secure transaction</h3>
