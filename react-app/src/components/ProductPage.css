@@ -1,0 +1,29 @@
+.product {
+    display: flex;
+    flex: 2fr 2fr 1fr;
+}
+
+html {
+    background-color: #FFFFFF;
+}
+
+.price {
+    float: right;
+    width: 244px;
+    border: 1px solid #D5D9D9;
+    height: 90%;
+    /* margin-left: 20px; */
+}
+
+#price {
+    color: #B12704;
+    font-size: 18px;
+}
+
+#cartAdd {
+    background-color: #FFA41D;
+}
+
+#buy {
+    background-color: #FA8900;
+}

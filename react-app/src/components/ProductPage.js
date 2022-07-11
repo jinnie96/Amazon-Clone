@@ -7,23 +7,36 @@ import './ProductPage.css'
 import { getSingleProduct } from '../store/products';
 
 const ProductPage = () => {
-    useEffect(() => {
-        dispatch(getSingleProduct(id))
-    }, [])
     const {id} = useParams()
     const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(getSingleProduct(id))
+    }, [dispatch, id])
     const product = useSelector(state => state.products.id)
-    console.log(product, "BEFORE")
-    // const productObj = product[Object.keys(product)[0]];
-    // console.log(product[Object.keys(product)[0]], "PRODUCT@@@")
+    console.log(product, "BEFORE!")
+    let productObj
+    // if (product) {
+    productObj = product[Object.keys(product)[0]];
+    console.log(product[Object.keys(product)[0]], "PRODUCT@@@")
+    // }
     console.log(id)
     return (
         <div className='product'>
-            {/* <img src={productObj.photourl}></img>
-            <h1>{productObj.description}</h1>
-            <h1>{productObj.id}</h1>
-            <h1>{productObj.name}</h1>
-            <h1>{productObj.price}</h1> */}
+            <div className="image">
+                <img src={productObj.photourl}></img>
+            </div>
+            <div className='productDetails'>
+                <h1>{productObj.name}</h1>
+                <h1>{productObj.description}</h1>
+                <h1>{productObj.id}</h1>
+            </div>
+            <div className='price'>
+                <h1 id='price'>{productObj.price}</h1>
+                <h2>In Stock.</h2>
+                <button id='cartAdd'>Add to Cart</button>
+                <button id='buy'>Buy Now</button>
+                <h3>Secure transaction</h3>
+            </div>
         </div>
     )
 }
