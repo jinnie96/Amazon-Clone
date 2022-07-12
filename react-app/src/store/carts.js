@@ -67,7 +67,7 @@ export const addtoCart = () => async dispatch => {
 // ------------------- Reducer ------------------- //
 const initialState = {}
 
-export default function cartssReducer(state = initialState, action) {
+export default function cartsReducer(state = initialState, action) {
     console.log(action)
     let newState;
     switch(action.type) {
