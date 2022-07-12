@@ -20,8 +20,8 @@ const addCart = id => ({
 })
 
 // ------------------- Thunk creators ------------------- //
-export const getCarts = () => async dispatch => {
-    const response = await fetch (`/api/products/`)
+export const getCarts = (id) => async dispatch => {
+    const response = await fetch (`/api/products/${id}`)
     if (response.ok) {
         const data = await response.json();
         console.log(data)
@@ -50,8 +50,11 @@ export const deleteCarts = (productId) => async (dispatch) => {
     }
 };
 
-export const addtoCart = () => async dispatch => {
-    const response = await fetch (`/api/products/`)
+export const addtoCart = (form) => async dispatch => {
+    const response = await fetch(`/api/products`, {
+        method: 'POST',
+        body: form
+    })
     if (response.ok) {
         const data = await response.json();
         console.log(data)
