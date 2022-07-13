@@ -5,14 +5,17 @@ import DemoButton from './auth/DemoButton'
 import { useDispatch, useSelector } from 'react-redux';
 import './ProductPage.css'
 import { getSingleProduct } from '../store/products';
+import { addtoCart } from '../store/carts';
 
 const ProductPage = () => {
     const {id} = useParams()
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(getS2ingleProduct(id))
+        dispatch(getSingleProduct(id))
     }, [dispatch, id])
     const product = useSelector(state => state.products.id)
+    const state = useSelector(state => state)
+    console.log("STATE", state)
     console.log(product, "BEFORE!")
     let productObj
     // if (product) {
@@ -22,7 +25,7 @@ const ProductPage = () => {
     console.log(id)
 
     const addToCart = () => {
-
+        dispatch(addToCart(id))
     }
     return (
         <div className='product'>
