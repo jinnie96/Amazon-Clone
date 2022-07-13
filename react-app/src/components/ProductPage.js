@@ -10,7 +10,7 @@ const ProductPage = () => {
     const {id} = useParams()
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(getSingleProduct(id))
+        dispatch(getS2ingleProduct(id))
     }, [dispatch, id])
     const product = useSelector(state => state.products.id)
     console.log(product, "BEFORE!")
@@ -20,6 +20,10 @@ const ProductPage = () => {
     console.log(product[Object.keys(product)[0]], "PRODUCT@@@")
     // }
     console.log(id)
+
+    const addToCart = () => {
+
+    }
     return (
         <div className='product'>
             <div className="image">
@@ -33,7 +37,7 @@ const ProductPage = () => {
             <div className='price'>
                 <h1 id='price'>{productObj.price}</h1>
                 <h2 id='stock'>In Stock.</h2>
-                <button id='cartAdd'>Add to Cart</button>
+                <button id='cartAdd' onClick={addToCart}>Add to Cart</button>
                 <button id='buy'>Buy Now</button>
                 <h3>Secure transaction</h3>
             </div>
