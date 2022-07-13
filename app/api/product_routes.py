@@ -1,5 +1,6 @@
 from flask import Blueprint, jsonify
 from app.models import Product
+
 # import simplejson as json
 
 product_routes = Blueprint('products', __name__)
