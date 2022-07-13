@@ -29,7 +29,7 @@ export const getCarts = (id) => async dispatch => {
             return;
         };
 
-        dispatch(getProducts(data));
+        dispatch(getCart(data));
         return data;
     }
 }
@@ -45,15 +45,15 @@ export const deleteCarts = (productId) => async (dispatch) => {
             return;
         };
 
-        dispatch(getOneProduct(data));
+        dispatch(deleteCart(data));
         return data;
     }
 };
 
-export const addtoCart = (form) => async dispatch => {
+export const addtoCart = (id) => async dispatch => {
     const response = await fetch(`/api/products`, {
         method: 'POST',
-        body: form
+        body: id
     })
     if (response.ok) {
         const data = await response.json();
@@ -62,7 +62,7 @@ export const addtoCart = (form) => async dispatch => {
             return;
         };
 
-        dispatch(getProducts(data));
+        dispatch(addCart(data));
         return data;
     }
 }
