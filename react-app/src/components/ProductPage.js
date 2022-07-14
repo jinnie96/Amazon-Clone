@@ -20,7 +20,7 @@ const ProductPage = () => {
     let productObj
     // if (product) {
     productObj = product[Object.keys(product)[0]];
-    console.log(product[Object.keys(product)[0]], "PRODUCT@@@")
+    // console.log(product[Object.keys(product)[0]], "PRODUCT@@@")
     // }
     console.log(id)
 
