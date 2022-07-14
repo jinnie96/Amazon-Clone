@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllProducts } from '../store/products'
+import { getCarts } from '../store/carts';
 import './Homepage.css'
 // import { NavLink } from "react-router-dom";
 
@@ -10,9 +11,12 @@ function Homepage() {
   const productsArr = []
   const dispatch = useDispatch()
   const productsState = useSelector(state => state.products);
+  const user= useSelector(state => state.session.user.id)
 
   useEffect(() => {
     async function fetchData() {
+        console.log("UUUSSSSERRR", user)
+        dispatch(getCarts(user))
       const data = await dispatch(getAllProducts())
       setProducts(data)
       console.log(((data)))
@@ -23,33 +27,6 @@ function Homepage() {
           console.log(productsArr)
       }
       console.log(productsArr)
-    //   console.log(productsState.undefined[0])
-    //   const photoArr = []
-    //   productsState.undefined.map((product) => {
-    //     const photoIndex = product.indexOf('photourl')
-    //     const photo = product.slice(photoIndex + 12, -2)
-    //     console.log(product.indexOf('photourl'))
-    //     console.log(photo,"PHOTOOO")
-    //     photoArr.push(photo)
-    // })
-    // setProducts(photoArr)
-    //   const response = await fetch('/api/products/');
-    //   const responseData = await response.json();
-    //   console.log(responseData)
-    //   setProducts(responseData)
-    //   console.log(products, "@@@")
-    //   Object.keys(responseData).map((key, i) => {
-    //       console.log(responseData[key])
-    //       productsObj[key] = (responseData[key])
-    //     console.log(productsObj.products)
-    // })
-    // setProducts(productsObj)
-    //   for (let key in responseData) {
-    //       console.log(key, responseData[key])
-    //       setProducts({
-    //           [key]: responseData[key]
-    //       })
-    //   }
       console.log(productsState)
     }
     fetchData();
