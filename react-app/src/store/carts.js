@@ -22,7 +22,7 @@ const addCart = id => ({
 // ------------------- Thunk creators ------------------- //
 export const getCarts = (id) => async dispatch => {
     console.log(id, "YO")
-    const response = await fetch (`/api/products/${id}`)
+    const response = await fetch (`/api/carts/${id}`)
     if (response.ok) {
         const data = await response.json();
         console.log("DATA", data)
@@ -37,7 +37,7 @@ export const getCarts = (id) => async dispatch => {
 
 export const deleteCarts = (productId) => async (dispatch) => {
     console.log("INSIDE")
-    const response = await fetch(`/api/products/${productId}`);
+    const response = await fetch(`/api/carts/${productId}`);
     console.log(response, "RES")
     if (response.ok) {
         const data = await response.json();
@@ -52,7 +52,7 @@ export const deleteCarts = (productId) => async (dispatch) => {
 };
 
 export const addtoCart = (id) => async dispatch => {
-    const response = await fetch(`/api/products`, {
+    const response = await fetch(`/api/carts`, {
         method: 'POST',
         body: id
     })
@@ -72,12 +72,13 @@ export const addtoCart = (id) => async dispatch => {
 const initialState = {}
 
 export default function cartsReducer(state = initialState, action) {
-    console.log(action)
+    console.log("REDICER", action.payload)
     let newState;
     switch(action.type) {
         case GET_CART:
             newState = { ...state }
             for (const key in action.payload) {
+                console.log(key)
                 newState[action.payload[key].id] = action.payload[key]
             }
             return newState;
