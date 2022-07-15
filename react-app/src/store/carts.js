@@ -5,6 +5,7 @@ const ADD_CART = 'carts/ADD_CART'
 
 // ------------------- Action creators ------------------- //
 const getCart = cart => ({
+    // console.log(cart)
     type:GET_CART,
     payload: cart
 })
@@ -26,12 +27,12 @@ export const getCarts = (id) => async dispatch => {
     if (response.ok) {
         const data = await response.json();
         console.log("DATA", data)
+        dispatch(getCart(data));
         if (data.errors) {
             return;
         };
+        // return data;
 
-        dispatch(getCart(data));
-        return data;
     }
 }
 
