@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify
-from app.models import Cart, db
+from app.models import Cart, Product, db
 from flask_login import current_user
 # import simplejson as json
 
@@ -10,7 +10,11 @@ def getCart(id):
     print("INSIDE")
     cart = Cart.query.filter(Cart.user_id == id).first()
     print(cart.to_dict(), "CAAAAAART")
-    return cart.to_dict()
+    products = Product.query.filter(Product.id == cart.to_dict()['product_id']).all()
+    print(products[0].to_dict(), "filtered")
+    return {
+        'cart': [product.to_dict() for product in products]
+    }
 
 @cart_routes.route('/<int:id>', methods=['DELETE'])
 def deleteCart(id):
