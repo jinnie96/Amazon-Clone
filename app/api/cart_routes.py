@@ -7,14 +7,20 @@ cart_routes = Blueprint('carts', __name__)
 
 @cart_routes.route('/<int:id>')
 def getCart(id):
-    print("INSIDE")
     cart = Cart.query.filter(Cart.user_id == id).first()
-    print(cart.to_dict(), "CAAAAAART")
     products = Product.query.filter(Product.id == cart.to_dict()['product_id']).all()
     print(products[0].to_dict(), "filtered")
-    return {
-        'cart': [product.to_dict() for product in products]
-    }
+    productsObj = {}
+    for product in products:
+        temp = {}
+        temp['id'] = (product.to_dict()['id'])
+        temp['name'] = (product.to_dict()['name'])
+        temp['description'] = (product.to_dict()['description'])
+        temp['price'] = str(product.to_dict()['price'])
+        temp['photourl'] = (product.to_dict()['photourl'])
+        productsObj['obj'] = temp
+    print(productsObj)
+    return productsObj
 
 @cart_routes.route('/<int:id>', methods=['DELETE'])
 def deleteCart(id):
