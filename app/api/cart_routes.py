@@ -34,4 +34,14 @@ def addTocart(id):
     db.session.add(cart)
     print("ZZZ", cart.to_dict())
     db.session.commit()
-    return cart.to_dict()
+    product = Product.query.filter(Product.id == cart.to_dict()['product_id']).first()
+    print("ADDED", product.to_dict())
+    # productsObj = {}
+    temp = {}
+    temp['id'] = (product.to_dict()['id'])
+    temp['name'] = (product.to_dict()['name'])
+    temp['description'] = (product.to_dict()['description'])
+    temp['price'] = str(product.to_dict()['price'])
+    temp['photourl'] = (product.to_dict()['photourl'])
+    # productsObj['obj'] = temp
+    return temp
