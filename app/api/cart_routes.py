@@ -9,7 +9,6 @@ cart_routes = Blueprint('carts', __name__)
 def getCart(id):
     cart = Cart.query.filter(Cart.user_id == id).first()
     products = Product.query.filter(Product.id == cart.to_dict()['product_id']).all()
-    print(products[0].to_dict(), "filtered")
     productsObj = {}
     for product in products:
         temp = {}
@@ -19,7 +18,6 @@ def getCart(id):
         temp['price'] = str(product.to_dict()['price'])
         temp['photourl'] = (product.to_dict()['photourl'])
         productsObj['obj'] = temp
-    print(productsObj)
     return productsObj
 
 @cart_routes.route('/<int:id>', methods=['DELETE'])
@@ -31,6 +29,9 @@ def deleteCart(id):
 
 @cart_routes.route('/<int:id>', methods=['POST'])
 def addTocart(id):
-    cart = Cart(user_id=current_user.id, product_id={id})
+    print("ADDING", id)
+    cart = Cart(user_id=current_user.id, product_id=id)
     db.session.add(cart)
+    print("ZZZ", cart.to_dict())
     db.session.commit()
+    return cart.to_dict()

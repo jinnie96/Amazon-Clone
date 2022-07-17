@@ -53,13 +53,14 @@ export const deleteCarts = (productId) => async (dispatch) => {
 };
 
 export const addtoCart = (id) => async dispatch => {
-    const response = await fetch(`/api/carts`, {
+    console.log("HEYHEY")
+    const response = await fetch(`/api/carts/${id}`, {
         method: 'POST',
         body: id
     })
     if (response.ok) {
         const data = await response.json();
-        console.log(data)
+        console.log("ADDED", data)
         if (data.errors) {
             return;
         };
