@@ -1,0 +1,9 @@
+.productBox {
+    display: flex;
+    align-items: center;
+}
+
+#deleteBtn {
+    margin-left: 10px;
+    cursor: pointer;
+}
