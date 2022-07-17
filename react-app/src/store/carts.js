@@ -74,7 +74,7 @@ export const addtoCart = (id) => async dispatch => {
 const initialState = {}
 
 export default function cartsReducer(state = initialState, action) {
-    console.log("REDICER", action.payload)
+    console.log("REDICER", action.payload.id)
     let newState;
     switch(action.type) {
         case GET_CART:
@@ -94,7 +94,7 @@ export default function cartsReducer(state = initialState, action) {
         case ADD_CART:
             newState = {
                 ...state,
-                'id': action.payload
+                [action.payload.id]: action.payload
                 // [action.payload.post.id]: action.payload.post
             };
             return newState;
