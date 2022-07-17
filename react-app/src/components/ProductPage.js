@@ -21,8 +21,8 @@ const ProductPage = () => {
     productObj = product[Object.keys(product)[0]];
     console.log(id)
 
-    const addToCart = () => {
-        dispatch(addToCart(id))
+    const addCart = () => {
+        dispatch(addtoCart(id))
     }
     return (
         <div className='product'>
@@ -37,7 +37,7 @@ const ProductPage = () => {
             <div className='price'>
                 <h1 id='price'>{productObj.price}</h1>
                 <h2 id='stock'>In Stock.</h2>
-                <button id='cartAdd' onClick={addToCart}>Add to Cart</button>
+                <button id='cartAdd' onClick={addCart}>Add to Cart</button>
                 <button id='buy'>Buy Now</button>
                 <h3>Secure transaction</h3>
             </div>
