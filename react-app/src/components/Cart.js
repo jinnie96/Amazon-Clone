@@ -25,7 +25,7 @@ const Cart = () => {
                     {console.log("KEYYYY", cart[oneKey])}
                     return (
                         <div className='productBox'>
-                            <li key={i} id={i}>{cart[oneKey].name}</li>
+                            <li key={i} id={cart[oneKey].id}>{cart[oneKey].name}</li>
                             <p id='deleteBtn' onClick={deleteProduct}>Delete</p>
                         </div>
                     )

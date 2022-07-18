@@ -37,8 +37,10 @@ export const getCarts = (id) => async dispatch => {
 }
 
 export const deleteCarts = (productId) => async (dispatch) => {
-    console.log("INSIDE")
-    const response = await fetch(`/api/carts/${productId}`);
+    console.log("INSIDE", productId)
+    const response = await fetch(`/api/carts/${productId}`, {
+        method: 'DELETE',
+    })
     console.log(response, "RES")
     if (response.ok) {
         const data = await response.json();

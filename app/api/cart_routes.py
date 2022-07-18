@@ -22,10 +22,14 @@ def getCart(id):
 
 @cart_routes.route('/<int:id>', methods=['DELETE'])
 def deleteCart(id):
-    cart = Cart.query.filter(Cart.id == id)
-    db.session.delete(cart)
-    db.session.commit()
-    return cart.to_dict()
+    print("BOTH", id, current_user.id)
+    carts = Cart.query.filter(Cart.product_id == id and Cart.user_id == current_user.id)
+    for c in carts:
+        print(c.to_dict(), "LOOP")
+    print(carts, "DELETEEEEE")
+    # db.session.delete(cart)
+    # db.session.commit()
+    # return cart.to_dict()
 
 @cart_routes.route('/<int:id>', methods=['POST'])
 def addTocart(id):
