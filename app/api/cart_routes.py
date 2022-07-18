@@ -26,10 +26,12 @@ def deleteCart(id):
     carts = Cart.query.filter(Cart.product_id == id and Cart.user_id == current_user.id)
     for c in carts:
         print(c.to_dict(), "LOOP")
+        db.session.delete(c)
+        db.session.commit()
     print(carts, "DELETEEEEE")
-    # db.session.delete(cart)
-    # db.session.commit()
-    # return cart.to_dict()
+    return {
+        "carts": [cart.to_dict() for cart in carts]
+    }
 
 @cart_routes.route('/<int:id>', methods=['POST'])
 def addTocart(id):
