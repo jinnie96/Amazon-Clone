@@ -25,6 +25,7 @@ const ProductPage = () => {
         dispatch(addtoCart(id))
     }
     return (
+        <>
         <div className='product'>
             <div className="image">
                 <img id='prodImage'src={productObj.photourl}></img>
@@ -42,6 +43,10 @@ const ProductPage = () => {
                 <h3>Secure transaction</h3>
             </div>
         </div>
+        <div className='reviews'>
+            
+        </div>
+        </>
     )
 }
 
