@@ -63,7 +63,7 @@ export const deleteOneReview = (productId) => async (dispatch) => {
 export const editOneReview = (productId) => async (dispatch) => {
     console.log("INSIDE", productId)
     const response = await fetch(`/api/reviews/${productId}`, {
-        method: 'PATCH',
+        method: 'PUT',
     })
     console.log(response, "RES")
     if (response.ok) {
