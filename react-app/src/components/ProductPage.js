@@ -44,7 +44,7 @@ const ProductPage = () => {
             </div>
         </div>
         <div className='reviews'>
-            
+
         </div>
         </>
     )
