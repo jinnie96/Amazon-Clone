@@ -33,7 +33,7 @@ export const getAllReviews = (id) => async dispatch => {
     if (response.ok) {
         const data = await response.json();
         console.log("DATA", data)
-        dispatch(getCart(data));
+        dispatch(getReviews(data));
         if (data.errors) {
             return;
         };
@@ -55,7 +55,7 @@ export const deleteOneReview = (productId) => async (dispatch) => {
             return;
         };
 
-        dispatch(deleteCart(data));
+        dispatch(deleteReview(data));
         return data;
     }
 };
@@ -73,7 +73,7 @@ export const editOneReview = (productId) => async (dispatch) => {
             return;
         };
 
-        dispatch(deleteCart(data));
+        dispatch(editReview(data));
         return data;
     }
 };
@@ -91,7 +91,7 @@ export const addOneReview = (id) => async dispatch => {
             return;
         };
 
-        dispatch(addCart(data));
+        dispatch(addReview(data));
         return data;
     }
 }
@@ -100,7 +100,7 @@ export const addOneReview = (id) => async dispatch => {
 const initialState = {}
 
 export default function cartsReducer(state = initialState, action) {
-    console.log("REDICER", action.payload)
+    console.log("REDICER", action.payload.reviews)
     let newState;
     switch(action.type) {
         case GET_REVIEWS:
@@ -110,7 +110,7 @@ export default function cartsReducer(state = initialState, action) {
                 newState[action.payload[key].id] = action.payload[key]
             }
             return newState;
-        case DELETE_CART:
+        case DELETE_REVIEW:
             newState = {
                 ...state,
                 'id': action.payload
@@ -122,7 +122,7 @@ export default function cartsReducer(state = initialState, action) {
                 ...state,
                 'id': action.payload
             }
-        case ADD_CART:
+        case ADD_REVIEW:
             newState = {
                 ...state,
                 [action.payload.id]: action.payload
