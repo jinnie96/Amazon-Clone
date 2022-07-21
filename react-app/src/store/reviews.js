@@ -100,7 +100,7 @@ export const addOneReview = (id) => async dispatch => {
 const initialState = {}
 
 export default function cartsReducer(state = initialState, action) {
-    console.log("REDICER", action.payload.reviews)
+    console.log("REVIEWSREDICER", action.payload)
     let newState;
     switch(action.type) {
         case GET_REVIEWS:
