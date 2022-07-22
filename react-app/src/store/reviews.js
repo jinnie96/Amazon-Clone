@@ -6,7 +6,6 @@ const ADD_REVIEW = 'reviews/ADD_REVIEW'
 
 // ------------------- Action creators ------------------- //
 const getReviews = id => ({
-    // console.log(cart)
     type:GET_REVIEWS,
     payload: id
 })
@@ -30,14 +29,15 @@ const addReview = id => ({
 export const getAllReviews = (id) => async dispatch => {
     console.log(id, "YO")
     const response = await fetch (`/api/reviews/${id}`)
+    console.log("REVIEWRES", response)
     if (response.ok) {
         const data = await response.json();
-        console.log("DATA", data)
+        console.log("DATA REVIEW", data)
         dispatch(getReviews(data));
         if (data.errors) {
             return;
         };
-        // return data;
+        return data;
 
     }
 }
@@ -99,15 +99,21 @@ export const addOneReview = (id) => async dispatch => {
 // ------------------- Reducer ------------------- //
 const initialState = {}
 
-export default function cartsReducer(state = initialState, action) {
-    console.log("REVIEWSREDICER", action.payload)
+export default function reviewsReducer(state = initialState, action) {
+    // console.log("REVIEWSREDICER", action.payload.reviews)
     let newState;
     switch(action.type) {
         case GET_REVIEWS:
             newState = { ...state }
             for (const key in action.payload) {
-                console.log(key)
-                newState[action.payload[key].id] = action.payload[key]
+                console.log(action.payload, key, action.payload[key][0])
+                for (const keytwo in action.payload[key]) {
+                    console.log(keytwo, action.payload, action.payload[key][keytwo], action.payload.key.keytwo)
+                }
+                // for (let i = 0; i < action.payload[key]; i++) {
+
+                // }
+                newState[action.payload[key]] = action.payload[key]
             }
             return newState;
         case DELETE_REVIEW:
