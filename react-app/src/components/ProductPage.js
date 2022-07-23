@@ -84,8 +84,18 @@ const ProductPage = () => {
             </div>
             <div className='rightSide'>
                 <h1>Top reviews from the United States</h1>
-                <div className='reviews'>
-                    {}
+                <div className='reviewsInfo'>
+                {
+                    Object.keys(reviews).map((key,i)=>{
+                        return (
+                            <div className='reviewDetail'>
+                                <h1 key={i}>{reviews[key][0].rating}</h1>
+                                <h2 key={i}>{reviews[key][0].title}</h2>
+                                <h3 key={i}>{reviews[key][0].description}</h3>
+                            </div>
+                        )
+                    })
+                }
                 </div>
             </div>
         </div>
