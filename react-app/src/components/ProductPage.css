@@ -74,3 +74,8 @@ html {
 .reviews {
     display: flex;
 }
+
+.rightSide {
+    display: flex;
+    flex-direction: column;
+}
