@@ -18,7 +18,7 @@ const ProductPage = () => {
     const product = useSelector(state => state.products.id)
     const state = useSelector(state => state)
     const reviews = useSelector(state => state.reviews)
-    console.log("reviews", state)
+    console.log("reviews", reviews)
     console.log(product, "BEFORE!")
     let productObj
     productObj = product[Object.keys(product)[0]];
@@ -84,6 +84,9 @@ const ProductPage = () => {
             </div>
             <div className='rightSide'>
                 <h1>Top reviews from the United States</h1>
+                <div className='reviews'>
+                    {}
+                </div>
             </div>
         </div>
         </>
