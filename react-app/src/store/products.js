@@ -48,7 +48,7 @@ export const getSingleProduct = (productId) => async (dispatch) => {
 const initialState = {}
 
 export default function productsReducer(state = initialState, action) {
-    console.log(action)
+    console.log("PRODUCTSREDUCER", action)
     let newState;
     switch(action.type) {
         case GET_PRODUCTS:

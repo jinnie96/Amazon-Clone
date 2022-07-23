@@ -100,20 +100,20 @@ export const addOneReview = (id) => async dispatch => {
 const initialState = {}
 
 export default function reviewsReducer(state = initialState, action) {
-    // console.log("REVIEWSREDICER", action.payload.reviews)
+    // console.log("REVIEWSREDICER", action.payload)
     let newState;
     switch(action.type) {
         case GET_REVIEWS:
             newState = { ...state }
             for (const key in action.payload) {
-                console.log(action.payload, key, action.payload[key][0])
-                for (const keytwo in action.payload[key]) {
-                    console.log(keytwo, action.payload, action.payload[key][keytwo], action.payload.key.keytwo)
-                }
-                // for (let i = 0; i < action.payload[key]; i++) {
-
+                console.log(action.payload, key, action.payload[key].length)
+                // for (const keytwo in action.payload[key]) {
+                //     console.log(keytwo, action.payload, action.payload[key][keytwo], action.payload.key.keytwo)
                 // }
-                newState[action.payload[key]] = action.payload[key]
+                for (let i = 0; i < action.payload[key].length; i++) {
+                    console.log(action.payload[key][i].id)
+                    newState[action.payload[key][i].id] = action.payload[key]
+                }
             }
             return newState;
         case DELETE_REVIEW:
