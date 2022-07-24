@@ -11,6 +11,7 @@ import ProductPage from './components/ProductPage'
 import User from './components/User';
 import Homepage from './components/Homepage';
 import Cart from './components/Cart'
+import NewReview from './components/NewReview';
 import { authenticate } from './store/session';
 
 function App() {
@@ -53,7 +54,7 @@ function App() {
         <ProtectedRoute path='/cart' exact={true} >
           <Cart/>
         </ProtectedRoute>
-        <ProtectedRoute path='/edit:id' exact={true} >
+        <ProtectedRoute path='/create/:id' exact={true} >
           <NewReview/>
         </ProtectedRoute>
       </Switch>
