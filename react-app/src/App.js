@@ -53,6 +53,9 @@ function App() {
         <ProtectedRoute path='/cart' exact={true} >
           <Cart/>
         </ProtectedRoute>
+        <ProtectedRoute path='/edit:id' exact={true} >
+          <NewReview/>
+        </ProtectedRoute>
       </Switch>
       <Footer />
     </BrowserRouter>
