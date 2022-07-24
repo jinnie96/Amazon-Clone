@@ -54,7 +54,7 @@ function App() {
         <ProtectedRoute path='/cart' exact={true} >
           <Cart/>
         </ProtectedRoute>
-        <ProtectedRoute path='/create/:id' exact={true} >
+        <ProtectedRoute path='/review/:id' exact={true} >
           <NewReview/>
         </ProtectedRoute>
       </Switch>
