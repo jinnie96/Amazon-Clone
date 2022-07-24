@@ -99,6 +99,13 @@ const ProductPage = () => {
                 </div>
             </div>
         </div>
+        <div>
+            <h1>Review this product</h1>
+            <h2>Share your thoughts with other customers</h2>
+            <NavLink to={'/edit/' + id}>
+                <p>Write a customer review</p>
+            </NavLink>
+        </div>
         </>
     )
 }
