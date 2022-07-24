@@ -21,7 +21,7 @@ const ProductPage = () => {
     console.log("reviews", reviews)
     console.log(product, "BEFORE!")
     let productObj
-    productObj = product[Object.keys(product)[0]];
+    // productObj = product[Object.keys(product)[0]];
     console.log(id)
 
     const addCart = () => {
@@ -29,7 +29,7 @@ const ProductPage = () => {
     }
     return (
         <>
-        <div className='product'>
+        {/* <div className='product'>
             <div className="image">
                 <img id='prodImage'src={productObj.photourl}></img>
             </div>
@@ -45,7 +45,7 @@ const ProductPage = () => {
                 <button id='buy'>Buy Now</button>
                 <h3>Secure transaction</h3>
             </div>
-        </div>
+        </div> */}
         <div className='reviews'>
             <div className='leftSide'>
                 <div>
@@ -102,7 +102,8 @@ const ProductPage = () => {
         <div>
             <h1>Review this product</h1>
             <h2>Share your thoughts with other customers</h2>
-            <NavLink to={'/edit/' + id}>
+            <p>review</p>
+            <NavLink to={'/create/' + id}>
                 <p>Write a customer review</p>
             </NavLink>
         </div>
