@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { NavLink, useParams, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addOneReview } from '../store/reviews';
+import { getAllReviews } from '../store/reviews';
 
 const NewReview = () => {
     const history = useHistory();
@@ -34,8 +35,9 @@ const NewReview = () => {
         }
 
         dispatch(addOneReview(id, form))
+        dispatch(getAllReviews(id))
         console.log(rating, title, description)
-        history.push('/sports/' + id)
+        window.location.href = `/sports/${id}`
     }
 
     return (

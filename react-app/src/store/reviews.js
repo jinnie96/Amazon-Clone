@@ -136,7 +136,7 @@ export default function reviewsReducer(state = initialState, action) {
         case ADD_REVIEW:
             newState = {
                 ...state,
-                [action.payload.id]: action.payload
+                [action.payload.id]: [action.payload]
                 // [action.payload.post.id]: action.payload.post
             };
             return newState;
