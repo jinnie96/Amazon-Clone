@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink, useParams, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addOneReview } from '../store/reviews';
 
 const NewReview = () => {
+    const history = useHistory();
     const {id} = useParams()
     const dispatch = useDispatch()
     const product = useSelector(state => state.products.id)
@@ -34,6 +35,7 @@ const NewReview = () => {
 
         dispatch(addOneReview(id, form))
         console.log(rating, title, description)
+        history.push('/sports/' + id)
     }
 
     return (

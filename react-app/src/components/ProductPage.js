@@ -20,6 +20,7 @@ const ProductPage = () => {
     const reviews = useSelector(state => state.reviews)
     console.log("reviews", reviews)
     console.log(product, "BEFORE!")
+    console.log("KEYSsSSSS", Object.keys(reviews))
     let productObj
     // productObj = product[Object.keys(product)[0]];
     console.log(id)
@@ -89,9 +90,9 @@ const ProductPage = () => {
                     Object.keys(reviews).map((key,i)=>{
                         return (
                             <div className='reviewDetail'>
-                                <h1 key={i}>{reviews[key][0].rating}</h1>
-                                <h2 key={i}>{reviews[key][0].title}</h2>
-                                <h3 key={i}>{reviews[key][0].description}</h3>
+                                <h1 key={i}>{reviews[key][i].rating}</h1>
+                                <h2 key={i}>{reviews[key][i].title}</h2>
+                                <h3 key={i}>{reviews[key][i].description}</h3>
                             </div>
                         )
                     })
