@@ -26,7 +26,13 @@ const NewReview = () => {
 
     const submitReview = (e) => {
         e.preventDefault();
-        dispatch(addOneReview(id, rating, title, description))
+        const form = {
+            rating,
+            title,
+            description
+        }
+
+        dispatch(addOneReview(id, form))
         console.log(rating, title, description)
     }
 
