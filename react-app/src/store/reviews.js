@@ -78,11 +78,18 @@ export const editOneReview = (productId) => async (dispatch) => {
     }
 };
 
-export const addOneReview = (id) => async dispatch => {
+export const addOneReview = (id, stars, headline, details) => async dispatch => {
     console.log("HEYHEY")
-    const response = await fetch(`/api/reviews/${id}`, {
+    const response = await fetch(`/api/reviews/new/${id}`, {
         method: 'POST',
-        body: id
+        headers: {
+            "Content-Type": 'application/json',
+        },
+        body: JSON.stringify({
+            stars,
+            headline,
+            details
+        })
     })
     if (response.ok) {
         const data = await response.json();
