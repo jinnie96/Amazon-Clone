@@ -91,12 +91,12 @@ const ProductPage = () => {
                     Object.keys(reviews).map((key,i)=>{
                         return (
                             <div className='reviewDetail'>
-                                <h1 key={i}>{reviews[key][i].rating}</h1>
-                                <h2 key={i}>{reviews[key][i].title}</h2>
-                                <h3 key={i}>{reviews[key][i].description}</h3>
+                                <h1 key={i} id={reviews[key][i].id}>{reviews[key][i].rating}</h1>
+                                <h2 key={i} id={reviews[key][i].id}>{reviews[key][i].title}</h2>
+                                <h3 key={i} id={reviews[key][i].id}>{reviews[key][i].description}</h3>
                                 {reviews[key][i].reviewer_id === user &&
                                     <div>
-                                        <NavLink to={'edit-review/' + id}>
+                                        <NavLink to={'edit-review/' + reviews[key][i].id}>
                                             <button>Edit Review</button>
                                         </NavLink>
                                             <button>Delete Review</button>

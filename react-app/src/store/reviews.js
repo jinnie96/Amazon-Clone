@@ -60,10 +60,16 @@ export const deleteOneReview = (productId) => async (dispatch) => {
     }
 };
 
-export const editOneReview = (productId) => async (dispatch) => {
-    console.log("INSIDE", productId)
-    const response = await fetch(`/api/reviews/${productId}`, {
+export const editOneReview = (id, form) => async (dispatch) => {
+    console.log("HEYHEY", JSON.stringify(form))
+    const response = await fetch(`/api/reviews/edit/${id}`, {
         method: 'PUT',
+        headers: {
+            "Content-Type": 'application/json',
+        },
+        body: JSON.stringify({
+            form
+        })
     })
     console.log(response, "RES")
     if (response.ok) {
