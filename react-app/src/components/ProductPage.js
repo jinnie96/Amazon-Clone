@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './ProductPage.css'
 import { getSingleProduct } from '../store/products';
 import { addtoCart } from '../store/carts';
-import { getAllReviews } from '../store/reviews';
+import { getAllReviews, deleteOneReview } from '../store/reviews';
 
 const ProductPage = () => {
     const {id} = useParams()
@@ -28,6 +28,12 @@ const ProductPage = () => {
 
     const addCart = () => {
         dispatch(addtoCart(id))
+    }
+
+    const deleteReview = (e) => {
+        console.log(e.target.id)
+        dispatch(deleteOneReview(e.target.id))
+        window.location.href = `/sports/${id}`
     }
     return (
         <>
@@ -99,7 +105,7 @@ const ProductPage = () => {
                                         <NavLink to={'edit-review/' + reviews[key][i].id}>
                                             <button>Edit Review</button>
                                         </NavLink>
-                                            <button>Delete Review</button>
+                                            <button id={reviews[key][i].id} onClick={deleteReview}>Delete Review</button>
                                     </div>
                             }
                             </div>
