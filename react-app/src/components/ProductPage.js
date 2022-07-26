@@ -11,18 +11,19 @@ import { getAllReviews } from '../store/reviews';
 const ProductPage = () => {
     const {id} = useParams()
     const dispatch = useDispatch()
+    let productObj
     useEffect(() => {
         dispatch(getSingleProduct(id))
         dispatch(getAllReviews(id))
     }, [dispatch, id])
     const product = useSelector(state => state.products.id)
+    // productObj = product[Object.keys(product)[0]];
     const state = useSelector(state => state)
     const reviews = useSelector(state => state.reviews)
+    const user= useSelector(state => state.session.user.id)
     console.log("reviews", reviews)
     console.log(product, "BEFORE!")
     console.log("KEYSsSSSS", Object.keys(reviews))
-    let productObj
-    // productObj = product[Object.keys(product)[0]];
     console.log(id)
 
     const addCart = () => {
@@ -93,6 +94,12 @@ const ProductPage = () => {
                                 <h1 key={i}>{reviews[key][i].rating}</h1>
                                 <h2 key={i}>{reviews[key][i].title}</h2>
                                 <h3 key={i}>{reviews[key][i].description}</h3>
+                                {reviews[key][i].reviewer_id === user &&
+                                    <div>
+                                        <button>Edit Review</button>
+                                        <button>Delete Review</button>
+                                    </div>
+                                }
                             </div>
                         )
                     })
