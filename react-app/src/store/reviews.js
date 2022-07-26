@@ -105,7 +105,7 @@ export const addOneReview = (id, form) => async dispatch => {
 const initialState = {}
 
 export default function reviewsReducer(state = initialState, action) {
-    // console.log("REVIEWSREDICER", action.payload)
+    console.log("REVIEWSREDICER", action.payload)
     let newState;
     switch(action.type) {
         case GET_REVIEWS:
@@ -136,7 +136,7 @@ export default function reviewsReducer(state = initialState, action) {
         case ADD_REVIEW:
             newState = {
                 ...state,
-                [action.payload.id]: action.payload
+                [action.payload.id]: [action.payload]
                 // [action.payload.post.id]: action.payload.post
             };
             return newState;
