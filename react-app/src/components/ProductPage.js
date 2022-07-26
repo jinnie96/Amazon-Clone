@@ -96,10 +96,12 @@ const ProductPage = () => {
                                 <h3 key={i}>{reviews[key][i].description}</h3>
                                 {reviews[key][i].reviewer_id === user &&
                                     <div>
-                                        <button>Edit Review</button>
-                                        <button>Delete Review</button>
+                                        <NavLink to={'edit-review/' + id}>
+                                            <button>Edit Review</button>
+                                        </NavLink>
+                                            <button>Delete Review</button>
                                     </div>
-                                }
+                            }
                             </div>
                         )
                     })
