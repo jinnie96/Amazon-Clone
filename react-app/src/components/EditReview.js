@@ -52,7 +52,7 @@ const NewReview = () => {
         dispatch(editOneReview(id))
         dispatch(getAllReviews(id))
         console.log(rating, title, description)
-        // window.location.href = `/sports/${productId}`
+        window.location.href = `/sports/${productId}`
     }
 
     return (
