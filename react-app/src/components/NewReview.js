@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { NavLink, useParams, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addOneReview } from '../store/reviews';
-import { getAllReviews } from '../store/reviews';
+import { getAllReviews, deleteOneReview } from '../store/reviews';
 
 const NewReview = () => {
     const history = useHistory();
