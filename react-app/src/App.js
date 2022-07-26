@@ -12,6 +12,7 @@ import User from './components/User';
 import Homepage from './components/Homepage';
 import Cart from './components/Cart'
 import NewReview from './components/NewReview';
+import EditReview from './components/EditReview'
 import { authenticate } from './store/session';
 
 function App() {
@@ -56,6 +57,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/review/:id' exact={true} >
           <NewReview/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/sports/edit-review/:id' exact={true} >
+          <EditReview/>
         </ProtectedRoute>
       </Switch>
       <Footer />

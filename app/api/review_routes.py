@@ -4,6 +4,7 @@ from app.models import Review, db
 from flask_login import login_required, current_user
 from flask import request
 from app.forms.review_form import AddReviewForm
+from app.forms.edit_review_form import EditReviewForm
 import json
 # import simplejson as json
 
@@ -18,6 +19,14 @@ def getReviews(id):
     return {
             "reviews": [review.to_dict() for review in reviews]
         }
+
+@review_routes.route('/single/<int:id>')
+@login_required
+def getSingleReview(id):
+    print("in review")
+    reviews = Review.query.filter(Review.id == id).first()
+    print(reviews, "reviews api")
+    return reviews.to_dict()
 
 @review_routes.route('/new/<int:id>', methods=['POST'])
 @login_required
@@ -41,7 +50,17 @@ def deleteReview(id):
     db.session.commit()
     return "Comment deleted"
 
-@review_routes.route('/<int:id>', methods=['PUT'])
+@review_routes.route('/edit/<int:id>', methods=['PUT'])
 @login_required
 def editReview(id):
+    print("IN API")
+    form = EditReviewForm()
+    data= request.json['form']
+    print(data, "json request")
     review = Review.query.get(id)
+    review.rating = request.json['form']['rating']
+    review.description = request.json['form']['description']
+    review.title = request.json['form']['title']
+    print("JSON", review.to_dict())
+    db.session.commit()
+    return review.to_dict()
