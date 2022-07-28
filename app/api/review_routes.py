@@ -55,7 +55,7 @@ def deleteReview(id):
 def editReview(id):
     print("IN API")
     form = EditReviewForm()
-    data= request.json['form']
+    data= request.json
     print(data, "json request")
     review = Review.query.get(id)
     review.rating = request.json['form']['rating']
