@@ -21,10 +21,18 @@ const ProductPage = () => {
     const state = useSelector(state => state)
     const reviews = useSelector(state => state.reviews)
     const user= useSelector(state => state.session.user.id)
+    let averageRating
     console.log("reviews", reviews)
     console.log(product, "BEFORE!")
     console.log("KEYSsSSSS", Object.keys(reviews))
     console.log(id)
+    for (let i = 0; i < Object.keys(reviews).length; i++) {
+        let key = reviews[Object.keys(reviews)[i]]
+
+        for (let j = 0; j < reviews[Object.keys(reviews)[i]]; j++) {
+            averageRating += key[j]
+        }
+    }
 
     const addCart = () => {
         dispatch(addtoCart(id))
