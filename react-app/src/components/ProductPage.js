@@ -21,18 +21,27 @@ const ProductPage = () => {
     const state = useSelector(state => state)
     const reviews = useSelector(state => state.reviews)
     const user= useSelector(state => state.session.user.id)
-    let averageRating
+    let averageRating = 0
     console.log("reviews", reviews)
     console.log(product, "BEFORE!")
     console.log("KEYSsSSSS", Object.keys(reviews))
     console.log(id)
-    for (let i = 0; i < Object.keys(reviews).length; i++) {
-        let key = reviews[Object.keys(reviews)[i]]
-
-        for (let j = 0; j < reviews[Object.keys(reviews)[i]]; j++) {
-            averageRating += key[j]
+    if (Object.keys(reviews)) {
+        for (let i = 0; i < 1; i++) {
+            let count = 0
+            console.log(Object.keys(reviews))
+            let key = reviews[Object.keys(reviews)[i]]
+            console.log(key, "THIS")
+            if (key) {
+                for (let j = 0; j < key.length; j++) {
+                    averageRating += key[j].rating
+                    count++
+                }
+            }
+            averageRating = Math.round((averageRating/count) * 10) / 10
         }
     }
+    console.log(averageRating, "AVERAGE")
 
     const addCart = () => {
         dispatch(addtoCart(id))
@@ -73,7 +82,7 @@ const ProductPage = () => {
                         <p>*</p>
                         <p>*</p>
                     </div>
-                    <h2>blank out of blank</h2>
+                    <h2>{averageRating} out of 5</h2>
                 </div>
                 <div className='ratings'>
                     <div className='five'>
