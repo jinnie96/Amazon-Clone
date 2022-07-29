@@ -20,11 +20,16 @@ const NavBar = () => {
           </NavLink>
         </div>
         <div className='delivery'>
-          <div class='deliveryName'>
-            Deliver to {user.username}
-          </div>
+          {/* <div className='deliveryBoxOne'> */}
+            <div className='deliveryIcon'>
+              <img id='locationIcon' src='https://kronospan-express.com/public/krono/img/icons/placeholder_blk.png'></img>
+            </div>
+            <div class='deliveryName'>
+              Deliver to {user.username}
+            </div>
+          {/* </div> */}
           <div class='cityName'>
-            
+
           </div>
         </div>
         <div className="searchBar">

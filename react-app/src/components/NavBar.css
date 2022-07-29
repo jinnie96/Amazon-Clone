@@ -67,3 +67,22 @@ input:focus {
 .rightSide > {
     margin-right: 15px;
 }
+
+#delivery {
+    color: white;
+    font-family: 'Lato', sans-serif
+}
+
+.deliveryName {
+    color:#ccc
+}
+
+#locationIcon {
+    height: 5%;
+    width: 5%;
+}
+
+.deliveryBoxOne {
+    display: flex;
+    
+}
