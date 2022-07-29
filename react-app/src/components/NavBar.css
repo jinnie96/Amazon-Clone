@@ -53,3 +53,17 @@ input:focus {
 .cart {
     margin-right: 5px;
 }
+
+.rightSide {
+    display: flex;
+    flex-direction: row;
+}
+
+.order {
+    display: flex;
+    flex-direction: column;
+}
+
+.rightSide > {
+    margin-right: 15px;
+}
