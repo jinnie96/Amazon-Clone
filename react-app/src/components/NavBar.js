@@ -21,12 +21,14 @@ const NavBar = () => {
         </div>
         <div className='delivery'>
           {/* <div className='deliveryBoxOne'> */}
+          <div className='deliveryBox'>
             <div className='deliveryIcon'>
               <img id='locationIcon' src='https://kronospan-express.com/public/krono/img/icons/placeholder_blk.png'></img>
             </div>
             <div class='deliveryName'>
               Deliver to {user.username}
             </div>
+          </div>
           {/* </div> */}
           <div class='cityName'>
 
@@ -64,7 +66,7 @@ const NavBar = () => {
           <NavLink to='/orders' exact={true} activeClassName='active' id="navOptions">
             Returns
           </NavLink>
-          <NavLink to='/orders' exact={true} activeClassName='active' id="navOptions">
+          <NavLink to='/orders' exact={true} activeClassName='active' id="optionsReturn">
             & Orders
           </NavLink>
         </div>

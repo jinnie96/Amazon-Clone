@@ -16,6 +16,7 @@ nav > div {
 
 #navOptions {
     color: white;
+    text-decoration: none;
 }
 
 .rightSide {
@@ -68,9 +69,10 @@ input:focus {
     margin-right: 15px;
 }
 
-#delivery {
-    color: white;
-    font-family: 'Lato', sans-serif
+.delivery {
+    /* color: white; */
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
 }
 
 .deliveryName {
@@ -84,5 +86,35 @@ input:focus {
 
 .deliveryBoxOne {
     display: flex;
-    
+
+}
+
+.delivery:hover, .greeting:hover, .order:hover, .cart:hover {
+    border: solid 1px white;
+    border-radius: 5%;
+}
+
+.order, .cart, .greeting {
+    margin-right: 30px;
+    text-decoration: none;
+}
+
+#optionsReturn {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.deliveryBox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.deliveryIcon {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5px;
 }
