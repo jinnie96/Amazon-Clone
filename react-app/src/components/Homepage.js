@@ -50,13 +50,14 @@ function Homepage() {
             <img src='https://m.media-amazon.com/images/I/31JaiPXYI8L._AC_.jpg'></img>
             <img src='https://m.media-amazon.com/images/I/61iqsjK1JtL._AC_SX466_.jpg'></img>
         </ul> */}
-        <div>
-            <img id="homePic" src ="https://m.media-amazon.com/images/I/715lpDNhM1L._SX3000_.jpg"></img>
+        <div className='banner'>
+            <img id="homePic" src ="https://www.thebanner.org/sites/default/files/styles/article_detail_header/public/TIN-332%20Books%20from_large.jpg?itok=7QRVhctV"></img>
         </div>
+        <div className='categoryTitle'><h1>Shop by Category:</h1></div>
         <div className="categories">
             <div className="sports">
                 <div className="sportsTitle">
-                    Sports
+                    Fantasy
                 </div>
                 <div class="sportsPics">
                     <NavLink to={'sports/1'}><img id="football" src="https://www.big5sportinggoods.com/catalogimage/img/product/rwd/large/1310_14339_0004_000_large_02.jpg"></img></NavLink>
@@ -67,7 +68,7 @@ function Homepage() {
             </div>
             <div className="books">
                 <div className="booksTitle">
-                    Books
+                    Science Fiction
                 </div>
                 <div class="booksPics">
                     <NavLink to={'books/1'}><img id="lifeOfPi" src="https://m.media-amazon.com/images/I/81E9oNSK3bL._AC_UY218_.jpg"></img></NavLink>
@@ -78,7 +79,7 @@ function Homepage() {
             </div>
             <div className="games">
                 <div className="gamesTitle">
-                    Games
+                    Mystery
                 </div>
                 <div class="gamesPics">
                     <NavLink to={'games/1'}><img id='xbox' src='https://m.media-amazon.com/images/I/61s248JDH+L._AC_SX522_.jpg'></img></NavLink>
@@ -89,7 +90,7 @@ function Homepage() {
             </div>
             <div className="computers">
                 <div className="computersTitle">
-                    Computers
+                    Horror
                 </div>
                 <div class="computersPics">
                     <NavLink to={'computers/1'}><img id='macPro' src='https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp-spacegray-select-202206_GEO_IE?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1654014007483'></img></NavLink>
@@ -100,7 +101,7 @@ function Homepage() {
             </div>
             <div className="cellPhones">
                 <div className="cellPhoneTitle">
-                    Cell Phones
+                    Biography
                 </div>
                 <div class="cellPhonePics">
                     <NavLink to={'phones/1'}><img id='iphone13' src='https://ss7.vzw.com/is/image/VerizonWireless/apple-iphone-13-midnight-09142021?hei=400'></img></NavLink>
@@ -111,7 +112,7 @@ function Homepage() {
             </div>
             <div className="clothing">
                 <div className="clothingTitle">
-                    Clothing
+                    Children's
                 </div>
                 <div class="clothingPics">
                     <NavLink to={'clothes/1'}><img id='jeans' src='https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fba%2F9d%2Fba9d9c48e4847ae9e18b3ed23d10878f6c758e38.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]'></img></NavLink>
