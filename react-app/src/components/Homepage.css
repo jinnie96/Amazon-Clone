@@ -1,17 +1,28 @@
 #homePic {
     height: 100%;
-    width: 100%;
-    margin-left: 50px
+    width: 90%;
+    /* margin-left: 50px; */
+    /* margin-right: 50px; */
+    margin-top: 50px;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+}
+
+.categoryTitle {
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
 }
 
 .categories {
     display: flex;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* width: 100%; */
+    flex-flow: row wrap;
+    justify-content: space-around;
     justify-items: center;
     gap: 55px;
-    /* flex-direction: column; */
 }
 
 .sports {
