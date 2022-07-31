@@ -75,7 +75,39 @@ html {
     display: flex;
 }
 
-/* .rightSide {
+#productName {
+    font-size: 28px;
+    font-family: 'Lato', sans-serif;
+}
+
+#author {
+    font-size: 8px;
     display: flex;
-    flex-direction: column;
-} */
+}
+
+#by {
+    font-size: 14px;
+}
+
+#onlyName {
+    color: #007185;
+    font-size: 14px;
+}
+
+.ratingStars * {
+    color: orange;
+    width: 20%;
+    /* width: 30px;
+    height: 30px; */
+}
+.ratingStars {
+    display: flex;
+    align-items: center;
+}
+
+#amountRatings {
+    color: #007185;
+    font-size: 14px;
+    display: flex;
+    align-content: center;
+}

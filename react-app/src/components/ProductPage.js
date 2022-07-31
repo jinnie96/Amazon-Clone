@@ -26,6 +26,7 @@ const ProductPage = () => {
     console.log(product, "BEFORE!")
     console.log("KEYSsSSSS", Object.keys(reviews))
     console.log(id)
+    let amountReviews = 0
     if (Object.keys(reviews)) {
         for (let i = 0; i < 1; i++) {
             let count = 0
@@ -36,6 +37,7 @@ const ProductPage = () => {
                 for (let j = 0; j < key.length; j++) {
                     averageRating += key[j].rating
                     count++
+                    amountReviews++
                 }
             }
             averageRating = Math.round((averageRating/count) * 10) / 10
@@ -59,9 +61,25 @@ const ProductPage = () => {
                 <img id='prodImage'src={productObj.photourl}></img>
             </div>
             <div className='productDetails'>
-                <h1>{productObj.name}</h1>
-                <h1>{productObj.description}</h1>
-                <h1>{productObj.id}</h1>
+                <h1 id='productName'>{productObj.name}</h1>
+                <div id='author'>
+                    <h2 id='by'>by&nbsp;</h2>
+                     <h2 id='onlyName'>{productObj.name}</h2>
+                </div>
+                <div className='ratingStars'>
+                    <div className='stars'>
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                    </div>
+                    <div id='amountRatings'>
+                        {amountReviews} ratings
+                    </div>
+                </div>
+                <h1 id='productDescription'>{productObj.description}</h1>
+                <h1 id='productId'>{productObj.id}</h1>
             </div>
             <div className='price'>
                 <h1 id='price'>{productObj.price}</h1>
