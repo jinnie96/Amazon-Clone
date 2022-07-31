@@ -17,7 +17,7 @@ const ProductPage = () => {
         dispatch(getAllReviews(id))
     }, [dispatch, id])
     const product = useSelector(state => state.products.id)
-    // productObj = product[Object.keys(product)[0]];
+    productObj = product[Object.keys(product)[0]];
     const state = useSelector(state => state)
     const reviews = useSelector(state => state.reviews)
     const user= useSelector(state => state.session.user.id)
@@ -54,7 +54,7 @@ const ProductPage = () => {
     }
     return (
         <>
-        {/* <div className='product'>
+        <div className='product'>
             <div className="image">
                 <img id='prodImage'src={productObj.photourl}></img>
             </div>
@@ -70,7 +70,7 @@ const ProductPage = () => {
                 <button id='buy'>Buy Now</button>
                 <h3>Secure transaction</h3>
             </div>
-        </div> */}
+        </div>
         <div className='reviews'>
             <div className='leftSide'>
                 <div>
