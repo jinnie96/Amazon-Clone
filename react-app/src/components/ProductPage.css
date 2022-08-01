@@ -59,12 +59,14 @@ html {
 
 .stars {
     display: flex;
+    align-items: center;
 }
 
 #starTitle {
-    margin-right: 14px;
+    margin-right: 10px;
     color: #007185;
     font-size: 14px;
+    width: max-content;
 }
 
 .rating5, .rating4, .rating3, .rating2, .rating1 {
@@ -155,4 +157,36 @@ html {
     color: #007185;
     font-size: 15px;
     margin-left: 6px;
+}
+
+#average {
+    margin-left: 5px;
+}
+
+.rating1, .rating2, .rating3, .rating4, .rating5 {
+    /* background-color: linear-gradient(transparent 70%, #FFA41D 30%); */
+    /* background-color: #FFA41D; */
+    background: linear-gradient(90deg, #FFA41D 50%, #FFFFFF 50%)
+}
+
+#percentage {
+    color: #007185;
+    font-size: 14px;
+    margin-left: 15px;
+}
+
+#totalReviews {
+    font-size: 14px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+}
+
+#title {
+    font-size: 24px;
+    font-weight: 400;
+    font-family: "Amazon Ember",Arial,sans-serif;
+}
+
+#average {
+    font-family: "Amazon Ember",Arial,sans-serif;
+    font-size: 18px;
 }
