@@ -17,7 +17,7 @@ const ProductPage = () => {
         dispatch(getAllReviews(id))
     }, [dispatch, id])
     const product = useSelector(state => state.products.id)
-    productObj = product[Object.keys(product)[0]];
+    // productObj = product[Object.keys(product)[0]];
     const state = useSelector(state => state)
     const reviews = useSelector(state => state.reviews)
     const user= useSelector(state => state.session.user.id)
@@ -26,6 +26,7 @@ const ProductPage = () => {
     console.log(product, "BEFORE!")
     console.log("KEYSsSSSS", Object.keys(reviews))
     console.log(id)
+    let reviewObj = {}
     let amountReviews = 0
     if (Object.keys(reviews)) {
         for (let i = 0; i < 1; i++) {
@@ -35,6 +36,8 @@ const ProductPage = () => {
             console.log(key, "THIS")
             if (key) {
                 for (let j = 0; j < key.length; j++) {
+                    if (!reviewObj[key[j].rating]) reviewObj[key[j].rating] = 1
+                    else reviewObj[key[j].rating]++
                     averageRating += key[j].rating
                     count++
                     amountReviews++
@@ -44,7 +47,7 @@ const ProductPage = () => {
         }
     }
     console.log(averageRating, "AVERAGE")
-
+    console.log(reviewObj, "OBJ")
     const addCart = () => {
         dispatch(addtoCart(id))
     }
@@ -56,7 +59,7 @@ const ProductPage = () => {
     }
     return (
         <>
-        <div className='product'>
+        {/* <div className='product'>
             <div className="image">
                 <img id='prodImage'src={productObj.photourl}></img>
             </div>
@@ -95,40 +98,46 @@ const ProductPage = () => {
                     <h3 id='secure'>Secure transaction</h3>
                 </div>
             </div>
-        </div>
+        </div> */}
         <div className='reviews'>
             <div className='leftSide'>
                 <div>
                     <h1 id='title'>Customer Reviews</h1>
                     <div className='stars'>
-                        <p>*</p>
-                        <p>*</p>
-                        <p>*</p>
-                        <p>*</p>
-                        <p>*</p>
+                        <p>&#9733;</p>
+                        <p>&#9733;</p>
+                        <p>&#9733;</p>
+                        <p>&#9733;</p>
+                        <p>&#9733;</p>
+                        <h2 id='average'>{averageRating} out of 5</h2>
                     </div>
-                    <h2>{averageRating} out of 5</h2>
+                        <h2 id='totalReviews'>{amountReviews} global ratings</h2>
                 </div>
                 <div className='ratings'>
                     <div className='five'>
                         <h3 id='starTitle'>5 star</h3>
                         <div className='rating5'></div>
+                        <h3 id='percentage'>{reviewObj[5] ? Math.round((reviewObj[5]/amountReviews) * 100) : 0}%</h3>
                     </div>
                     <div className='four'>
                         <h3 id='starTitle'>4 star</h3>
                         <div className='rating4'></div>
+                        <h3 id='percentage'>{reviewObj[4] ? Math.round((reviewObj[4]/amountReviews) * 100) : 0}%</h3>
                     </div>
                     <div className='three'>
                         <h3 id='starTitle'>3 star</h3>
                         <div className='rating3'></div>
+                        <h3 id='percentage'>{reviewObj[3] ? Math.round((reviewObj[3]/amountReviews) * 100) : 0}%</h3>
                     </div>
                     <div className='two'>
                         <h3 id='starTitle'>2 star</h3>
                         <div className='rating2'></div>
+                        <h3 id='percentage'>{reviewObj[2] ? Math.round((reviewObj[2]/amountReviews)*100) : 0}%</h3>
                     </div>
                     <div className='one'>
                         <h3 id='starTitle'>1 star</h3>
                         <div className='rating1'></div>
+                        <h3 id='percentage'>{reviewObj[1] ? Math.round((reviewObj[1]/amountReviews) * 100) : 0}%</h3>
                     </div>
                 </div>
             </div>
