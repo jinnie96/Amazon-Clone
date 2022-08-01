@@ -82,10 +82,14 @@ const ProductPage = () => {
                 <h1 id='productId'>{productObj.id}</h1>
             </div>
             <div className='price'>
-                <h1 id='price'>{productObj.price}</h1>
+                <div className='priceDiv'>
+                    <h1 id='price'>${productObj.price}</h1>
+                </div>
                 <h2 id='stock'>In Stock.</h2>
-                <button id='cartAdd' onClick={addCart}>Add to Cart</button>
-                <button id='buy'>Buy Now</button>
+                <div className='cartBtns'>
+                    <button id='cartAdd' onClick={addCart}>Add to Cart</button>
+                    <button id='buy'>Buy Now</button>
+                </div>
                 <h3>Secure transaction</h3>
             </div>
         </div>
