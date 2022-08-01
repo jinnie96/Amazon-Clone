@@ -142,13 +142,16 @@ const ProductPage = () => {
                 </div>
             </div>
             <div className='rightSide'>
-                <h1>Top reviews from the United States</h1>
+                <div id='topReviews'>Top reviews from the United States</div>
                 <div className='reviewsInfo'>
                 {
                     Object.keys(reviews).map((key,i)=>{
                         return (
                             <div className='reviewDetail'>
-                                <h1 key={i} id={reviews[key][i].id}>{reviews[key][i].rating}</h1>
+                                <div class='userInfo'>
+                                    <img id='profilePic' src='https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png'></img>
+                                </div>
+                                {/* <h1 key={i} id={reviews[key][i].id}>{reviews[key][i].rating}</h1> */}
                                 <h2 key={i} id={reviews[key][i].id}>{reviews[key][i].title}</h2>
                                 <h3 key={i} id={reviews[key][i].id}>{reviews[key][i].description}</h3>
                                 {reviews[key][i].reviewer_id === user &&

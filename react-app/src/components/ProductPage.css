@@ -190,3 +190,24 @@ html {
     font-family: "Amazon Ember",Arial,sans-serif;
     font-size: 18px;
 }
+
+.rightSide {
+    display: flex;
+    flex-direction: column;
+}
+
+#topReviews {
+    font-family: "Amazon Ember",Arial,sans-serif;
+    font-size: 18px;
+    font-weight: bolder;
+    color: #0F1111;
+}
+
+#profilePic {
+    height: 34px;
+    width: 34px;
+}
+
+.reviewsInfo {
+    margin-top: 20px;
+}
