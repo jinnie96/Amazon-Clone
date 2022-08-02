@@ -56,9 +56,9 @@ const ProductPage = () => {
     }
 
     const deleteReview = (e) => {
-        console.log(e.target.id)
-        dispatch(deleteOneReview(e.target.id))
-        window.location.href = `/sports/${id}`
+        console.log(e.target)
+        // dispatch(deleteOneReview(e.target.id))
+        // window.location.href = `/sports/${id}`
     }
     return (
         <>
@@ -154,20 +154,39 @@ const ProductPage = () => {
                         return (
                             <div className='reviewDetail'>
                                 <div class='userInfo'>
+                                    <div className='info'>
                                     <img id='profilePic' src='https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png'></img>
-                                    <h3>{reviews[key][i].username}</h3>
+                                    <h3 id='reviewUser'>{reviews[key][i].username}</h3>
+                                    </div>
+                                    <div class='editDiv'>
+                                    {reviews[key][i].reviewer_id === user &&
+                                        <div className='editDelBtns'>
+                                            <NavLink to={'edit-review/' + reviews[key][i].id}>
+                                                <button id={reviews[key][i].id}>Edit Review</button>
+                                            </NavLink>
+                                                {/* <button id='deleteRevBtn' onClick={deleteReview}>Delete Review</button> */}
+                                        </div>
+                                    }
+                                    </div>
                                 </div>
                                 {/* <h1 key={i} id={reviews[key][i].id}>{reviews[key][i].rating}</h1> */}
-                                <h2 key={i} id={reviews[key][i].id}>{reviews[key][i].title}</h2>
-                                <h3 key={i} id={reviews[key][i].id}>{reviews[key][i].description}</h3>
+                                <div className='starsTitle'>
+                                    <p>&#9733;</p>
+                                    <p>&#9733;</p>
+                                    <p>&#9733;</p>
+                                    <p>&#9733;</p>
+                                    <p>&#9733;</p>
+                                    <h2 key={i} id='reviewTitle'>{reviews[key][i].title}</h2>
+                                </div>
+                                <h3 key={i} id='reviewsDescription'>{reviews[key][i].description}</h3>
                                 {reviews[key][i].reviewer_id === user &&
-                                    <div>
-                                        <NavLink to={'edit-review/' + reviews[key][i].id}>
-                                            <button>Edit Review</button>
-                                        </NavLink>
+                                    <div className='editDelBtns'>
+                                        {/* <NavLink to={'edit-review/' + reviews[key][i].id}>
+                                            <button id='editRevBtn'>Edit Review</button>
+                                        </NavLink> */}
                                             <button id={reviews[key][i].id} onClick={deleteReview}>Delete Review</button>
                                     </div>
-                            }
+                                }
                             </div>
                         )
                     })
