@@ -191,7 +191,7 @@ html {
     font-size: 18px;
 }
 
-.rightSide {
+.rightSideReviews {
     display: flex;
     flex-direction: column;
     padding: 0px 50px;
@@ -277,4 +277,29 @@ html {
 .info {
     display: flex;
     align-items: center;
+}
+
+#reviewText {
+    font-weight: 700;
+    font-size: 18px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+}
+
+.newReviewDiv {
+    border-top: solid #E7E7E7 1px;
+}
+
+#thoughts {
+    font-size: 14px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+}
+
+#customerBtn {
+    color: #0F1111;
+    background-color: white;
+    width: 100%;
+    padding: 5px 10px 5px 11px;
+    border-radius: 5px;
+    border: none;
+    border: solid 1px lightgrey;
 }
