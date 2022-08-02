@@ -211,3 +211,8 @@ html {
 .reviewsInfo {
     margin-top: 20px;
 }
+
+.userInfo {
+    display: flex;
+    align-items: center;
+}
