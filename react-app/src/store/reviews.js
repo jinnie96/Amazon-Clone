@@ -33,7 +33,8 @@ export const getAllReviews = (id) => async dispatch => {
     if (response.ok) {
         const data = await response.json();
         console.log("DATA REVIEW", data)
-        dispatch(getReviews(data));
+        const reviews = dispatch(getReviews(data));
+        console.log("RETURNED REVIEWS", reviews)
         if (data.errors) {
             return;
         };
