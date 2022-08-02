@@ -194,6 +194,7 @@ html {
 .rightSide {
     display: flex;
     flex-direction: column;
+    padding: 0px 50px;
 }
 
 #topReviews {
@@ -213,6 +214,67 @@ html {
 }
 
 .userInfo {
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+#reviewUser {
+    font-size: 13px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    margin-left: 9px;
+    /* padding-bottom: 5px; */
+}
+
+.starsTitle {
+    display: flex;
+    align-items: center;
+    height: 20px;
+}
+
+#reviewTitle {
+    font-size: 14px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    margin-left: 6px;
+    font-weight: bolder;
+}
+
+#reviewsDescription {
+    font-size: 14px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    font-weight: lighter;
+    color: #0F1111;
+}
+
+.reviewDetail {
+    padding-bottom: 25px;
+    border-bottom: solid grey 1px;
+}
+
+.editDelBtns {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.editDelBtns * {
+    width: 150px;
+    background-color: #FFA41D;
+    color: white;
+    border-radius: 5px;
+}
+
+.editDiv {
+    display: flex;
+    align-items: center;
+    /* justify-content: flex-end; */
+    justify-content: space-between;
+}
+
+.info {
     display: flex;
     align-items: center;
 }
