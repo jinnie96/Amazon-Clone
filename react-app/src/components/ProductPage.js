@@ -145,8 +145,16 @@ const ProductPage = () => {
                         <h3 id='percentage'>{reviewObj[1] ? Math.round((reviewObj[1]/amountReviews) * 100) : 0}%</h3>
                     </div>
                 </div>
+                <div className='newReviewDiv'>
+                    <h1 id='reviewText'>Review this product</h1>
+                    <h2 id='thoughts'>Share your thoughts with other customers</h2>
+                    <NavLink to={'/review/' + id}>
+                        <button id='customerBtn'>Write a customer review</button>
+                    </NavLink>
+                </div>
+
             </div>
-            <div className='rightSide'>
+            <div className='rightSideReviews'>
                 <div id='topReviews'>Top reviews from the United States</div>
                 <div className='reviewsInfo'>
                 {
@@ -193,14 +201,6 @@ const ProductPage = () => {
                 }
                 </div>
             </div>
-        </div>
-        <div>
-            <h1>Review this product</h1>
-            <h2>Share your thoughts with other customers</h2>
-            <p>review</p>
-            <NavLink to={'/review/' + id}>
-                <p>Write a customer review</p>
-            </NavLink>
         </div>
         </>
     )
