@@ -7,3 +7,102 @@
     margin-left: 10px;
     cursor: pointer;
 }
+
+.page {
+    background-color: #FFFFFF;
+}
+
+.productBox {
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    margin-left: 100px;
+    margin-right: 50px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+#photoUrl {
+    height: 200px;
+    width: 145px;
+}
+
+#productName {
+    color: black;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+#productName:hover {
+    cursor: pointer;
+}
+
+.cartProductInfo * {
+    font-family: "Amazon Ember",Arial,sans-serif;
+    padding-left: 50px;
+    /* margin-left: 50px; */
+
+}
+
+#authorName, #returns {
+    font-size: 14px;
+}
+
+#instock, #paperback {
+    font-size: 12px;
+}
+
+#instock {
+    color:#007600;
+}
+
+#deleteProdCart {
+    color: #268697;
+    font-size: 11px;
+    cursor:pointer;
+}
+
+.page {
+    /* background-color: #EAEDED; */
+}
+
+.priceDiv {
+    display:flex;
+    justify-content: flex-end;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.priceTagDiv {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+#priceTag {
+    padding-right: 50px;
+
+}
+
+.subTotalDiv {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+}
+
+* {
+    font-family: "Amazon Ember",Arial,sans-serif;
+}
+
+#totalCost {
+    font-weight: 800;
+}
+
+#subTotalCost {
+    font-weight: lighter;
+}
+
+#cartShopTitle {
+    padding-left: 50px;
+    /* padding-top: 50px; */
+}
