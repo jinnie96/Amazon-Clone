@@ -55,7 +55,7 @@
     color:#007600;
 }
 
-#deleteProdCart {
+.deleteProdCart {
     color: #268697;
     font-size: 11px;
     cursor:pointer;

@@ -18,8 +18,8 @@ const Cart = () => {
 
 
     const deleteProduct = (e) => {
-        console.log(e.target.parentNode.firstChild.id)
-        const id = e.target.parentNode.firstChild.id
+        console.log(e.target.id)
+        const id = e.target.id
         dispatch(deleteCarts(id))
     }
 
@@ -42,7 +42,7 @@ const Cart = () => {
                                 <p id='instock'>In Stock</p>
                                 <p id='paperback'>Paperback</p>
                                 <p id='returns'>FREE RETURNS</p>
-                                <p id='deleteProdCart' onClick={deleteProduct}>Delete</p>
+                                <p id={cart[oneKey].id} className='deleteProdCart' onClick={deleteProduct}>Delete</p>
                             </div>
                             <div className='priceDiv'>
                                 <p id='productPrice'>${cart[oneKey].price}</p>
