@@ -24,8 +24,9 @@ def getCart(id):
 def deleteCart(id):
     print("BOTH", id, current_user.id)
     carts = Cart.query.filter(Cart.product_id == id and Cart.user_id == current_user.id)
+    print(carts, 'CARTs')
     for c in carts:
-        print(c.to_dict(), "LOOP")
+        print(c.to_dict(), "LOOPp")
         db.session.delete(c)
         db.session.commit()
     print(carts, "DELETEEEEE")

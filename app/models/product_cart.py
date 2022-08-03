@@ -8,8 +8,8 @@ class Product_Cart(db.Model):
     product_id = db.Column(db.Integer, db.ForeignKey('products.id'), nullable=False)
     cart_id = db.Column(db.Integer, db.ForeignKey('cart.id'), nullable=False)
 
-    cart = relationship("Cart", foreign_keys=[cart_id], back_populates="product_cart")
-    products = relationship("Product", foreign_keys=[product_id], back_populates="product_cart")
+    cart = relationship("Cart", foreign_keys=[cart_id], cascade='all, delete', back_populates="product_cart")
+    products = relationship("Product", foreign_keys=[product_id], cascade='all, delete', back_populates="product_cart")
 
     def to_dict(self):
         return {

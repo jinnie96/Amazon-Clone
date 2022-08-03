@@ -9,7 +9,7 @@ class Cart(db.Model):
     product_id = db.Column(db.Integer, db.ForeignKey('products.id'), nullable=False)
 
     users = relationship("User", foreign_keys=[user_id], cascade="all, delete", back_populates="cart")
-    products = relationship("Product", foreign_keys=[product_id], cascade="all, delete", back_populates="cart")
+    products = relationship("Product", foreign_keys=[product_id], cascade="all, delete-orphan", back_populates="cart", single_parent=True)
     product_cart = relationship("Product_Cart", foreign_keys="Product_Cart.cart_id", cascade="all, delete", back_populates='cart')
 
     def to_dict(self):
