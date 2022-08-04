@@ -7,6 +7,7 @@ class Cart(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     product_id = db.Column(db.Integer, db.ForeignKey('products.id'), nullable=False)
+    quantity = db.Column(db.Integer, nullable=False)
     cascade="all, delete-orphan"
 
     users = relationship("User", foreign_keys=[user_id], back_populates="cart")
