@@ -7,10 +7,11 @@ class Cart(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     product_id = db.Column(db.Integer, db.ForeignKey('products.id'), nullable=False)
+    cascade="all, delete-orphan"
 
-    users = relationship("User", foreign_keys=[user_id], cascade="all, delete", back_populates="cart")
-    products = relationship("Product", foreign_keys=[product_id], cascade="all, delete-orphan", back_populates="cart", single_parent=True)
-    product_cart = relationship("Product_Cart", foreign_keys="Product_Cart.cart_id", cascade="all, delete", back_populates='cart')
+    users = relationship("User", foreign_keys=[user_id], back_populates="cart")
+    products = relationship("Product", foreign_keys=[product_id], back_populates="cart", single_parent=True)
+    product_cart = relationship("Product_Cart", foreign_keys="Product_Cart.cart_id", back_populates='cart')
 
     def to_dict(self):
         return {
