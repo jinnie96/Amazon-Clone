@@ -4,7 +4,7 @@ def seed_product_cart():
     productCart1 = Product_Cart(
         product_id=1, cart_id=1)
     productCart2 = Product_Cart(
-        product_id=2, cart_id=2)
+        product_id=1, cart_id=2)
     productCart3 = Product_Cart(
         product_id=3, cart_id=3)
 

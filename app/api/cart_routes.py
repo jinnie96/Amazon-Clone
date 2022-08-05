@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify
-from app.models import Cart, Product, db
+from app.models import Cart, Product, Product_Cart, db
 from flask_login import current_user
 # import simplejson as json
 
@@ -27,6 +27,10 @@ def deleteCart(id):
     print(carts, 'CARTs')
     for c in carts:
         print(c.to_dict(), "LOOPp")
+        # productCart = Product_Cart.query.filter(Product_Cart.product_id == c.to_dict()['product_id'] and Product_Cart.cart_id == c.to_dict()['id'])
+        # for product in productCart:
+        #     print(product.to_dict(), 'productcart')
+        # db.session.delete(productCart)
         db.session.delete(c)
         db.session.commit()
     print(carts, "DELETEEEEE")
