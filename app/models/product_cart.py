@@ -1,5 +1,5 @@
-from .db import db
-from sqlalchemy.orm import relationship
+# from .db import db
+# from sqlalchemy.orm import relationship
 
 # class Product_Cart(db.Model):
 #     __tablename__ = 'product_cart'
