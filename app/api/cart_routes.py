@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify
-from app.models import Cart, Product, Product_Cart, db
+from app.models import Cart, Product, db
 from flask_login import current_user
 # import simplejson as json
 
