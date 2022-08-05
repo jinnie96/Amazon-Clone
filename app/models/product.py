@@ -12,7 +12,7 @@ class Product(db.Model):
 
     reviews = relationship("Review", foreign_keys="Review.product_id", back_populates='products')
     cart = relationship("Cart", foreign_keys="Cart.product_id", back_populates='products')
-    product_cart = relationship("Product_Cart", foreign_keys="Product_Cart.product_id", back_populates='products')
+    # product_cart = relationship("Product_Cart", foreign_keys="Product_Cart.product_id", back_populates='products')
 
 
     def to_dict(self):

@@ -1,7 +1,7 @@
 from flask.cli import AppGroup
 from .users import seed_users, undo_users
 from .carts import seed_cart, undo_cart
-from .product_carts import seed_product_cart, undo_product_cart
+# from .product_carts import seed_product_cart, undo_product_cart
 from .products import seed_products, undo_products
 from .reviews import seed_reviews, undo_reviews
 
@@ -17,7 +17,7 @@ def seed():
     seed_products()
     seed_reviews()
     seed_cart()
-    seed_product_cart()
+    # seed_product_cart()
     # Add other seed functions here
 
 
@@ -28,5 +28,5 @@ def undo():
     undo_products()
     undo_reviews()
     undo_cart()
-    undo_product_cart()
+    # undo_product_cart()
     # Add other undo functions here
