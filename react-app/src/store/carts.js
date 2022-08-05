@@ -38,6 +38,7 @@ export const getCarts = (id) => async dispatch => {
 
 export const deleteCarts = (productId) => async (dispatch) => {
     console.log("INSIDE", productId)
+    window.location.href = `/cart`
     const response = await fetch(`/api/carts/${productId}`, {
         method: 'DELETE',
     })
