@@ -50,6 +50,7 @@ def editCart(id):
     print((cart.to_dict()), "CAAAAAAR")
     cart.quantity = id
     print(cart.to_dict())
+    db.session.commit()
     return cart.to_dict()
 
 @cart_routes.route('/<int:id>', methods=['POST'])
