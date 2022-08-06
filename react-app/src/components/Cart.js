@@ -2,17 +2,26 @@ import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './Cart.css'
-import { deleteCarts, editCartQuantity } from '../store/carts';
+import { deleteCarts, editCartQuantity, getCarts } from '../store/carts';
 
 const Cart = () => {
     const cart = useSelector(state => state.cart);
+    const user= useSelector(state => state.session.user.id)
     console.log(cart, "@@@")
     const dispatch = useDispatch()
     let total = 0
+    let subTotal = 0
+    useEffect(() => {
+        (async() => {
+        })();
+    }, [dispatch]);
+
     if (cart) {
+        // subTotal = Object.keys(cart).length
         Object.keys(cart).map((oneKey,i)=>{
             console.log("ONEKEY", cart[oneKey].quantity)
-            total += parseFloat(cart[oneKey].price)
+            subTotal += (cart[oneKey].quantity)
+            total += parseFloat(cart[oneKey].price * cart[oneKey].quantity)
         })
     }
     console.log(total)
@@ -20,7 +29,9 @@ const Cart = () => {
     const changeQuantity = (e) => {
         console.log(e.target.value, e.target.className)
         dispatch(editCartQuantity(e.target.value, e.target.className))
-
+        dispatch(getCarts(user))
+        // window.location.href = `/`
+        // window.location.href = '/cart'
     }
 
     const deleteProduct = (e) => {
@@ -69,7 +80,7 @@ const Cart = () => {
                 })
                 }
             <div className='subTotalDiv'>
-                <h3 id='subTotalCost'>Subtotal ({Object.keys(cart).length} items): </h3>
+                <h3 id='subTotalCost'>Subtotal ({subTotal} items): </h3>
                 <h3 id='totalCost'>${total}</h3>
             </div>
             </div>
