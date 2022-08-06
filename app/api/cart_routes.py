@@ -1,6 +1,8 @@
 from flask import Blueprint, jsonify
 from app.models import Cart, Product, db
 from flask_login import current_user
+from flask import request
+
 # import simplejson as json
 
 cart_routes = Blueprint('carts', __name__)
@@ -40,6 +42,15 @@ def deleteCart(id):
     return {
         "carts": [cart.to_dict() for cart in carts]
     }
+
+@cart_routes.route('/edit/<int:id>', methods=['PUT'])
+def editCart(id):
+    print("REz", id, request.json['quantity'], current_user.id)
+    cart = Cart.query.filter(Cart.product_id == request.json['quantity'] and current_user.id == Cart.user_id).first()
+    print((cart.to_dict()), "CAAAAAAR")
+    cart.quantity = id
+    print(cart.to_dict())
+    return cart.to_dict()
 
 @cart_routes.route('/<int:id>', methods=['POST'])
 def addTocart(id):
