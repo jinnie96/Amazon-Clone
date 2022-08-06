@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './Cart.css'
-import { deleteCarts, editCartQuantity, getCarts } from '../store/carts';
+import { deleteCarts, editCartQuantity, getCarts, deleteAllCart } from '../store/carts';
 
 const Cart = () => {
     const cart = useSelector(state => state.cart);
@@ -38,6 +38,12 @@ const Cart = () => {
         console.log(e.target.id)
         const id = e.target.id
         dispatch(deleteCarts(id))
+        window.location.href = `/`
+    }
+
+    const deleteAllCarts = (e) => {
+        console.log(e.target.id)
+        dispatch(deleteAllCart(e.target.id))
     }
 
     return (
@@ -83,6 +89,9 @@ const Cart = () => {
                 <h3 id='subTotalCost'>Subtotal ({subTotal} items): </h3>
                 <h3 id='totalCost'>${total}</h3>
             </div>
+            </div>
+            <div className='submitOrder'>
+                <button id={user} onClick={deleteAllCarts}>Submit Order</button>
             </div>
         </div>
 

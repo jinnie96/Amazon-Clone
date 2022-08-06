@@ -43,6 +43,25 @@ def deleteCart(id):
         "carts": [cart.to_dict() for cart in carts]
     }
 
+@cart_routes.route('/all/<int:id>', methods=['DELETE'])
+def deleteAllCarts(id):
+    print("BOTH", id, current_user.id)
+    carts = Cart.query.filter(Cart.user_id == id)
+    print(carts, 'CARTs')
+    for c in carts:
+        print(c.to_dict(), "LOOPp")
+        # productCart = Product_Cart.query.filter(Product_Cart.product_id == c.to_dict()['product_id'] and Product_Cart.cart_id == c.to_dict()['id'])
+        # for product in productCart:
+        #     print(product.to_dict(), 'productcart')
+        # db.session.delete(productCart)
+        db.session.delete(c)
+        db.session.commit()
+    print(carts, "DELETEEEEE")
+    return {
+        "carts": [cart.to_dict() for cart in carts]
+    }
+
+
 @cart_routes.route('/edit/<int:id>', methods=['PUT'])
 def editCart(id):
     print("REz", id, request.json['quantity'], current_user.id)
