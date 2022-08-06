@@ -2,6 +2,7 @@
 const GET_CART = 'carts/GET_CART'
 const DELETE_CART = 'carts/DELETE_CART'
 const ADD_CART = 'carts/ADD_CART'
+const EDIT_CART = 'carts/EDIT_CART'
 
 // ------------------- Action creators ------------------- //
 const getCart = cart => ({
@@ -14,6 +15,11 @@ const deleteCart = id => ({
     type: DELETE_CART,
     payload: id
 });
+
+const editCart = id => ({
+    type: EDIT_CART,
+    payload: id
+})
 
 const addCart = id => ({
     type: ADD_CART,
@@ -55,6 +61,23 @@ export const deleteCarts = (productId) => async (dispatch) => {
     }
 };
 
+export const editCartQuantity = (id, quantity) => async dispatch => {
+    const response = await fetch(`api/carts/edit/${id}`, {
+        method: 'PUT',
+        headers: {
+            "Content-Type": 'application/json',
+        },
+        body: JSON.stringify({
+            quantity
+        })
+    })
+    if (response.ok) {
+        const data=await response.json()
+        console.log("EDITCARTDATA", data)
+    }
+    dispatch(editCart)
+}
+
 export const addtoCart = (id) => async dispatch => {
     console.log("HEYHEY")
     const response = await fetch(`/api/carts/${id}`, {
@@ -94,6 +117,11 @@ export default function cartsReducer(state = initialState, action) {
                 // [action.payload.post.id]: action.payload.post
             };
             return newState;
+        case EDIT_CART:
+            newState = {
+               ...state,
+                'id': action.payload
+            }
         case ADD_CART:
             newState = {
                 ...state,

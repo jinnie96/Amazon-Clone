@@ -11,12 +11,15 @@ def getCart(id):
     products = Product.query.filter(Product.id == cart.to_dict()['product_id']).all()
     productsObj = {}
     for product in products:
+        cart = Cart.query.filter(Cart.user_id == id and Cart.product_id == product.to_dict()['id']).first()
+        print("NEWWWWW", cart.to_dict())
         temp = {}
         temp['id'] = (product.to_dict()['id'])
         temp['name'] = (product.to_dict()['name'])
         temp['description'] = (product.to_dict()['description'])
         temp['price'] = str(product.to_dict()['price'])
         temp['photourl'] = (product.to_dict()['photourl'])
+        temp['quantity'] = cart.to_dict()['quantity']
         productsObj['obj'] = temp
     return productsObj
 

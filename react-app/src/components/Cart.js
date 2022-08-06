@@ -11,11 +11,17 @@ const Cart = () => {
     let total = 0
     if (cart) {
         Object.keys(cart).map((oneKey,i)=>{
+            console.log("ONEKEY", cart[oneKey].quantity)
             total += parseFloat(cart[oneKey].price)
         })
     }
     console.log(total)
 
+    const changeQuantity = (e) => {
+        console.log(e.target.value, e.target.className)
+        
+
+    }
 
     const deleteProduct = (e) => {
         console.log(e.target.id)
@@ -43,6 +49,17 @@ const Cart = () => {
                                 <p id='paperback'>Paperback</p>
                                 <p id='returns'>FREE RETURNS</p>
                                 <p id={cart[oneKey].id} className='deleteProdCart' onClick={deleteProduct}>Delete</p>
+                                <select class={cart[oneKey].id} onChange={changeQuantity}>
+                                    <option value='1'>Qty: 1</option>
+                                    <option value='2'>Qty: 2</option>
+                                    <option value='3'>Qty: 3</option>
+                                    <option value='4'>Qty: 4</option>
+                                    <option value='5'>Qty: 5</option>
+                                    <option value='6'>Qty: 6</option>
+                                    <option value='7'>Qty: 7</option>
+                                    <option value='8'>Qty: 8</option>
+                                    <option value='9'>Qty: 9</option>
+                                </select>
                             </div>
                             <div className='priceDiv'>
                                 <p id='productPrice'>${cart[oneKey].price}</p>
