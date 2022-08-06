@@ -61,6 +61,25 @@ export const deleteCarts = (productId) => async (dispatch) => {
     }
 };
 
+export const deleteAllCart = (userId) => async (dispatch) => {
+    console.log("INSIDE", userId)
+    window.location.href = `/cart`
+    const response = await fetch(`/api/carts/all/${userId}`, {
+        method: 'DELETE',
+    })
+    console.log(response, "RES")
+    if (response.ok) {
+        const data = await response.json();
+        console.log("DATA", data)
+        if (data.errors) {
+            return;
+        };
+
+        dispatch(deleteCart(data));
+        return data;
+    }
+};
+
 export const editCartQuantity = (id, quantity) => async dispatch => {
     console.log(quantity, id, "HEH")
     const response = await fetch(`api/carts/edit/${id}`, {
