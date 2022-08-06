@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './Cart.css'
-import { deleteCarts } from '../store/carts';
+import { deleteCarts, editCartQuantity } from '../store/carts';
 
 const Cart = () => {
     const cart = useSelector(state => state.cart);
@@ -19,7 +19,7 @@ const Cart = () => {
 
     const changeQuantity = (e) => {
         console.log(e.target.value, e.target.className)
-        
+        dispatch(editCartQuantity(e.target.value, e.target.className))
 
     }
 

@@ -62,6 +62,7 @@ export const deleteCarts = (productId) => async (dispatch) => {
 };
 
 export const editCartQuantity = (id, quantity) => async dispatch => {
+    console.log(quantity, id, "HEH")
     const response = await fetch(`api/carts/edit/${id}`, {
         method: 'PUT',
         headers: {
