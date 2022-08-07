@@ -28,7 +28,7 @@ def products():
 
 @product_routes.route('/search/<string>')
 def searchNewTerm(string):
-    products = Product.query.filter(Product.name.contains(string)).all()
+    products = Product.query.filter(Product.name.contains(string))
     print(string, products)
     productsObj = {}
     for product in products:
@@ -42,7 +42,7 @@ def searchNewTerm(string):
         temp['photourl'] = (product.to_dict()['photourl'])
         print(product.to_dict()['id'])
         print(temp, "@@@@")
-        productsObj['obj'] = temp
+        productsObj[product.to_dict()['id']] = temp
         print(productsObj, "UPDATED")
     print(productsObj)
     return productsObj
