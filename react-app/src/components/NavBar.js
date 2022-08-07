@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, {useState} from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import DemoButton from './auth/DemoButton'
@@ -11,6 +11,23 @@ import User from './User';
 const NavBar = () => {
   const user = useSelector(state => state.session.user)
   console.log(user)
+
+  const [searchTerm, setSearchTerm] = useState()
+
+  const getSearchList = async(term) => {
+    const response = await fetch(`api/products/search/${searchTerm}`)
+    if (response.ok) {
+      const data = await response.json()
+      console.log("SEARCHDATA", data)
+    }
+
+  }
+
+  const updateSearch = async(e) => {
+    console.log(e.target.value)
+    setSearchTerm(e.target.value)
+    getSearchList(searchTerm)
+  }
   return (
     <nav>
       <div className="navBar">
@@ -35,8 +52,11 @@ const NavBar = () => {
           </div>
         </div>
         <div className="searchBar">
-          <input className="search"></input>
+          <input className="search" value={searchTerm} onChange={updateSearch}></input>
           <img id="searchBtn" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtNTc5LjQ1IDU3OS40NWMtMTEuODg3IDExLjg4Ny0zMS4xMTMgMTEuODg3LTQyLjk1MyAwbC04NC45NjEtODQuOTYxYy0yOS43ODkgMjEuMjE1LTY2LjE2IDMzLjgxMi0xMDUuNTIgMzMuODEyLTEwMC42OCAwLTE4Mi4zMy04MS42NDUtMTgyLjMzLTE4Mi4zMyAwLTEwMC42OCA4MS42NDUtMTgyLjMzIDE4Mi4zMy0xODIuMzMgMTAwLjY4IDAgMTgyLjMzIDgxLjY0NSAxODIuMzMgMTgyLjMzIDAgMzkuMzU1LTEyLjU5OCA3NS43MjctMzMuODEyIDEwNS41Mmw4NC45MTQgODQuOTE0YzExLjg0IDExLjkzIDExLjg0IDMxLjE2IDAgNDMuMDQ3em0tODEuNTA0LTIzMy40OGMwLTgzLjkxOC02OC4wMDgtMTUxLjkzLTE1MS45My0xNTEuOTMtODMuOTE4IDAtMTUxLjk3IDY4LjA1NS0xNTEuOTcgMTUxLjkzIDAgODMuODcxIDY4LjAwOCAxNTEuOTMgMTUxLjkzIDE1MS45MyA4My45MTggMCAxNTEuOTctNjguMDA4IDE1MS45Ny0xNTEuOTN6IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz4KPC9zdmc+Cg=="></img>
+          <div className='searchResults'>
+
+          </div>
         </div>
         <div className="rightSide">
         {!user && (
