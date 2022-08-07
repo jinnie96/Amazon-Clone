@@ -60,7 +60,7 @@ function Homepage() {
                     Fantasy
                 </div>
                 <div class="sportsPics">
-                    <NavLink to={'sports/1'}><img id="gameOfThrones" src="https://images-na.ssl-images-amazon.com/images/I/81q1AybR-ZL.jpg"></img></NavLink>
+                    <NavLink to={'sports/1'}><img id="gameOfThrones" src="https://m.media-amazon.com/images/I/81VqkhMFpuL._AC_UY218_.jpg"></img></NavLink>
                     <NavLink to={'sports/2'}><img id="nameOfWind" src="https://images-na.ssl-images-amazon.com/images/I/91b8oNwaV1L.jpg"></img></NavLink>
                     <NavLink to={'sports/3'}><img id="lordOfTheRings" src="https://images-na.ssl-images-amazon.com/images/I/71jLBXtWJWL.jpg"></img></NavLink>
                     <NavLink to={'sports/4'}><img id="colorOfMagic" src="https://images-na.ssl-images-amazon.com/images/I/91u24IHWS8L.jpg"></img></NavLink>
