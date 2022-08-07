@@ -15,7 +15,10 @@ const NavBar = () => {
   const [searchTerm, setSearchTerm] = useState()
   const [searchedTerms, setSearchedTerms] = useState([])
   const getSearchList = async(term) => {
+    setSearchedTerms([])
+    console.log(searchedTerms, "NNN")
     if (!searchTerm) setSearchedTerms([])
+    console.log(searchTerm, "LLL")
     const response = await fetch(`api/products/search/${searchTerm}`)
     if (response.ok) {
       let arr = []
@@ -38,7 +41,8 @@ const NavBar = () => {
   const updateSearch = async(e) => {
     console.log(e.target.value)
     setSearchTerm(e.target.value)
-    getSearchList(searchTerm)
+    console.log(searchTerm, "HHH")
+    getSearchList(e.target.value)
   }
   return (
     <nav>

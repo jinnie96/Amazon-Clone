@@ -29,11 +29,12 @@ def products():
 @product_routes.route('/search/<string>')
 def searchNewTerm(string):
     products = Product.query.filter(Product.name.contains(string))
-    print(string, products)
+    print(string, "^^^^^^^")
+    print(products, "*****")
     productsObj = {}
     for product in products:
         temp = {}
-        # print(product.to_dict(), "HEHEHEHE")
+        print(product.to_dict()['id'], "HEHEHEHE")
         temp['id'] = (product.to_dict()['id'])
         temp['name'] = (product.to_dict()['name'])
         temp['description'] = (product.to_dict()['description'])
