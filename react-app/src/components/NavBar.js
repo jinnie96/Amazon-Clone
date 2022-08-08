@@ -15,11 +15,14 @@ const NavBar = () => {
   const [searchTerm, setSearchTerm] = useState()
   const [searchedTerms, setSearchedTerms] = useState([])
   const getSearchList = async(term) => {
+    if (!term) {
+      setSearchedTerms([])
+      return
+    }
     setSearchedTerms([])
     console.log(searchedTerms, "NNN")
-    if (!searchTerm) setSearchedTerms([])
-    console.log(searchTerm, "LLL")
-    const response = await fetch(`api/products/search/${searchTerm}`)
+    console.log(term, "LLL")
+    const response = await fetch(`api/products/search/${term}`)
     if (response.ok) {
       let arr = []
       const data = await response.json()
@@ -28,7 +31,8 @@ const NavBar = () => {
       for (const key in data) {
         console.log([data[key].id, data[key].name])
         // setSearchedTerms(searchedTerms.concat(searchTerm))
-        searchedTerms.push([data[key].id, data[key].name])
+        // searchedTerms.push([data[key].id, data[key].name])
+        setSearchedTerms(arr => [...arr, [data[key].id, data[key].name]])
         console.log(searchedTerms, "zzz")
       }
       console.log(arr)
@@ -37,13 +41,13 @@ const NavBar = () => {
     }
 
   }
-
   const updateSearch = async(e) => {
     console.log(e.target.value)
     setSearchTerm(e.target.value)
     console.log(searchTerm, "HHH")
     getSearchList(e.target.value)
   }
+  console.log("LINE", searchedTerms)
   return (
     <nav>
       <div className="navBar">
@@ -81,7 +85,7 @@ const NavBar = () => {
                     {term[1]}
                 </NavLink>
         ))}
-            <h1 id='listSearch'>hi</h1>
+            {/* <h1 id='listSearch'>hi</h1> */}
           </div>
           )
         }

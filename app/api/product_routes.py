@@ -45,7 +45,7 @@ def searchNewTerm(string):
         print(temp, "@@@@")
         productsObj[product.to_dict()['id']] = temp
         print(productsObj, "UPDATED")
-    print(productsObj)
+    print(productsObj, "NEWOBJ")
     return productsObj
 
     # return {'products': [(productsObj.to_dict()) for product in productsObj]}
