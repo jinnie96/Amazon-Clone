@@ -2,6 +2,7 @@
     display: flex;
     flex: 2fr 2fr 1fr;
     margin-top: 50px;
+    /* justify-content: space-between; */
 }
 
 html {
@@ -20,6 +21,7 @@ html {
     border: 5px solid #E5E5E5;
     border-radius: 5px;
     padding:0px 10px;
+    /* padding-left: 50px; */
     /* height: 850px; */
     /* margin-left: 20px; */
 }
@@ -42,14 +44,21 @@ html {
     font-weight: 400;
 }
 
+.productDetails {
+    padding-right: 30px;
+}
+
 #prodImage {
     height: 50%;
+    height: 400px;
+    width: 300px;
 }
 
 .image {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-right: 50px;
 }
 
 #stock {
@@ -60,6 +69,7 @@ html {
 .stars {
     display: flex;
     align-items: center;
+    padding-right: 5px;
 }
 
 #starTitle {
@@ -84,6 +94,10 @@ html {
 
 .reviews {
     display: flex;
+}
+
+.leftSide {
+    padding-bottom: 10px;
 }
 
 #productName {
