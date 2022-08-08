@@ -36,9 +36,9 @@
     cursor: pointer;
 }
 
-.cartProductInfo * {
+.cartProductInfo {
     font-family: "Amazon Ember",Arial,sans-serif;
-    padding-left: 50px;
+    padding-left: 30px;
     /* margin-left: 50px; */
 
 }
@@ -112,4 +112,10 @@
     justify-content: flex-end;
     padding-right: 50px;
     padding-bottom: 50px;
+}
+
+#quantity {
+    background-color: #E3E6E6;
+    width: 100%;
+    border-radius: 5px;
 }
