@@ -25,12 +25,14 @@ def getCart(id):
         temp['photourl'] = (product.to_dict()['photourl'])
         temp['quantity'] = cart.to_dict()['quantity']
         count += cart.to_dict()['quantity']
+        print(cart.to_dict()['quantity'], '=====================')
+        print(product.to_dict()['price'], "---------------------")
         total += (cart.to_dict()['quantity'] * product.to_dict()['price'])
         print('totes', total)
         productsObj['obj'] = temp
-        productsObj['total'] = str(total)
-        productsObj['count'] = count
-    print(productsObj['total'], productsObj['count'], count, total, "TOTAL")
+    print(count, total, "TOTAL")
+    productsObj['total'] = str(total)
+    productsObj['count'] = count
     return productsObj
 
 @cart_routes.route('/<int:id>', methods=['DELETE'])
@@ -83,7 +85,8 @@ def editCart(id):
 @cart_routes.route('/<int:id>', methods=['POST'])
 def addTocart(id):
     print("ADDING", id)
-    cart = Cart(user_id=current_user.id, product_id=id)
+
+    cart = Cart(user_id=current_user.id, product_id=id, quantity=1)
     db.session.add(cart)
     print("ZZZ", cart.to_dict())
     db.session.commit()
