@@ -127,8 +127,11 @@ export default function cartsReducer(state = initialState, action) {
             newState = { ...state }
             for (const key in action.payload) {
                 console.log(key)
-                newState[action.payload[key].id] = action.payload[key]
+                if (action.payload[key].id) newState[action.payload[key].id] = action.payload[key]
+                // else (newState[action.payload[key]] = action.payload[key])
             }
+            newState['count'] = action.payload['count']
+            newState['total'] = action.payload['total']
             return newState;
         case DELETE_CART:
             newState = {

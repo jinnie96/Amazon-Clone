@@ -12,9 +12,11 @@ def getCart(id):
     cart = Cart.query.filter(Cart.user_id == id).first()
     products = Product.query.filter(Product.id == cart.to_dict()['product_id']).all()
     productsObj = {}
+    count = 0
+    total = 0
     for product in products:
         cart = Cart.query.filter(Cart.user_id == id and Cart.product_id == product.to_dict()['id']).first()
-        print("NEWWWWW", cart.to_dict())
+        print("NEWWWWW", cart.to_dict()['quantity'], product.to_dict()['price'])
         temp = {}
         temp['id'] = (product.to_dict()['id'])
         temp['name'] = (product.to_dict()['name'])
@@ -22,7 +24,13 @@ def getCart(id):
         temp['price'] = str(product.to_dict()['price'])
         temp['photourl'] = (product.to_dict()['photourl'])
         temp['quantity'] = cart.to_dict()['quantity']
+        count += cart.to_dict()['quantity']
+        total += (cart.to_dict()['quantity'] * product.to_dict()['price'])
+        print('totes', total)
         productsObj['obj'] = temp
+        productsObj['total'] = str(total)
+        productsObj['count'] = count
+    print(productsObj['total'], productsObj['count'], count, total, "TOTAL")
     return productsObj
 
 @cart_routes.route('/<int:id>', methods=['DELETE'])
