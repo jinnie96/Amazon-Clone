@@ -81,7 +81,7 @@ const NavBar = () => {
           <div className='searchResults'>
             {console.log(searchedTerms,"TERMZ")}
             {searchedTerms.map(term => (
-                <NavLink to={`/sports/${term[0]}`}>
+                <NavLink id='term' to={`/sports/${term[0]}`}>
                     {term[1]}
                 </NavLink>
         ))}
