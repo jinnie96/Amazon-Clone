@@ -4,11 +4,15 @@
     /* margin-left: 50px; */
     /* margin-right: 50px; */
     margin-top: 50px;
+    display: flex;
+    align-content: center;
 }
 
 .banner {
     display: flex;
     justify-content: center;
+    align-content: center;
+    background: linear-gradient(rgba(251,182,144,1) 0%, rgba(255,255,255,1) 100%);
 }
 
 .categoryTitle {
