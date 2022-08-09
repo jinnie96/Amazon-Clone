@@ -80,7 +80,7 @@ export const deleteAllCart = (userId) => async (dispatch) => {
     }
 };
 
-export const editCartQuantity = (id, quantity) => async dispatch => {
+export const editCartQuantity = (quantity, id) => async dispatch => {
     console.log(quantity, id, "HEH")
     const response = await fetch(`api/carts/edit/${id}`, {
         method: 'PUT',
@@ -94,8 +94,8 @@ export const editCartQuantity = (id, quantity) => async dispatch => {
     if (response.ok) {
         const data=await response.json()
         console.log("EDITCARTDATA", data)
+        dispatch(editCart(data))
     }
-    dispatch(editCart)
 }
 
 export const addtoCart = (id) => async dispatch => {

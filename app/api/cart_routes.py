@@ -9,8 +9,35 @@ cart_routes = Blueprint('carts', __name__)
 
 @cart_routes.route('/<int:id>')
 def getCart(id):
-    cart = Cart.query.filter(Cart.user_id == id).first()
-    products = Product.query.filter(Product.id == cart.to_dict()['product_id']).all()
+    # cart = Cart.query.filter(Cart.user_id == id).first()
+    carts = Cart.query.filter(Cart.user_id == id)
+    productsObj = {}
+    count = 0
+    total = 0
+    for cart in carts:
+        product = Product.query.filter(Product.id == cart.product_id).first()
+        print(product.to_dict(), "..........")
+        temp = {}
+        temp['id'] = (product.to_dict()['id'])
+        temp['name'] = (product.to_dict()['name'])
+        temp['description'] = (product.to_dict()['description'])
+        temp['price'] = str(product.to_dict()['price'])
+        temp['photourl'] = (product.to_dict()['photourl'])
+        temp['quantity'] = cart.to_dict()['quantity']
+        count += cart.to_dict()['quantity']
+        print(cart.to_dict()['quantity'], '=====================')
+        print(product.to_dict()['price'], "---------------------")
+        total += (cart.to_dict()['quantity'] * product.to_dict()['price'])
+        print('totes', total)
+        productsObj['obj'] = temp
+    print(count, total, productsObj, "TOTALLLLL")
+    productsObj['total'] = str(total)
+    productsObj['count'] = count
+    return productsObj
+
+    # print(cart.to_dict())
+    # products = Product.query.filter(Product.id == cart.to_dict()['product_id']).all()
+    # print(products.to_dict())
     productsObj = {}
     count = 0
     total = 0
@@ -25,12 +52,14 @@ def getCart(id):
         temp['photourl'] = (product.to_dict()['photourl'])
         temp['quantity'] = cart.to_dict()['quantity']
         count += cart.to_dict()['quantity']
+        print(cart.to_dict()['quantity'], '=====================')
+        print(product.to_dict()['price'], "---------------------")
         total += (cart.to_dict()['quantity'] * product.to_dict()['price'])
         print('totes', total)
         productsObj['obj'] = temp
-        productsObj['total'] = str(total)
-        productsObj['count'] = count
-    print(productsObj['total'], productsObj['count'], count, total, "TOTAL")
+    print(count, total, productsObj, "TOTALLLLL")
+    productsObj['total'] = str(total)
+    productsObj['count'] = count
     return productsObj
 
 @cart_routes.route('/<int:id>', methods=['DELETE'])
@@ -73,17 +102,26 @@ def deleteAllCarts(id):
 @cart_routes.route('/edit/<int:id>', methods=['PUT'])
 def editCart(id):
     print("REz", id, request.json['quantity'], current_user.id)
-    cart = Cart.query.filter(Cart.product_id == request.json['quantity'] and current_user.id == Cart.user_id).first()
+    cart = Cart.query.filter(Cart.product_id == id and current_user.id == Cart.user_id).first()
     print((cart.to_dict()), "CAAAAAAR")
-    cart.quantity = id
+    cart.quantity = int(request.json['quantity'])
     print(cart.to_dict())
     db.session.commit()
-    return cart.to_dict()
+    product = Product.query.filter(Product.id == cart.to_dict()['product_id']).first()
+    temp = {}
+    temp['id'] = (product.to_dict()['id'])
+    temp['name'] = (product.to_dict()['name'])
+    temp['description'] = (product.to_dict()['description'])
+    temp['price'] = str(product.to_dict()['price'])
+    temp['photourl'] = (product.to_dict()['photourl'])
+    temp['quantity'] = cart.to_dict()['quantity']
+    return temp
 
 @cart_routes.route('/<int:id>', methods=['POST'])
 def addTocart(id):
     print("ADDING", id)
-    cart = Cart(user_id=current_user.id, product_id=id)
+
+    cart = Cart(user_id=current_user.id, product_id=id, quantity=1)
     db.session.add(cart)
     print("ZZZ", cart.to_dict())
     db.session.commit()
