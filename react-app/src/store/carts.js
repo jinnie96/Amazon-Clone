@@ -44,7 +44,7 @@ export const getCarts = (id) => async dispatch => {
 
 export const deleteCarts = (productId) => async (dispatch) => {
     console.log("INSIDE", productId)
-    window.location.href = `/cart`
+    // window.location.href = `/cart`
     const response = await fetch(`/api/carts/${productId}`, {
         method: 'DELETE',
     })
@@ -56,14 +56,14 @@ export const deleteCarts = (productId) => async (dispatch) => {
             return;
         };
 
-        dispatch(deleteCart(data));
+        dispatch(deleteCart(productId));
         return data;
     }
 };
 
 export const deleteAllCart = (userId) => async (dispatch) => {
     console.log("INSIDE", userId)
-    window.location.href = `/cart`
+    // window.location.href = `/cart`
     const response = await fetch(`/api/carts/all/${userId}`, {
         method: 'DELETE',
     })
@@ -120,7 +120,8 @@ export const addtoCart = (id) => async dispatch => {
 const initialState = {}
 
 export default function cartsReducer(state = initialState, action) {
-    console.log("CARTSREDICER", action.payload)
+    console.log("CARTSREDICER", action.payload, action.type, state)
+    // console.log(action.payload['id'])
     let newState;
     switch(action.type) {
         case GET_CART:
@@ -136,9 +137,10 @@ export default function cartsReducer(state = initialState, action) {
         case DELETE_CART:
             newState = {
                 ...state,
-                'id': action.payload
+                // 'id': action.payload
                 // [action.payload.post.id]: action.payload.post
             };
+            delete newState[action.payload]
             return newState;
         case EDIT_CART:
             newState = {
@@ -148,7 +150,7 @@ export default function cartsReducer(state = initialState, action) {
         case ADD_CART:
             newState = {
                 ...state,
-                [action.payload.id]: action.payload
+                [action.payload.id]: [action.payload][0]
                 // [action.payload.post.id]: action.payload.post
             };
             return newState;

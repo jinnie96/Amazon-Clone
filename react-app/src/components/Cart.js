@@ -38,16 +38,18 @@ const Cart = () => {
         // window.location.href = '/cart'
     }
 
-    const deleteProduct = (e) => {
+    const deleteProduct = async(e) => {
         console.log(e.target.id)
         const id = e.target.id
-        dispatch(deleteCarts(id))
-        window.location.href = `/`
+        await dispatch(deleteCarts(id))
+        await dispatch(getCarts(user))
+        // window.location.href = `/`
     }
 
-    const deleteAllCarts = (e) => {
+    const deleteAllCarts = async(e) => {
         console.log(e.target.id)
-        dispatch(deleteAllCart(e.target.id))
+        await dispatch(deleteAllCart(e.target.id))
+        await dispatch(getCarts(user))
     }
 
     return (
