@@ -11,11 +11,12 @@ const EditReview = () => {
     const dispatch = useDispatch()
     const product = useSelector(state => state.products.id)
     const review = useSelector(state => state.reviews)
+    const user = useSelector(state => state.session.user)
     const [rating, setRating] = useState()
     const [title, setTitle] = useState()
     const [description, setDescription] = useState()
     const [productId, setProductId] = useState()
-    console.log(product, review, "PRODUCTREVIEW")
+    console.log(product, review, user, "PRODUCTREVIEW")
 
     useEffect(async() => {
         // dispatch(getSingleProduct(id))
@@ -59,11 +60,14 @@ const EditReview = () => {
     return (
         // <h1>hi</h1>
         <div className='reviewForm'>
-            <div className=''>
-                <div>hi</div>
+            <div className='nameDiv'>
+                <div className='picAndName'>
+                    <img id='profilePicture' src='https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png'></img>
+                    <h1 id='usernameDiv'>{user.username}</h1>
+                </div>
             </div>
-            <form onSubmit={submitEditedReview}>
-                <div>Edit Review</div>
+            <form id='formEdit' onSubmit={submitEditedReview}>
+                <div id='editRev'>Edit Review</div>
                 <div className='picInfo'>
                     <img src={product[Object.keys(product)[0]].photourl}></img>
                     <h3>{product[Object.keys(product)[0]].name}</h3>
