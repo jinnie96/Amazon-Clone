@@ -73,7 +73,7 @@ const Cart = () => {
                                     <p id='paperback'>Paperback</p>
                                     <p id='returns'>FREE RETURNS</p>
                                     <p id={cart[oneKey].id} className='deleteProdCart' onClick={deleteProduct}>Delete</p>
-                                    <select class={cart[oneKey].id} id='quantity' onChange={changeQuantity}>hi
+                                    <select class={cart[oneKey].id} id='quantity' onChange={changeQuantity}>
                                         <option selected="selected" value={cart[oneKey].quantity}>Qty: {cart[oneKey].quantity}</option>
                                         <option value='1'>Qty: 1</option>
                                         <option value='2'>Qty: 2</option>
