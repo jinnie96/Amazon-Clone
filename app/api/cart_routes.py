@@ -65,19 +65,19 @@ def getCart(id):
 @cart_routes.route('/<int:id>', methods=['DELETE'])
 def deleteCart(id):
     print("BOTH", id, current_user.id)
-    carts = Cart.query.filter(Cart.product_id == id and Cart.user_id == current_user.id)
-    print(carts, 'CARTs')
-    for c in carts:
-        print(c.to_dict(), "LOOPp")
+    cart = Cart.query.filter(Cart.product_id == id and Cart.user_id == current_user.id).first()
+    print(cart.to_dict(), 'CARTs')
+    # for c in carts:
+    #     print(c.to_dict(), "LOOPp")
         # productCart = Product_Cart.query.filter(Product_Cart.product_id == c.to_dict()['product_id'] and Product_Cart.cart_id == c.to_dict()['id'])
         # for product in productCart:
         #     print(product.to_dict(), 'productcart')
         # db.session.delete(productCart)
-        db.session.delete(c)
-        db.session.commit()
-    print(carts, "DELETEEEEE")
+    db.session.delete(cart)
+    db.session.commit()
+    print(cart, "DELETEEEEE")
     return {
-        "carts": [cart.to_dict() for cart in carts]
+        "id": id
     }
 
 @cart_routes.route('/all/<int:id>', methods=['DELETE'])
