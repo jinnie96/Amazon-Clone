@@ -3,8 +3,9 @@ import { NavLink, useParams, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { editOneReview } from '../store/reviews';
 import { getAllReviews } from '../store/reviews';
+import './EditReview.css'
 
-const NewReview = () => {
+const EditReview = () => {
     const history = useHistory();
     const {id} = useParams()
     const dispatch = useDispatch()
@@ -58,6 +59,9 @@ const NewReview = () => {
     return (
         // <h1>hi</h1>
         <div className='reviewForm'>
+            <div className=''>
+                <div>hi</div>
+            </div>
             <form onSubmit={submitEditedReview}>
                 <div>Edit Review</div>
                 <div className='picInfo'>
@@ -98,4 +102,4 @@ const NewReview = () => {
     )
 }
 
-export default NewReview;
+export default EditReview;
