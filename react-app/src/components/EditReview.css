@@ -33,10 +33,55 @@
 #editRev {
     font-size: 24px;
     font-family: "Amazon Ember",Arial,sans-serif;
+    padding-top: 33px;
+    padding-bottom: 16px;
 }
 
 #formEdit {
     margin-left: 250px;
     margin-right: 250px;
+
+}
+
+.picInfo {
+    display: flex;
+    /* border-bottom: 1px solid #E7E7E7; */
+}
+
+#editProductPic {
+    height: 62px;
+    width: 62px;
+}
+
+#editProductName {
+    font-size: 14px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    display: flex;
+    align-items: flex-start;
+    padding-left: 10px;
+}
+
+#line {
+    color: green;
+}
+
+#overall, #headline, #editReview {
+    font-size: 18px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+}
+
+.submitEditDiv {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 10px;
+
+}
+
+#submitEditBtn {
+    background-color: #F7CA01;
+    color: black;
+    border-radius: 5px;
+    border: none;
+    padding: 7px 10px 7px 11px;
 
 }
