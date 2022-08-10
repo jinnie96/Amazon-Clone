@@ -38,8 +38,8 @@
 }
 
 #formEdit {
-    margin-left: 250px;
-    margin-right: 250px;
+    margin-left: 350px;
+    margin-right: 350px;
 
 }
 
@@ -74,6 +74,7 @@
     display: flex;
     justify-content: flex-end;
     padding-bottom: 10px;
+    padding-top: 10px;
 
 }
 
@@ -83,5 +84,20 @@
     border-radius: 5px;
     border: none;
     padding: 7px 10px 7px 11px;
+
+}
+
+#headlineInput {
+    width: 100%;
+    height: 23px;
+    border-radius: 3px;
+    border: solid 1px black;
+}
+
+#detailsInput {
+    width: 100%;
+    height: 23px;
+    border-radius: 3px;
+    border: solid 1px black;
 
 }
