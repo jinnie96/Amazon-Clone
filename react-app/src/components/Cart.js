@@ -29,11 +29,15 @@ const Cart = () => {
     // }, [count])
     console.log(total)
 
+    const getCartQuantity = async() => {
+        await dispatch(getCarts(user))
+    }
     const changeQuantity = async(e) => {
         count++
         console.log(e.target.value, e.target.className)
         await dispatch(editCartQuantity(e.target.value, e.target.className))
-        await dispatch(getCarts(user))
+        getCartQuantity(user)
+        // await dispatch(getCarts(user))
         // window.location.href = `/`
         // window.location.href = '/cart'
     }
