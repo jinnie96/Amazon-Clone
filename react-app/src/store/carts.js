@@ -145,8 +145,10 @@ export default function cartsReducer(state = initialState, action) {
         case EDIT_CART:
             newState = {
                ...state,
-                'id': action.payload
+               // 'id': action.payload
             }
+            newState[action.payload.id] = action.payload
+            newState['count'] = action.payload['count']
         case ADD_CART:
             newState = {
                 ...state,
