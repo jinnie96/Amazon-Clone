@@ -5,7 +5,7 @@ import DemoButton from './auth/DemoButton'
 import { useDispatch, useSelector } from 'react-redux';
 import './ProductPage.css'
 import { getSingleProduct } from '../store/products';
-import { addtoCart } from '../store/carts';
+import { addtoCart, getCarts } from '../store/carts';
 import { getAllReviews, deleteOneReview } from '../store/reviews';
 
 const ProductPage = () => {
@@ -51,8 +51,9 @@ const ProductPage = () => {
     }
     console.log(averageRating, "AVERAGE")
     console.log(reviewObj, "OBJ")
-    const addCart = () => {
-        dispatch(addtoCart(id))
+    const addCart = async() => {
+        await dispatch(addtoCart(id))
+        await dispatch(getCarts(user))
     }
 
     const deleteReview = (e) => {
@@ -157,6 +158,7 @@ const ProductPage = () => {
             <div className='rightSideReviews'>
                 <div id='topReviews'>Top reviews from the United States</div>
                 <div className='reviewsInfo'>
+                    {console.log("EEEEEEEEEEEEE",  reviews)}
                 {
                     Object.keys(reviews).map((key,i)=>{
                         return (

@@ -50,6 +50,7 @@ const Cart = () => {
         console.log(e.target.id)
         await dispatch(deleteAllCart(e.target.id))
         await dispatch(getCarts(user))
+        window.location.href = '/'
     }
 
     return (

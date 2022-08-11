@@ -116,7 +116,7 @@ export default function reviewsReducer(state = initialState, action) {
     let newState;
     switch(action.type) {
         case GET_REVIEWS:
-            newState = { ...state }
+            newState = {}
             for (const key in action.payload) {
                 console.log(action.payload, key, action.payload[key].length)
                 // for (const keytwo in action.payload[key]) {
