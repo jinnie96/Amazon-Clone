@@ -24,6 +24,7 @@ const ProductPage = () => {
     const state = useSelector(state => state)
     const reviews = useSelector(state => state.reviews)
     const user= useSelector(state => state.session.user.id)
+
     let averageRating = 0
     console.log("reviews", reviews)
     console.log(product, "BEFORE!")
@@ -49,6 +50,12 @@ const ProductPage = () => {
             averageRating = Math.round((averageRating/count) * 10) / 10
         }
     }
+    let rating5 = reviewObj[5] ? Math.round((reviewObj[5]/amountReviews) * 100) : 0
+    let rating4 = reviewObj[4] ? Math.round((reviewObj[4]/amountReviews) * 100) : 0
+    let rating3 = reviewObj[3] ? Math.round((reviewObj[3]/amountReviews) * 100) : 0
+    let rating2 = reviewObj[2] ? Math.round((reviewObj[2]/amountReviews) * 100) : 0
+    let rating1 = reviewObj[1] ? Math.round((reviewObj[1]/amountReviews) * 100) : 0
+
     console.log(averageRating, "AVERAGE")
     console.log(reviewObj, "OBJ")
     const addCart = async() => {
@@ -61,6 +68,22 @@ const ProductPage = () => {
         // dispatch(deleteOneReview(e.target.id))
         // window.location.href = `/sports/${id}`
     }
+
+    const five = document.querySelector('.rating5')
+    const four = document.querySelector('.rating4')
+    const three = document.querySelector('.rating3')
+    const two = document.querySelector('.rating2')
+    const one = document.querySelector('.rating1')
+
+    if (five) five.style.backgroundImage = 'linear-gradient(90deg, #FFA41D ' + rating5 + '%, #FFFFFF 0%)'
+    if (four) four.style.backgroundImage = 'linear-gradient(90deg, #FFA41D ' + rating4 + '%, #FFFFFF 0%)'
+    if (three) three.style.backgroundImage = 'linear-gradient(90deg, #FFA41D ' + rating3 + '%, #FFFFFF 0%)'
+    if (two) two.style.backgroundImage = 'linear-gradient(90deg, #FFA41D ' + rating2 + '%, #FFFFFF 0%)'
+    if (one) one.style.backgroundImage = 'linear-gradient(90deg, #FFA41D ' + rating1 + '%, #FFFFFF 0%)'
+
+        // console.log(reviewObj[5] ? Math.round((reviewObj[5]/amountReviews) * 100) : 0)
+        // four.style.backgroundImage = 'linear-gradient(90deg, #FFA41D 50%, #FFFFFF 50%)'
+
     return (
         <>
         {productObj &&
