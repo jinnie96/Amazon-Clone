@@ -177,11 +177,11 @@ html {
     margin-left: 5px;
 }
 
-.rating1, .rating2, .rating3, .rating4, .rating5 {
+/* .rating1, .rating2, .rating3, .rating4, .rating5 { */
     /* background-color: linear-gradient(transparent 70%, #FFA41D 30%); */
     /* background-color: #FFA41D; */
-    background: linear-gradient(90deg, #FFA41D 50%, #FFFFFF 50%)
-}
+    /* background: linear-gradient(90deg, #FFA41D 50%, #FFFFFF 50%)
+} */
 
 #percentage {
     color: #007185;
