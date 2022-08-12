@@ -15,6 +15,7 @@ const ProductPage = () => {
     useEffect(() => {
         dispatch(getSingleProduct(id))
         dispatch(getAllReviews(id))
+        getStarsForReview()
     }, [dispatch, id])
     const product = useSelector(state => state.products.id)
     console.log(product)
@@ -55,7 +56,26 @@ const ProductPage = () => {
     let rating3 = reviewObj[3] ? Math.round((reviewObj[3]/amountReviews) * 100) : 0
     let rating2 = reviewObj[2] ? Math.round((reviewObj[2]/amountReviews) * 100) : 0
     let rating1 = reviewObj[1] ? Math.round((reviewObj[1]/amountReviews) * 100) : 0
-
+    function getStarsForReview () {
+        let starDiv = document.querySelector('.starsCustomers')
+        if (starDiv) starDiv.innerHTML = ''
+        for (let i = 1; i <= 5; i++) {
+            console.log(starDiv)
+            if (i < Math.round(averageRating) && starDiv) {
+                const star = document.createElement('span')
+                star.innerHTML = '&#9733;'
+                star.style.color = 'orange'
+                starDiv.appendChild(star)
+                console.log(starDiv)
+            } else if (i > Math.round(averageRating) && starDiv) {
+                const star = document.createElement('span')
+                star.innerText = '&#9733;'
+                star.style.color = 'grey'
+                starDiv.appendChild(star)
+                console.log(starDiv)
+            }
+        }
+    }
     console.log(averageRating, "AVERAGE")
     console.log(reviewObj, "OBJ")
     const addCart = async() => {
@@ -132,15 +152,15 @@ const ProductPage = () => {
             <div className='leftSide'>
                 <div>
                     <h1 id='title'>Customer Reviews</h1>
-                    <div className='stars'>
-                        <p>&#9733;</p>
-                        <p>&#9733;</p>
-                        <p>&#9733;</p>
-                        <p>&#9733;</p>
-                        <p>&#9733;</p>
-                        <h2 id='average'>{averageRating} out of 5</h2>
+                    <div className='starsCustomers'>
+                        {/* <span>&#9733;</span>
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                        <span>&#9733;</span> */}
+                        <h2 id='average'>{averageRating ? averageRating : "N/A"} out of 5</h2>
                     </div>
-                        <h2 id='totalReviews'>{amountReviews} global ratings</h2>
+                        <h2 id='totalReviews'>{amountReviews ? amountReviews : 0} global ratings</h2>
                 </div>
                 <div className='ratings'>
                     <div className='five'>

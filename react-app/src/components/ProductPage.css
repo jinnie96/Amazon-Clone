@@ -317,3 +317,14 @@ html {
     border: none;
     border: solid 1px lightgrey;
 }
+
+.starsCustomers > span {
+    color: grey;
+    /* border: solid 1px blue; */
+}
+
+.starsCustomers {
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
+}
