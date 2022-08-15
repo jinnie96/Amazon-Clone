@@ -328,3 +328,8 @@ html {
     align-items: center;
     padding-right: 5px;
 }
+
+#averageReviewStar {
+    height: 20px;
+    width: 100px;
+}
