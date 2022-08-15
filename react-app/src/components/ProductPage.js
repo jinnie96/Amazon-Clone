@@ -15,7 +15,7 @@ const ProductPage = () => {
     useEffect(() => {
         dispatch(getSingleProduct(id))
         dispatch(getAllReviews(id))
-        getStarsForReview()
+        // getStarsForReview()
     }, [dispatch, id])
     const product = useSelector(state => state.products.id)
     console.log(product)
@@ -56,25 +56,34 @@ const ProductPage = () => {
     let rating3 = reviewObj[3] ? Math.round((reviewObj[3]/amountReviews) * 100) : 0
     let rating2 = reviewObj[2] ? Math.round((reviewObj[2]/amountReviews) * 100) : 0
     let rating1 = reviewObj[1] ? Math.round((reviewObj[1]/amountReviews) * 100) : 0
+    let starImg = '&#9733;'
+    let starDiv = document.querySelector('.starsCustomers')
+    console.log(starDiv, averageRating, ";;;;;;;;;")
+    // if (starDiv) starDiv.innerHTML = ''
+    if (averageRating >= 4.5) {
+        const star = document.createElement('img')
+        star.src = 'https://i.ibb.co/JRbbH09/Screen-Shot-2022-08-12-at-9-28-33-PM-removebg-preview.jpg'
+        star.style.color = 'blue'
+        star.id = 'averageReviewStar'
+        starDiv.appendChild(star)
+    }
     function getStarsForReview () {
-        let starDiv = document.querySelector('.starsCustomers')
-        if (starDiv) starDiv.innerHTML = ''
-        for (let i = 1; i <= 5; i++) {
-            console.log(starDiv)
-            if (i < Math.round(averageRating) && starDiv) {
-                const star = document.createElement('span')
-                star.innerHTML = '&#9733;'
-                star.style.color = 'orange'
-                starDiv.appendChild(star)
-                console.log(starDiv)
-            } else if (i > Math.round(averageRating) && starDiv) {
-                const star = document.createElement('span')
-                star.innerText = '&#9733;'
-                star.style.color = 'grey'
-                starDiv.appendChild(star)
-                console.log(starDiv)
-            }
-        }
+        // for (let i = 1; i <= 5; i++) {
+        //     console.log(starDiv, i, Math.round(averageRating))
+        //     if (i < Math.round(averageRating) && starDiv) {
+        //         const star = document.createElement('img')
+        //         star.innerHTML = 'https://cdn.pixabay.com/photo/2020/04/26/11/56/amazon-stars-5094895_1280.png'
+        //         star.style.color = 'orange'
+        //         starDiv.appendChild(star)
+        //         console.log(starDiv)
+        //     } else if (i >= Math.round(averageRating) && starDiv) {
+        //         const star = document.createElement('span')
+        //         star.innerText = starImg
+        //         star.style.color = 'grey'
+        //         starDiv.appendChild(star)
+        //         console.log(starDiv)
+        //     }
+        // }
     }
     console.log(averageRating, "AVERAGE")
     console.log(reviewObj, "OBJ")
@@ -104,6 +113,10 @@ const ProductPage = () => {
         // console.log(reviewObj[5] ? Math.round((reviewObj[5]/amountReviews) * 100) : 0)
         // four.style.backgroundImage = 'linear-gradient(90deg, #FFA41D 50%, #FFFFFF 50%)'
 
+    document.addEventListener('DOMContentLoaded', function() {
+        getStarsForReview()
+    }, false);
+
     return (
         <>
         {productObj &&
@@ -119,6 +132,7 @@ const ProductPage = () => {
                     </div>
                     <div className='ratingStars'>
                         <div className='stars'>
+                            {/* <i className="fa-solid fa-plus"></i> */}
                             <span>&#9733;</span>
                             <span>&#9733;</span>
                             <span>&#9733;</span>
