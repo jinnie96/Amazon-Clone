@@ -28,6 +28,7 @@ const EditReview = () => {
             setTitle(data.title)
             setDescription(data.description)
             setProductId(data.product_id)
+            setRating(data.rating)
         }
     }, [])
 
