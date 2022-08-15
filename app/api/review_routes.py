@@ -76,9 +76,12 @@ def editReview(id):
     data= request.json
     print(data, "json request")
     review = Review.query.get(id)
-    review.rating = request.json['form']['rating']
-    review.description = request.json['form']['description']
-    review.title = request.json['form']['title']
+    if request.json['form']['rating']:
+        review.rating = request.json['form']['rating']
+    if request.json['form']['description']:
+        review.description = request.json['form']['description']
+    if request.json['form']['title']:
+        review.title = request.json['form']['title']
     print("JSON", review.to_dict())
     db.session.commit()
     return review.to_dict()
