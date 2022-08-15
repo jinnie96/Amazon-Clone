@@ -21,6 +21,8 @@
 # Start the flask environment by setting our
 # closing command to gunicorn app:app
 
+#test
+
 FROM node:12 AS build-stage
 
 WORKDIR /react-app
