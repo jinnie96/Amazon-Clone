@@ -60,13 +60,87 @@ const ProductPage = () => {
     let starDiv = document.querySelector('.starsCustomers')
     console.log(starDiv, averageRating, ";;;;;;;;;")
     // if (starDiv) starDiv.innerHTML = ''
+    let fiveBool = false
+    let fourBool = false
+    let threeBool = false
+    let twoBool = false
+    let oneBool = false
+    let zeroBool = false
+
     if (averageRating >= 4.5) {
-        const star = document.createElement('img')
-        star.src = 'https://i.ibb.co/JRbbH09/Screen-Shot-2022-08-12-at-9-28-33-PM-removebg-preview.jpg'
-        star.style.color = 'blue'
-        star.id = 'averageReviewStar'
-        starDiv.appendChild(star)
+        // const star = document.createElement('img')
+        // star.src = 'https://www.clipartmax.com/middle/m2H7K9m2b1K9m2m2_3-star-reviews-five-stars-rating/'
+        // star.style.color = 'blue'
+        // star.id = 'averageReviewStar'
+        // starDiv.appendChild(star)
+        fiveBool = true
+        fourBool = false
+        threeBool = false
+        twoBool = false
+        oneBool = false
+        zeroBool = false
     }
+    if (averageRating >= 3.5 && averageRating < 4.5) {
+        // const star = document.createElement('img')
+        // star.src = 'https://www.clipartmax.com/middle/m2i8H7A0A0Z5b1d3_4-stars-four-out-of-five-stars/'
+        // star.style.color = 'blue'
+        // star.id = 'averageReviewStar'
+        // starDiv.appendChild(star)
+        fiveBool = false
+        fourBool = true
+        threeBool = false
+        twoBool = false
+        oneBool = false
+        zeroBool = false
+    }
+    if (averageRating >= 2.5 && averageRating < 3.5) {
+        // const star = document.createElement('img')
+        // star.src = 'https://www.clipartmax.com/png/small/253-2532437_3-star-reviews-five-stars-rating.png'
+        // star.style.color = 'blue'
+        // star.id = 'averageReviewStar'
+        // starDiv.appendChild(star)
+        fiveBool = false
+        fourBool = false
+        threeBool = true
+        twoBool = false
+        oneBool = false
+        zeroBool = false
+    }
+    if (averageRating >= 1.5 && averageRating < 2.5) {
+        // const star = document.createElement('img')
+        // star.src = 'https://i.ibb.co/JRbbH09/Screen-Shot-2022-08-12-at-9-28-33-PM-removebg-preview.jpg'
+        // star.style.color = 'blue'
+        // star.id = 'averageReviewStar'
+        // starDiv.appendChild(star)
+        fiveBool = false
+        fourBool = false
+        threeBool = false
+        twoBool = true
+        oneBool = false
+        zeroBool = false
+    }
+    if (averageRating < 1.5) {
+        // const star = document.createElement('img')
+        // star.src = 'https://s3.amazonaws.com/hoth.bizango/images/414129/one-star_rating_feature.jpg'
+        // star.style.color = 'blue'
+        // star.id = 'averageReviewStar'
+        // starDiv.appendChild(star)
+        fiveBool = false
+        fourBool = false
+        threeBool = false
+        twoBool = false
+        oneBool = true
+        zeroBool = false
+    }
+    if (averageRating < .5 || !averageRating) {
+        fiveBool = false
+        fourBool = false
+        threeBool = false
+        twoBool = false
+        oneBool = false
+        zeroBool = true
+    }
+
     function getStarsForReview () {
         // for (let i = 1; i <= 5; i++) {
         //     console.log(starDiv, i, Math.round(averageRating))
@@ -172,6 +246,26 @@ const ProductPage = () => {
                         <span>&#9733;</span>
                         <span>&#9733;</span>
                         <span>&#9733;</span> */}
+                        {fiveBool && (
+                            // <h1>5</h1>
+                            <img id='averageReviewStar' src="https://i.ibb.co/JRbbH09/Screen-Shot-2022-08-12-at-9-28-33-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                        )}
+                        {fourBool && (
+                            <img id='averageReviewStar' src="https://i.ibb.co/dk3ZZbn/Screen-Shot-2022-08-12-at-9-28-57-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                        )}
+                        {threeBool && (
+                            <img id='averageReviewStar' src="https://i.ibb.co/RgTb9MT/Screen-Shot-2022-08-12-at-9-29-12-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                        )}
+                        {twoBool && (
+                            <img id='averageReviewStar' src="https://i.ibb.co/P5Fmjdd/Screen-Shot-2022-08-12-at-9-29-23-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                        )}
+                        {oneBool && (
+                            <img id='averageReviewStar' src="https://i.ibb.co/kgBYWdH/Screen-Shot-2022-08-12-at-9-29-37-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                        )}
+                        {zeroBool && (
+                            <h1>0</h1>
+                            // <img src="https://www.clipartmax.com/png/small/67-676994_4-stars-four-out-of-five-stars.png" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                        )}
                         <h2 id='average'>{averageRating ? averageRating : "N/A"} out of 5</h2>
                     </div>
                         <h2 id='totalReviews'>{amountReviews ? amountReviews : 0} global ratings</h2>
