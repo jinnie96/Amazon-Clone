@@ -134,9 +134,13 @@ input:focus {
 
 }
 
-.delivery:hover, .greeting:hover, .order:hover, .cart:hover {
+.delivery:hover, .loginBtn:hover, .signUpBtn:hover, .order:hover, .cart:hover {
     border: solid 1px white;
     border-radius: 5%;
+}
+
+.signUpBtn {
+    padding-left: 30px;
 }
 
 .order, .cart, .greeting {

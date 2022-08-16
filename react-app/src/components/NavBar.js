@@ -74,9 +74,12 @@ const NavBar = () => {
             <div className='deliveryIcon'>
               <img id='locationIcon' src='https://kronospan-express.com/public/krono/img/icons/placeholder_blk.png'></img>
             </div>
+            {user && (
             <div class='deliveryName'>
               Deliver to {user.username}
             </div>
+
+            )}
           {/* </div> */}
           {/* </div> */}
         </div>
@@ -102,12 +105,12 @@ const NavBar = () => {
         <div className="rightSide">
         {!user && (
           <div class="greeting">
-            <div>
+            <div className='loginBtn'>
               <NavLink to='/login' exact={true} activeClassName='active' id="navOptions">
                 Hello, Sign in
               </NavLink>
             </div>
-            <div>
+            <div className='signUpBtn'>
               <NavLink to='/sign-up' exact={true} activeClassName='active' id="navOptions">
                 Sign Up
               </NavLink>
