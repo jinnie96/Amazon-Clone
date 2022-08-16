@@ -15,7 +15,7 @@ const Cart = () => {
     useEffect(() => {
         if (cart) {
             // subTotal = Object.keys(cart).length
-            console.log("inside")
+            console.log("inside", Object.keys(cart))
             Object.keys(cart).map((oneKey,i)=>{
                 console.log("ONEKEY", cart[oneKey].quantity)
                 subTotal += (cart[oneKey].quantity)
@@ -61,8 +61,15 @@ const Cart = () => {
         <div className='page'>
             <h1 id='cartShopTitle'>Shopping Cart</h1>
             <div className='priceTagDiv'>
-                <h3 id='priceTag'>Price</h3>
+                {Object.keys(cart).length > 2 && (
+                    <h3 id='priceTag'>Price</h3>
+                )}
             </div>
+                {Object.keys(cart).length <= 2 && (
+                    <div className='emptyCartDiv'>
+                        <h1 id='emptyCart'>Your cart is empty!</h1>
+                    </div>
+                )}
             <div>
                 {
                 Object.keys(cart).map((oneKey,i)=>{
@@ -109,7 +116,9 @@ const Cart = () => {
             </div>
             </div>
             <div className='submitOrder'>
-                <NavLink to='confirmation'><button id={user} className='placeOrderBtn' onClick={deleteAllCarts}>Place your order</button></NavLink>
+                {Object.keys(cart).length > 2 && (
+                    <NavLink to='confirmation'><button id={user} className='placeOrderBtn' onClick={deleteAllCarts}>Place your order</button></NavLink>
+                )}
             </div>
         </div>
 
