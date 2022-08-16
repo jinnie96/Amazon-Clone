@@ -17,7 +17,7 @@ const OrderConfirmation = () => {
     return (
         <div className='confirmationPage'>
             <div className='usernameConfirmation'>
-                <h2 id='greeting'>Hey {user.username}</h2>
+                <h2 id='greeting'>Hello {user.username},</h2>
             </div>
             <div className='orderIsConfirmed'>
                 <i id='checkmark' class="fa-solid fa-check"></i>

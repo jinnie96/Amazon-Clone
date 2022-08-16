@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import DemoButton from './auth/DemoButton'
@@ -25,7 +25,24 @@ const ProductPage = () => {
     const state = useSelector(state => state)
     const reviews = useSelector(state => state.reviews)
     const user= useSelector(state => state.session.user.id)
-
+    // const [hasReview, setHasReview] = useState(false)
+    let hasReview = false
+    useEffect(() => {
+        if (Object.keys(reviews)) {
+            for (let i = 0; i < 1; i++) {
+                let count = 0
+                console.log(Object.keys(reviews))
+                let key = reviews[Object.keys(reviews)[i]]
+                console.log(key, "THIS")
+                if (key) {
+                    console.log(key[0].reviewer_id === user)
+                    if (key[0].reviewer_id === user) {
+                        hasReview = true
+                    }
+                }
+            }
+        }
+    }, [])
     let averageRating = 0
     console.log("reviews", reviews)
     console.log(product, "BEFORE!")
@@ -33,6 +50,7 @@ const ProductPage = () => {
     console.log(id)
     let reviewObj = {}
     let amountReviews = 0
+
     if (Object.keys(reviews)) {
         for (let i = 0; i < 1; i++) {
             let count = 0
@@ -40,6 +58,10 @@ const ProductPage = () => {
             let key = reviews[Object.keys(reviews)[i]]
             console.log(key, "THIS")
             if (key) {
+                console.log(key[0].reviewer_id === user)
+                if (key[0].reviewer_id === user) {
+                    hasReview = true
+                }
                 for (let j = 0; j < key.length; j++) {
                     if (!reviewObj[key[j].rating]) reviewObj[key[j].rating] = 1
                     else reviewObj[key[j].rating]++
@@ -315,9 +337,11 @@ const ProductPage = () => {
                 <div className='newReviewDiv'>
                     <h1 id='reviewText'>Review this product</h1>
                     <h2 id='thoughts'>Share your thoughts with other customers</h2>
-                    <NavLink to={'/review/' + id}>
-                        <button id='customerBtn'>Write a customer review</button>
-                    </NavLink>
+                    {!hasReview && (
+                        <NavLink to={'/review/' + id}>
+                            <button id='customerBtn'>Write a customer review</button>
+                        </NavLink>
+                    )}
                 </div>
 
             </div>
