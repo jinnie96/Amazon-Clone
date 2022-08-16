@@ -119,3 +119,11 @@
     width: 100%;
     border-radius: 5px;
 }
+
+.submitOrder > button {
+    background-color: #F7CA01;
+    cursor: pointer;
+    padding: 10px 60px;
+    border-radius: 5px;
+    border: none;
+}
