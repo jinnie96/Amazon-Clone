@@ -166,13 +166,15 @@ input:focus {
 
 .searchResults {
     position: absolute;
-    top: 82px;
+    top: 62px;
     height: 350px;
-    width: 40%;
+    width: 56%;
     background-color: white;
     display: flex;
     flex-direction: column;
-    padding: 7px 10px;}
+    padding: 7px 10px;
+    margin-left: 15px;
+}
 
 #term {
     color: black;

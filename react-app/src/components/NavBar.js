@@ -14,6 +14,7 @@ const NavBar = () => {
 
   const [searchTerm, setSearchTerm] = useState()
   const [searchedTerms, setSearchedTerms] = useState([])
+  const [searchClicked, setSearchClicked] = useState(false)
   const getSearchList = async(term) => {
     if (!term) {
       setSearchedTerms([])
@@ -48,7 +49,18 @@ const NavBar = () => {
     getSearchList(e.target.value)
   }
   console.log("LINE", searchedTerms)
-  return (
+
+  // let searchClicked = false
+  window.addEventListener('click', function(event){
+    console.log(searchClicked, event.target.className === 'search');
+    if (event.target.className === 'search') {
+      setSearchClicked(true)
+    } else {
+      setSearchClicked(false)
+    }
+    console.log(searchClicked, "CLICKS")
+  });
+    return (
     <nav>
       <div className="navBar">
         <div>
@@ -73,10 +85,10 @@ const NavBar = () => {
           <input className="search" value={searchTerm} onChange={updateSearch}></input>
           <img id="searchBtn" src="https://i.ibb.co/5Wy8tZH/b96782d0ab0ea492dabcf4a0f00698d2-removebg-preview.jpg"></img>
         </div>
+        {console.log(searchedTerms, searchClicked, "TERMZ")}
         {
-          searchedTerms.length > 0 && (
+          (searchedTerms.length > 0 && searchClicked) && (
           <div className='searchResults'>
-            {console.log(searchedTerms,"TERMZ")}
             {searchedTerms.map(term => (
                 <NavLink id='term' to={`/sports/${term[0]}`}>
                     {term[1]}
