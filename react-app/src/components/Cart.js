@@ -54,7 +54,7 @@ const Cart = () => {
         console.log(e.target.id)
         await dispatch(deleteAllCart(e.target.id))
         await dispatch(getCarts(user))
-        window.location.href = '/'
+        // window.location.href = '/'
     }
 
     return (
@@ -109,7 +109,7 @@ const Cart = () => {
             </div>
             </div>
             <div className='submitOrder'>
-                <button id={user} className='placeOrderBtn' onClick={deleteAllCarts}>Place your order</button>
+                <NavLink to='confirmation'><button id={user} className='placeOrderBtn' onClick={deleteAllCarts}>Place your order</button></NavLink>
             </div>
         </div>
 

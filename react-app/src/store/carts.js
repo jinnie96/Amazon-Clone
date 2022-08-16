@@ -140,7 +140,13 @@ export default function cartsReducer(state = initialState, action) {
                 // 'id': action.payload
                 // [action.payload.post.id]: action.payload.post
             };
-            delete newState[action.payload]
+            for (const key in newState) {
+                console.log(".....", key, !(key === 'count'), !(key === 'total'))
+                delete newState[key]
+                // if (!(key === 'count') || !(key === 'total')) {
+                //     console.log(newState[key])
+                // }
+            }
             return newState;
         case EDIT_CART:
             newState = {
