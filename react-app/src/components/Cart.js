@@ -109,7 +109,7 @@ const Cart = () => {
             </div>
             </div>
             <div className='submitOrder'>
-                <button id={user} onClick={deleteAllCarts}>Submit Order</button>
+                <button id={user} className='placeOrderBtn' onClick={deleteAllCarts}>Place your order</button>
             </div>
         </div>
 
