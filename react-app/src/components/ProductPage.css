@@ -69,7 +69,7 @@ html {
 .stars {
     display: flex;
     align-items: center;
-    padding-right: 5px;
+    /* padding-right: 5px; */
 }
 
 #starTitle {
@@ -121,7 +121,7 @@ html {
 
 .ratingStars * {
     color: orange;
-    width: 20%;
+    /* width: 20%; */
     /* width: 30px;
     height: 30px; */
 }
@@ -135,6 +135,7 @@ html {
     font-size: 14px;
     display: flex;
     align-content: center;
+    margin-left: 10px;
 }
 
 .priceDiv {

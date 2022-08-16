@@ -207,18 +207,33 @@ const ProductPage = () => {
                     <div className='ratingStars'>
                         <div className='stars'>
                             {/* <i className="fa-solid fa-plus"></i> */}
-                            <span>&#9733;</span>
-                            <span>&#9733;</span>
-                            <span>&#9733;</span>
-                            <span>&#9733;</span>
-                            <span>&#9733;</span>
+                            {fiveBool && (
+                            // <h1>5</h1>
+                            <img id='averageReviewStar' src="https://i.ibb.co/JRbbH09/Screen-Shot-2022-08-12-at-9-28-33-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                        )}
+                        {fourBool && (
+                            <img id='averageReviewStar' src="https://i.ibb.co/dk3ZZbn/Screen-Shot-2022-08-12-at-9-28-57-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                        )}
+                        {threeBool && (
+                            <img id='averageReviewStar' src="https://i.ibb.co/RgTb9MT/Screen-Shot-2022-08-12-at-9-29-12-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                        )}
+                        {twoBool && (
+                            <img id='averageReviewStar' src="https://i.ibb.co/P5Fmjdd/Screen-Shot-2022-08-12-at-9-29-23-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                        )}
+                        {oneBool && (
+                            <img id='averageReviewStar' src="https://i.ibb.co/kgBYWdH/Screen-Shot-2022-08-12-at-9-29-37-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                        )}
+                        {zeroBool && (
+                            <h1>0</h1>
+                            // <img src="https://www.clipartmax.com/png/small/67-676994_4-stars-four-out-of-five-stars.png" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                        )}
                         </div>
                         <div id='amountRatings'>
                             {amountReviews} ratings
                         </div>
                     </div>
                     <h1 id='productDescription'>{productObj.description}</h1>
-                    <h1 id='productId'>{productObj.id}</h1>
+                    {/* <h1 id='productId'>{productObj.id}</h1> */}
                 </div>
                 <div className='price'>
                     <div className='priceDiv'>

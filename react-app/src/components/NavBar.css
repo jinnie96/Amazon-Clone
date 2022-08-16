@@ -75,6 +75,10 @@ input:focus {
     align-items:center;
 }
 
+.logoutBtn {
+    cursor: pointer;
+}
+
 .logoutBtn > button, .demoBtn > button {
     color: white;
     text-decoration: none;
