@@ -14,6 +14,7 @@ import Cart from './components/Cart'
 import NewReview from './components/NewReview';
 import EditReview from './components/EditReview'
 import { authenticate } from './store/session';
+import OrderConfirmation from './components/OrderConfirmation';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -61,6 +62,10 @@ function App() {
         <ProtectedRoute path='/sports/edit-review/:id' exact={true} >
           <EditReview/>
         </ProtectedRoute>
+        <ProtectedRoute path='/confirmation' exact={true} >
+          <OrderConfirmation/>
+        </ProtectedRoute>
+
       </Switch>
       <Footer />
     </BrowserRouter>

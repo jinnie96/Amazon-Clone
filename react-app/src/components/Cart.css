@@ -120,7 +120,7 @@
     border-radius: 5px;
 }
 
-.submitOrder > button {
+.placeOrderBtn {
     background-color: #F7CA01;
     cursor: pointer;
     padding: 10px 60px;
