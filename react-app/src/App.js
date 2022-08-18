@@ -68,7 +68,6 @@ function App() {
         </ProtectedRoute>
 
       </Switch>
-      <Footer />
       <LinksFooter />
     </BrowserRouter>
   );

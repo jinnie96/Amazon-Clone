@@ -2,6 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 20px;
+    /* position: absolute; */
+    /* height: 100%; */
 }
 
 #signUpLogo {
@@ -16,6 +19,26 @@
 .nameInput, .userNameInput, .emailInput, .passwordInput, .repeatInput {
     display: flex;
     flex-direction: column;
+    padding-bottom: 10px;
+    /* height: 31px;
+    width: 312px; */
+}
+
+#nameLabel, #userLabel, #emailLabel, #passwordLabel, #reEnterLabel {
+    font-size: 13px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    font-weight: bolder;
+    padding-bottom: 4px;
+}
+
+#nameInputTag, #userInputTag, #emailInputTag, #passwordInputTag, #repeatInputTag {
+    height: 31px;
+    width: 312px;
+}
+
+.topHalf {
+    border: 1px solid #E6E1E1;
+    padding: 15px 25px 5px 25px;
 }
 
 #conditions {
@@ -32,8 +55,91 @@
 
 .signInDirectDiv {
     display: flex;
+    /* padding: 10px; */
+    /* margin-left: -20px; */
 }
 
 #signInLink {
-    color:black
+    color:#5B95D2
+}
+
+hr {
+    border:none;
+    border-top:1px solid black;
+    color:#fff;
+    background-color:#fff;
+    height:1px;
+    width:50%;
+}
+
+.fullFormDiv {
+    /* border: solid 1px black; */
+}
+
+.footerLinks {
+    display: flex;
+    /* fle */
+}
+
+.footerLinks * {
+    color:#5B95D2;
+    font-size: 12px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+}
+
+#copyright {
+    color: #555555;
+    font-size: 11px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+}
+
+.bottomHalf {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FAFAFA;
+    /* position: absolute; */
+    height: 435px;
+    position:relative;
+    bottom: 0;
+}
+
+#conditionUse, #privacyNotice {
+    margin-right: 19px;
+}
+
+/* .fullPage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+} */
+
+
+#createAccount {
+    font-size: 28px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    cursor: pointer;
+}
+
+#signupBtn {
+    background-image: linear-gradient(#f7dfa5, #f0c14b);
+    width: 100%;
+    border: none;
+    padding: 8px 13px;
+}
+
+#conditionSpan, #privacySpan {
+    color:#5B95D2;
+    cursor: pointer;
+}
+
+#conditionSpan:hover, #privacySpan:hover, #signInLink:hover, #conditionUse:hover, #privacyNotice:hover, #helpLink:hover {
+    color:#D78F67;
+    text-decoration: underline;
+}
+
+#conditionSpan, #privacySpan, #signInLink, #conditionUse, #privacyNotice, #helpLink {
+    cursor: pointer;
+    text-decoration: none;
 }
