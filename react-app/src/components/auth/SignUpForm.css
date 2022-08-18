@@ -1,0 +1,39 @@
+.fullFormDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#signUpLogo {
+    height: 61px;
+    width: 133px;
+}
+
+.signUpFormDiv {
+
+}
+
+.nameInput, .userNameInput, .emailInput, .passwordInput, .repeatInput {
+    display: flex;
+    flex-direction: column;
+}
+
+#conditions {
+    font-size: 12px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    /* width: 306px; */
+    margin-left: 39px;
+}
+
+#signInDirect{
+    font-size: 13px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+}
+
+.signInDirectDiv {
+    display: flex;
+}
+
+#signInLink {
+    color:black
+}
