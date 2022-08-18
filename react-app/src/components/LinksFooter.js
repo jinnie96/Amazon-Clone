@@ -1,4 +1,4 @@
-import './LinksFooter.css'
+import './Linksfooter.css'
 
 const LinksFooter = () => {
     return (
