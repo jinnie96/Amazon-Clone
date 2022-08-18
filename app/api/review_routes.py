@@ -66,7 +66,9 @@ def deleteReview(id):
     review = Review.query.get(id)
     db.session.delete(review)
     db.session.commit()
-    return "Comment deleted"
+    return {
+        'id':"Comment deleted"
+        }
 
 @review_routes.route('/edit/<int:id>', methods=['PUT'])
 @login_required

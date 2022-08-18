@@ -85,6 +85,7 @@ html {
     background-color: #F0F2F2;
     height: 20px;
     width: 200px;
+    border-radius: 5px;
 }
 
 .five, .four, .three, .two, .one {
@@ -156,6 +157,7 @@ html {
 #cartAdd, #buy {
     border-radius: 5px;
     padding: 5px;
+    cursor:pointer;
 }
 
 #lockIcon {
@@ -281,6 +283,7 @@ html {
     background-color: #FFA41D;
     color: white;
     border-radius: 5px;
+    cursor:pointer;
 }
 
 .editDiv {
@@ -318,6 +321,11 @@ html {
     border-radius: 5px;
     border: none;
     border: solid 1px lightgrey;
+    cursor: pointer;
+}
+
+#customerBtn:hover {
+    background-color: #F7FAFA;
 }
 
 .starsCustomers > span {

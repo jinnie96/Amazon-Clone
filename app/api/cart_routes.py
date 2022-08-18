@@ -120,19 +120,35 @@ def editCart(id):
 @cart_routes.route('/<int:id>', methods=['POST'])
 def addTocart(id):
     print("ADDING", id)
-
-    cart = Cart(user_id=current_user.id, product_id=id, quantity=1)
-    db.session.add(cart)
-    print("ZZZ", cart.to_dict())
-    db.session.commit()
-    product = Product.query.filter(Product.id == cart.to_dict()['product_id']).first()
-    print("ADDED", product.to_dict())
-    # productsObj = {}
+    cart = Cart.query.filter(Cart.user_id ==current_user.id, Cart.product_id==id).first()
+    # print('caaaaaa', cart.to_dict())
     temp = {}
-    temp['id'] = (product.to_dict()['id'])
-    temp['name'] = (product.to_dict()['name'])
-    temp['description'] = (product.to_dict()['description'])
-    temp['price'] = str(product.to_dict()['price'])
-    temp['photourl'] = (product.to_dict()['photourl'])
+    if cart:
+        print(cart.quantity)
+        cart.quantity += 1
+        db.session.commit()
+        product = Product.query.filter(Product.id == cart.to_dict()['product_id']).first()
+        print("ADDED", product.to_dict())
+        # productsObj = {}
+        temp['id'] = (product.to_dict()['id'])
+        temp['name'] = (product.to_dict()['name'])
+        temp['description'] = (product.to_dict()['description'])
+        temp['price'] = str(product.to_dict()['price'])
+        temp['photourl'] = (product.to_dict()['photourl'])
+    else:
+        print('in else')
+        cart = Cart(user_id=current_user.id, product_id=id, quantity=1)
+        db.session.add(cart)
+        print("ZZZ", cart.to_dict())
+        db.session.commit()
+        product = Product.query.filter(Product.id == cart.to_dict()['product_id']).first()
+        print("ADDED", product.to_dict())
+        # productsObj = {}
+        # temp = {}
+        temp['id'] = (product.to_dict()['id'])
+        temp['name'] = (product.to_dict()['name'])
+        temp['description'] = (product.to_dict()['description'])
+        temp['price'] = str(product.to_dict()['price'])
+        temp['photourl'] = (product.to_dict()['photourl'])
     # productsObj['obj'] = temp
     return temp

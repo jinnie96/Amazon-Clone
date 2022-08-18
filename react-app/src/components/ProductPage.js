@@ -190,7 +190,7 @@ const ProductPage = () => {
 
     const deleteReview = (e) => {
         console.log(e.target)
-        // dispatch(deleteOneReview(e.target.id))
+        dispatch(deleteOneReview(e.target.id))
         // window.location.href = `/sports/${id}`
     }
 
@@ -362,7 +362,7 @@ const ProductPage = () => {
                                     {reviews[key][i].reviewer_id === user &&
                                         <div className='editDelBtns'>
                                             <NavLink to={'edit-review/' + reviews[key][i].id}>
-                                                <button id={reviews[key][i].id}>Edit Review</button>
+                                                <button id={reviews[key][i].id} className='editReviewButton'>Edit Review</button>
                                             </NavLink>
                                                 {/* <button id='deleteRevBtn' onClick={deleteReview}>Delete Review</button> */}
                                         </div>
@@ -384,7 +384,7 @@ const ProductPage = () => {
                                         {/* <NavLink to={'edit-review/' + reviews[key][i].id}>
                                             <button id='editRevBtn'>Edit Review</button>
                                         </NavLink> */}
-                                            <button id={reviews[key][i].id} onClick={deleteReview}>Delete Review</button>
+                                            <button id={reviews[key][i].id} className='deleteReviewButton' onClick={deleteReview}>Delete Review</button>
                                     </div>
                                 }
                             </div>
