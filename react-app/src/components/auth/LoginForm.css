@@ -16,7 +16,7 @@
 
 }
 
-.nameInput, .userNameInput, .emailInput, .passwordInput, .repeatInput {
+.emailInput, .passwordInput {
     display: flex;
     flex-direction: column;
     padding-bottom: 10px;
@@ -41,13 +41,28 @@
     padding: 15px 25px 5px 25px;
 }
 
+h2 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #E7E7E7;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+ }
+
+ h2 span {
+     background:#fff;
+     padding:0 10px;
+ }
+
 #conditions {
-    font-size: 12px;
+    font-size: 22px;
     font-family: "Amazon Ember",Arial,sans-serif;
-    /* width: 306px; */
-    margin-left: 39px;
+    margin-left: 49px;
 }
 
+.conditionsDiv {
+    margin-left: -49px;
+}
 #signInDirect{
     font-size: 13px;
     font-family: "Amazon Ember",Arial,sans-serif;
@@ -102,6 +117,7 @@ hr {
     height: 435px;
     position:relative;
     bottom: 0;
+    margin-top: 28px;
 }
 
 #conditionUse, #privacyNotice {
@@ -122,12 +138,18 @@ hr {
     cursor: pointer;
 }
 
-#signupBtn {
+#loginBtn {
     background-image: linear-gradient(#f7dfa5, #f0c14b);
     width: 100%;
     border: none;
     padding: 8px 13px;
-    border-radius: 3px;
+    margin-top: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#loginBtn:hover {
+    opacity: 90%;
 }
 
 #conditionSpan, #privacySpan {
@@ -143,4 +165,51 @@ hr {
 #conditionSpan, #privacySpan, #signInLink, #conditionUse, #privacyNotice, #helpLink {
     cursor: pointer;
     text-decoration: none;
+}
+
+.createLinkDiv {
+    /* display: flex;
+    justify-content: center; */
+    /* width: 50%; */
+    margin-left: 37%;
+    margin-right: 37%;
+}
+
+#newToAmazon {
+    /* line-height: 1; */
+    font-size: 12px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    color: #767676;
+
+    /* font-weight: 400; */
+    /* z-index: 2; */
+    /* position: relative; */
+    /* display: inline-block; */
+    /* background-color: #fff; */
+    /* padding: 0 8px 0 7px; */
+}
+
+.createNewAcc {
+    display: flex;
+    justify-content: center;
+    /* padding-bottom: 28px; */
+    /* position: absolute; */
+    /* width: 374px; */
+
+}
+
+#createNewBtn:hover {
+    background-color: #DDE0E5;
+}
+
+#createAccBtn {
+    width: 372px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    /* height: 322px; */
+    padding: 6px 11px;
+    cursor: pointer;
+    border: none;
+    border: solid 1px #A2A6AB;
+    border-radius: 3px;
+
 }

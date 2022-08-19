@@ -124,7 +124,7 @@ const SignUpForm = () => {
         <div><h3 id='conditions'>By creating an account, you agree to Amazon's<br></br> <span id='conditionSpan'>Conditions of Use</span> and <span id='privacySpan'>Privacy Notice.</span></h3></div>
         <hr></hr>
         <div className='signInDirectDiv'>
-          <h3 id='signInDirect'>Already have an account? <NavLink to='login'><span id='signInLink'>Sign-in</span></NavLink></h3>
+          <h3 id='signInDirect'>Already have an account? <NavLink to='/login'><span id='signInLink'>Sign-in</span></NavLink></h3>
         </div>
         </div>
       </div>
