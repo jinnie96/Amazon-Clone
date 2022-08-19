@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, NavLink } from 'react-router-dom';
 import { login } from '../../store/session';
+import './LoginForm.css'
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -31,34 +32,74 @@ const LoginForm = () => {
   }
 
   return (
-    <form onSubmit={onLogin}>
+    <div className='fullPage'>
+    <div className='fullFormDiv'>
+      <div className='signUpLogoDiv'>
+        <img id='signUpLogo' src='http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG'></img>
+      </div>
+      <div className='topHalf'>
+
+      <div className='signUpformDiv'>
+        <div>
+          <h1 id='createAccount'>Sign in</h1>
+        </div>
+        <form onSubmit={onLogin}>
       <div>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
       </div>
-      <div>
-        <label htmlFor='email'>Email</label>
+      <div className='emailInput'>
+        <label id='emailLabel' htmlFor='email'>Email</label>
         <input
           name='email'
           type='text'
           placeholder='Email'
           value={email}
           onChange={updateEmail}
+          id='emailInputTag'
         />
       </div>
-      <div>
-        <label htmlFor='password'>Password</label>
+      <div className='passwordInput'>
+        <label id='passwordLabel' htmlFor='password'>Password</label>
         <input
           name='password'
           type='password'
           placeholder='Password'
           value={password}
           onChange={updatePassword}
+          id='passwordInputTag'
         />
-        <button type='submit'>Login</button>
+        <button id='loginBtn' type='submit'>Login</button>
       </div>
     </form>
+      </div>
+      <div className='conditionsDiv'><h3 id='conditions'>By continuing, you agree to Amazon's <span id='conditionSpan'>Conditions of<br></br> Use</span> and <span id='privacySpan'>Privacy Notice.</span></h3></div>
+      {/* <hr></hr>
+      <div className='signInDirectDiv'>
+        <h3 id='signInDirect'>Already have an account? <NavLink to='login'><span id='signInLink'>Sign-in</span></NavLink></h3>
+      </div> */}
+      </div>
+    </div>
+      <div className='createLinkDiv'>
+        <h2><span id='newToAmazon'>New to Amazon?</span></h2>
+      </div>
+      <div className='createNewAcc'>
+        <NavLink to='/sign-up'>
+          <button id='createAccBtn'>Create your Amazon account</button>
+        </NavLink>
+      </div>
+    <div className='bottomHalf'>
+      <div className='footerLinks'>
+        <h3 id='conditionUse'>Conditions of Use</h3>
+        <h3 id='privacyNotice'>Privacy Notice</h3>
+        <h3 id='helpLink'>Help</h3>
+      </div>
+      <div>
+        <h3 id='copyright'>© 1996-2022, Amazon.com, Inc. or its affiliates</h3>
+      </div>
+    </div>
+  </div>
   );
 };
 
