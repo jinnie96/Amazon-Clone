@@ -34,7 +34,6 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
       <Switch>
         <Route path='/login' exact={true}>
           <LoginForm />
@@ -49,26 +48,37 @@ function App() {
           <User />
         </ProtectedRoute>
         <ProtectedRoute path='/' exact={true} >
+          <NavBar />
           <Homepage />
+          <LinksFooter />
         </ProtectedRoute>
         <ProtectedRoute path='/sports/:id' exact={true}>
+          <NavBar />
           <ProductPage />
+          <LinksFooter />
         </ProtectedRoute>
         <ProtectedRoute path='/cart' exact={true} >
+          <NavBar />
           <Cart/>
+          <LinksFooter />
         </ProtectedRoute>
         <ProtectedRoute path='/review/:id' exact={true} >
+          <NavBar />
           <NewReview/>
+          <LinksFooter />
         </ProtectedRoute>
         <ProtectedRoute path='/sports/edit-review/:id' exact={true} >
+          <NavBar />
           <EditReview/>
+          <LinksFooter />
         </ProtectedRoute>
         <ProtectedRoute path='/confirmation' exact={true} >
+          <NavBar />
           <OrderConfirmation/>
+          <LinksFooter />
         </ProtectedRoute>
 
       </Switch>
-      <LinksFooter />
     </BrowserRouter>
   );
 }
