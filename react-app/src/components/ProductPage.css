@@ -44,6 +44,11 @@ html {
     font-weight: 400;
 }
 
+#productDescription {
+    font-size: 14px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+}
+
 .productDetails {
     padding-right: 30px;
 }
