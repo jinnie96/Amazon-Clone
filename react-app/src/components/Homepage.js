@@ -71,7 +71,7 @@ function Homepage() {
                     Science Fiction
                 </div>
                 <div class="booksPics">
-                    <NavLink to={'fiction/1'}><img id="nineEightFour" src="https://images-na.ssl-images-amazon.com/images/I/81StSOpmkjL.jpg"></img></NavLink>
+                    <NavLink to={'fiction/5'}><img id="nineEightFour" src="https://images-na.ssl-images-amazon.com/images/I/81StSOpmkjL.jpg"></img></NavLink>
                     <NavLink to={'fiction/2'}><img id="fahrenheit" src="https://www.arts.gov/sites/default/files/Fahrenheit%20451%20Cover.jpg"></img></NavLink>
                     <NavLink to={'fiction/3'}><img id="braveNewWorld" src="https://images-na.ssl-images-amazon.com/images/I/81zE42gT3xL.jpg"></img></NavLink>
                     <NavLink to={'fiction/4'}><img id="dune" src="https://images-na.ssl-images-amazon.com/images/I/81ym3QUd3KL.jpg"></img></NavLink>

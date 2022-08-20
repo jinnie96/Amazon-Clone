@@ -8,6 +8,8 @@ class Product(db.Model):
     name = db.Column(db.String(50), nullable=False)
     description = db.Column(db.String(500), nullable=False)
     price = db.Column(db.Numeric(4,2), nullable=False)
+    category = db.Column(db.String(500), nullable=False)
+    author = db.Column(db.String(500), nullable=False)
     photourl = db.Column(db.String(500), nullable=False)
 
     reviews = relationship("Review", foreign_keys="Review.product_id", back_populates='products')
@@ -21,5 +23,7 @@ class Product(db.Model):
             'name': self.name,
             'description': self.description,
             'price': self.price,
+            'category': self.category,
+            'author': self.author,
             'photourl': self.photourl
         }

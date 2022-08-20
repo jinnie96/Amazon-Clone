@@ -57,6 +57,11 @@ function App() {
           <ProductPage />
           <LinksFooter />
         </ProtectedRoute>
+        <ProtectedRoute path='/fiction/:id' exact={true}>
+          <NavBar />
+          <ProductPage />
+          <LinksFooter />
+        </ProtectedRoute>
         <ProtectedRoute path='/cart' exact={true} >
           <NavBar />
           <Cart/>

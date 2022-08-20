@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, NavLink } from 'react-router-dom';
 import { login } from '../../store/session';
+import DemoButton from './DemoButton';
 import './LoginForm.css'
 
 const LoginForm = () => {
@@ -10,6 +11,11 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
+
+  const demoUser = async (e) => {
+     e.preventDefault()
+    await dispatch(login('demo@aa.io', 'password'))
+  };
 
   const onLogin = async (e) => {
     e.preventDefault();
@@ -71,6 +77,11 @@ const LoginForm = () => {
           id='passwordInputTag'
         />
         <button id='loginBtn' type='submit'>Login</button>
+        <button id='loginBtn' onClick={demoUser}>Demo</button>
+        {/* <div className='demoBtn'>
+          <DemoButton />
+        </div> */}
+        {/* <button id='loginBtn' type='submit'>Demo User</button> */}
       </div>
     </form>
       </div>
@@ -82,7 +93,7 @@ const LoginForm = () => {
       </div>
     </div>
       <div className='createLinkDiv'>
-        <h2><span id='newToAmazon'>New to Amazon?</span></h2>
+        <h2 id='amazonNew'><span id='newToAmazon'>New to Amazon?</span></h2>
       </div>
       <div className='createNewAcc'>
         <NavLink to='/sign-up'>
