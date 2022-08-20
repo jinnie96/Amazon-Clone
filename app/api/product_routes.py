@@ -19,6 +19,8 @@ def products():
         temp['price'] = str(product.to_dict()['price'])
         print(product.to_dict()['photourl'])
         temp['photourl'] = (product.to_dict()['photourl'])
+        temp['category'] = (product.to_dict()['category'])
+        temp['author'] = (product.to_dict()['author'])
         print(product.to_dict()['id'])
         print(temp, "@@@@")
         productsObj['obj'] = temp
@@ -41,6 +43,8 @@ def searchNewTerm(string):
         temp['price'] = str(product.to_dict()['price'])
         print(product.to_dict()['photourl'])
         temp['photourl'] = (product.to_dict()['photourl'])
+        temp['category'] = (product.to_dict()['category'])
+        temp['author'] = (product.to_dict()['author'])
         print(product.to_dict()['id'])
         print(temp, "@@@@")
         productsObj[product.to_dict()['id']] = temp
@@ -67,6 +71,8 @@ def oneProduct(id):
     temp['price'] = str(product.to_dict()['price'])
     print(product.to_dict()['photourl'])
     temp['photourl'] = (product.to_dict()['photourl'])
+    temp['category'] = (product.to_dict()['category'])
+    temp['author'] = (product.to_dict()['author'])
     print(product.to_dict()['id'])
     productsObj[product.to_dict()['id']] = temp
     print(productsObj, "UPDATED")

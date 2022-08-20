@@ -52,7 +52,7 @@ function App() {
           <Homepage />
           <LinksFooter />
         </ProtectedRoute>
-        <ProtectedRoute path='/sports/:id' exact={true}>
+        <ProtectedRoute path='/books/:id' exact={true}>
           <NavBar />
           <ProductPage />
           <LinksFooter />

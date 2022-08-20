@@ -19,7 +19,7 @@ def getReviews(id):
     reviewsArr = []
     for review in reviews:
         user = User.query.filter(User.id == review.reviewer_id).first()
-        print(user.to_dict()['username'], "@@@@@")
+        print(review.to_dict(), "@@@@@")
         temp = {}
         temp['id'] = review.to_dict()['id']
         temp['reviewer_id'] = review.to_dict()['reviewer_id']

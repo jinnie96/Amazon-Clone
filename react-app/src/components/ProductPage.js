@@ -20,6 +20,7 @@ const ProductPage = () => {
     const product = useSelector(state => state.products.id)
     console.log(product)
     if (product) {
+        console.log("jjjjjj", product[Object.keys(product)[0]])
         productObj = product[Object.keys(product)[0]];
     }
     const state = useSelector(state => state)
@@ -215,6 +216,7 @@ const ProductPage = () => {
 
     return (
         <>
+        {console.log("productobj", productObj)}
         {productObj &&
             <div className='product'>
                 <div className="image">
@@ -224,7 +226,7 @@ const ProductPage = () => {
                     <h1 id='productName'>{productObj.name}</h1>
                     <div id='author'>
                         <h2 id='by'>by&nbsp;</h2>
-                        <h2 id='onlyName'>{productObj.name}</h2>
+                        <h2 id='onlyName'>{productObj.author}</h2>
                     </div>
                     <div className='ratingStars'>
                         <div className='stars'>
