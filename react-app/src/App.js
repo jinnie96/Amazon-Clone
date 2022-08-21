@@ -16,6 +16,7 @@ import EditReview from './components/EditReview'
 import { authenticate } from './store/session';
 import OrderConfirmation from './components/OrderConfirmation';
 import LinksFooter from './components/LinksFooter';
+import AddedToCart from './components/AddedToCart';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -80,6 +81,11 @@ function App() {
         <ProtectedRoute path='/confirmation' exact={true} >
           <NavBar />
           <OrderConfirmation/>
+          <LinksFooter />
+        </ProtectedRoute>
+        <ProtectedRoute path='/added' exact={true} >
+          <NavBar />
+          <AddedToCart/>
           <LinksFooter />
         </ProtectedRoute>
 
