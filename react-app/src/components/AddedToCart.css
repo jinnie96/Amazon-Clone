@@ -1,0 +1,32 @@
+.addedToCartDiv {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+#greenCheck {
+    height: 18px;
+    width: 18px;
+}
+
+#added {
+    font-size: 20px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    margin-left: 5px;
+}
+
+.productAddedDiv {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+#goToCart {
+    background-image: linear-gradient(#f7dfa5, #f0c14b);
+    width: 100%;
+    border: none;
+    padding: 8px 13px;
+    margin-top: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}

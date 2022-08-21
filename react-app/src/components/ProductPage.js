@@ -265,7 +265,9 @@ const ProductPage = () => {
                     </div>
                     <h2 id='stock'>In Stock.</h2>
                     <div className='cartBtns'>
-                        <button id='cartAdd' onClick={addCart}>Add to Cart</button>
+                        <NavLink to='/added'>
+                            <button id='cartAdd' onClick={addCart}>Add to Cart</button>
+                        </NavLink>
                         <NavLink to='/confirmation'><button id='buy'>Buy Now</button></NavLink>
                     </div>
                     <div class='secureTrans'>
