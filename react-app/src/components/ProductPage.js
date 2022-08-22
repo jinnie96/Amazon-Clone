@@ -36,8 +36,8 @@ const ProductPage = () => {
                 let key = reviews[Object.keys(reviews)[i]]
                 console.log(key, "THIS")
                 if (key) {
-                    console.log(key[0].reviewer_id === user)
-                    if (key[0].reviewer_id === user) {
+                    console.log(key.reviewer_id === user)
+                    if (key.reviewer_id === user) {
                         hasReview = true
                     }
                 }
@@ -53,26 +53,29 @@ const ProductPage = () => {
     let amountReviews = 0
 
     if (Object.keys(reviews)) {
-        for (let i = 0; i < 1; i++) {
-            let count = 0
-            console.log(Object.keys(reviews))
+        let count = 0
+        for (let i = 0; i < Object.keys(reviews).length; i++) {
+            console.log(Object.keys(reviews).length)
             let key = reviews[Object.keys(reviews)[i]]
             console.log(key, "THIS")
             if (key) {
-                console.log(key[0].reviewer_id === user)
-                if (key[0].reviewer_id === user) {
+                console.log(key.reviewer_id === user)
+                if (key.reviewer_id === user) {
                     hasReview = true
                 }
-                for (let j = 0; j < key.length; j++) {
-                    if (!reviewObj[key[j].rating]) reviewObj[key[j].rating] = 1
-                    else reviewObj[key[j].rating]++
-                    averageRating += key[j].rating
+                // for (let j = 0; j < key.length; j++) {
+                    // console.log(key[j])
+                    if (!reviewObj[key.rating]) reviewObj[key.rating] = 1
+                    else reviewObj[key.rating]++
+                    averageRating += key.rating
                     count++
                     amountReviews++
-                }
+                // }
             }
-            averageRating = Math.round((averageRating/count) * 10) / 10
         }
+        console.log(count, averageRating/count)
+        averageRating = Math.round((averageRating/count) * 10) / 10
+        console.log(averageRating)
     }
     let rating5 = reviewObj[5] ? Math.round((reviewObj[5]/amountReviews) * 100) : 0
     let rating4 = reviewObj[4] ? Math.round((reviewObj[4]/amountReviews) * 100) : 0
@@ -310,6 +313,7 @@ const ProductPage = () => {
                         <h2 id='totalReviews'>{amountReviews ? amountReviews : 0} global ratings</h2>
                 </div>
                 <div className='ratings'>
+                    {console.log(reviewObj, amountReviews)}
                     <div className='five'>
                         <h3 id='starTitle'>5 star</h3>
                         <div className='rating5'></div>
@@ -350,24 +354,25 @@ const ProductPage = () => {
             <div className='rightSideReviews'>
                 <div id='topReviews'>Top reviews from the United States</div>
                 <div className='reviewsInfo'>
-                    {console.log("EEEEEEEEEEEEE",  Object.keys(reviews).length)}
+                    {console.log("EEEEEEEEEEEEE",  Object.keys(reviews), reviews)}
                 {!Object.keys(reviews).length && (
                     <h3 id='noReviews'>No reviews for this product.</h3>
                 )}
                 {
                     Object.keys(reviews).map((key,i)=>{
+                        {console.log(key, i, reviews[key])}
                         return (
                             <div className='reviewDetail'>
                                 <div class='userInfo'>
                                     <div className='info'>
                                     <img id='profilePic' src='https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png'></img>
-                                    <h3 id='reviewUser'>{reviews[key][i].username}</h3>
+                                    <h3 id='reviewUser'>{reviews[key].username}</h3>
                                     </div>
                                     <div class='editDiv'>
-                                    {reviews[key][i].reviewer_id === user &&
+                                    {reviews[key].reviewer_id === user &&
                                         <div className='editDelBtns'>
-                                            <NavLink to={'edit-review/' + reviews[key][i].id}>
-                                                <button id={reviews[key][i].id} className='editReviewButton'>Edit Review</button>
+                                            <NavLink to={'edit-review/' + reviews[i].id}>
+                                                <button id={reviews[i].id} className='editReviewButton'>Edit Review</button>
                                             </NavLink>
                                                 {/* <button id='deleteRevBtn' onClick={deleteReview}>Delete Review</button> */}
                                         </div>
@@ -376,20 +381,33 @@ const ProductPage = () => {
                                 </div>
                                 {/* <h1 key={i} id={reviews[key][i].id}>{reviews[key][i].rating}</h1> */}
                                 <div className='starsTitle'>
-                                    <p>&#9733;</p>
-                                    <p>&#9733;</p>
-                                    <p>&#9733;</p>
-                                    <p>&#9733;</p>
-                                    <p>&#9733;</p>
-                                    <h2 key={i} id='reviewTitle'>{reviews[key][i].title}</h2>
+                                    {reviews[key].rating === 5 && (
+                                        <img id='indivReviewStar' src="https://i.ibb.co/23qphks/Screen-Shot-2022-08-21-at-8-26-27-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                                    )}
+                                    {(reviews[key].rating === 4) && (
+                                        <img id='indivReviewStar' src="https://i.ibb.co/dk3ZZbn/Screen-Shot-2022-08-12-at-9-28-57-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                                    )}
+                                    {(reviews[key].rating === 3) && (
+                                        <img id='indivReviewStar' src="https://i.ibb.co/RgTb9MT/Screen-Shot-2022-08-12-at-9-29-12-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                                    )}
+                                    {(reviews[key].rating === 2) && (
+                                        <img id='indivReviewStar' src="https://i.ibb.co/P5Fmjdd/Screen-Shot-2022-08-12-at-9-29-23-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                                    )}
+                                    {(reviews[key].rating === 1) && (
+                                        <img id='indivReviewStar' src="https://i.ibb.co/kgBYWdH/Screen-Shot-2022-08-12-at-9-29-37-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                                    )}
+                                    {(reviews[key].rating === 0) && (
+                                        <img id='indivReviewStar' src="https://i.ibb.co/mFVwGzC/Screen-Shot-2022-08-21-at-8-15-46-PM.png" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                                    )}
+                                    <h2 key={i} id='reviewTitle'>{reviews[key].title}</h2>
                                 </div>
-                                <h3 key={i} id='reviewsDescription'>{reviews[key][i].description}</h3>
-                                {reviews[key][i].reviewer_id === user &&
+                                <h3 key={i} id='reviewsDescription'>{reviews[key].description}</h3>
+                                {reviews[key].reviewer_id === user &&
                                     <div className='editDelBtns'>
                                         {/* <NavLink to={'edit-review/' + reviews[key][i].id}>
                                             <button id='editRevBtn'>Edit Review</button>
                                         </NavLink> */}
-                                            <button id={reviews[key][i].id} className='deleteReviewButton' onClick={deleteReview}>Delete Review</button>
+                                            <button id={reviews[key].id} className='deleteReviewButton' onClick={deleteReview}>Delete Review</button>
                                     </div>
                                 }
                             </div>

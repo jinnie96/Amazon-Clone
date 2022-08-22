@@ -73,7 +73,7 @@ function App() {
           <NewReview/>
           <LinksFooter />
         </ProtectedRoute>
-        <ProtectedRoute path='/sports/edit-review/:id' exact={true} >
+        <ProtectedRoute path='/books/edit-review/:id' exact={true} >
           <NavBar />
           <EditReview/>
           <LinksFooter />
