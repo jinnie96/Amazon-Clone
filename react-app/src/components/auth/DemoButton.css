@@ -1,0 +1,10 @@
+#demoBtnId {
+    cursor: pointer;
+
+}
+
+#demoBtnId:hover {
+    border: solid 1px white;
+    border-radius: 5%;
+    cursor: pointer;
+}

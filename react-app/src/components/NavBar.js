@@ -63,7 +63,7 @@ const NavBar = () => {
     return (
     <nav>
       <div className="navBar">
-        <div>
+        <div className='amazonLogoDiv'>
           <NavLink class='amznLogo' to='/' exact={true} activeClassName='active'>
             <img id="logo" src='https://www.doorwaysva.org/wp-content/uploads/2019/06/amazon-logo.png'></img>
           </NavLink>
@@ -119,21 +119,21 @@ const NavBar = () => {
         )}
         {user && (
           <div className="greeting">
-            <div>
+            <div className='helloUserDiv'>
               <NavLink to='/' exact={true} activeClassName='active' id="navOptions">
                 Hello, {user.username}
               </NavLink>
             </div>
           </div>
         )}
-        <div className="order">
+        {/* <div className="order">
           <NavLink to='/orders' exact={true} activeClassName='active' id="navOptions">
             Returns
           </NavLink>
           <NavLink to='/orders' exact={true} activeClassName='active' id="optionsReturn">
             & Orders
           </NavLink>
-        </div>
+        </div> */}
         <div className="cart">
           <NavLink to='/cart' exact={true} activeClassName='active' id="navOptions">
             Cart

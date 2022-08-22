@@ -11,12 +11,12 @@ function Homepage() {
   const productsArr = []
   const dispatch = useDispatch()
   const productsState = useSelector(state => state.products);
-  const user= useSelector(state => state.session.user.id)
+  const user= useSelector(state => state.session.user)
 
   useEffect(() => {
     async function fetchData() {
         console.log("UUUSSSSERRR", user)
-        dispatch(getCarts(user))
+        if (user) dispatch(getCarts(user.id))
       const data = await dispatch(getAllProducts())
       setProducts(data)
       console.log(((data)))

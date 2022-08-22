@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from '../../store/session';
+import './DemoButton.css'
 
 const DemoButton = () => {
   const dispatch = useDispatch()
@@ -9,7 +10,7 @@ const DemoButton = () => {
     await dispatch(login('demo@aa.io', 'password'))
   };
 
-  return <button onClick={demoUser}>Demo</button>;
+  return <button id='demoBtnId' onClick={demoUser}>Demo</button>;
 };
 
 export default DemoButton;
