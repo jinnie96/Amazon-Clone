@@ -352,7 +352,10 @@ const ProductPage = () => {
             <div className='rightSideReviews'>
                 <div id='topReviews'>Top reviews from the United States</div>
                 <div className='reviewsInfo'>
-                    {console.log("EEEEEEEEEEEEE",  reviews)}
+                    {console.log("EEEEEEEEEEEEE",  Object.keys(reviews).length)}
+                {!Object.keys(reviews).length && (
+                    <h3 id='noReviews'>No reviews for this product.</h3>
+                )}
                 {
                     Object.keys(reviews).map((key,i)=>{
                         return (
