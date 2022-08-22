@@ -26,7 +26,7 @@ nav > div {
 
 .rightSide {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .search {
@@ -134,9 +134,14 @@ input:focus {
 
 }
 
-.delivery:hover, .loginBtn:hover, .signUpBtn:hover, .order:hover, .cart:hover {
+.delivery:hover, .loginBtn:hover, .signUpBtn:hover, .order:hover, .cart:hover, .amazonLogoDiv:hover, .logoutBtn:hover, .helloUserDiv:hover {
     border: solid 1px white;
     border-radius: 5%;
+    cursor: pointer;
+}
+
+.amazonLogoDiv {
+    margin: 4px;
 }
 
 .signUpBtn {
