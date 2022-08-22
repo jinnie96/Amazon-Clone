@@ -371,8 +371,8 @@ const ProductPage = () => {
                                     <div class='editDiv'>
                                     {reviews[key].reviewer_id === user &&
                                         <div className='editDelBtns'>
-                                            <NavLink to={'edit-review/' + reviews[i].id}>
-                                                <button id={reviews[i].id} className='editReviewButton'>Edit Review</button>
+                                            <NavLink to={'edit-review/' + reviews[key].id}>
+                                                <button id={reviews[key].id} className='editReviewButton'>Edit Review</button>
                                             </NavLink>
                                                 {/* <button id='deleteRevBtn' onClick={deleteReview}>Delete Review</button> */}
                                         </div>
