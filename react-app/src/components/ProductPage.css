@@ -34,6 +34,7 @@ html {
 
 #cartAdd {
     background-color: #FFA41D;
+    width: 100%;
 }
 
 #buy {
@@ -350,4 +351,9 @@ html {
 #averageReviewStar {
     height: 20px;
     width: 100px;
+}
+
+#noReviews {
+    font-family: "Amazon Ember",Arial,sans-serif;
+    font-size: 15px;
 }
