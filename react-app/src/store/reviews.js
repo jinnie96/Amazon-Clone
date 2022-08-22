@@ -117,23 +117,24 @@ export default function reviewsReducer(state = initialState, action) {
     switch(action.type) {
         case GET_REVIEWS:
             newState = {}
-            for (const key in action.payload) {
-                console.log(action.payload, key, action.payload[key].length)
+            // for (const key in action.payload) {
+                // console.log(action.payload, key, action.payload[key].length)
                 // for (const keytwo in action.payload[key]) {
                 //     console.log(keytwo, action.payload, action.payload[key][keytwo], action.payload.key.keytwo)
                 // }
-                for (let i = 0; i < action.payload[key].length; i++) {
-                    console.log(action.payload[key][i].id)
-                    newState[action.payload[key][i].id] = action.payload[key]
+                for (let i = 0; i < action.payload.reviews.length; i++) {
+                    console.log(action.payload.reviews[i])
+                    newState[action.payload.reviews[i].id] = action.payload.reviews[i]
                 }
-            }
+            // }
             return newState;
         case DELETE_REVIEW:
             newState = {
                 ...state,
-                'id': action.payload
+                // 'id': action.payload
                 // [action.payload.post.id]: action.payload.post
             };
+            delete newState[action.payload.id]
             return newState;
         case EDIT_REVIEW:
             newState = {

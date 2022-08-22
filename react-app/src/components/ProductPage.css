@@ -357,3 +357,8 @@ html {
     font-family: "Amazon Ember",Arial,sans-serif;
     font-size: 15px;
 }
+
+#indivReviewStar {
+    height: 17px;
+    width: 85px;
+}
