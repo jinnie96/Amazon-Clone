@@ -233,7 +233,7 @@ const ProductPage = () => {
                             {/* <i className="fa-solid fa-plus"></i> */}
                             {fiveBool && (
                             // <h1>5</h1>
-                            <img id='averageReviewStar' src="https://i.ibb.co/JRbbH09/Screen-Shot-2022-08-12-at-9-28-33-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                            <img id='averageReviewStar' src="https://i.ibb.co/23qphks/Screen-Shot-2022-08-21-at-8-26-27-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
                         )}
                         {fourBool && (
                             <img id='averageReviewStar' src="https://i.ibb.co/dk3ZZbn/Screen-Shot-2022-08-12-at-9-28-57-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
@@ -248,8 +248,7 @@ const ProductPage = () => {
                             <img id='averageReviewStar' src="https://i.ibb.co/kgBYWdH/Screen-Shot-2022-08-12-at-9-29-37-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
                         )}
                         {zeroBool && (
-                            <h1>0</h1>
-                            // <img src="https://www.clipartmax.com/png/small/67-676994_4-stars-four-out-of-five-stars.png" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                            <img id='averageReviewStar' src="https://i.ibb.co/mFVwGzC/Screen-Shot-2022-08-21-at-8-15-46-PM.png" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
                         )}
                         </div>
                         <div id='amountRatings'>
@@ -289,7 +288,7 @@ const ProductPage = () => {
                         <span>&#9733;</span> */}
                         {fiveBool && (
                             // <h1>5</h1>
-                            <img id='averageReviewStar' src="https://i.ibb.co/JRbbH09/Screen-Shot-2022-08-12-at-9-28-33-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                            <img id='averageReviewStar' src="https://i.ibb.co/23qphks/Screen-Shot-2022-08-21-at-8-26-27-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
                         )}
                         {fourBool && (
                             <img id='averageReviewStar' src="https://i.ibb.co/dk3ZZbn/Screen-Shot-2022-08-12-at-9-28-57-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
@@ -304,10 +303,9 @@ const ProductPage = () => {
                             <img id='averageReviewStar' src="https://i.ibb.co/kgBYWdH/Screen-Shot-2022-08-12-at-9-29-37-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
                         )}
                         {zeroBool && (
-                            <h1>0</h1>
-                            // <img src="https://www.clipartmax.com/png/small/67-676994_4-stars-four-out-of-five-stars.png" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                            <img id='averageReviewStar' src="https://i.ibb.co/mFVwGzC/Screen-Shot-2022-08-21-at-8-15-46-PM.png" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
                         )}
-                        <h2 id='average'>{averageRating ? averageRating : "N/A"} out of 5</h2>
+                        <h2 id='average'>{averageRating ? averageRating : 0} out of 5</h2>
                     </div>
                         <h2 id='totalReviews'>{amountReviews ? amountReviews : 0} global ratings</h2>
                 </div>
