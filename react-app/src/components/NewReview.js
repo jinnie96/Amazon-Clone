@@ -59,6 +59,7 @@ const NewReview = () => {
         }
     }
 
+    const errors = []
     const setRatingNum = (num) => {
         setRating(num)
         changeStars(num)
@@ -73,7 +74,21 @@ const NewReview = () => {
     }
 
     const submitReview = (e) => {
+
         e.preventDefault();
+        if (!rating && !document.querySelector('#errorString')) {
+            let error = document.createElement('h2')
+            error.innerText = "Please choose a rating"
+            error.id = 'errorString'
+            let errorDiv = document.querySelector('.rating')
+            errorDiv.appendChild(error)
+            // errors.push("Please choose a rating.")
+            console.log(errors)
+            return
+        } else if(!rating) return
+        if (document.querySelector('#errorString')) {
+            document.querySelector('#errorString').remove(7)
+        }
         const form = {
             rating,
             title,
@@ -96,6 +111,11 @@ const NewReview = () => {
                 </div>
             </div>
             <form id='formEdit' onSubmit={submitReview}>
+                {/* <div className='errors'>
+                {errors.map((error, ind) => (
+                    <div key={ind}>{error}</div>
+                ))}
+                </div> */}
                 <div id='editRev'>New Review</div>
                 <div className='picInfo'>
                     <img id='editProductPic'src={product[Object.keys(product)[0]].photourl}></img>
@@ -104,6 +124,10 @@ const NewReview = () => {
                 <hr id='reviewLine'></hr>
                 {/* <hr id='line'></hr> */}
                 <div className='rating' name='rating'>
+                    {console.log(errors)}
+                    {errors.map((error, ind) => (
+                        <div key={ind}>{error}</div>
+                    ))}
                     <h1 id='overall'>Overall rating</h1>
                     <img id='starOne' onClick={() => setRatingNum(1)} src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzgiIGhlaWdodD0iMzUiPjxkZWZzPjxwYXRoIGlkPSJhIiBkPSJNMTkgMGwtNS44NyAxMS41MkwwIDEzLjM3bDkuNSA4Ljk3TDcuMjYgMzUgMTkgMjkuMDIgMzAuNzUgMzVsLTIuMjQtMTIuNjYgOS41LTguOTctMTMuMTMtMS44NXoiLz48L2RlZnM+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48dXNlIGZpbGw9IiNGRkYiIHhsaW5rOmhyZWY9IiNhIi8+PHBhdGggc3Ryb2tlPSIjQTI2QTAwIiBzdHJva2Utb3BhY2l0eT0iLjc1IiBkPSJNMTkgMS4xbC01LjU0IDEwLjg4TDEuMSAxMy43Mmw4Ljk0IDguNDRMNy45MiAzNC4xIDE5IDI4LjQ2bDExLjA4IDUuNjQtMi4xMS0xMS45NCA4Ljk0LTguNDQtMTIuMzYtMS43NEwxOSAxLjF6Ii8+PC9nPjwvc3ZnPg=='></img>
                     <img id='starTwo' onClick={() => setRatingNum(2)} src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzgiIGhlaWdodD0iMzUiPjxkZWZzPjxwYXRoIGlkPSJhIiBkPSJNMTkgMGwtNS44NyAxMS41MkwwIDEzLjM3bDkuNSA4Ljk3TDcuMjYgMzUgMTkgMjkuMDIgMzAuNzUgMzVsLTIuMjQtMTIuNjYgOS41LTguOTctMTMuMTMtMS44NXoiLz48L2RlZnM+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48dXNlIGZpbGw9IiNGRkYiIHhsaW5rOmhyZWY9IiNhIi8+PHBhdGggc3Ryb2tlPSIjQTI2QTAwIiBzdHJva2Utb3BhY2l0eT0iLjc1IiBkPSJNMTkgMS4xbC01LjU0IDEwLjg4TDEuMSAxMy43Mmw4Ljk0IDguNDRMNy45MiAzNC4xIDE5IDI4LjQ2bDExLjA4IDUuNjQtMi4xMS0xMS45NCA4Ljk0LTguNDQtMTIuMzYtMS43NEwxOSAxLjF6Ii8+PC9nPjwvc3ZnPg=='></img>
@@ -113,7 +137,7 @@ const NewReview = () => {
                 </div>
                 <hr id='reviewLine'></hr>
                 <div className='headline'>
-                    <h1 id='headline'>Edit headline</h1>
+                    <h1 id='headline'>Headline</h1>
                     <input
                     type='text'
                     name='title'
@@ -121,11 +145,12 @@ const NewReview = () => {
                     value={title}
                     onChange={updateHeadline}
                     id='headlineInput'
+                    required
                     ></input>
                 </div>
                 {/* <hr></hr> */}
                 <div className='details'>
-                    <h1 id='editReview'>Edit written review</h1>
+                    <h1 id='editReview'>Written review</h1>
                     <input
                         type='text'
                         name='description'
@@ -133,6 +158,7 @@ const NewReview = () => {
                         value={description}
                         onChange={updateDetails}
                         id='detailsInput'
+                        required
                     ></input>
                 </div>
                 <div className='submitEditDiv'>

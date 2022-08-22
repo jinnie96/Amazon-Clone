@@ -136,6 +136,7 @@ const EditReview = () => {
                     value={title}
                     onChange={updateHeadline}
                     id='headlineInput'
+                    required
                     ></input>
                 </div>
                 {/* <hr></hr> */}
@@ -148,6 +149,7 @@ const EditReview = () => {
                         value={description}
                         onChange={updateDetails}
                         id='detailsInput'
+                        required
                     ></input>
                 </div>
                 <div className='submitEditDiv'>

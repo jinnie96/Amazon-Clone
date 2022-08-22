@@ -105,3 +105,8 @@
 #reviewLine {
     width: 100%;
 }
+
+#errorString {
+    font-size: 14px;
+    color:red ;
+}
