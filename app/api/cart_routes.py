@@ -16,7 +16,7 @@ def getCart(id):
     total = 0
     for cart in carts:
         product = Product.query.filter(Product.id == cart.product_id).first()
-        print(product.to_dict(), "..........")
+        print(product.to_dict()['id'], "..........")
         temp = {}
         temp['id'] = (product.to_dict()['id'])
         temp['name'] = (product.to_dict()['name'])
@@ -29,8 +29,9 @@ def getCart(id):
         print(product.to_dict()['price'], "---------------------")
         total += (cart.to_dict()['quantity'] * product.to_dict()['price'])
         print('totes', total)
-        productsObj['obj'] = temp
-    print(count, total, productsObj, "TOTALLLLL")
+        productsObj[str(product.to_dict()['id'])] = temp
+    print(productsObj, "TOTALLLLL")
+    print(total, 'TOTES')
     productsObj['total'] = str(total)
     productsObj['count'] = count
     return productsObj
