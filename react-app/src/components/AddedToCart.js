@@ -23,7 +23,7 @@ const AddedToCart = () => {
                 <h2 id='added'><b>Added To Cart</b></h2>
             </div>
             <div className='subTotal'>
-                <h3><b>Cart Subtotal: ${cart.total}</b></h3>
+                <h3><b>Cart Subtotal:&nbsp;${cart.total}</b></h3>
                 <NavLink to='/cart'><button id='goToCart'>Go to Cart</button></NavLink>
             </div>
             {/* <div className='thankYou'>
