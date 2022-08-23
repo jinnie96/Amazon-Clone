@@ -6,7 +6,7 @@ import './SignUpForm.css'
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
-  const [fullName, setFullName] = useState([])
+  const [fullname, setFullName] = useState([])
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -16,11 +16,15 @@ const SignUpForm = () => {
 
   const onSignUp = async (e) => {
     e.preventDefault();
+    console.log("in")
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password));
+      const data = await dispatch(signUp(fullname, username, email, password));
+      console.log(data, "SIGNUPDATA")
       if (data) {
         setErrors(data)
       }
+    } else {
+      setErrors(['Passwords must match.'])
     }
   };
 
@@ -63,16 +67,16 @@ const SignUpForm = () => {
           <form onSubmit={onSignUp}>
             <div>
               {errors.map((error, ind) => (
-                <div key={ind}>{error}</div>
+                <div id='errorMsg' key={ind}>{error}</div>
               ))}
             </div>
             <div className='nameInput'>
               <label id='nameLabel'><b>Your name</b></label>
               <input
                 type='text'
-                name='fullName'
+                name='fullname'
                 onChange={updateFullName}
-                value={fullName}
+                value={fullname}
                 placeholder='First and last name'
                 id='nameInputTag'
               ></input>

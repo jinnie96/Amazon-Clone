@@ -144,3 +144,8 @@ hr {
     cursor: pointer;
     text-decoration: none;
 }
+
+#errorMsg {
+    color: red;
+    
+}
