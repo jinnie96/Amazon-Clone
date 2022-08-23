@@ -152,6 +152,10 @@ hr {
     opacity: 90%;
 }
 
+#loginErrors {
+    color: red;
+}
+
 #conditionSpan, #privacySpan {
     color:#5B95D2;
     cursor: pointer;
