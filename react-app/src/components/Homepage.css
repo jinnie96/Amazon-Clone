@@ -66,3 +66,29 @@
     width: 100px;
     cursor: pointer;
 }
+
+#exploreBooks {
+    font-size: 36px;
+    color: grey;
+}
+
+.categoryList img, .categoryListTwo img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.categoryList, .categoryListTwo {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+#categoryName {
+    font-size: 12px;
+}
+
+.fantasyName, .sciFiName, .mysteryName, .horrorName, .biographyName, .childrensName, .mangaName, .litFictionName, .historyName, .cookbookName, .actionName, .poetryName {
+    display: flex;
+    justify-content: center;
+}
