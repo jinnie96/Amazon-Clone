@@ -121,3 +121,12 @@
     border-radius: 50%; */
     cursor: pointer;
 }
+
+#navLink {
+    text-decoration: none;
+}
+
+#navLink:hover {
+    text-decoration: underline;
+    text-decoration-color: black;
+}
