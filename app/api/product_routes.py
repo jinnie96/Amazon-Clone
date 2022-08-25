@@ -23,7 +23,7 @@ def products():
         temp['author'] = (product.to_dict()['author'])
         print(product.to_dict()['id'])
         print(temp, "@@@@")
-        productsObj['obj'] = temp
+        productsObj[product.to_dict()['id']] = temp
         print(productsObj, "UPDATED")
     print(productsObj)
     return productsObj
