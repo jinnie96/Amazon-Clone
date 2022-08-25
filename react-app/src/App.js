@@ -17,6 +17,7 @@ import { authenticate } from './store/session';
 import OrderConfirmation from './components/OrderConfirmation';
 import LinksFooter from './components/LinksFooter';
 import AddedToCart from './components/AddedToCart';
+import CategoryPage from './components/CategoryPage'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -86,6 +87,11 @@ function App() {
         <ProtectedRoute path='/added' exact={true} >
           <NavBar />
           <AddedToCart/>
+          <LinksFooter />
+        </ProtectedRoute>
+        <ProtectedRoute path='/category/:str' exact={true} >
+          <NavBar />
+          <CategoryPage/>
           <LinksFooter />
         </ProtectedRoute>
 

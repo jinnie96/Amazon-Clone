@@ -62,7 +62,62 @@
 }
 
 .sportsPics *, .booksPics *, .gamesPics *, .cellPhonePics *, .computersPics *, .clothingPics * {
+    height: 150px;
+    width: 100px;
+    cursor: pointer;
+}
+
+#exploreBooks {
+    font-size: 36px;
+    color: grey;
+}
+
+.categoryList img, .categoryListTwo img {
     height: 100px;
-    width: 110px;
+    width: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+
+.categoryList, .categoryListTwo {
+    display: flex;
+    justify-content: space-around;
+    /* cursor:pointer; */
+}
+
+#categoryName {
+    font-size: 12px;
+}
+
+.fantasyName, .sciFiName, .mysteryName, .horrorName, .biographyName, .childrensName, .mangaName, .litFictionName, .historyName, .cookbookName, .actionName, .poetryName {
+    display: flex;
+    justify-content: center;
+    /* cursor: pointer; */
+}
+
+.fantasyName > h3, .sciFiName > h3, .mysteryName > h3, .horrorName > h3, .biographyName > h3, .childrensName > h3, .mangaName > h3, .litFictionName > h3, .historyName > h3, .cookbookName > h3, .actionName > h3, .poetryName > h3 {
+    /* display: flex;
+    justify-content: center; */
+    color: black;
+    text-decoration: none;
+    /* cursor: pointer; */
+}
+
+
+.fantasyDiv, .sciFiDiv, .mysteryDiv, .horrorDiv, .biographyDiv, .childrensDiv, .mangaDiv, .litFictionDiv, .historyDiv, .cookbookDiv, .actionDiv, .poetryDiv {
+    cursor:pointer;
+    /* width: 500px; */
+}
+
+/* .fantasyDiv:hover {
+    cursor: pointer;
+} */
+
+.categoryList > div, .categoryListTwo > div {
+    /* height: 100px;
+    width: 100px;
+    border-radius: 50%; */
     cursor: pointer;
 }
