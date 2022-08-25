@@ -55,7 +55,7 @@ function Homepage() {
             {/* <img id="homePic" src ="https://www.thebanner.org/sites/default/files/styles/article_detail_header/public/TIN-332%20Books%20from_large.jpg?itok=7QRVhctV"></img> */}
         </div>
         <div className='categoryList'>
-            <NavLink to='/category/fantasy'>
+            <NavLink to='/category/Fantasy'>
                 <div className='fantasyDiv>'>
                     <img src='https://i.ibb.co/WVbyPQF/imageedit-2-4521847632.jpg'></img>
                     <div className='fantasyName'>
@@ -64,13 +64,13 @@ function Homepage() {
                     </div>
                 </div>
             </NavLink>
-            <NavLink to='/category/scifi'>
+            <NavLink to='/category/Sci-Fi'>
                 <div className='sciFiDiv>'>
                     <img src='https://thumbs.dreamstime.com/z/book-icon-concept-science-fiction-genre-open-literary-81641039.jpg'></img>
                     <div className='sciFiName'><h3 id='categoryName'>Science Fiction</h3></div>
                 </div>
             </NavLink>
-            <NavLink to='/category/mystery'>
+            <NavLink to='/category/Mystery'>
                 <div className='mysteryDiv>'>
                     <img src='https://48b6yd3iigex2rv7g41h5sts-wpengine.netdna-ssl.com/wp-content/uploads/2020/03/what-is-a-mystery.jpg'></img>
                     <div className='mysteryName'>
@@ -79,7 +79,7 @@ function Homepage() {
                     </div>
                 </div>
             </NavLink>
-            <NavLink to='/category/horror'>
+            <NavLink to='/category/Horror'>
                 <div className='horrorDiv>'>
                     <img src='https://puzzleboxhorror.com/wp-content/uploads/2020/07/horror-book-and-skull-scaled.jpeg'></img>
                     <div className='horrorName'>
@@ -88,7 +88,7 @@ function Homepage() {
                     </div>
                 </div>
             </NavLink>
-            <NavLink to='/category/biography'>
+            <NavLink to='/category/Biography'>
                 <div className='biographyDiv>'>
                     <img src='https://image.shutterstock.com/image-illustration/biography-book-260nw-176418089.jpg'></img>
                     <div className='biographyName'>
@@ -97,7 +97,7 @@ function Homepage() {
                     </div>
                 </div>
             </NavLink>
-            <NavLink to='/category/childrens'>
+            <NavLink to='/category/Childrens'>
                 <div className='childrensDiv>'>
                     <img src='https://www.mrsjudyaraujo.com/wp-content/uploads/vectorstock_21648326-289x300.jpg'></img>
                     <div className='childrensName'>
@@ -109,7 +109,7 @@ function Homepage() {
         </div>
 
         <div className='categoryListTwo'>
-            <NavLink to='/category/manga'>
+            <NavLink to='/category/Manga'>
                 <div className='mangaDiv>'>
                     <img src='https://images.saymedia-content.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:eco%2Cw_1200/MTg2OTMwMTMxNDAxNDUxNDA4/5-reasons-l-knew-light-was-kira-in-death-note.jpg'></img>
                     <div className='mangaName'>
@@ -118,7 +118,7 @@ function Homepage() {
                     </div>
                 </div>
             </NavLink>
-            <NavLink to='/category/literary-fiction'>
+            <NavLink to='/category/Literary-Fiction'>
                 <div className='litFictionDiv>'>
                     <img src='https://s26162.pcdn.co/wp-content/uploads/2020/12/Fiction-2020.png'></img>
                     <div className='litFictionName'>
@@ -127,7 +127,7 @@ function Homepage() {
                     </div>
                 </div>
             </NavLink>
-            <NavLink to='/category/history'>
+            <NavLink to='/category/History'>
                 <div className='historyDiv>'>
                     <img src='http://cdn2.mhpbooks.com/2016/01/HistoryBook.gif'></img>
                     <div className='historyName'>
@@ -136,7 +136,7 @@ function Homepage() {
                     </div>
                 </div>
             </NavLink>
-            <NavLink to='/category/cookbooks'>
+            <NavLink to='/category/Cookbooks'>
                 <div className='cookbookDiv>'>
                     <img src='https://img.freepik.com/premium-vector/cartoon-little-girl-cooking-making-cake_29190-7102.jpg?w=2000'></img>
                     <div className='cookbookName'>
@@ -145,7 +145,7 @@ function Homepage() {
                     </div>
                 </div>
             </NavLink>
-            <NavLink to='/category/action'>
+            <NavLink to='/category/Action'>
                 <div className='actionDiv>'>
                     <img src='https://img.freepik.com/free-vector/guys-playing-knights-fighting-cartoon-illustration_74855-14394.jpg?w=2000'></img>
                     <div className='actionName'>
@@ -154,7 +154,7 @@ function Homepage() {
                     </div>
                 </div>
             </NavLink>
-            <NavLink to='/category/poetry'>
+            <NavLink to='/category/Poetry'>
                 <div className='poetryDiv>'>
                     <img src='https://self-publishingschool.com/wp-content/uploads/2019/05/how-to-write-poetry.jpg'></img>
                     <div className='poetryName'>
