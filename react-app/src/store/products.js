@@ -60,7 +60,7 @@ export default function productsReducer(state = initialState, action) {
         case GET_ONE_PRODUCT:
             newState = {
                 ...state,
-                'id': action.payload
+                // 'id': action.payload
                 // [action.payload.post.id]: action.payload.post
             };
             return newState;

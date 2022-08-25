@@ -44,9 +44,25 @@ const CategoryPage = () => {
             })
             } */}
             {Object.keys(products).map((oneKey, i) => (
-                console.log(products[oneKey].category.includes(window.location.pathname.slice(10).toLowerCase()))
                 // {products[oneKey].category.includes(window.location.pathname.slice(10).toLowerCase()) && (
-                //     <div key={i}>{products[oneKey].name}</div>
+                    // console.log(products[oneKey])
+
+                    <NavLink className='productGenreBox' to={'/books/' + oneKey}>
+                        <div key={i}>
+                            <div className='bookPic'>
+                                <img id='photoSize' src={products[oneKey].photourl}></img>
+                            </div>
+                            <div className='bookPrice'>
+                                ${products[oneKey].price}
+                            </div>
+                            <div className='bookTitle'>
+                                {products[oneKey].name}
+                            </div>
+                            <div className='bookAuth'>
+                                by {products[oneKey].author}
+                            </div>
+                        </div>
+                    </NavLink>
 
                 // )}
             ))}
