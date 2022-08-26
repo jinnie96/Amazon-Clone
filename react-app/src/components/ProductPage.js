@@ -17,7 +17,7 @@ const ProductPage = () => {
         dispatch(getAllReviews(id))
         // getStarsForReview()
     }, [dispatch, id])
-    const product = useSelector(state => state.products.id)
+    const product = useSelector(state => state.products)
     console.log(product)
     if (product) {
         console.log("jjjjjj", product[Object.keys(product)[0]])
