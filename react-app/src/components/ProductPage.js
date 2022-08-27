@@ -7,6 +7,7 @@ import './ProductPage.css'
 import { getSingleProduct } from '../store/products';
 import { addtoCart, getCarts } from '../store/carts';
 import { getAllReviews, deleteOneReview } from '../store/reviews';
+import SideBar from './SideBar';
 
 const ProductPage = () => {
     const {id} = useParams()
@@ -220,6 +221,7 @@ const ProductPage = () => {
     return (
         <>
         {console.log("productobj", productObj)}
+        <SideBar />
         {productObj &&
             <div className='product'>
                 <div className="image">
