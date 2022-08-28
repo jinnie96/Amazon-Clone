@@ -10,10 +10,18 @@
     margin-left: 30px;
     cursor: pointer;
     font-family: "Amazon Ember",Arial,sans-serif;
+    color: black;
+    text-decoration: none;
+}
+
+.sideBarList h3:hover, .dealsList h3:hover {
+    color: #C35600;
+    text-decoration: none;
+
 }
 
 .sideBar {
-    width: 35%;
+    /* width: 35%; */
     margin-top: 10px;
     border-right: 2px solid #D3D3D3;
     border-top: 2px solid #D3D3D3;
@@ -25,5 +33,26 @@
 }
 
 .fourplus, .threeplus, .twoplus, .oneplus {
+    display: flex;
+    align-items: center;
     cursor: pointer;
+}
+
+.fourplus:hover, .threeplus:hover, .twoplus:hover, .oneplus:hover {
+    color: #C35600;
+}
+
+#andUp {
+    font-size: 12px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    margin-left: 3px;
+}
+
+#navLink {
+    text-decoration: none;
+}
+
+#navLink:hover {
+    text-decoration: none;
+    /* text-decoration-color: black; */
 }
