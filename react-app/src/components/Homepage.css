@@ -130,3 +130,12 @@
     text-decoration: underline;
     text-decoration-color: black;
 }
+
+.bodyPage {
+    display: flex;
+}
+
+.nextToSide {
+    display: flex;
+    flex-direction: column;
+}
