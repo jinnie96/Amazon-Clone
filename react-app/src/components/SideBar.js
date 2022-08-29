@@ -42,10 +42,18 @@ const SideBar = () => {
             <div className='byReviewRating'>
                 <h1 id='customerRating'>Avg. Customer Rating</h1>
                 <div className='ratingsList'>
-                    <div className='fourplus'><img id='averageReviewStar' src="https://i.ibb.co/dk3ZZbn/Screen-Shot-2022-08-12-at-9-28-57-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img><h2 id='andUp'>& up</h2></div>
-                    <div className='threeplus'><img id='averageReviewStar' src="https://i.ibb.co/RgTb9MT/Screen-Shot-2022-08-12-at-9-29-12-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img><h2 id='andUp'>& up</h2></div>
-                    <div className='twoplus'><img id='averageReviewStar' src="https://i.ibb.co/P5Fmjdd/Screen-Shot-2022-08-12-at-9-29-23-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img><h2 id='andUp'>& up</h2></div>
-                    <div className='oneplus'><img id='averageReviewStar' src="https://i.ibb.co/kgBYWdH/Screen-Shot-2022-08-12-at-9-29-37-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img><h2 id='andUp'>& up</h2></div>
+                    <NavLink id='navLink' to ='/byRating/4'>
+                        <div className='fourplus'><img id='averageReviewStar' src="https://i.ibb.co/dk3ZZbn/Screen-Shot-2022-08-12-at-9-28-57-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img><h2 id='andUp'>& up</h2></div>
+                    </NavLink>
+                    <NavLink id='navLink' to ='/byRating/3'>
+                        <div className='threeplus'><img id='averageReviewStar' src="https://i.ibb.co/RgTb9MT/Screen-Shot-2022-08-12-at-9-29-12-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img><h2 id='andUp'>& up</h2></div>
+                    </NavLink>
+                    <NavLink id='navLink' to='/byRating/2'>
+                        <div className='twoplus'><img id='averageReviewStar' src="https://i.ibb.co/P5Fmjdd/Screen-Shot-2022-08-12-at-9-29-23-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img><h2 id='andUp'>& up</h2></div>
+                    </NavLink>
+                    <NavLink id='navLink' to='/byRating/1'>
+                        <div className='oneplus'><img id='averageReviewStar' src="https://i.ibb.co/kgBYWdH/Screen-Shot-2022-08-12-at-9-29-37-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img><h2 id='andUp'>& up</h2></div>
+                    </NavLink>
                 </div>
             </div>
         </div>
