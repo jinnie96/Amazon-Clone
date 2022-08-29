@@ -19,7 +19,7 @@ import LinksFooter from './components/LinksFooter';
 import AddedToCart from './components/AddedToCart';
 import CategoryPage from './components/CategoryPage'
 import BestDeals from './components/BestDeals';
-
+import ByReview from './components/ByReview';
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
@@ -98,6 +98,11 @@ function App() {
         <ProtectedRoute path='/deals' exact={true} >
           <NavBar />
           <BestDeals />
+          <LinksFooter />
+        </ProtectedRoute>
+        <ProtectedRoute path='/byRating/:id' exact={true} >
+          <NavBar />
+          <ByReview />
           <LinksFooter />
         </ProtectedRoute>
       </Switch>
