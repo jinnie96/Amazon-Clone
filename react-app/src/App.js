@@ -18,6 +18,7 @@ import OrderConfirmation from './components/OrderConfirmation';
 import LinksFooter from './components/LinksFooter';
 import AddedToCart from './components/AddedToCart';
 import CategoryPage from './components/CategoryPage'
+import BestDeals from './components/BestDeals';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -94,7 +95,11 @@ function App() {
           <CategoryPage/>
           <LinksFooter />
         </ProtectedRoute>
-
+        <ProtectedRoute path='/deals' exact={true} >
+          <NavBar />
+          <BestDeals />
+          <LinksFooter />
+        </ProtectedRoute>
       </Switch>
     </BrowserRouter>
   );

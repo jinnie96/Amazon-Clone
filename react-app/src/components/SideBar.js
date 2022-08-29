@@ -34,7 +34,10 @@ const SideBar = () => {
             </div>
             <div className='bestDealsDiv'>
                 <h1 id='bestdeals'>Deals</h1>
+                <NavLink id='navLink' to='/deals'>
                 <div className='dealsList'><h3>Shop the best deals</h3></div>
+                </NavLink>
+
             </div>
             <div className='byReviewRating'>
                 <h1 id='customerRating'>Avg. Customer Rating</h1>
