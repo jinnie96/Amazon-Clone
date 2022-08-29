@@ -74,12 +74,12 @@ const NavBar = () => {
             <div className='deliveryIcon'>
               <img id='locationIcon' src='https://kronospan-express.com/public/krono/img/icons/placeholder_blk.png'></img>
             </div>
-            {user && (
+            {/* {user && (
             <div class='deliveryName'>
               Deliver to {user.username}
             </div>
 
-            )}
+            )} */}
           {/* </div> */}
           {/* </div> */}
         </div>

@@ -36,7 +36,7 @@ const ByReview = () => {
             <div className='dealWholePage'>
                 {/* <h1 id='genreType'>{window.location.pathname.slice(10)}</h1> */}
                 <div>
-                    <h2 id='bestSellers'>Shop best value deals</h2>
+                    <h2 id='bestSellers'>Shop books with greater than {window.location.pathname.slice(10)} star rating</h2>
 
                 </div>
                 <div className='categoryBooks'>
