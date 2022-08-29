@@ -21,6 +21,7 @@ const SideBar = () => {
                 <div className='sideBarList'>
                     <NavLink id='navLink' to='/category/Fantasy'><h3>Fantasy</h3></NavLink>
                     <NavLink id='navLink' to='/category/Sci-Fi'><h3>Science Fiction</h3></NavLink>
+                    <NavLink id='navLink' to='/category/Mystery'><h3>Mystery</h3></NavLink>
                     <NavLink id='navLink' to='/category/Horror'><h3>Horror</h3></NavLink>
                     <NavLink id='navLink' to='/category/Biography'><h3>Biography</h3></NavLink>
                     <NavLink id='navLink' to='/category/Children'><h3>Children</h3></NavLink>
