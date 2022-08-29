@@ -62,6 +62,27 @@ const BestDeals = () => {
                                         <div className='bookAuth'>
                                             by {oneKey.author}
                                         </div>
+                                        <div className='bookRatings'>
+                                            {oneKey.rating >= 4.5 && (
+                                                <img id='averageReviewStar' src="https://i.ibb.co/23qphks/Screen-Shot-2022-08-21-at-8-26-27-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                                            )}
+                                            {(oneKey.rating >= 3.5 && oneKey.rating < 4.5) && (
+                                                <img id='averageReviewStar' src="https://i.ibb.co/dk3ZZbn/Screen-Shot-2022-08-12-at-9-28-57-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                                            )}
+                                            {(oneKey.rating >= 2.5 && oneKey.rating < 3.5) && (
+                                                <img id='averageReviewStar' src="https://i.ibb.co/RgTb9MT/Screen-Shot-2022-08-12-at-9-29-12-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                                            )}
+                                            {(oneKey.rating >= 1.5 && oneKey.rating < 2.5) && (
+                                                <img id='averageReviewStar' src="https://i.ibb.co/P5Fmjdd/Screen-Shot-2022-08-12-at-9-29-23-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                                            )}
+                                            {(oneKey.rating >= .5 && oneKey.rating < 1.5) && (
+                                                <img id='averageReviewStar' src="https://i.ibb.co/kgBYWdH/Screen-Shot-2022-08-12-at-9-29-37-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                                            )}
+                                            {(oneKey.rating < .5 || !oneKey.rating) && (
+                                                <img id='averageReviewStar' src="https://i.ibb.co/mFVwGzC/Screen-Shot-2022-08-21-at-8-15-46-PM.png" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                                            )}
+                                        </div>
+
                                     </div>
                                 </NavLink>
                             // </div>
