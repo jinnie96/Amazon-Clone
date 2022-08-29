@@ -237,9 +237,7 @@ const ProductPage = () => {
                             </div>
                             <div className='ratingStars'>
                                 <div className='stars'>
-                                    {/* <i className="fa-solid fa-plus"></i> */}
-                                    {fiveBool && (
-                                    // <h1>5</h1>
+                                {fiveBool && (
                                     <img id='averageReviewStar' src="https://i.ibb.co/23qphks/Screen-Shot-2022-08-21-at-8-26-27-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
                                 )}
                                 {fourBool && (
