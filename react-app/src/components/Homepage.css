@@ -10,9 +10,9 @@
 
 .banner {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-content: center;
-    background: linear-gradient(rgba(251,182,144,1) 0%, rgba(255,255,255,1) 100%);
+    /* background: linear-gradient(rgba(251,182,144,1) 0%, rgba(255,255,255,1) 100%); */
 }
 
 .categoryTitle {
@@ -69,7 +69,7 @@
 
 #exploreBooks {
     font-size: 36px;
-    color: grey;
+    color: black;
 }
 
 .categoryList img, .categoryListTwo img {
@@ -84,6 +84,7 @@
 .categoryList, .categoryListTwo {
     display: flex;
     justify-content: space-around;
+    border-left: solid 2px #D3D3D3;
     /* cursor:pointer; */
 }
 
@@ -138,4 +139,7 @@
 .nextToSide {
     display: flex;
     flex-direction: column;
+    margin-left: 20px;
+    /* background-color: grey; */
+    /* border-left: solid 1px black; */
 }

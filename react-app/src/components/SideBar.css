@@ -22,7 +22,9 @@
 
 .sideBar {
     /* width: 35%; */
+    min-width: 200px;
     margin-top: 10px;
+    margin-left: 10px;
     border-right: 2px solid #D3D3D3;
     border-top: 2px solid #D3D3D3;
 
@@ -51,7 +53,7 @@
 #navLink {
     text-decoration: none;
     color: black;
-    
+
 }
 
 #navLink:hover {

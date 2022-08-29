@@ -56,7 +56,7 @@ function Homepage() {
         <div className='nextToSide'>
 
             <div className='banner'>
-                <h3 id='exploreBooks'>Explore Books</h3>
+                <h3 id='exploreBooks'>Explore Books by Category</h3>
                 {/* <img id="homePic" src ="https://www.thebanner.org/sites/default/files/styles/article_detail_header/public/TIN-332%20Books%20from_large.jpg?itok=7QRVhctV"></img> */}
             </div>
             <div className='categoryList'>
