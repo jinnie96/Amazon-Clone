@@ -362,3 +362,7 @@ html {
     height: 17px;
     width: 85px;
 }
+
+.wholeProdPage {
+    display: flex;
+}

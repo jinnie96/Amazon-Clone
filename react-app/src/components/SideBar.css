@@ -50,6 +50,8 @@
 
 #navLink {
     text-decoration: none;
+    color: black;
+    
 }
 
 #navLink:hover {
