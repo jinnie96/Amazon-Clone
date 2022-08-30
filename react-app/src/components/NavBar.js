@@ -22,7 +22,7 @@ const NavBar = () => {
     }
     setSearchedTerms([])
     console.log(searchedTerms, "NNN")
-    console.log(term, "LLL")
+    console.log((term), "LLL")
     const response = await fetch(`api/products/search/${term}`)
     if (response.ok) {
       let arr = []
@@ -93,7 +93,7 @@ const NavBar = () => {
           (searchedTerms.length > 0 && searchClicked) && (
           <div className='searchResults'>
             {searchedTerms.map(term => (
-                <NavLink id='term' to={`/sports/${term[0]}`}>
+                <NavLink id='term' to={`/books/${term[0]}`}>
                     {term[1]}
                 </NavLink>
         ))}
