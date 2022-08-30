@@ -6,7 +6,7 @@ const EDIT_CART = 'carts/EDIT_CART'
 
 // ------------------- Action creators ------------------- //
 const getCart = cart => ({
-    // console.log(cart)
+    // // console.log(cart)
     type:GET_CART,
     payload: cart
 })
@@ -28,11 +28,11 @@ const addCart = id => ({
 
 // ------------------- Thunk creators ------------------- //
 export const getCarts = (id) => async dispatch => {
-    console.log(id, "YO")
+    // console.log(id, "YO")
     const response = await fetch (`/api/carts/${id}`)
     if (response.ok) {
         const data = await response.json();
-        console.log("DATA", data)
+        // console.log("DATA", data)
         dispatch(getCart(data));
         if (data.errors) {
             return;
@@ -43,15 +43,15 @@ export const getCarts = (id) => async dispatch => {
 }
 
 export const deleteCarts = (productId) => async (dispatch) => {
-    console.log("INSIDE", productId)
+    // console.log("INSIDE", productId)
     // window.location.href = `/cart`
     const response = await fetch(`/api/carts/${productId}`, {
         method: 'DELETE',
     })
-    console.log(response, "RES")
+    // console.log(response, "RES")
     if (response.ok) {
         const data = await response.json();
-        console.log("DATA", data)
+        // console.log("DATA", data)
         if (data.errors) {
             return;
         };
@@ -62,15 +62,15 @@ export const deleteCarts = (productId) => async (dispatch) => {
 };
 
 export const deleteAllCart = (userId) => async (dispatch) => {
-    console.log("INSIDE", userId)
+    // console.log("INSIDE", userId)
     // window.location.href = `/cart`
     const response = await fetch(`/api/carts/all/${userId}`, {
         method: 'DELETE',
     })
-    console.log(response, "RES")
+    // console.log(response, "RES")
     if (response.ok) {
         const data = await response.json();
-        console.log("DATA", data)
+        // console.log("DATA", data)
         if (data.errors) {
             return;
         };
@@ -81,7 +81,7 @@ export const deleteAllCart = (userId) => async (dispatch) => {
 };
 
 export const editCartQuantity = (quantity, id) => async dispatch => {
-    console.log(quantity, id, "HEH")
+    // console.log(quantity, id, "HEH")
     const response = await fetch(`api/carts/edit/${id}`, {
         method: 'PUT',
         headers: {
@@ -93,20 +93,20 @@ export const editCartQuantity = (quantity, id) => async dispatch => {
     })
     if (response.ok) {
         const data=await response.json()
-        console.log("EDITCARTDATA", data)
+        // console.log("EDITCARTDATA", data)
         dispatch(editCart(data))
     }
 }
 
 export const addtoCart = (id) => async dispatch => {
-    console.log("HEYHEY")
+    // console.log("HEYHEY")
     const response = await fetch(`/api/carts/${id}`, {
         method: 'POST',
         body: id
     })
     if (response.ok) {
         const data = await response.json();
-        console.log("ADDED", data)
+        // console.log("ADDED", data)
         if (data.errors) {
             return;
         };
@@ -120,14 +120,14 @@ export const addtoCart = (id) => async dispatch => {
 const initialState = {}
 
 export default function cartsReducer(state = initialState, action) {
-    console.log("CARTSREDICER", action.payload, action.type, state)
-    // console.log(action.payload['id'])
+    // console.log("CARTSREDICER", action.payload, action.type, state)
+    // // console.log(action.payload['id'])
     let newState;
     switch(action.type) {
         case GET_CART:
             newState = { ...state }
             for (const key in action.payload) {
-                console.log(key)
+                // console.log(key)
                 if (action.payload[key].id) newState[action.payload[key].id] = action.payload[key]
                 // else (newState[action.payload[key]] = action.payload[key])
             }
@@ -141,10 +141,10 @@ export default function cartsReducer(state = initialState, action) {
                 // [action.payload.post.id]: action.payload.post
             };
             for (const key in newState) {
-                console.log(".....", key, !(key === 'count'), !(key === 'total'))
+                // console.log(".....", key, !(key === 'count'), !(key === 'total'))
                 delete newState[key]
                 // if (!(key === 'count') || !(key === 'total')) {
-                //     console.log(newState[key])
+                //     // console.log(newState[key])
                 // }
             }
             return newState;

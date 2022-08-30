@@ -10,55 +10,60 @@ import User from './User';
 
 const NavBar = () => {
   const user = useSelector(state => state.session.user)
-  console.log(user)
+  // console.log(user)
 
-  const [searchTerm, setSearchTerm] = useState()
+  const [searchTerm, setSearchTerm] = useState('')
   const [searchedTerms, setSearchedTerms] = useState([])
   const [searchClicked, setSearchClicked] = useState(false)
+
+  const domain = window.location.origin
   const getSearchList = async(term) => {
     if (!term) {
       setSearchedTerms([])
       return
     }
     setSearchedTerms([])
-    console.log(searchedTerms, "NNN")
-    console.log((term), "LLL")
-    const response = await fetch(`api/products/search/${term}`)
+    debugger
+    // console.log(searchedTerms, "NNN")
+    // console.log((term), "LLL")
+    const response = await fetch(domain + `/api/products/search/${term}`)
     if (response.ok) {
       let arr = []
       const data = await response.json()
-      console.log("SEARCHDATA", data)
+      debugger
+      // console.log("SEARCHDATA", data)
       // setSearchedTerms(data)
       for (const key in data) {
-        console.log([data[key].id, data[key].name])
+        // console.log([data[key].id, data[key].name])
         // setSearchedTerms(searchedTerms.concat(searchTerm))
         // searchedTerms.push([data[key].id, data[key].name])
         setSearchedTerms(arr => [...arr, [data[key].id, data[key].name]])
-        console.log(searchedTerms, "zzz")
+        // console.log(searchedTerms, "zzz")
       }
-      console.log(arr)
+      // console.log(arr)
       // setSearchedTerms(arr)
-      console.log("SEADATA", searchedTerms)
+      // console.log("SEADATA", searchedTerms)
     }
 
   }
   const updateSearch = async(e) => {
-    console.log(e.target.value)
+    // console.log(e.target.value)
+    // debugger
     setSearchTerm(e.target.value)
-    console.log(searchTerm, "HHH")
+    // console.log(searchTerm, "HHH")
     getSearchList(e.target.value)
   }
-  console.log("LINE", searchedTerms)
+  // console.log("LINE", searchedTerms)
 
   // let searchClicked = false
   window.addEventListener('click', function(event){
-    console.log(searchClicked, event.target.className === 'search');
+    // console.log(searchClicked, event.target.className === 'search');
     if (event.target.className === 'search') {
       setSearchClicked(true)
     } else {
       setSearchClicked(false)
     }
-    console.log(searchClicked, "CLICKS")
+    // console.log(searchClicked, "CLICKS")
   });
     return (
     <nav>
@@ -88,7 +93,6 @@ const NavBar = () => {
           <input className="search" value={searchTerm} onChange={updateSearch}></input>
           <img id="searchBtn" src="https://i.ibb.co/5Wy8tZH/b96782d0ab0ea492dabcf4a0f00698d2-removebg-preview.jpg"></img>
         </div>
-        {console.log(searchedTerms, searchClicked, "TERMZ")}
         {
           (searchedTerms.length > 0 && searchClicked) && (
           <div className='searchResults'>

@@ -27,29 +27,29 @@ useEffect(() => {
     (async() => {
         const deal = []
         Object.keys(products).map((key, i) => {
-            console.log('vvvvvvvvvvv', products[key])
+            // console.log('vvvvvvvvvvv', products[key])
             deal.push(products[key])
         })
-        console.log(deal)
+        // console.log(deal)
         setDeals(deal)
     })();
   }, [products]);
 
 //   useEffect(() => {
 //     async function fetchData() {
-//         console.log("UUUSSSSERRR", user)
+//         // console.log("UUUSSSSERRR", user)
 //         if (user) dispatch(getCarts(user.id))
 //       const data = await dispatch(getAllProducts())
 //       setProducts(data)
-//       console.log(((data)))
-//       console.log(products)
+//       // console.log(((data)))
+//       // console.log(products)
 //       for (let key in data) {
-//           console.log(data[key])
+//           // console.log(data[key])
 //           productsArr.push(data[key])
-//           console.log(productsArr)
+//           // console.log(productsArr)
 //       }
-//       console.log(productsArr)
-//       console.log(productsState)
+//       // console.log(productsArr)
+//       // console.log(productsState)
 //     }
 //     fetchData();
 //   }, []);
@@ -58,18 +58,18 @@ useEffect(() => {
 //     (async() => {
 //         const deal = []
 //         Object.keys(products).map((key, i) => {
-//             console.log('vvvvvvvvvvv', products[key])
+//             // console.log('vvvvvvvvvvv', products[key])
 //             deal.push(products[key])
 //         })
-//         console.log(deal)
+//         // console.log(deal)
 //         setDeals(deal)
 //     })();
 //   }, []);
 
 
   const productComponents = productsArr.map((product, i) => {
-      console.log(product)
-      console.log(productsArr)
+      // console.log(product)
+      // console.log(productsArr)
     return (
         // <h1>hi</h1>
       <li key={product.id}>
@@ -223,15 +223,13 @@ useEffect(() => {
                 <div className='categoryTitle'><h1 id='topPicks'>Top picks for you</h1></div>
                 <div className="categories">
                 <div className='categoryBooks'>
-                    {/* <div> */}
-                        {console.log(deals, ")))))))))")}
                 {deals && (
 
                     <div className='listofDeals'>
                     {deals.map((oneKey, i) => (
                         // {products[oneKey].price < 10 &&
                         // <div>
-                                // {console.log('fffffffffff', oneKey)}
+                                // {// console.log('fffffffffff', oneKey)}
                                     <NavLink className='productGenreBox' to={'/books/' + oneKey.id}>
                                     <div key={i} className='bookBorder'>
                                         <div className='bookPic'>

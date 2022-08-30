@@ -7,7 +7,7 @@ import { deleteCarts, editCartQuantity, getCarts, deleteAllCart } from '../store
 const Cart = () => {
     const cart = useSelector(state => state.cart);
     const user= useSelector(state => state.session.user.id)
-    console.log(cart, "@@@")
+    // console.log(cart, "@@@")
     const dispatch = useDispatch()
     let total = 0
     let subTotal = 0
@@ -15,9 +15,9 @@ const Cart = () => {
     useEffect(() => {
         if (cart) {
             // subTotal = Object.keys(cart).length
-            console.log("inside", Object.keys(cart))
+            // console.log("inside", Object.keys(cart))
             Object.keys(cart).map((oneKey,i)=>{
-                console.log("ONEKEY", cart[oneKey].quantity)
+                // console.log("ONEKEY", cart[oneKey].quantity)
                 subTotal += (cart[oneKey].quantity)
                 total += parseFloat(cart[oneKey].price * cart[oneKey].quantity)
             })
@@ -27,14 +27,14 @@ const Cart = () => {
     // useEffect(() => {
     //     dispatch(getCarts(user))
     // }, [count])
-    console.log(total)
+    // console.log(total)
 
     const getCartQuantity = async() => {
         await dispatch(getCarts(user))
     }
     const changeQuantity = async(e) => {
         count++
-        console.log(e.target.value, e.target.className)
+        // console.log(e.target.value, e.target.className)
         await dispatch(editCartQuantity(e.target.value, e.target.className))
         getCartQuantity(user)
         // await dispatch(getCarts(user))
@@ -43,7 +43,7 @@ const Cart = () => {
     }
 
     const deleteProduct = async(e) => {
-        console.log(e.target.id)
+        // console.log(e.target.id)
         const id = e.target.id
         await dispatch(deleteCarts(id))
         await dispatch(getCarts(user))
@@ -51,7 +51,7 @@ const Cart = () => {
     }
 
     const deleteAllCarts = async(e) => {
-        console.log(e.target.id)
+        // console.log(e.target.id)
         await dispatch(deleteAllCart(e.target.id))
         await dispatch(getCarts(user))
         // window.location.href = '/'
@@ -73,8 +73,6 @@ const Cart = () => {
             <div>
                 {
                 Object.keys(cart).map((oneKey,i)=>{
-                    {console.log("KEYYYY", parseInt(oneKey), oneKey, cart)}
-                    // {oneKey && ()}
                     {if(parseInt(oneKey)) {
                         return (
                             <div>
