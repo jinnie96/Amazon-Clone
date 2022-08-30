@@ -207,9 +207,7 @@ useEffect(() => {
         <div className='nextToSide'>
 
             <div className='topBanner'>
-                <NavLink to='/deals'>
-                    <img id='topBannerPic' src='https://images-na.ssl-images-amazon.com/images/G/01/kindle/apub/SR22/20220801_US_PRR-KU_Banner_Summer_Reading-Phase_3_1500x300-rev.jpg'></img>
-                </NavLink>
+                    <img id='topBannerPic' src='https://i.ibb.co/z8YRM6r/20220801-US-PRR-KU-Banner-Summer-Reading-Phase-3-1500x300-rev.jpg'></img>
             </div>
             <div className='bottomBanner'>
                 <NavLink className='navDiv' to='/byRating/4'>

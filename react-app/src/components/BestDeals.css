@@ -36,5 +36,5 @@
 } */
 
 div:empty {
-    display: none
+    /* display: none */
 }
