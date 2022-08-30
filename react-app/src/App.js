@@ -53,56 +53,67 @@ function App() {
         <Route path='/' exact={true} >
           <NavBar />
           <Homepage />
+          <Footer />
           <LinksFooter />
         </Route>
         <ProtectedRoute path='/books/:id' exact={true}>
           <NavBar />
           <ProductPage />
+          <Footer />
           <LinksFooter />
         </ProtectedRoute>
         <ProtectedRoute path='/fiction/:id' exact={true}>
           <NavBar />
           <ProductPage />
+          <Footer />
           <LinksFooter />
         </ProtectedRoute>
         <ProtectedRoute path='/cart' exact={true} >
           <NavBar />
           <Cart/>
+          <Footer />
           <LinksFooter />
         </ProtectedRoute>
         <ProtectedRoute path='/review/:id' exact={true} >
           <NavBar />
           <NewReview/>
+          <Footer />
           <LinksFooter />
         </ProtectedRoute>
         <ProtectedRoute path='/books/edit-review/:id' exact={true} >
           <NavBar />
           <EditReview/>
+          <Footer />
           <LinksFooter />
         </ProtectedRoute>
         <ProtectedRoute path='/confirmation' exact={true} >
           <NavBar />
           <OrderConfirmation/>
+          <Footer />
           <LinksFooter />
         </ProtectedRoute>
         <ProtectedRoute path='/added' exact={true} >
           <NavBar />
           <AddedToCart/>
+          <Footer />
           <LinksFooter />
         </ProtectedRoute>
         <ProtectedRoute path='/category/:str' exact={true} >
           <NavBar />
           <CategoryPage/>
+          <Footer />
           <LinksFooter />
         </ProtectedRoute>
         <ProtectedRoute path='/deals' exact={true} >
           <NavBar />
           <BestDeals />
+          <Footer />
           <LinksFooter />
         </ProtectedRoute>
         <ProtectedRoute path='/byRating/:id' exact={true} >
           <NavBar />
           <ByReview />
+          <Footer />
           <LinksFooter />
         </ProtectedRoute>
       </Switch>

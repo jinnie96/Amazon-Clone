@@ -8,30 +8,64 @@ import SideBar from './SideBar';
 // import { NavLink } from "react-router-dom";
 
 function Homepage() {
-  const [products, setProducts] = useState();
+//   const [products, setProducts] = useState();
   const productsArr = []
   const dispatch = useDispatch()
-  const productsState = useSelector(state => state.products);
+  const products= useSelector(state => state.products);
   const user= useSelector(state => state.session.user)
+//   const products = useSelector(state => state.products)
+const [deals, setDeals] = useState([])
+
+useEffect(() => {
+    (async() => {
+      await dispatch(getAllProducts());
+    })();
+  }, []);
+
 
   useEffect(() => {
-    async function fetchData() {
-        console.log("UUUSSSSERRR", user)
-        if (user) dispatch(getCarts(user.id))
-      const data = await dispatch(getAllProducts())
-      setProducts(data)
-      console.log(((data)))
-      console.log(products)
-      for (let key in data) {
-          console.log(data[key].photourl)
-          productsArr.push(data[key].photourl)
-          console.log(productsArr)
-      }
-      console.log(productsArr)
-      console.log(productsState)
-    }
-    fetchData();
-  }, []);
+    (async() => {
+        const deal = []
+        Object.keys(products).map((key, i) => {
+            console.log('vvvvvvvvvvv', products[key])
+            deal.push(products[key])
+        })
+        console.log(deal)
+        setDeals(deal)
+    })();
+  }, [products]);
+
+//   useEffect(() => {
+//     async function fetchData() {
+//         console.log("UUUSSSSERRR", user)
+//         if (user) dispatch(getCarts(user.id))
+//       const data = await dispatch(getAllProducts())
+//       setProducts(data)
+//       console.log(((data)))
+//       console.log(products)
+//       for (let key in data) {
+//           console.log(data[key])
+//           productsArr.push(data[key])
+//           console.log(productsArr)
+//       }
+//       console.log(productsArr)
+//       console.log(productsState)
+//     }
+//     fetchData();
+//   }, []);
+
+//   useEffect(() => {
+//     (async() => {
+//         const deal = []
+//         Object.keys(products).map((key, i) => {
+//             console.log('vvvvvvvvvvv', products[key])
+//             deal.push(products[key])
+//         })
+//         console.log(deal)
+//         setDeals(deal)
+//     })();
+//   }, []);
+
 
   const productComponents = productsArr.map((product, i) => {
       console.log(product)
@@ -51,11 +85,9 @@ function Homepage() {
             <img src='https://m.media-amazon.com/images/I/31JaiPXYI8L._AC_.jpg'></img>
             <img src='https://m.media-amazon.com/images/I/61iqsjK1JtL._AC_SX466_.jpg'></img>
         </ul> */}
-        <div className='bodyPage'>
-        <SideBar />
-        <div className='nextToSide'>
 
-            <div className='banner'>
+        <h1 id='booksAt'>Books at Amazon</h1>
+        <div className='banner'>
                 <h3 id='exploreBooks'>Explore Books by Category</h3>
                 {/* <img id="homePic" src ="https://www.thebanner.org/sites/default/files/styles/article_detail_header/public/TIN-332%20Books%20from_large.jpg?itok=7QRVhctV"></img> */}
             </div>
@@ -169,9 +201,89 @@ function Homepage() {
                     </div>
                 </NavLink>
             </div>
-                <div className='categoryTitle'><h1>Shop by Category:</h1></div>
+
+        <div className='bodyPage'>
+        <SideBar />
+        <div className='nextToSide'>
+
+            <div className='topBanner'>
+                <NavLink to='/deals'>
+                    <img id='topBannerPic' src='https://images-na.ssl-images-amazon.com/images/G/01/kindle/apub/SR22/20220801_US_PRR-KU_Banner_Summer_Reading-Phase_3_1500x300-rev.jpg'></img>
+                </NavLink>
+            </div>
+            <div className='bottomBanner'>
+                <NavLink className='navDiv' to='/byRating/4'>
+                    <img id='bottomBannerPic' src='https://images-na.ssl-images-amazon.com/images/G/01/books/editorial/bhp/BOTYSF22_tile.jpg'></img>
+                </NavLink>
+                <NavLink to='/category/Children'>
+                    <img id='bottomBannerPic' src='https://images-na.ssl-images-amazon.com/images/G/01/books/editorial/bhp/Kids_tile.jpg'></img>
+                </NavLink>
+                <NavLink to='/deals'>
+                    <img id='bottomBannerPic' src='https://i.ibb.co/YfXXVcR/Screen-Shot-2022-08-29-at-10-36-48-PM.png'></img>
+                </NavLink>
+            </div>
+                <div className='categoryTitle'><h1 id='topPicks'>Top picks for you</h1></div>
                 <div className="categories">
-                    <div className="sports">
+                <div className='categoryBooks'>
+                    {/* <div> */}
+                        {console.log(deals, ")))))))))")}
+                {deals && (
+
+                    <div className='listofDeals'>
+                    {deals.map((oneKey, i) => (
+                        // {products[oneKey].price < 10 &&
+                        // <div>
+                                // {console.log('fffffffffff', oneKey)}
+                                    <NavLink className='productGenreBox' to={'/books/' + oneKey.id}>
+                                    <div key={i} className='bookBorder'>
+                                        <div className='bookPic'>
+                                            <img id='photoSize' src={oneKey.photourl}></img>
+                                        </div>
+                                        <div className='bookPrice'>
+                                            ${oneKey.price}
+                                        </div>
+                                        <div className='bookTitle'>
+                                            {oneKey.name}
+                                        </div>
+                                        <div className='bookAuth'>
+                                            by {oneKey.author}
+                                        </div>
+                                        <div className='bookRatings'>
+                                            {oneKey.rating >= 4.5 && (
+                                                <img id='averageReviewStar' src="https://i.ibb.co/23qphks/Screen-Shot-2022-08-21-at-8-26-27-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                                            )}
+                                            {(oneKey.rating >= 3.5 && oneKey.rating < 4.5) && (
+                                                <img id='averageReviewStar' src="https://i.ibb.co/dk3ZZbn/Screen-Shot-2022-08-12-at-9-28-57-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                                            )}
+                                            {(oneKey.rating >= 2.5 && oneKey.rating < 3.5) && (
+                                                <img id='averageReviewStar' src="https://i.ibb.co/RgTb9MT/Screen-Shot-2022-08-12-at-9-29-12-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                                            )}
+                                            {(oneKey.rating >= 1.5 && oneKey.rating < 2.5) && (
+                                                <img id='averageReviewStar' src="https://i.ibb.co/P5Fmjdd/Screen-Shot-2022-08-12-at-9-29-23-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                                            )}
+                                            {(oneKey.rating >= .5 && oneKey.rating < 1.5) && (
+                                                <img id='averageReviewStar' src="https://i.ibb.co/kgBYWdH/Screen-Shot-2022-08-12-at-9-29-37-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                                            )}
+                                            {(oneKey.rating < .5 || !oneKey.rating) && (
+                                                <img id='averageReviewStar' src="https://i.ibb.co/mFVwGzC/Screen-Shot-2022-08-21-at-8-15-46-PM.png" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
+                                            )}
+                                        </div>
+
+                                    </div>
+                                </NavLink>
+                            // </div>
+                                    // }
+
+                                    // )}
+                                    ))}
+                                    </div>
+                )}
+
+                    {/* </div> */}
+
+                </div>
+
+                    {/* <div className="sports">
                         <div className="sportsTitle">
                             Fantasy
                         </div>
@@ -302,7 +414,7 @@ function Homepage() {
                             <NavLink to={'books/47'}><img id='odyssey' src='https://images-na.ssl-images-amazon.com/images/I/51S8fUZ6nfL._SX331_BO1,204,203,200_.jpg'></img></NavLink>
                             <NavLink to={'books/48'}><img id='flowers' src='https://images-na.ssl-images-amazon.com/images/I/416ZrnNLj6L._SX321_BO1,204,203,200_.jpg'></img></NavLink>
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
         </div>
