@@ -19,9 +19,9 @@ const ProductPage = () => {
         // getStarsForReview()
     }, [dispatch, id])
     const product = useSelector(state => state.products)
-    console.log(product, id, Object.keys(product), Object.keys(product)[id - 1])
+    // console.log(product, id, Object.keys(product), Object.keys(product)[id - 1])
     if (product) {
-        console.log("jjjjjj", product[Object.keys(product)[id - 1]])
+        // console.log("jjjjjj", product[Object.keys(product)[id - 1]])
         productObj = product[Object.keys(product)[id - 1]];
     }
     const state = useSelector(state => state)
@@ -33,11 +33,11 @@ const ProductPage = () => {
         if (Object.keys(reviews)) {
             for (let i = 0; i < 1; i++) {
                 let count = 0
-                console.log(Object.keys(reviews))
+                // console.log(Object.keys(reviews))
                 let key = reviews[Object.keys(reviews)[i]]
-                console.log(key, "THIS")
+                // console.log(key, "THIS")
                 if (key) {
-                    console.log(key.reviewer_id === user)
+                    // console.log(key.reviewer_id === user)
                     if (key.reviewer_id === user) {
                         hasReview = true
                     }
@@ -46,26 +46,26 @@ const ProductPage = () => {
         }
     }, [])
     let averageRating = 0
-    console.log("reviews", reviews)
-    console.log(product, "BEFORE!")
-    console.log("KEYSsSSSS", Object.keys(reviews))
-    console.log(id)
+    // console.log("reviews", reviews)
+    // console.log(product, "BEFORE!")
+    // console.log("KEYSsSSSS", Object.keys(reviews))
+    // console.log(id)
     let reviewObj = {}
     let amountReviews = 0
 
     if (Object.keys(reviews)) {
         let count = 0
         for (let i = 0; i < Object.keys(reviews).length; i++) {
-            console.log(Object.keys(reviews).length)
+            // console.log(Object.keys(reviews).length)
             let key = reviews[Object.keys(reviews)[i]]
-            console.log(key, "THIS")
+            // console.log(key, "THIS")
             if (key) {
-                console.log(key.reviewer_id === user)
+                // console.log(key.reviewer_id === user)
                 if (key.reviewer_id === user) {
                     hasReview = true
                 }
                 // for (let j = 0; j < key.length; j++) {
-                    // console.log(key[j])
+                    // // console.log(key[j])
                     if (!reviewObj[key.rating]) reviewObj[key.rating] = 1
                     else reviewObj[key.rating]++
                     averageRating += key.rating
@@ -74,9 +74,9 @@ const ProductPage = () => {
                 // }
             }
         }
-        console.log(count, averageRating/count)
+        // console.log(count, averageRating/count)
         averageRating = Math.round((averageRating/count) * 10) / 10
-        console.log(averageRating)
+        // console.log(averageRating)
     }
     let rating5 = reviewObj[5] ? Math.round((reviewObj[5]/amountReviews) * 100) : 0
     let rating4 = reviewObj[4] ? Math.round((reviewObj[4]/amountReviews) * 100) : 0
@@ -85,7 +85,7 @@ const ProductPage = () => {
     let rating1 = reviewObj[1] ? Math.round((reviewObj[1]/amountReviews) * 100) : 0
     let starImg = '&#9733;'
     let starDiv = document.querySelector('.starsCustomers')
-    console.log(starDiv, averageRating, ";;;;;;;;;")
+    // console.log(starDiv, averageRating, ";;;;;;;;;")
     // if (starDiv) starDiv.innerHTML = ''
     let fiveBool = false
     let fourBool = false
@@ -170,31 +170,31 @@ const ProductPage = () => {
 
     function getStarsForReview () {
         // for (let i = 1; i <= 5; i++) {
-        //     console.log(starDiv, i, Math.round(averageRating))
+        //     // console.log(starDiv, i, Math.round(averageRating))
         //     if (i < Math.round(averageRating) && starDiv) {
         //         const star = document.createElement('img')
         //         star.innerHTML = 'https://cdn.pixabay.com/photo/2020/04/26/11/56/amazon-stars-5094895_1280.png'
         //         star.style.color = 'orange'
         //         starDiv.appendChild(star)
-        //         console.log(starDiv)
+        //         // console.log(starDiv)
         //     } else if (i >= Math.round(averageRating) && starDiv) {
         //         const star = document.createElement('span')
         //         star.innerText = starImg
         //         star.style.color = 'grey'
         //         starDiv.appendChild(star)
-        //         console.log(starDiv)
+        //         // console.log(starDiv)
         //     }
         // }
     }
-    console.log(averageRating, "AVERAGE")
-    console.log(reviewObj, "OBJ")
+    // console.log(averageRating, "AVERAGE")
+    // console.log(reviewObj, "OBJ")
     const addCart = async() => {
         await dispatch(addtoCart(id))
         await dispatch(getCarts(user))
     }
 
     const deleteReview = (e) => {
-        console.log(e.target)
+        // console.log(e.target)
         dispatch(deleteOneReview(e.target.id))
         // window.location.href = `/sports/${id}`
     }
@@ -211,7 +211,7 @@ const ProductPage = () => {
     if (two) two.style.backgroundImage = 'linear-gradient(90deg, #FFA41D ' + rating2 + '%, #FFFFFF 0%)'
     if (one) one.style.backgroundImage = 'linear-gradient(90deg, #FFA41D ' + rating1 + '%, #FFFFFF 0%)'
 
-        // console.log(reviewObj[5] ? Math.round((reviewObj[5]/amountReviews) * 100) : 0)
+        // // console.log(reviewObj[5] ? Math.round((reviewObj[5]/amountReviews) * 100) : 0)
         // four.style.backgroundImage = 'linear-gradient(90deg, #FFA41D 50%, #FFFFFF 50%)'
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -220,7 +220,6 @@ const ProductPage = () => {
 
     return (
         <>
-        {console.log("productobj", productObj)}
         <div className='wholeProdPage'>
             {/* <SideBar /> */}
             <div>
@@ -315,7 +314,6 @@ const ProductPage = () => {
                                 <h2 id='totalReviews'>{amountReviews ? amountReviews : 0} {amountReviews === 1 ? 'global rating' : 'global ratings'}</h2>
                         </div>
                         <div className='ratings'>
-                            {console.log(reviewObj, amountReviews)}
                             <div className='five'>
                                 <h3 id='starTitle'>5 star</h3>
                                 <div className='rating5'></div>
@@ -356,13 +354,11 @@ const ProductPage = () => {
                     <div className='rightSideReviews'>
                         <div id='topReviews'>Top reviews from the United States</div>
                         <div className='reviewsInfo'>
-                            {console.log("EEEEEEEEEEEEE",  Object.keys(reviews), reviews)}
                         {!Object.keys(reviews).length && (
                             <h3 id='noReviews'>No reviews for this product.</h3>
                         )}
                         {
                             Object.keys(reviews).map((key,i)=>{
-                                {console.log(key, i, reviews[key])}
                                 return (
                                     <div className='reviewDetail'>
                                         <div class='userInfo'>

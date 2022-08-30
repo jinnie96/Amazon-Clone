@@ -22,10 +22,10 @@ const CategoryPage = () => {
         (async() => {
             const deal = []
             Object.keys(products).map((key, i) => {
-                console.log('vvvvvvvvvvv', products[key])
+                // console.log('vvvvvvvvvvv', products[key])
                 if(products[key].category.includes(window.location.pathname.slice(10).toLowerCase())) deal.push(products[key])
             })
-            console.log(deal)
+            // console.log(deal)
             setDeals(deal)
         })();
       }, []);
@@ -35,7 +35,7 @@ const CategoryPage = () => {
           const movieID = window.location.pathname.slice(10)
         // movieID on initial render or subsequent render when updated
         // logic to use movieID and resynchronize any data.
-        console.log('movie', movieID)
+        // console.log('movie', movieID)
       });
 
     const state = useSelector(state => state)
@@ -43,8 +43,8 @@ const CategoryPage = () => {
     const user= useSelector(state => state.session.user)
     const cart = useSelector(state => state.cart);
     const products = useSelector(state =>state.products)
-    console.log(products)
-    console.log((window.location.pathname).slice(10))
+    // console.log(products)
+    // console.log((window.location.pathname).slice(10))
     return (
         <div className='categoryPage'>
             <div className='sideBarDiv'>
@@ -56,15 +56,13 @@ const CategoryPage = () => {
                     <h2 id='bestSellers'>Best Sellers</h2>
                 </div>
                 <div className='categoryBooks'>
-                    {/* <div> */}
-                        {console.log(deals, ")))))))))")}
                 {deals && (
 
                     <div className='listofDeals'>
                     {deals.map((oneKey, i) => (
                         // {products[oneKey].price < 10 &&
                         // <div>
-                                // {console.log('fffffffffff', oneKey)}
+                                // {// console.log('fffffffffff', oneKey)}
                                     <NavLink className='productGenreBox' to={'/books/' + oneKey.id}>
                                     <div key={i}>
                                         <div className='bookPic'>

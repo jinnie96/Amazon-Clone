@@ -18,7 +18,7 @@ export const getAllProducts = () => async dispatch => {
     const response = await fetch (`/api/products/`)
     if (response.ok) {
         const data = await response.json();
-        console.log(data)
+        // console.log(data)
         if (data.errors) {
             return;
         };
@@ -29,12 +29,12 @@ export const getAllProducts = () => async dispatch => {
 }
 
 export const getSingleProduct = (productId) => async (dispatch) => {
-    console.log("INSIDE")
+    // console.log("INSIDE")
     const response = await fetch(`/api/products/${productId}`);
-    console.log(response, "RES")
+    // console.log(response, "RES")
     if (response.ok) {
         const data = await response.json();
-        console.log("DATA", data)
+        // console.log("DATA", data)
         if (data.errors) {
             return;
         };
@@ -48,7 +48,7 @@ export const getSingleProduct = (productId) => async (dispatch) => {
 const initialState = {}
 
 export default function productsReducer(state = initialState, action) {
-    console.log("PRODUCTSREDUCER", action)
+    // console.log("PRODUCTSREDUCER", action)
     let newState;
     switch(action.type) {
         case GET_PRODUCTS:

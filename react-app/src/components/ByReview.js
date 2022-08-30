@@ -14,20 +14,20 @@ const ByReview = () => {
     const products=useSelector(state => state.products)
 
     const [deals, setDeals] = useState([])
-    console.log(window.location.pathname.slice(-1))
+    // console.log(window.location.pathname.slice(-1))
     useEffect(() => {
         (async() => {
             const deal = []
             Object.keys(products).map((key, i) => {
-                console.log('vvvvvvvvvvv', products[key])
+                // console.log('vvvvvvvvvvv', products[key])
                 if(products[key].rating >= window.location.pathname.slice(-1)) deal.push(products[key])
             })
-            console.log(deal)
+            // console.log(deal)
             setDeals(deal)
         })();
       }, []);
 
-    console.log(user)
+    // console.log(user)
     return (
         <div className='categoryPage'>
             <div className='sideBarDiv'>
@@ -40,15 +40,13 @@ const ByReview = () => {
 
                 </div>
                 <div className='categoryBooks'>
-                    {/* <div> */}
-                        {console.log(deals, ")))))))))")}
                 {deals && (
 
                     <div className='listofDeals'>
                     {deals.map((oneKey, i) => (
                         // {products[oneKey].price < 10 &&
                         // <div>
-                                // {console.log('fffffffffff', oneKey)}
+                                // {// console.log('fffffffffff', oneKey)}
                                     <NavLink className='productGenreBox' to={'/books/' + oneKey.id}>
                                     <div key={i}>
                                         <div className='bookPic'>

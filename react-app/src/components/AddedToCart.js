@@ -15,7 +15,7 @@ const AddedToCart = () => {
     const user= useSelector(state => state.session.user)
     const cart = useSelector(state => state.cart);
 
-    console.log('addedtocart', cart)
+    // console.log('addedtocart', cart)
     return (
         <div className='productAddedDiv'>
             <div className='addedToCartDiv'>

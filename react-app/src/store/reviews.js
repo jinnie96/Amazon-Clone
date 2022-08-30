@@ -27,14 +27,14 @@ const addReview = id => ({
 
 // ------------------- Thunk creators ------------------- //
 export const getAllReviews = (id) => async dispatch => {
-    console.log(id, "YO")
+    // console.log(id, "YO")
     const response = await fetch (`/api/reviews/${id}`)
-    console.log("REVIEWRES", response)
+    // console.log("REVIEWRES", response)
     if (response.ok) {
         const data = await response.json();
-        console.log("DATA REVIEW", data)
+        // console.log("DATA REVIEW", data)
         const reviews = dispatch(getReviews(data));
-        console.log("RETURNED REVIEWS", reviews)
+        // console.log("RETURNED REVIEWS", reviews)
         if (data.errors) {
             return;
         };
@@ -44,14 +44,14 @@ export const getAllReviews = (id) => async dispatch => {
 }
 
 export const deleteOneReview = (productId) => async (dispatch) => {
-    console.log("INSIDE", productId)
+    // console.log("INSIDE", productId)
     const response = await fetch(`/api/reviews/${productId}`, {
         method: 'DELETE',
     })
-    console.log(response, "RES")
+    // console.log(response, "RES")
     if (response.ok) {
         const data = await response.json();
-        console.log("DATA", data)
+        // console.log("DATA", data)
         if (data.errors) {
             return;
         };
@@ -62,7 +62,7 @@ export const deleteOneReview = (productId) => async (dispatch) => {
 };
 
 export const editOneReview = (id, form) => async (dispatch) => {
-    console.log("HEYHEY", JSON.stringify(form))
+    // console.log("HEYHEY", JSON.stringify(form))
     const response = await fetch(`/api/reviews/edit/${id}`, {
         method: 'PUT',
         headers: {
@@ -72,10 +72,10 @@ export const editOneReview = (id, form) => async (dispatch) => {
             form
         })
     })
-    console.log(response, "RES")
+    // console.log(response, "RES")
     if (response.ok) {
         const data = await response.json();
-        console.log("DATA", data)
+        // console.log("DATA", data)
         if (data.errors) {
             return;
         };
@@ -86,7 +86,7 @@ export const editOneReview = (id, form) => async (dispatch) => {
 };
 
 export const addOneReview = (id, form) => async dispatch => {
-    console.log("HEYHEY", JSON.stringify(form))
+    // console.log("HEYHEY", JSON.stringify(form))
     const response = await fetch(`/api/reviews/new/${id}`, {
         method: 'POST',
         headers: {
@@ -98,7 +98,7 @@ export const addOneReview = (id, form) => async dispatch => {
     })
     if (response.ok) {
         const data = await response.json();
-        console.log("ADDED", data)
+        // console.log("ADDED", data)
         if (data.errors) {
             return;
         };
@@ -112,18 +112,18 @@ export const addOneReview = (id, form) => async dispatch => {
 const initialState = {}
 
 export default function reviewsReducer(state = initialState, action) {
-    console.log("REVIEWSREDICER", action.payload)
+    // console.log("REVIEWSREDICER", action.payload)
     let newState;
     switch(action.type) {
         case GET_REVIEWS:
             newState = {}
             // for (const key in action.payload) {
-                // console.log(action.payload, key, action.payload[key].length)
+                // // console.log(action.payload, key, action.payload[key].length)
                 // for (const keytwo in action.payload[key]) {
-                //     console.log(keytwo, action.payload, action.payload[key][keytwo], action.payload.key.keytwo)
+                //     // console.log(keytwo, action.payload, action.payload[key][keytwo], action.payload.key.keytwo)
                 // }
                 for (let i = 0; i < action.payload.reviews.length; i++) {
-                    console.log(action.payload.reviews[i])
+                    // console.log(action.payload.reviews[i])
                     newState[action.payload.reviews[i].id] = action.payload.reviews[i]
                 }
             // }
