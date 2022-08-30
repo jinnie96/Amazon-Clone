@@ -19,10 +19,10 @@ const ProductPage = () => {
         // getStarsForReview()
     }, [dispatch, id])
     const product = useSelector(state => state.products)
-    console.log(product)
+    console.log(product, id, Object.keys(product), Object.keys(product)[id - 1])
     if (product) {
-        console.log("jjjjjj", product[Object.keys(product)[0]])
-        productObj = product[Object.keys(product)[0]];
+        console.log("jjjjjj", product[Object.keys(product)[id - 1]])
+        productObj = product[Object.keys(product)[id - 1]];
     }
     const state = useSelector(state => state)
     const reviews = useSelector(state => state.reviews)
@@ -222,7 +222,7 @@ const ProductPage = () => {
         <>
         {console.log("productobj", productObj)}
         <div className='wholeProdPage'>
-            <SideBar />
+            {/* <SideBar /> */}
             <div>
                 {productObj &&
                     <div className='product'>
@@ -257,7 +257,7 @@ const ProductPage = () => {
                                 )}
                                 </div>
                                 <div id='amountRatings'>
-                                    {amountReviews} ratings
+                                    {amountReviews} {amountReviews === 1 ? 'rating' : 'ratings'}
                                 </div>
                             </div>
                             <h1 id='productDescription'>{productObj.description}</h1>
@@ -312,7 +312,7 @@ const ProductPage = () => {
                                 )}
                                 <h2 id='average'>{averageRating ? averageRating : 0} out of 5</h2>
                             </div>
-                                <h2 id='totalReviews'>{amountReviews ? amountReviews : 0} global ratings</h2>
+                                <h2 id='totalReviews'>{amountReviews ? amountReviews : 0} {amountReviews === 1 ? 'global rating' : 'global ratings'}</h2>
                         </div>
                         <div className='ratings'>
                             {console.log(reviewObj, amountReviews)}
