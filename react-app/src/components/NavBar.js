@@ -73,21 +73,21 @@ const NavBar = () => {
             <img id="logo" src='https://www.doorwaysva.org/wp-content/uploads/2019/06/amazon-logo.png'></img>
           </NavLink>
         </div>
-        <div className='delivery'>
-          {/* <div className='deliveryBoxOne'> */}
-          {/* <div className='deliveryBox'> */}
+        {/* <div className='delivery'>
+          <div className='deliveryBoxOne'>
+          <div className='deliveryBox'>
             <div className='deliveryIcon'>
               <img id='locationIcon' src='https://kronospan-express.com/public/krono/img/icons/placeholder_blk.png'></img>
             </div>
-            {/* {user && (
+            {user && (
             <div class='deliveryName'>
               Deliver to {user.username}
             </div>
 
-            )} */}
-          {/* </div> */}
-          {/* </div> */}
-        </div>
+            )}
+          </div>
+          </div>
+        </div> */}
         <div className='searchResultList'>
         <div className="searchBar">
           <input className="search" value={searchTerm} onChange={updateSearch}></input>
@@ -122,13 +122,13 @@ const NavBar = () => {
           </div>
         )}
         {user && (
-          <div className="greeting">
+          // <div className="greeting">
             <div className='helloUserDiv'>
               <NavLink to='/' exact={true} activeClassName='active' id="navOptions">
                 Hello, {user.username}
               </NavLink>
             </div>
-          </div>
+          // </div>
         )}
         {/* <div className="order">
           <NavLink to='/orders' exact={true} activeClassName='active' id="navOptions">

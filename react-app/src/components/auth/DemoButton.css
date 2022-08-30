@@ -8,3 +8,14 @@
     border-radius: 5%;
     cursor: pointer;
 }
+
+#demoBtnId {
+    height: 70px;
+    width: 70px;
+}
+
+#demoBtnId {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
