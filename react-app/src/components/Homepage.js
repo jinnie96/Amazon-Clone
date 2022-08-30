@@ -109,7 +109,7 @@ useEffect(() => {
                 </NavLink>
                 <NavLink id='navLink' to='/category/Mystery'>
                     <div className='mysteryDiv>'>
-                        <img src='https://48b6yd3iigex2rv7g41h5sts-wpengine.netdna-ssl.com/wp-content/uploads/2020/03/what-is-a-mystery.jpg'></img>
+                        <img src='https://images.ctfassets.net/3s5io6mnxfqz/5yaU9R8CfN7H3IFwlpjINO/41882ddd6ce99df47e11434a03ee6271/AdobeStock_138391201.jpeg'></img>
                         <div className='mysteryName'>
 
                             <h3 id='categoryName'>Mystery</h3>
@@ -148,7 +148,7 @@ useEffect(() => {
             <div className='categoryListTwo'>
                 <NavLink id='navLink' to='/category/Manga'>
                     <div className='mangaDiv>'>
-                        <img src='https://images.saymedia-content.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:eco%2Cw_1200/MTg2OTMwMTMxNDAxNDUxNDA4/5-reasons-l-knew-light-was-kira-in-death-note.jpg'></img>
+                        <img src='https://cdn.dribbble.com/users/1325222/screenshots/6500297/100_.png?compress=1&resize=400x300'></img>
                         <div className='mangaName'>
                             <h3 id='categoryName'>Manga</h3>
 
@@ -157,7 +157,7 @@ useEffect(() => {
                 </NavLink>
                 <NavLink id='navLink' to='/category/Literary-Fiction'>
                     <div className='litFictionDiv>'>
-                        <img src='https://s26162.pcdn.co/wp-content/uploads/2020/12/Fiction-2020.png'></img>
+                        <img src='https://48b6yd3iigex2rv7g41h5sts-wpengine.netdna-ssl.com/wp-content/uploads/2020/02/what-is-literary-fiction.jpg'></img>
                         <div className='litFictionName'>
 
                             <h3 id='categoryName'>Literary Fiction</h3>
@@ -166,7 +166,7 @@ useEffect(() => {
                 </NavLink>
                 <NavLink id='navLink' to='/category/History'>
                     <div className='historyDiv>'>
-                        <img src='http://cdn2.mhpbooks.com/2016/01/HistoryBook.gif'></img>
+                        <img src='https://howtotalkaboutarthistory.files.wordpress.com/2016/05/wassilij_grigorjewitsch_perow_004.jpg'></img>
                         <div className='historyName'>
                             <h3 id='categoryName'>History</h3>
 
@@ -193,7 +193,7 @@ useEffect(() => {
                 </NavLink>
                 <NavLink id='navLink' to='/category/Poetry'>
                     <div className='poetryDiv>'>
-                        <img src='https://self-publishingschool.com/wp-content/uploads/2019/05/how-to-write-poetry.jpg'></img>
+                        <img src='https://talkstar-assets.s3.amazonaws.com/production/playlists/playlist_697/a96f0391-83e8-45a3-bc6a-f1c571b78239/poetry_by_women_SQ.jpg'></img>
                         <div className='poetryName'>
                             <h3 id='categoryName'>Poetry</h3>
 
