@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink, useParams, Link } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import DemoButton from './auth/DemoButton'
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,6 +14,8 @@ const SideBar = () => {
     const reviews = useSelector(state => state.reviews)
     const user= useSelector(state => state.session.user)
     console.log(user)
+
+
     return (
         <div className='sideBar'>
             <div className='categorySection'>

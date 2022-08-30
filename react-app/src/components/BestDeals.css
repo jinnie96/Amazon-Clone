@@ -23,15 +23,17 @@
     flex-wrap: wrap;
 }
 
-.productGenreBox {
+/* .productGenreBox {
     flex-basis: 20%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-decoration: none;}
+    text-decoration: none;
+    border: solid 1px #D5DBDB;
+    width: 210px;
+    height: 263px;
+} */
 
 div:empty {
     display: none

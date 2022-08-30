@@ -30,6 +30,14 @@ const CategoryPage = () => {
         })();
       }, []);
 
+
+      useEffect(() => {
+          const movieID = window.location.pathname.slice(10)
+        // movieID on initial render or subsequent render when updated
+        // logic to use movieID and resynchronize any data.
+        console.log('movie', movieID)
+      });
+
     const state = useSelector(state => state)
     const reviews = useSelector(state => state.reviews)
     const user= useSelector(state => state.session.user)

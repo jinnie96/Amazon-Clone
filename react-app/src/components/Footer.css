@@ -1,3 +1,7 @@
+.footerDiv {
+    bottom: 0;
+}
+
 .top {
     width: 100%;
     color: white;
@@ -26,7 +30,7 @@
     font-weight: 700;
     font-family: Arial,sans-serif;
     margin: 6px 0 14px 0;
-    font-size:16px;
+    font-size:15px;
 }
 
 #amazonLogo {
@@ -39,4 +43,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.linksToFooter p {
+    font-size: 12px;
 }

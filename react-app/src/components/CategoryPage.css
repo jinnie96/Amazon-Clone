@@ -19,20 +19,25 @@
 }
 
 .productGenreBox {
-    flex-basis: 20%;
+    flex-basis: 18%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    /* margin-top: 20px;
+    margin-bottom: 20px; */
     text-decoration: none;
+    border: solid 1px #D5DBDB;
+    padding: 20px 10px 15px;
+    /* width: 210px;
+    height: 263px; */
     /* width: 20%; */
     /* box-sizing: border-box; */
 }
 
 .bookPrice {
     margin-top: 5px;
+    margin-bottom: -4px;
     font-size: 13px;
     height: 30px;
 }
@@ -57,4 +62,8 @@
 
 .bookRatings {
     margin-top: 10px;
+}
+
+.dealWholePage {
+    margin-left: 5px;
 }

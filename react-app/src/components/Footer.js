@@ -9,12 +9,12 @@ const Footer = () => {
     }
 
     return (
-        <div>
+        <div className='footerDiv'>
             <div className="top" onClick={scrollTop}>Back to top</div>
             <div className="bottom">
                <div className="get">
                    <h1 id="head">Get to Know Us</h1>
-                   <div>
+                   <div className='linksToFooter'>
                        <p>Careers</p>
                        <p>Amazon Newsletter</p>
                        <p>About Amazon</p>
@@ -28,7 +28,7 @@ const Footer = () => {
                </div>
                <div className='make'>
                     <h1 id="head">Make Money with Us</h1>
-                    <div>
+                    <div className='linksToFooter'>
                         <p>Sell products on Amazon</p>
                         <p>Sell apps on Amazon</p>
                         <p>Supply to Amazon</p>
@@ -42,7 +42,7 @@ const Footer = () => {
                </div>
                <div className='amazon'>
                     <h1 id="head">Amazon Payments Products</h1>
-                    <div>
+                    <div className='linksToFooter'>
                         <p>Amazon Rewards Visa Signature Cards</p>
                         <p>Amazon Store Card</p>
                         <p>Amazon Secured Card</p>
@@ -55,7 +55,7 @@ const Footer = () => {
                </div>
                <div className='let'>
                     <h1 id="head">Let Us Help You</h1>
-                    <div>
+                    <div className='linksToFooter'>
                         <p>Amazon and COVID-19</p>
                         <p>Your Account</p>
                         <p>Your Orders</p>
