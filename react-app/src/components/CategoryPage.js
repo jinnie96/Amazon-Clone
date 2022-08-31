@@ -12,11 +12,20 @@ import SideBar from './SideBar';
 const CategoryPage = () => {
     const dispatch = useDispatch()
     const [deals, setDeals] = useState([])
+    const state = useSelector(state => state)
+    const reviews = useSelector(state => state.reviews)
+    const user= useSelector(state => state.session.user)
+    const cart = useSelector(state => state.cart);
+    const products = useSelector(state =>state.products)
+
     useEffect(() => {
         (async() => {
+          window.scrollTo(0,0);
           await dispatch(getAllProducts());
+          console.log(products)
         })();
       }, []);
+
 
       useEffect(() => {
         (async() => {
@@ -28,7 +37,7 @@ const CategoryPage = () => {
             // console.log(deal)
             setDeals(deal)
         })();
-      }, []);
+      }, [products]);
 
 
       useEffect(() => {
@@ -38,11 +47,6 @@ const CategoryPage = () => {
         // console.log('movie', movieID)
       });
 
-    const state = useSelector(state => state)
-    const reviews = useSelector(state => state.reviews)
-    const user= useSelector(state => state.session.user)
-    const cart = useSelector(state => state.cart);
-    const products = useSelector(state =>state.products)
     // console.log(products)
     // console.log((window.location.pathname).slice(10))
     return (

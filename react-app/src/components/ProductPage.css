@@ -169,6 +169,28 @@ html {
     cursor:pointer;
 }
 
+#cartAdd {
+    background-color: #FFD711;
+    border: none;
+    border-radius: 15px;
+    padding: 8px 13px;
+}
+
+#cartAdd:hover {
+    background-color: #F7CA00;
+}
+
+#buy {
+    background-color: #FA8900;
+    border: none;
+    border-radius: 15px;
+    padding: 8px 13px;
+}
+
+#buy:hover {
+    background-color: #FFA41C;
+}
+
 #lockIcon {
     height: 7%;
     width: 7%;
@@ -366,4 +388,13 @@ html {
 .wholeProdPage {
     display: flex;
     /* margin-left: 5px; */
+}
+
+#hasReview {
+    font-size:12px;
+    border: solid 3px #FFA41C;
+    display: flex;
+    justify-content: center;
+    padding: 5px 5px;
+    border-radius: 5px;
 }

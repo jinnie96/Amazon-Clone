@@ -9,7 +9,7 @@ const EditReview = () => {
     const history = useHistory();
     const {id} = useParams()
     const dispatch = useDispatch()
-    const product = useSelector(state => state.products.id)
+    const product = useSelector(state => state.products)
     const review = useSelector(state => state.reviews)
     const user = useSelector(state => state.session.user)
     const [rating, setRating] = useState()

@@ -7,6 +7,7 @@ import './ProductPage.css'
 import { getSingleProduct } from '../store/products';
 import { addtoCart, getCarts } from '../store/carts';
 import { getAllReviews, deleteOneReview } from '../store/reviews';
+import { getAllProducts } from '../store/products';
 import SideBar from './SideBar';
 
 const ProductPage = () => {
@@ -29,6 +30,14 @@ const ProductPage = () => {
     const user= useSelector(state => state.session.user.id)
     // const [hasReview, setHasReview] = useState(false)
     let hasReview = false
+
+    useEffect(() => {
+        (async() => {
+          window.scrollTo(0,0);
+          await dispatch(getAllProducts());
+        })();
+      }, []);
+
     useEffect(() => {
         if (Object.keys(reviews)) {
             for (let i = 0; i < 1; i++) {
@@ -347,6 +356,9 @@ const ProductPage = () => {
                                 <NavLink to={'/review/' + id}>
                                     <button id='customerBtn'>Write a customer review</button>
                                 </NavLink>
+                            )}
+                            {hasReview && (
+                                <h4 id='hasReview'>You have already reviewed this product</h4>
                             )}
                         </div>
 

@@ -5,7 +5,7 @@ import DemoButton from './auth/DemoButton'
 import { useDispatch, useSelector } from 'react-redux';
 import './BestDeals.css'
 import SideBar from './SideBar';
-
+import { getAllProducts } from '../store/products';
 const ByReview = () => {
     const dispatch = useDispatch()
     const state = useSelector(state => state)
@@ -15,6 +15,15 @@ const ByReview = () => {
 
     const [deals, setDeals] = useState([])
     // console.log(window.location.pathname.slice(-1))
+
+    useEffect(() => {
+        (async() => {
+          window.scrollTo(0,0);
+          await dispatch(getAllProducts());
+          console.log(products)
+        })();
+      }, []);
+
     useEffect(() => {
         (async() => {
             const deal = []
@@ -25,7 +34,9 @@ const ByReview = () => {
             // console.log(deal)
             setDeals(deal)
         })();
-      }, []);
+      }, [products]);
+
+
 
     // console.log(user)
     return (

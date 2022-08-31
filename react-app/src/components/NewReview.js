@@ -9,7 +9,7 @@ const NewReview = () => {
     const history = useHistory();
     const {id} = useParams()
     const dispatch = useDispatch()
-    const product = useSelector(state => state.products.id)
+    const product = useSelector(state => state.products)
     const [rating, setRating] = useState()
     const [title, setTitle] = useState()
     const [description, setDescription] = useState()
@@ -104,6 +104,7 @@ const NewReview = () => {
     return (
         // <h1>hi</h1>
         <div className='reviewForm'>
+            {console.log('kkkkkkk', product)}
             <div className='nameDiv'>
                 <div className='picAndName'>
                     <img id='profilePicture' src='https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png'></img>

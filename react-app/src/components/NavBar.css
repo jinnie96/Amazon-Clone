@@ -70,11 +70,6 @@ input:focus {
     border: color #FF9900;
 }
 
-/* .helloUserDiv {
-    margin-right: 5px;
-    display: flex;
-    align-items:center;
-} */
 
 .order {
     margin-right: 5px;
@@ -157,10 +152,6 @@ input:focus {
     cursor: pointer;
 }
 
-.delivery, .loginBtn, .signUpBtn, .order, .cart, .amazonLogoDiv, .logoutBtn, .helloUserDiv {
-    /* padding: 5px; */
-}
-
 .amazonLogoDiv {
     margin: 4px;
 }
@@ -174,6 +165,10 @@ input:focus {
     text-decoration: none;
     height: 70px;
     width: 70px;
+}
+
+.helloUserDiv {
+    padding-left: 30px;
 }
 
 .loginBtn, .signUpBtn, .demoBtn {
