@@ -32,7 +32,7 @@ const ThreePlus = () => {
             const deal = []
             Object.keys(products).map((key, i) => {
                 // console.log('vvvvvvvvvvv', products[key])
-                if(products[key].rating >= window.location.pathname.slice(-1)) deal.push(products[key])
+                if(products[key].rating >= 3) deal.push(products[key])
             })
             // console.log(deal)
             setDeals(deal)
@@ -50,7 +50,7 @@ const ThreePlus = () => {
             <div className='dealWholePage'>
                 {/* <h1 id='genreType'>{window.location.pathname.slice(10)}</h1> */}
                 <div>
-                    <h2 id='bestSellers'>{window.location.pathname.slice(10)}+ star rated books</h2>
+                    <h2 id='bestSellers'>{3}+ star rated books</h2>
 
                 </div>
                 <div className='categoryBooks'>
@@ -62,7 +62,7 @@ const ThreePlus = () => {
                         // <div>
                                 // {// console.log('fffffffffff', oneKey)}
                                     <NavLink className='productGenreBox' to={'/books/' + oneKey.id}>
-                                    <div key={i}>
+                                    <div className='bookDiv' key={i}>
                                         <div className='bookPic'>
                                             <img id='photoSize' src={oneKey.photourl}></img>
                                         </div>
