@@ -210,10 +210,10 @@ useEffect(() => {
                     <img id='topBannerPic' src='https://i.ibb.co/z8YRM6r/20220801-US-PRR-KU-Banner-Summer-Reading-Phase-3-1500x300-rev.jpg'></img>
             </div>
             <div className='bottomBanner'>
-                <NavLink className='navDiv' to='/byRating/4'>
+                <NavLink className='navDiv' to='/byRating/FourStars'>
                     <img id='bottomBannerPic' src='https://images-na.ssl-images-amazon.com/images/G/01/books/editorial/bhp/BOTYSF22_tile.jpg'></img>
                 </NavLink>
-                <NavLink to='/category/Children'>
+                <NavLink to='/category/Childrens'>
                     <img id='bottomBannerPic' src='https://images-na.ssl-images-amazon.com/images/G/01/books/editorial/bhp/Kids_tile.jpg'></img>
                 </NavLink>
                 <NavLink to='/deals'>
