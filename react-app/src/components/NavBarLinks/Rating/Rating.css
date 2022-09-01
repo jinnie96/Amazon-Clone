@@ -1,0 +1,69 @@
+#genreType{
+    color: #FF9900;
+}
+
+#bestSellers {
+    font-size: 28px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+}
+
+#photoSize {
+    height: 196px;
+    width: 120px;
+}
+
+.categoryBooks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.productGenreBox {
+    flex-basis: 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 20px;
+    margin-bottom: 20px; */
+    text-decoration: none;
+    border: solid 1px #D5DBDB;
+    padding: 20px 10px 15px;
+    /* width: 210px;
+    height: 263px; */
+    /* width: 20%; */
+    /* box-sizing: border-box; */
+}
+
+.bookPrice {
+    margin-top: 5px;
+    margin-bottom: -4px;
+    font-size: 13px;
+    height: 30px;
+}
+
+.bookTitle {
+    font-size: 14px;
+    height: 25px;
+}
+
+.bookAuth {
+    font-size: 12px;
+}
+
+.bookPrice, .bookTitle, .bookAuth, .bookRatings {
+    color: black;
+    text-decoration: none;
+}
+
+.categoryPage {
+    display: flex;
+}
+
+.bookRatings {
+    margin-top: 10px;
+}
+
+.dealWholePage {
+    margin-left: 5px;
+}

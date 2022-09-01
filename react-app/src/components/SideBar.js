@@ -7,7 +7,7 @@ import './SideBar.css'
 import { getSingleProduct } from '../store/products';
 import { addtoCart, getCarts } from '../store/carts';
 import { getAllReviews, deleteOneReview } from '../store/reviews';
-
+import FantasyGenre from './NavBarLinks/Categories/FantasyGenre';
 const SideBar = () => {
     const dispatch = useDispatch()
     const state = useSelector(state => state)

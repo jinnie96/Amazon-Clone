@@ -20,6 +20,19 @@ import AddedToCart from './components/AddedToCart';
 import CategoryPage from './components/CategoryPage'
 import BestDeals from './components/BestDeals';
 import ByReview from './components/ByReview';
+import FantasyGenre from './components/NavBarLinks/Categories/FantasyGenre';
+import MysteryGenre from './components/NavBarLinks/Categories/MysteryGenre';
+import ActionGenre from './components/NavBarLinks/Categories/ActionGenre';
+import BiographyGenre from './components/NavBarLinks/Categories/BiographyGenre';
+import ChildrensGenre from './components/NavBarLinks/Categories/ChildrensGenre';
+import CookBookGenre from './components/NavBarLinks/Categories/CookBookGenre';
+import HistoryGenre from './components/NavBarLinks/Categories/HistoryGenre';
+import HorrorGenre from './components/NavBarLinks/Categories/HorrorGenre';
+import LitFictionGenre from './components/NavBarLinks/Categories/LitFictionGenre';
+import MangaGenre from './components/NavBarLinks/Categories/MangaGenre';
+import PoetryGenre from './components/NavBarLinks/Categories/PoetryGenre';
+import SciFiGenre from './components/NavBarLinks/Categories/SciFiGenre';
+
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
@@ -98,12 +111,79 @@ function App() {
           <Footer />
           <LinksFooter />
         </ProtectedRoute>
-        <ProtectedRoute path='/category/:str' exact={true} >
+        <ProtectedRoute path='/category/Fantasy' exact={true} >
           <NavBar />
-          <CategoryPage/>
+          <FantasyGenre/>
           <Footer />
           <LinksFooter />
         </ProtectedRoute>
+        <ProtectedRoute path='/category/Mystery' exact={true} >
+          <NavBar />
+          <MysteryGenre/>
+          <Footer />
+          <LinksFooter />
+        </ProtectedRoute>
+        <ProtectedRoute path='/category/Action' exact={true} >
+          <NavBar />
+          <ActionGenre/>
+          <Footer />
+          <LinksFooter />
+        </ProtectedRoute>
+        <ProtectedRoute path='/category/Biography' exact={true} >
+          <NavBar />
+          <BiographyGenre/>
+          <Footer />
+          <LinksFooter />
+        </ProtectedRoute>
+        <ProtectedRoute path='/category/Childrens' exact={true} >
+          <NavBar />
+          <ChildrensGenre/>
+          <Footer />
+          <LinksFooter />
+        </ProtectedRoute>
+        <ProtectedRoute path='/category/CookBooks' exact={true} >
+          <NavBar />
+          <CookBookGenre/>
+          <Footer />
+          <LinksFooter />
+        </ProtectedRoute>
+        <ProtectedRoute path='/category/History' exact={true} >
+          <NavBar />
+          <HistoryGenre/>
+          <Footer />
+          <LinksFooter />
+        </ProtectedRoute>
+        <ProtectedRoute path='/category/Horror' exact={true} >
+          <NavBar />
+          <HorrorGenre/>
+          <Footer />
+          <LinksFooter />
+        </ProtectedRoute>
+        <ProtectedRoute path='/category/Lit-Fiction' exact={true} >
+          <NavBar />
+          <LitFictionGenre/>
+          <Footer />
+          <LinksFooter />
+        </ProtectedRoute>
+        <ProtectedRoute path='/category/Manga' exact={true} >
+          <NavBar />
+          <MangaGenre/>
+          <Footer />
+          <LinksFooter />
+        </ProtectedRoute>
+        <ProtectedRoute path='/category/Poetry' exact={true} >
+          <NavBar />
+          <PoetryGenre/>
+          <Footer />
+          <LinksFooter />
+        </ProtectedRoute>
+        <ProtectedRoute path='/category/Sci-Fi' exact={true} >
+          <NavBar />
+          <SciFiGenre/>
+          <Footer />
+          <LinksFooter />
+        </ProtectedRoute>
+
         <ProtectedRoute path='/deals' exact={true} >
           <NavBar />
           <BestDeals />
