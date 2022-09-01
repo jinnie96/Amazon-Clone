@@ -35,6 +35,11 @@
     /* box-sizing: border-box; */
 }
 
+.bookDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;}
+
 .bookPrice {
     margin-top: 5px;
     margin-bottom: -4px;

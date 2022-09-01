@@ -33,6 +33,11 @@ import MangaGenre from './components/NavBarLinks/Categories/MangaGenre';
 import PoetryGenre from './components/NavBarLinks/Categories/PoetryGenre';
 import SciFiGenre from './components/NavBarLinks/Categories/SciFiGenre';
 
+import FourPlus from './components/NavBarLinks/Rating/FourPlus';
+import ThreePlus from './components/NavBarLinks/Rating/ThreePlus';
+import TwoPlus from './components/NavBarLinks/Rating/TwoPlus';
+import OnePlus from './components/NavBarLinks/Rating/OnePlus';
+
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
@@ -190,12 +195,31 @@ function App() {
           <Footer />
           <LinksFooter />
         </ProtectedRoute>
-        <ProtectedRoute path='/byRating/:id' exact={true} >
+        <ProtectedRoute path='/byRating/FourStars' exact={true} >
           <NavBar />
-          <ByReview />
+          <FourPlus />
           <Footer />
           <LinksFooter />
         </ProtectedRoute>
+        <ProtectedRoute path='/byRating/ThreeStars' exact={true} >
+          <NavBar />
+          <ThreePlus />
+          <Footer />
+          <LinksFooter />
+        </ProtectedRoute>
+        <ProtectedRoute path='/byRating/TwoStars' exact={true} >
+          <NavBar />
+          <TwoPlus />
+          <Footer />
+          <LinksFooter />
+        </ProtectedRoute>
+        <ProtectedRoute path='/byRating/OneStar' exact={true} >
+          <NavBar />
+          <OnePlus />
+          <Footer />
+          <LinksFooter />
+        </ProtectedRoute>
+
       </Switch>
     </BrowserRouter>
   );

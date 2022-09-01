@@ -68,7 +68,7 @@ const BiographyGenre = () => {
                         // <div>
                                 // {// console.log('fffffffffff', oneKey)}
                                     <NavLink className='productGenreBox' to={'/books/' + oneKey.id}>
-                                    <div key={i}>
+                                    <div className='bookDiv' key={i}>
                                         <div className='bookPic'>
                                             <img id='photoSize' src={oneKey.photourl}></img>
                                         </div>
