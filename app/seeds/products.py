@@ -116,6 +116,7 @@ def seed_products():
     db.session.add(FAHRENHEIT)
     db.session.add(BRAVENEWWORLD)
     db.session.add(DUNE)
+    db.session.add(IMPERIAL)
     db.session.add(MOONSTONE)
     db.session.add(SCARLET)
     db.session.add(MURDER)
