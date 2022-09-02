@@ -70,7 +70,7 @@ const NavBar = () => {
       <div className="navBar">
         <div className='amazonLogoDiv'>
           <NavLink class='amznLogo' to='/' exact={true} activeClassName='active'>
-            <img id="logo" src='https://www.doorwaysva.org/wp-content/uploads/2019/06/amazon-logo.png'></img>
+            <img id="logo" src='https://i.ibb.co/gmV9mQF/amazon-logo.jpg'></img>
           </NavLink>
         </div>
         {/* <div className='delivery'>

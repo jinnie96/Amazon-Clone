@@ -125,7 +125,7 @@ const SignUpForm = () => {
             <button id='signupBtn' type='submit'>Create Account</button>
           </form>
         </div>
-        <div><h3 id='conditions'>By creating an account, you agree to Amazon's<br></br> <span id='conditionSpan'>Conditions of Use</span> and <span id='privacySpan'>Privacy Notice.</span></h3></div>
+        <div><h3 id='conditions'>By creating an account, you agree to Amazun's<br></br> <span id='conditionSpan'>Conditions of Use</span> and <span id='privacySpan'>Privacy Notice.</span></h3></div>
         <hr></hr>
         <div className='signInDirectDiv'>
           <h3 id='signInDirect'>Already have an account? <NavLink to='/login'><span id='signInLink'>Sign-in</span></NavLink></h3>
@@ -139,7 +139,7 @@ const SignUpForm = () => {
           <h3 id='helpLink'>Help</h3>
         </div>
         <div>
-          <h3 id='copyright'>© 1996-2022, Amazon.com, Inc. or its affiliates</h3>
+          <h3 id='copyright'>© 1996-2022, Amazun.com, Inc. or its affiliates</h3>
         </div>
       </div>
     </div>

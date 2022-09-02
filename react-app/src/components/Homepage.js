@@ -86,7 +86,7 @@ useEffect(() => {
             <img src='https://m.media-amazon.com/images/I/61iqsjK1JtL._AC_SX466_.jpg'></img>
         </ul> */}
 
-        <h1 id='booksAt'>Books at Amazon</h1>
+        <h1 id='booksAt'>Books at Amazun</h1>
         <div className='banner'>
                 <h3 id='exploreBooks'>Explore Books by Category</h3>
                 {/* <img id="homePic" src ="https://www.thebanner.org/sites/default/files/styles/article_detail_header/public/TIN-332%20Books%20from_large.jpg?itok=7QRVhctV"></img> */}
