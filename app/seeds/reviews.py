@@ -7,6 +7,10 @@ def seed_reviews():
         reviewer_id=1, product_id=1, description='Great product. I have had no problems.', title='Awesome', rating=5)
     review3 = Review(
         reviewer_id=3, product_id=3, description='Fun, but batteries run out too fast.', title='Solid', rating=4)
+    review3 = Review(
+        reviewer_id=3, product_id=3, description='Fun, but batteries run out too fast.', title='Solid', rating=4)
+    review3 = Review(
+        reviewer_id=3, product_id=3, description='Fun, but batteries run out too fast.', title='Solid', rating=4)
 
     db.session.add(review1)
     db.session.add(review2)

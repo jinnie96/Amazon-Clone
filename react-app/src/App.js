@@ -164,7 +164,7 @@ function App() {
           <Footer />
           <LinksFooter />
         </ProtectedRoute>
-        <ProtectedRoute path='/category/Lit-Fiction' exact={true} >
+        <ProtectedRoute path='/category/Literary-Fiction' exact={true} >
           <NavBar />
           <LitFictionGenre/>
           <Footer />

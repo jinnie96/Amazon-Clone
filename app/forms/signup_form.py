@@ -24,7 +24,7 @@ def username_exists(form, field):
 
 def email_format(form, field):
     email = field.data
-    print(email, "EEEEMMMM")
+    # print(email, "EEEEMMMM")
     if not "@" in email:
         raise ValidationError("Invalid Email")
 

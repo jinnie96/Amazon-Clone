@@ -26,7 +26,7 @@ const SideBar = () => {
                     <NavLink id='navLink' to='/category/Mystery'><h3>Mystery</h3></NavLink>
                     <NavLink id='navLink' to='/category/Horror'><h3>Horror</h3></NavLink>
                     <NavLink id='navLink' to='/category/Biography'><h3>Biography</h3></NavLink>
-                    <NavLink id='navLink' to='/category/Children'><h3>Children</h3></NavLink>
+                    <NavLink id='navLink' to='/category/Childrens'><h3>Children</h3></NavLink>
                     <NavLink id='navLink' to='/category/Manga'><h3>Manga</h3></NavLink>
                     <NavLink id='navLink' to='/category/Literary-Fiction'><h3>Literary Fiction</h3></NavLink>
                     <NavLink id='navLink' to='/category/History'><h3>History</h3></NavLink>
