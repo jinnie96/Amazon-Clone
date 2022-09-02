@@ -45,10 +45,12 @@
 .bookTitle {
     font-size: 14px;
     height: 25px;
+    margin-bottom: 20px;
 }
 
 .bookAuth {
     font-size: 12px;
+    /* margin-top: 20px; */
 }
 
 .bookPrice, .bookTitle, .bookAuth, .bookRatings {
