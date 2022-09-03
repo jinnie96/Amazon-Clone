@@ -42,6 +42,9 @@
     background-color: #F7FCFD;
 }
 
+.mysteryDiv img {
+    border: solid 1px black;
+}
 .sportsTitle, .booksTitle, .gamesTitle, .computersTitle, .cellPhoneTitle, .clothingTitle {
     font-size: 21px;
     font-weight: bolder;

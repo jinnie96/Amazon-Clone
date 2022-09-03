@@ -94,7 +94,7 @@ useEffect(() => {
             <div className='categoryList'>
                 <NavLink id='navLink' to='/category/Fantasy'>
                     <div className='fantasyDiv>'>
-                        <img src='https://i.ibb.co/WVbyPQF/imageedit-2-4521847632.jpg'></img>
+                        <img src='https://mvlteenvoice.files.wordpress.com/2013/11/harry_potter_kazu_kibuishi.jpg'></img>
                         <div className='fantasyName'>
                             <h3 id='categoryName'>Fantasy</h3>
 
@@ -109,7 +109,7 @@ useEffect(() => {
                 </NavLink>
                 <NavLink id='navLink' to='/category/Mystery'>
                     <div className='mysteryDiv>'>
-                        <img src='https://images.ctfassets.net/3s5io6mnxfqz/5yaU9R8CfN7H3IFwlpjINO/41882ddd6ce99df47e11434a03ee6271/AdobeStock_138391201.jpeg'></img>
+                        <img src='http://sherlockwebquest.weebly.com/uploads/1/3/7/0/13703805/3464358.png'></img>
                         <div className='mysteryName'>
 
                             <h3 id='categoryName'>Mystery</h3>
@@ -166,7 +166,7 @@ useEffect(() => {
                 </NavLink>
                 <NavLink id='navLink' to='/category/History'>
                     <div className='historyDiv>'>
-                        <img src='https://howtotalkaboutarthistory.files.wordpress.com/2016/05/wassilij_grigorjewitsch_perow_004.jpg'></img>
+                        <img src='https://media.istockphoto.com/vectors/on-patrol-vector-id131723828?k=20&m=131723828&s=612x612&w=0&h=n4Ve2Slwv1G6z1mnO1dEG8LfHJtG4iE9ghZ-JuSDzeY='></img>
                         <div className='historyName'>
                             <h3 id='categoryName'>History</h3>
 
@@ -175,7 +175,7 @@ useEffect(() => {
                 </NavLink>
                 <NavLink id='navLink' to='/category/Cookbooks'>
                     <div className='cookbookDiv>'>
-                        <img src='https://img.freepik.com/premium-vector/cartoon-little-girl-cooking-making-cake_29190-7102.jpg?w=2000'></img>
+                        <img src='https://i.pinimg.com/736x/c8/f8/eb/c8f8eb1dce1ab744af209842847db4b2.jpg'></img>
                         <div className='cookbookName'>
 
                             <h3 id='categoryName'>Cookbooks</h3>

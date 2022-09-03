@@ -45,10 +45,10 @@ def seed_reviews():
         reviewer_id=3, product_id=21, description='This book does a great job at showing the impacts of Edison\'s inventions.', title='Genius', rating=5)
     review22 = Review(
         reviewer_id=2, product_id=22, description='Funny book! I read it with my son and he laughed a ton.', title='Funny', rating=4)
-    review23 = Review(
-        reviewer_id=3, product_id=23, description='Not my favorite treehouse book, but solid!', title='Good', rating=4)
-    review24 = Review(
-        reviewer_id=2, product_id=24, description='Highly recommend.', title='Great', rating=5)
+    # review23 = Review(
+    #     reviewer_id=3, product_id=23, description='Not my favorite treehouse book, but solid!', title='Good', rating=4)
+    # review24 = Review(
+    #     reviewer_id=2, product_id=24, description='Highly recommend.', title='Great', rating=5)
     review25 = Review(
         reviewer_id=3, product_id=25, description='Great plot! Could not put the book down', title='Great plot', rating=4)
     review26 = Review(
@@ -59,8 +59,8 @@ def seed_reviews():
         reviewer_id=2, product_id=28, description='None of the recipes worked. Did not taste good.', title='Terrible', rating=1)
     review29 = Review(
         reviewer_id=3, product_id=29, description='Delicious, authentic Indian food recipes!', title='Yummy', rating=4)
-    review30 = Review(
-        reviewer_id=3, product_id=30, description='Scary book! Read in the dark.', title='Spooky', rating=4)
+    # review30 = Review(
+    #     reviewer_id=3, product_id=30, description='Scary book! Read in the dark.', title='Spooky', rating=4)
     review31 = Review(
         reviewer_id=2, product_id=31, description='This book does such a good job at being a horror book; that I could barely finish it! I had nightmares but pushed through and finished it. Recommend!', title='Could not finish!', rating=5)
     review32 = Review(
@@ -95,8 +95,8 @@ def seed_reviews():
         reviewer_id=3, product_id=46, description='Raw and authentic poetry', title='Felt deeply!', rating=5)
     review47 = Review(
         reviewer_id=3, product_id=47, description='Meaningful poetry. Wish there were more variations of poetry.', title='Beautiful', rating=4)
-    review48 = Review(
-        reviewer_id=2, product_id=48, description='Beautiful read!', title='Impactful', rating=5)
+    # review48 = Review(
+    #     reviewer_id=2, product_id=48, description='Beautiful read!', title='Impactful', rating=5)
     review49 = Review(
         reviewer_id=3, product_id=49, description='Great read. The poetry is beautifully written', title='Amazing', rating=5)
 
