@@ -74,6 +74,8 @@ hr {
 
 .fullFormDiv {
     /* border: solid 1px black; */
+    overflow:hidden;
+
 }
 
 .footerLinks {
@@ -99,9 +101,11 @@ hr {
     align-items: center;
     background-color: #FAFAFA;
     /* position: absolute; */
-    height: 435px;
+    height: 175px;
+    /* min-height: 100px; */
     position:relative;
     bottom: 0;
+    overflow:hidden;
 }
 
 #conditionUse, #privacyNotice {

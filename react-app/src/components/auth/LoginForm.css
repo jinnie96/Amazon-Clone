@@ -108,16 +108,18 @@ hr {
     font-family: "Amazon Ember",Arial,sans-serif;
 }
 
-.bottomHalf {
+.bottomHalfSignIn {
     display:flex;
     flex-direction: column;
     align-items: center;
     background-color: #FAFAFA;
     /* position: absolute; */
-    height: 435px;
+    height: 235px;
     position:relative;
     bottom: 0;
     margin-top: 28px;
+    overflow:hidden;
+
 }
 
 #conditionUse, #privacyNotice {
@@ -216,4 +218,8 @@ hr {
     border: solid 1px #A2A6AB;
     border-radius: 3px;
 
+}
+
+.fullPage {
+    overflow:hidden;
 }

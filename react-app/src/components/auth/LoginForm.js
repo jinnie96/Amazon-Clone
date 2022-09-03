@@ -100,7 +100,7 @@ const LoginForm = () => {
           <button id='createAccBtn'>Create your Amazon account</button>
         </NavLink>
       </div>
-    <div className='bottomHalf'>
+    <div className='bottomHalfSignIn'>
       <div className='footerLinks'>
         <h3 id='conditionUse'>Conditions of Use</h3>
         <h3 id='privacyNotice'>Privacy Notice</h3>
