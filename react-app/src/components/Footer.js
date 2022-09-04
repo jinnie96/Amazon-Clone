@@ -59,7 +59,7 @@ const Footer = () => {
                </div> */}
             </div>
             <div className="logo">
-                <img id='amazonLogo' src='https://www.doorwaysva.org/wp-content/uploads/2019/06/amazon-logo.png'></img>
+                <img id='amazonLogo' src='https://i.ibb.co/gmV9mQF/amazon-logo.jpg'></img>
                 <div className='copyRight'>© 2022 Amazun</div>
             </div>
         </div>

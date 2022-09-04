@@ -41,7 +41,7 @@ const LoginForm = () => {
     <div className='fullPage'>
     <div className='fullFormDiv'>
       <div className='signUpLogoDiv'>
-        <img id='signUpLogo' src='http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG'></img>
+        <img id='signUpLogo' src='https://i.ibb.co/4Z5F4wQ/Amazon-20logo.jpg'></img>
       </div>
       <div className='topHalf'>
 
