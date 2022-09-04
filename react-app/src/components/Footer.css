@@ -1,5 +1,6 @@
 .footerDiv {
     bottom: 0;
+    /* background-color: #232F3E; */
 }
 
 .top {
@@ -41,10 +42,27 @@
 .logo {
     background-color: #232F3E;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-items: center;
     align-items: center;
 }
 
 .linksToFooter p {
     font-size: 12px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color:#475768
+}
+
+.copyRight {
+    font-size: 12px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    color: white;
+    padding-bottom: 30px;
 }

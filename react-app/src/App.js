@@ -72,7 +72,7 @@ function App() {
           <NavBar />
           <Homepage />
           <Footer />
-          <LinksFooter />
+          {/* <LinksFooter /> */}
         </Route>
         <ProtectedRoute path='/books/:id' exact={true}>
           <NavBar />

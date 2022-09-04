@@ -13,12 +13,18 @@
     background-color: #475769;
     height: 10vh;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    color: white;
+    padding-bottom: 10px;
+    /* justify-content: space-between; */
     /* width: max-content; */
     /* align-items: center; */
 }
 
-#githubLogo, #linkedInLogo {
+/* #githubLogo, #linkedInLogo {
     font-size: 50px;
     color: black;
-}
+} */
