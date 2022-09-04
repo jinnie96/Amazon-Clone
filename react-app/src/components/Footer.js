@@ -13,47 +13,37 @@ const Footer = () => {
             <div className="top" onClick={scrollTop}>Back to top</div>
             <div className="bottom">
                <div className="get">
-                   <h1 id="head">Get to Know Us</h1>
+                   <h1 id="head">More projects by developer</h1>
                    <div className='linksToFooter'>
-                       <p>Careers</p>
-                       <p>Amazon Newsletter</p>
-                       <p>About Amazon</p>
-                       <p>Sustainability</p>
-                       <p>Press Center</p>
-                       <p>Investor Relations</p>
-                       <p>Amazon Devices</p>
-                       <p>Amazon Science</p>
+                       <a href='http://insta-clone-group.herokuapp.com'><p>Instaclone</p></a>
+                       <a href='https://remember-the-grapes.herokuapp.com/'><p>Remember the Grapes</p></a>
 
                    </div>
                </div>
                <div className='make'>
-                    <h1 id="head">Make Money with Us</h1>
+                    <h1 id="head">Technologies Used</h1>
                     <div className='linksToFooter'>
-                        <p>Sell products on Amazon</p>
-                        <p>Sell apps on Amazon</p>
-                        <p>Supply to Amazon</p>
-                        <p>Become an Affiliate</p>
-                        <p>Become a Delivery Driver</p>
-                        <p>Start a package delivery business</p>
-                        <p>Advertise Your Products</p>
-                        <p>Self-Publish with Us</p>
-                        <p>Host an Amazon Hub</p>
+                        <p>React</p>
+                        <p>Redux</p>
+                        <p>Javascript</p>
+                        <p>HTML</p>
+                        <p>CSS</p>
+                        <p>Flask</p>
+                        <p>PostgreSQL</p>
+                        <p>SQLAlchemy</p>
+                        <p>Git</p>
                     </div>
                </div>
                <div className='amazon'>
-                    <h1 id="head">Amazon Payments Products</h1>
+                    <h1 id="head">Connect with the developer</h1>
                     <div className='linksToFooter'>
-                        <p>Amazon Rewards Visa Signature Cards</p>
-                        <p>Amazon Store Card</p>
-                        <p>Amazon Secured Card</p>
-                        <p>Amazon Business Card</p>
-                        <p>Shop with Points</p>
-                        <p>Credit card Marketplace</p>
-                        <p>Reload Your Balance</p>
-                        <p>Amazon Currency Converter</p>
+                        <a href='https://github.com/jinnie96/'><p>Github</p></a>
+                        <a href='https://angel.co/u/karandeep-singh-83'><p>AngelList</p></a>
+                        <a href='https://www.linkedin.com/in/karandeep-singh-600852a8/'><p>LinkedIn</p></a>
+                        <a href='https://jinnie96.github.io'><p>Personal Website</p></a>
                     </div>
                </div>
-               <div className='let'>
+               {/* <div className='let'>
                     <h1 id="head">Let Us Help You</h1>
                     <div className='linksToFooter'>
                         <p>Amazon and COVID-19</p>
@@ -66,10 +56,11 @@ const Footer = () => {
                         <p>Amazon Assistant</p>
                         <p>Help</p>
                     </div>
-               </div>
+               </div> */}
             </div>
             <div className="logo">
                 <img id='amazonLogo' src='https://www.doorwaysva.org/wp-content/uploads/2019/06/amazon-logo.png'></img>
+                <div className='copyRight'>© 2022 Amazun</div>
             </div>
         </div>
 
