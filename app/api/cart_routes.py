@@ -17,7 +17,7 @@ def getCart(id):
     for cart in carts:
         product = Product.query.filter(Product.id == cart.product_id).first()
         # print(product.to_dict()['id'], "..........")
-        print(product.to_dict()['author'], "PROOOOO")
+        # print(product.to_dict()['author'], "PROOOOO")
         temp = {}
         temp['id'] = (product.to_dict()['id'])
         temp['name'] = (product.to_dict()['name'])

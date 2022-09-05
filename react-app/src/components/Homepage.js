@@ -71,8 +71,6 @@ useEffect(() => {
 
 
   const productComponents = productsArr.map((product, i) => {
-      // console.log(product)
-      // console.log(productsArr)
     return (
         // <h1>hi</h1>
       <li key={product.id}>

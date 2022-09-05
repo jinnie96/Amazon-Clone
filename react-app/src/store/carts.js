@@ -33,7 +33,7 @@ export const getCarts = (id) => async dispatch => {
     const response = await fetch (`/api/carts/${id}`)
     if (response.ok) {
         const data = await response.json();
-        console.log("DATA", data)
+        // console.log("DATA", data)
         dispatch(getCart(data));
         if (data.errors) {
             return;
