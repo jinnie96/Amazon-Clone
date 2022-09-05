@@ -210,5 +210,6 @@ hr {
 }
 
 #loginBtn:hover {
-    opacity: 90%;
+    /* background-image: #F1C96B; */
+    background-image: linear-gradient(#F2CB71, #F2CB71);
 }

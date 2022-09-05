@@ -152,5 +152,6 @@ hr {
 }
 
 #signupBtn:hover {
-    opacity: 90%;
+    /* opacity: 90%; */
+    background-image: linear-gradient(#F2CB71, #F2CB71);
 }
