@@ -127,9 +127,9 @@ hr {
     cursor: pointer;
 }
 
-#signupBtn:hover {
+/* #signupBtn:hover {
     opacity: 90%;
-}
+} */
 
 #conditionSpan, #privacySpan {
     color:#5B95D2;
@@ -151,6 +151,6 @@ hr {
 
 }
 
-#signupBtn:hover {
+/* #signupBtn:hover {
     opacity: 90%;
-}
+} */

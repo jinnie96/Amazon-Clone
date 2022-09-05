@@ -143,10 +143,6 @@ hr {
     cursor: pointer;
 }
 
-#loginBtn:hover {
-    opacity: 90%;
-}
-
 #loginErrors {
     color: red;
 }
@@ -195,10 +191,6 @@ hr {
     /* position: absolute; */
     /* width: 374px; */
 
-}
-
-#createNewBtn:hover {
-    opacity: 90%;
 }
 
 #createAccBtn {
