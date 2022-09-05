@@ -208,3 +208,7 @@ hr {
 .fullPage {
     overflow:hidden;
 }
+
+#loginBtn:hover {
+    opacity: 90%;
+}
