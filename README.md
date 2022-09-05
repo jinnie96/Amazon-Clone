@@ -40,29 +40,30 @@ To view and use this application, you can either navigate to the [live hosted si
 ## Features
 ### Login + Signup
 ![login](https://i.ibb.co/V9qD17g/Screen-Shot-2022-09-04-at-8-24-01-PM.png)
-![signup](./Images/ReadMePhotos/7-signup.png)
+![signup](https://i.ibb.co/QbVgTYL/Screen-Shot-2022-09-04-at-8-27-21-PM.png)
 
 ### Home
 Home feed:
-![image](https://user-images.githubusercontent.com/85136034/159996150-31a62e6f-bcc2-438a-a54b-8503a4353412.png)
+![image](https://i.ibb.co/R754Rzv/Screen-Shot-2022-09-04-at-8-48-38-PM.png)
 
-Single post:
-![single post](./Images/ReadMePhotos/2-singlepost.png)
+Book page:
+![single post](https://i.ibb.co/jJpRPGz/Screen-Shot-2022-09-04-at-8-52-55-PM.png)
 
-### Create post
-![create post](./Images/ReadMePhotos/3-createpost.png)
+### Create Review/Edit Review
+![create review](https://i.ibb.co/kxdRJkS/Screen-Shot-2022-09-04-at-9-11-26-PM.png)
+![edit review](https://i.ibb.co/7GNtDR1/Screen-Shot-2022-09-04-at-9-13-46-PM.png)
 
-### Profile Page
-User profile:
-![user profile](./Images/ReadMePhotos/4-viewprofile.png)
-Edit profile:
-![edit profile](./Images/ReadMePhotos/5-editprofile.png)
+### Category Page
+![category](https://i.ibb.co/SmMvJK2/Screen-Shot-2022-09-04-at-9-15-27-PM.png)
+
+### Cart
+Cart:
+![cart](https://i.ibb.co/cvz6KJR/Screen-Shot-2022-09-04-at-9-05-32-PM.png)
 
 ## Future Features
-- Profile
-   - Users will be able to add and remove a profile picture
-- Search
-    - Users will be able to search for users and posts that include searched characters
-- Hashtags + tags
-    - Users will be able to add # to text in posts and comments to add hashtags
-    - Users will be able to add @ to text in posts and comments that will link to other users
+- Author Pages
+   - Users will be able to view books by author
+- Book recommendation page
+    - Users will be recommended books based on their page visited history
+- Profile Page
+    - Users will be able to view all reviews by a user on their profile page.
