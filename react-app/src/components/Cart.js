@@ -24,6 +24,13 @@ const Cart = () => {
         }
     });
 
+    useEffect(() => {
+        (async() => {
+        //   await dispatch(getAllProducts());
+          await dispatch(getCarts(user))
+        })();
+      }, []);
+
     // useEffect(() => {
     //     dispatch(getCarts(user))
     // }, [count])
@@ -73,6 +80,7 @@ const Cart = () => {
             <div>
                 {
                 Object.keys(cart).map((oneKey,i)=>{
+                    {console.log(cart[oneKey])}
                     {if(parseInt(oneKey)) {
                         return (
                             <div>
@@ -80,7 +88,7 @@ const Cart = () => {
                                 <img id='photoUrl'src={cart[oneKey].photourl}></img>
                                 <div className='cartProductInfo'>
                                     <p key={i} id='productName'>{cart[oneKey].name}</p>
-                                    <p id='authorName'>by {cart[oneKey].name}</p>
+                                    <p id='authorName'>by {cart[oneKey].author}</p>
                                     <p id='instock'>In Stock</p>
                                     <p id='paperback'>Paperback</p>
                                     <p id='returns'>FREE RETURNS</p>

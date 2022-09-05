@@ -17,12 +17,14 @@ def getCart(id):
     for cart in carts:
         product = Product.query.filter(Product.id == cart.product_id).first()
         # print(product.to_dict()['id'], "..........")
+        print(product.to_dict()['author'], "PROOOOO")
         temp = {}
         temp['id'] = (product.to_dict()['id'])
         temp['name'] = (product.to_dict()['name'])
         temp['description'] = (product.to_dict()['description'])
         temp['price'] = str(product.to_dict()['price'])
         temp['photourl'] = (product.to_dict()['photourl'])
+        temp['author'] = product.to_dict()['author']
         temp['quantity'] = cart.to_dict()['quantity']
         count += cart.to_dict()['quantity']
         # print(cart.to_dict()['quantity'], '=====================')

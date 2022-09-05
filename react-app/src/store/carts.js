@@ -29,10 +29,11 @@ const addCart = id => ({
 // ------------------- Thunk creators ------------------- //
 export const getCarts = (id) => async dispatch => {
     // console.log(id, "YO")
+    const domain = window.location.origin
     const response = await fetch (`/api/carts/${id}`)
     if (response.ok) {
         const data = await response.json();
-        // console.log("DATA", data)
+        console.log("DATA", data)
         dispatch(getCart(data));
         if (data.errors) {
             return;

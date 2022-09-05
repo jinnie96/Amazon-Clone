@@ -23,14 +23,14 @@ const NavBar = () => {
       return
     }
     setSearchedTerms([])
-    debugger
+    // debugger
     // console.log(searchedTerms, "NNN")
     // console.log((term), "LLL")
     const response = await fetch(domain + `/api/products/search/${term}`)
     if (response.ok) {
       let arr = []
       const data = await response.json()
-      debugger
+      // debugger
       // console.log("SEARCHDATA", data)
       // setSearchedTerms(data)
       for (const key in data) {

@@ -30,6 +30,7 @@
     color: black;
     font-size: 18px;
     font-weight: bolder;
+    width: max-content;
 }
 
 #productName:hover {
@@ -45,6 +46,10 @@
 
 #authorName, #returns {
     font-size: 14px;
+}
+
+#authorName {
+    width: max-content;
 }
 
 #instock, #paperback {
@@ -118,7 +123,7 @@
     background-color: #E3E6E6;
     /* width: 100%; */
     border-radius: 5px;
-    /* max-width: 82px; */
+    max-width: 92px;
 }
 
 .placeOrderBtn {

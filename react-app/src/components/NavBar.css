@@ -185,6 +185,11 @@ input:focus {
     align-items: center;
 }
 
+.loginBtn {
+    padding-left: 20px;
+    padding-right: -15px;
+}
+
 #optionsReturn {
     color: white;
     font-weight: bolder;

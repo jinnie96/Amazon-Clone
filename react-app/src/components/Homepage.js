@@ -19,6 +19,9 @@ const [deals, setDeals] = useState([])
 useEffect(() => {
     (async() => {
       await dispatch(getAllProducts());
+      if (user) {
+          await dispatch(getCarts(user.id))
+      }
     })();
   }, []);
 
@@ -118,7 +121,7 @@ useEffect(() => {
                 </NavLink>
                 <NavLink id='navLink' to='/category/Horror'>
                     <div className='horrorDiv>'>
-                        <img src='https://puzzleboxhorror.com/wp-content/uploads/2020/07/horror-book-and-skull-scaled.jpeg'></img>
+                        <img src='https://i.pinimg.com/originals/2d/1c/ca/2d1ccab3d4ae904157d912ee012372b1.jpg'></img>
                         <div className='horrorName'>
                             <h3 id='categoryName'>Horror</h3>
 
