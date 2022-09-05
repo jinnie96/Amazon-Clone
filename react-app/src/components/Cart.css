@@ -116,8 +116,9 @@
 
 #quantity {
     background-color: #E3E6E6;
-    width: 100%;
+    /* width: 100%; */
     border-radius: 5px;
+    /* max-width: 82px; */
 }
 
 .placeOrderBtn {

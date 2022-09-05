@@ -150,3 +150,7 @@ hr {
     color: red;
 
 }
+
+#signupBtn:hover {
+    opacity: 90%;
+}

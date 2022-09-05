@@ -106,7 +106,7 @@ const EditReview = () => {
         <div className='reviewForm'>
             <div className='nameDiv'>
                 <div className='picAndName'>
-                    <img id='profilePicture' src='https://images-na.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png'></img>
+                    <img id='profilePicture' src='https://i.ibb.co/7n9xYnF/default-CR0-0-1024-1024-SX48-removebg-preview.jpg'></img>
                     <h1 id='usernameDiv'>{user.username}</h1>
                 </div>
             </div>

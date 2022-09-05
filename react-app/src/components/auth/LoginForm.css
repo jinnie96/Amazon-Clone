@@ -198,7 +198,7 @@ hr {
 }
 
 #createNewBtn:hover {
-    background-color: #DDE0E5;
+    opacity: 90%;
 }
 
 #createAccBtn {
