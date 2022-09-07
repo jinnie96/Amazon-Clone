@@ -14,7 +14,7 @@ def seed_reviews():
     review6 = Review(
         reviewer_id=2, product_id=6, description='Fahrenheit 451 is a truly impactful book, that explains the dangers of censorship through book burning. I highly reccommend this book!', title='Symbolic', rating=5)
     review7 = Review(
-        reviewer_id=3, product_id=7, description='Good book! I could\'nt put it down', title='Good', rating=4)
+        reviewer_id=3, product_id=7, description='Good book! I couldn\'t put it down', title='Good', rating=4)
     review8 = Review(
         reviewer_id=3, product_id=8, description='It deserves its spot as a science fiction icon. At times dense, but eminently readable. It’s characters come to life. I loved every page!', title=' Vivid, beautiful.', rating=4)
     review9 = Review(
@@ -80,7 +80,7 @@ def seed_reviews():
     review39 = Review(
         reviewer_id=2, product_id=39, description='This book is a masterpiece! I remember reading it in high school and remember how much I loved it. Still as good as I first read it!', title='Wonderful book!', rating=5)
     review40 = Review(
-        reviewer_id=3, product_id=40, description='Enjoyed the book. Short and concise, but conveys message well', title='DONT BUY', rating=4)
+        reviewer_id=3, product_id=40, description='Enjoyed the book. Short and concise, but conveys message well', title='Liked it!', rating=4)
     review41 = Review(
         reviewer_id=2, product_id=41, description='Book has missing pages. Had to return. Don\'t buy.', title='DONT BUY', rating=1)
     review42 = Review(
@@ -90,7 +90,7 @@ def seed_reviews():
     review44 = Review(
         reviewer_id=2, product_id=44, description='The book doesn\'t do this manga justice. I recommend watching the anime over reading this book.', title='Decent, but not great', rating=2)
     review45 = Review(
-        reviewer_id=2, product_id=45, description='The only bad thing I can say about this book is how short it is! I could\'t put it down. Highly recommend reading and watching this anime!', title='Short', rating=5)
+        reviewer_id=2, product_id=45, description='The only bad thing I can say about this book is how short it is! I couldn\'t put it down. Highly recommend reading and watching this anime!', title='Short', rating=5)
     review46 = Review(
         reviewer_id=3, product_id=46, description='Raw and authentic poetry', title='Felt deeply!', rating=5)
     review47 = Review(
