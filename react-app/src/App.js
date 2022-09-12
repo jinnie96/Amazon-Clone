@@ -32,6 +32,7 @@ import LitFictionGenre from './components/NavBarLinks/Categories/LitFictionGenre
 import MangaGenre from './components/NavBarLinks/Categories/MangaGenre';
 import PoetryGenre from './components/NavBarLinks/Categories/PoetryGenre';
 import SciFiGenre from './components/NavBarLinks/Categories/SciFiGenre';
+import Handle404 from './components/404Page';
 
 import FourPlus from './components/NavBarLinks/Rating/FourPlus';
 import ThreePlus from './components/NavBarLinks/Rating/ThreePlus';
@@ -219,7 +220,10 @@ function App() {
           <Footer />
           {/* <LinksFooter /> */}
         </ProtectedRoute>
-
+        <Route path='*' >
+          <NavBar />
+          <Handle404 />
+        </Route>
       </Switch>
     </BrowserRouter>
   );
