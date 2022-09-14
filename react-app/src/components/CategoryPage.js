@@ -42,13 +42,8 @@ const CategoryPage = () => {
 
       useEffect(() => {
           const movieID = window.location.pathname.slice(10)
-        // movieID on initial render or subsequent render when updated
-        // logic to use movieID and resynchronize any data.
-        // console.log('movie', movieID)
       });
 
-    // console.log(products)
-    // console.log((window.location.pathname).slice(10))
     return (
         <div className='categoryPage'>
             <div className='sideBarDiv'>
@@ -104,10 +99,6 @@ const CategoryPage = () => {
 
                                     </div>
                                 </NavLink>
-                            // </div>
-                                    // }
-
-                                    // )}
                                     ))}
                                     </div>
                 )}

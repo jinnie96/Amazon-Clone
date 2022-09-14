@@ -73,21 +73,6 @@ const NavBar = () => {
             <img id="logo" src='https://i.ibb.co/gmV9mQF/amazon-logo.jpg'></img>
           </NavLink>
         </div>
-        {/* <div className='delivery'>
-          <div className='deliveryBoxOne'>
-          <div className='deliveryBox'>
-            <div className='deliveryIcon'>
-              <img id='locationIcon' src='https://kronospan-express.com/public/krono/img/icons/placeholder_blk.png'></img>
-            </div>
-            {user && (
-            <div class='deliveryName'>
-              Deliver to {user.username}
-            </div>
-
-            )}
-          </div>
-          </div>
-        </div> */}
         <div className='searchResultList'>
         <div className="searchBar">
           <input className="search" value={searchTerm} onChange={updateSearch}></input>
@@ -130,14 +115,6 @@ const NavBar = () => {
             </div>
           // </div>
         )}
-        {/* <div className="order">
-          <NavLink to='/orders' exact={true} activeClassName='active' id="navOptions">
-            Returns
-          </NavLink>
-          <NavLink to='/orders' exact={true} activeClassName='active' id="optionsReturn">
-            & Orders
-          </NavLink>
-        </div> */}
         <div className="cart">
           <NavLink to='/cart' exact={true} activeClassName='active' id="navOptions">
             Cart

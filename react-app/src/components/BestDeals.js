@@ -53,9 +53,6 @@ const BestDeals = () => {
 
                     <div className='listofDeals'>
                     {deals.map((oneKey, i) => (
-                        // {products[oneKey].price < 10 &&
-                        // <div>
-                                // {// console.log('fffffffffff', oneKey)}
                                     <NavLink className='productGenreBox' to={'/books/' + oneKey.id}>
                                     <div className='bookDiv' key={i}>
                                         <div className='bookPic'>
@@ -93,10 +90,6 @@ const BestDeals = () => {
 
                                     </div>
                                 </NavLink>
-                            // </div>
-                                    // }
-
-                                    // )}
                                     ))}
                                     </div>
                 )}
