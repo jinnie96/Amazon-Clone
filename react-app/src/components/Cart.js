@@ -14,8 +14,6 @@ const Cart = () => {
     let count = 1
     useEffect(() => {
         if (cart) {
-            // subTotal = Object.keys(cart).length
-            // console.log("inside", Object.keys(cart))
             Object.keys(cart).map((oneKey,i)=>{
                 // console.log("ONEKEY", cart[oneKey].quantity)
                 subTotal += (cart[oneKey].quantity)
@@ -26,39 +24,26 @@ const Cart = () => {
 
     useEffect(() => {
         (async() => {
-        //   await dispatch(getAllProducts());
           await dispatch(getCarts(user))
         })();
       }, []);
-
-    // useEffect(() => {
-    //     dispatch(getCarts(user))
-    // }, [count])
-    // console.log(total)
 
     const getCartQuantity = async() => {
         await dispatch(getCarts(user))
     }
     const changeQuantity = async(e) => {
         count++
-        // console.log(e.target.value, e.target.className)
         await dispatch(editCartQuantity(e.target.value, e.target.className))
         getCartQuantity(user)
-        // await dispatch(getCarts(user))
-        // window.location.href = `/`
-        // window.location.href = '/cart'
     }
 
     const deleteProduct = async(e) => {
-        // console.log(e.target.id)
         const id = e.target.id
         await dispatch(deleteCarts(id))
         await dispatch(getCarts(user))
-        // window.location.href = `/`
     }
 
     const deleteAllCarts = async(e) => {
-        // console.log(e.target.id)
         await dispatch(deleteAllCart(e.target.id))
         await dispatch(getCarts(user))
         // window.location.href = '/'

@@ -43,20 +43,6 @@ const Footer = () => {
                         <a href='https://jinnie96.github.io'><p>Personal Website</p></a>
                     </div>
                </div>
-               {/* <div className='let'>
-                    <h1 id="head">Let Us Help You</h1>
-                    <div className='linksToFooter'>
-                        <p>Amazon and COVID-19</p>
-                        <p>Your Account</p>
-                        <p>Your Orders</p>
-                        <p>Shipping Rates & Policies</p>
-                        <p>Amazon Prime</p>
-                        <p>Returns & Replacements</p>
-                        <p>Manage Your Content and Devices</p>
-                        <p>Amazon Assistant</p>
-                        <p>Help</p>
-                    </div>
-               </div> */}
             </div>
             <div className="logo">
                 <img id='amazonLogo' src='https://i.ibb.co/gmV9mQF/amazon-logo.jpg'></img>

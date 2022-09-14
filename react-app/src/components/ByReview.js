@@ -14,7 +14,6 @@ const ByReview = () => {
     const products=useSelector(state => state.products)
 
     const [deals, setDeals] = useState([])
-    // console.log(window.location.pathname.slice(-1))
 
     useEffect(() => {
         (async() => {
@@ -28,7 +27,6 @@ const ByReview = () => {
         (async() => {
             const deal = []
             Object.keys(products).map((key, i) => {
-                // console.log('vvvvvvvvvvv', products[key])
                 if(products[key].rating >= window.location.pathname.slice(-1)) deal.push(products[key])
             })
             // console.log(deal)
@@ -45,7 +43,6 @@ const ByReview = () => {
                 <SideBar />
             </div>
             <div className='dealWholePage'>
-                {/* <h1 id='genreType'>{window.location.pathname.slice(10)}</h1> */}
                 <div>
                     <h2 id='bestSellers'>{window.location.pathname.slice(10)}+ star rated books</h2>
 
@@ -55,9 +52,6 @@ const ByReview = () => {
 
                     <div className='listofDeals'>
                     {deals.map((oneKey, i) => (
-                        // {products[oneKey].price < 10 &&
-                        // <div>
-                                // {// console.log('fffffffffff', oneKey)}
                                     <NavLink className='productGenreBox' to={'/books/' + oneKey.id}>
                                     <div key={i}>
                                         <div className='bookPic'>
@@ -95,15 +89,9 @@ const ByReview = () => {
 
                                     </div>
                                 </NavLink>
-                            // </div>
-                                    // }
-
-                                    // )}
                                     ))}
                                     </div>
                 )}
-
-                    {/* </div> */}
 
                 </div>
             </div>

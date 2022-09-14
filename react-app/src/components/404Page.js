@@ -26,9 +26,6 @@ const Handle404 = () => {
                     <img src='https://images-na.ssl-images-amazon.com/images/G/01/error/113._TTD_.jpg'></img>
                 </div>
             </NavLink>
-            {/* <div className='thankYou'>
-                <h2 id='thankyouOrder'>Thank you for your order! Your order will be shipped shortly.</h2>
-            </div> */}
         </div>
     )
 }

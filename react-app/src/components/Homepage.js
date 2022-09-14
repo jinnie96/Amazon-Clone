@@ -5,15 +5,12 @@ import { getAllProducts } from '../store/products'
 import { getCarts } from '../store/carts';
 import './Homepage.css'
 import SideBar from './SideBar';
-// import { NavLink } from "react-router-dom";
 
 function Homepage() {
-//   const [products, setProducts] = useState();
   const productsArr = []
   const dispatch = useDispatch()
   const products= useSelector(state => state.products);
   const user= useSelector(state => state.session.user)
-//   const products = useSelector(state => state.products)
 const [deals, setDeals] = useState([])
 
 useEffect(() => {
@@ -38,37 +35,6 @@ useEffect(() => {
     })();
   }, [products]);
 
-//   useEffect(() => {
-//     async function fetchData() {
-//         // console.log("UUUSSSSERRR", user)
-//         if (user) dispatch(getCarts(user.id))
-//       const data = await dispatch(getAllProducts())
-//       setProducts(data)
-//       // console.log(((data)))
-//       // console.log(products)
-//       for (let key in data) {
-//           // console.log(data[key])
-//           productsArr.push(data[key])
-//           // console.log(productsArr)
-//       }
-//       // console.log(productsArr)
-//       // console.log(productsState)
-//     }
-//     fetchData();
-//   }, []);
-
-//   useEffect(() => {
-//     (async() => {
-//         const deal = []
-//         Object.keys(products).map((key, i) => {
-//             // console.log('vvvvvvvvvvv', products[key])
-//             deal.push(products[key])
-//         })
-//         // console.log(deal)
-//         setDeals(deal)
-//     })();
-//   }, []);
-
 
   const productComponents = productsArr.map((product, i) => {
     return (
@@ -81,11 +47,6 @@ useEffect(() => {
 
   return (
     <>
-        {/* <ul>
-            <img src='https://m.media-amazon.com/images/I/61s248JDH+L._AC_SX522_.jpg'></img>
-            <img src='https://m.media-amazon.com/images/I/31JaiPXYI8L._AC_.jpg'></img>
-            <img src='https://m.media-amazon.com/images/I/61iqsjK1JtL._AC_SX466_.jpg'></img>
-        </ul> */}
 
         <h1 id='booksAt'>Books at Amazun</h1>
         <div className='banner'>
@@ -416,7 +377,6 @@ useEffect(() => {
                 </div>
         </div>
         </div>
-      {/* <ul>{productComponents}</ul> */}
     </>
   );
 }
