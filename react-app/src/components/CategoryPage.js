@@ -59,9 +59,6 @@ const CategoryPage = () => {
 
                     <div className='listofDeals'>
                     {deals.map((oneKey, i) => (
-                        // {products[oneKey].price < 10 &&
-                        // <div>
-                                // {// console.log('fffffffffff', oneKey)}
                                     <NavLink className='productGenreBox' to={'/books/' + oneKey.id}>
                                     <div key={i}>
                                         <div className='bookPic'>

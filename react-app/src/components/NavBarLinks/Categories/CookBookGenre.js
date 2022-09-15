@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
-// import LogoutButton from './auth/LogoutButton';
-// import DemoButton from './auth/DemoButton'
 import { useDispatch, useSelector } from 'react-redux';
 import './Category.css'
-// import { getSingleProduct } from '../store/products';
-// import { addtoCart, getCarts } from '../store/carts';
+
 import { getAllProducts } from '../../../store/products'
-// import { getAllReviews, deleteOneReview } from '../store/reviews';
 import SideBar from '../../SideBar';
 const CookBookGenre = () => {
     const dispatch = useDispatch()
@@ -42,13 +38,8 @@ const CookBookGenre = () => {
 
       useEffect(() => {
           const movieID = window.location.pathname.slice(10)
-        // movieID on initial render or subsequent render when updated
-        // logic to use movieID and resynchronize any data.
-        // console.log('movie', movieID)
       });
 
-    // console.log(products)
-    // console.log((window.location.pathname).slice(10))
     return (
         <div className='categoryPage'>
             <div className='sideBarDiv'>
@@ -64,9 +55,6 @@ const CookBookGenre = () => {
 
                     <div className='listofDeals'>
                     {deals.map((oneKey, i) => (
-                        // {products[oneKey].price < 10 &&
-                        // <div>
-                                // {// console.log('fffffffffff', oneKey)}
                                     <NavLink className='productGenreBox' to={'/books/' + oneKey.id}>
                                     <div className='bookDiv' key={i}>
                                         <div className='bookPic'>
@@ -104,10 +92,6 @@ const CookBookGenre = () => {
 
                                     </div>
                                 </NavLink>
-                            // </div>
-                                    // }
-
-                                    // )}
                                     ))}
                                     </div>
                 )}
