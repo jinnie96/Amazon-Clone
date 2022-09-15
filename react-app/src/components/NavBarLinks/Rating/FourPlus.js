@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
-// import LogoutButton from './auth/LogoutButton';
-// import DemoButton from './auth/DemoButton'
 import { useDispatch, useSelector } from 'react-redux';
 import './Rating.css'
-// import { getSingleProduct } from '../store/products';
-// import { addtoCart, getCarts } from '../store/carts';
+
 import { getAllProducts } from '../../../store/products'
-// import { getAllReviews, deleteOneReview } from '../store/reviews';
 import SideBar from '../../SideBar';
 const FourPlus = () => {
     const dispatch = useDispatch()
@@ -58,9 +54,6 @@ const FourPlus = () => {
 
                     <div className='listofDeals'>
                     {deals.map((oneKey, i) => (
-                        // {products[oneKey].price < 10 &&
-                        // <div>
-                                // {// console.log('fffffffffff', oneKey)}
                                     <NavLink className='productGenreBox' to={'/books/' + oneKey.id}>
                                     <div className='bookDiv' key={i}>
                                         <div className='bookPic'>
@@ -98,10 +91,6 @@ const FourPlus = () => {
 
                                     </div>
                                 </NavLink>
-                            // </div>
-                                    // }
-
-                                    // )}
                                     ))}
                                     </div>
                 )}
