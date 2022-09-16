@@ -96,7 +96,7 @@ const HistoryGenre = () => {
                                     </div>
                 )}
 
-                    {/* </div> */}
+
 
                 </div>
             </div>

@@ -40,7 +40,6 @@
 .cartProductInfo {
     font-family: "Amazon Ember",Arial,sans-serif;
     padding-left: 30px;
-    /* margin-left: 50px; */
 
 }
 
@@ -64,10 +63,6 @@
     color: #268697;
     font-size: 11px;
     cursor:pointer;
-}
-
-.page {
-    /* background-color: #EAEDED; */
 }
 
 .priceDiv {
@@ -109,7 +104,6 @@
 
 #cartShopTitle {
     padding-left: 50px;
-    /* padding-top: 50px; */
 }
 
 .submitOrder {
@@ -121,7 +115,6 @@
 
 #quantity {
     background-color: #E3E6E6;
-    /* width: 100%; */
     border-radius: 5px;
     max-width: 92px;
 }

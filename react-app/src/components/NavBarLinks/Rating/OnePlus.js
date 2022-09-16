@@ -44,7 +44,6 @@ const OnePlus = () => {
                 <SideBar />
             </div>
             <div className='dealWholePage'>
-                {/* <h1 id='genreType'>{window.location.pathname.slice(10)}</h1> */}
                 <div>
                     <h2 id='bestSellers'>{1}+ star rated books</h2>
 
@@ -95,7 +94,7 @@ const OnePlus = () => {
                                     </div>
                 )}
 
-                    {/* </div> */}
+
 
                 </div>
             </div>

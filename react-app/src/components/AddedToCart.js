@@ -26,9 +26,6 @@ const AddedToCart = () => {
                 <h3><b>Cart Subtotal:&nbsp;${cart.total}</b></h3>
                 <NavLink to='/cart'><button id='goToCart'>Go to Cart</button></NavLink>
             </div>
-            {/* <div className='thankYou'>
-                <h2 id='thankyouOrder'>Thank you for your order! Your order will be shipped shortly.</h2>
-            </div> */}
         </div>
     )
 }

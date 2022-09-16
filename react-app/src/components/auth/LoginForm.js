@@ -78,18 +78,10 @@ const LoginForm = () => {
         />
         <button id='loginBtn' type='submit'>Login</button>
         <button id='loginBtn' onClick={demoUser}>Demo</button>
-        {/* <div className='demoBtn'>
-          <DemoButton />
-        </div> */}
-        {/* <button id='loginBtn' type='submit'>Demo User</button> */}
       </div>
     </form>
       </div>
       <div className='conditionsDiv'><h3 id='conditions'>By continuing, you agree to Amazon's <span id='conditionSpan'>Conditions of<br></br> Use</span> and <span id='privacySpan'>Privacy Notice.</span></h3></div>
-      {/* <hr></hr>
-      <div className='signInDirectDiv'>
-        <h3 id='signInDirect'>Already have an account? <NavLink to='login'><span id='signInLink'>Sign-in</span></NavLink></h3>
-      </div> */}
       </div>
     </div>
       <div className='createLinkDiv'>

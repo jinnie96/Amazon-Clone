@@ -36,14 +36,12 @@ const BestDeals = () => {
         })();
       }, [products]);
 
-    // console.log(user)
     return (
         <div className='categoryPage'>
             <div className='sideBarDiv'>
                 <SideBar />
             </div>
             <div className='dealWholePage'>
-                {/* <h1 id='genreType'>{window.location.pathname.slice(10)}</h1> */}
                 <div>
                     <h2 id='bestSellers'>Shop best value deals</h2>
 
@@ -94,7 +92,6 @@ const BestDeals = () => {
                                     </div>
                 )}
 
-                    {/* </div> */}
 
                 </div>
             </div>

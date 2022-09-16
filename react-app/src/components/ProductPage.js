@@ -230,7 +230,6 @@ const ProductPage = () => {
     return (
         <>
         <div className='wholeProdPage'>
-            {/* <SideBar /> */}
             <div>
                 {productObj &&
                     <div className='product'>
@@ -269,7 +268,6 @@ const ProductPage = () => {
                                 </div>
                             </div>
                             <h1 id='productDescription'>{productObj.description}</h1>
-                            {/* <h1 id='productId'>{productObj.id}</h1> */}
                         </div>
                         <div className='price'>
                             <div className='priceDiv'>
@@ -294,11 +292,6 @@ const ProductPage = () => {
                         <div>
                             <h1 id='title'>Customer Reviews</h1>
                             <div className='starsCustomers'>
-                                {/* <span>&#9733;</span>
-                                <span>&#9733;</span>
-                                <span>&#9733;</span>
-                                <span>&#9733;</span>
-                                <span>&#9733;</span> */}
                                 {fiveBool && (
                                     // <h1>5</h1>
                                     <img id='averageReviewStar' src="https://i.ibb.co/23qphks/Screen-Shot-2022-08-21-at-8-26-27-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
@@ -384,12 +377,10 @@ const ProductPage = () => {
                                                     <NavLink to={'edit-review/' + reviews[key].id}>
                                                         <button id={reviews[key].id} className='editReviewButton'>Edit Review</button>
                                                     </NavLink>
-                                                        {/* <button id='deleteRevBtn' onClick={deleteReview}>Delete Review</button> */}
                                                 </div>
                                             }
                                             </div>
                                         </div>
-                                        {/* <h1 key={i} id={reviews[key][i].id}>{reviews[key][i].rating}</h1> */}
                                         <div className='starsTitle'>
                                             {reviews[key].rating === 5 && (
                                                 <img id='indivReviewStar' src="https://i.ibb.co/23qphks/Screen-Shot-2022-08-21-at-8-26-27-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
@@ -414,9 +405,6 @@ const ProductPage = () => {
                                         <h3 key={i} id='reviewsDescription'>{reviews[key].description}</h3>
                                         {reviews[key].reviewer_id === user &&
                                             <div className='editDelBtns'>
-                                                {/* <NavLink to={'edit-review/' + reviews[key][i].id}>
-                                                    <button id='editRevBtn'>Edit Review</button>
-                                                </NavLink> */}
                                                     <button id={reviews[key].id} className='deleteReviewButton' onClick={deleteReview}>Delete Review</button>
                                             </div>
                                         }

@@ -96,7 +96,7 @@ const SciFiGenre = () => {
                                     </div>
                 )}
 
-                    {/* </div> */}
+
 
                 </div>
             </div>

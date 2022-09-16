@@ -96,7 +96,7 @@ const PoetryGenre = () => {
                                     </div>
                 )}
 
-                    {/* </div> */}
+
 
                 </div>
             </div>

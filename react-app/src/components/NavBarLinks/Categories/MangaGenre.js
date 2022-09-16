@@ -93,7 +93,7 @@ const MangaGenre = () => {
                                     </div>
                 )}
 
-                    {/* </div> */}
+
 
                 </div>
             </div>

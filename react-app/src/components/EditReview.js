@@ -112,7 +112,6 @@ const EditReview = () => {
                     <h3 id='editProductName'>{product[Object.keys(product)[0]].name}</h3>
                 </div>
                 <hr id='reviewLine'></hr>
-                {/* <hr id='line'></hr> */}
                 <div className='rating' name='rating'>
                     <h1 id='overall'>Overall rating</h1>
                     <img id='starOne' onClick={() => setRatingNum(1)} src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzgiIGhlaWdodD0iMzUiPjxkZWZzPjxwYXRoIGlkPSJhIiBkPSJNMTkgMGwtNS44NyAxMS41MkwwIDEzLjM3bDkuNSA4Ljk3TDcuMjYgMzUgMTkgMjkuMDIgMzAuNzUgMzVsLTIuMjQtMTIuNjYgOS41LTguOTctMTMuMTMtMS44NXoiLz48L2RlZnM+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48dXNlIGZpbGw9IiNGRkYiIHhsaW5rOmhyZWY9IiNhIi8+PHBhdGggc3Ryb2tlPSIjQTI2QTAwIiBzdHJva2Utb3BhY2l0eT0iLjc1IiBkPSJNMTkgMS4xbC01LjU0IDEwLjg4TDEuMSAxMy43Mmw4Ljk0IDguNDRMNy45MiAzNC4xIDE5IDI4LjQ2bDExLjA4IDUuNjQtMi4xMS0xMS45NCA4Ljk0LTguNDQtMTIuMzYtMS43NEwxOSAxLjF6Ii8+PC9nPjwvc3ZnPg=='></img>
@@ -134,7 +133,6 @@ const EditReview = () => {
                     required
                     ></input>
                 </div>
-                {/* <hr></hr> */}
                 <div className='details'>
                     <h1 id='editReview'>Edit written review</h1>
                     <input
