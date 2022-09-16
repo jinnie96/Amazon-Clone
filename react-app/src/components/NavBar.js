@@ -3,14 +3,12 @@ import React, {useState} from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import DemoButton from './auth/DemoButton'
-// import
 import { useDispatch, useSelector } from 'react-redux';
 import './NavBar.css'
 import User from './User';
 
 const NavBar = () => {
   const user = useSelector(state => state.session.user)
-  // console.log(user)
 
   const [searchTerm, setSearchTerm] = useState('')
   const [searchedTerms, setSearchedTerms] = useState([])
@@ -23,47 +21,26 @@ const NavBar = () => {
       return
     }
     setSearchedTerms([])
-    // debugger
-    // console.log(searchedTerms, "NNN")
-    // console.log((term), "LLL")
     const response = await fetch(domain + `/api/products/search/${term}`)
     if (response.ok) {
       let arr = []
       const data = await response.json()
-      // debugger
-      // console.log("SEARCHDATA", data)
-      // setSearchedTerms(data)
       for (const key in data) {
-        // console.log([data[key].id, data[key].name])
-        // setSearchedTerms(searchedTerms.concat(searchTerm))
-        // searchedTerms.push([data[key].id, data[key].name])
         setSearchedTerms(arr => [...arr, [data[key].id, data[key].name]])
-        // console.log(searchedTerms, "zzz")
       }
-      // console.log(arr)
-      // setSearchedTerms(arr)
-      // console.log("SEADATA", searchedTerms)
     }
 
   }
   const updateSearch = async(e) => {
-    // console.log(e.target.value)
-    // debugger
     setSearchTerm(e.target.value)
-    // console.log(searchTerm, "HHH")
     getSearchList(e.target.value)
   }
-  // console.log("LINE", searchedTerms)
-
-  // let searchClicked = false
   window.addEventListener('click', function(event){
-    // console.log(searchClicked, event.target.className === 'search');
     if (event.target.className === 'search') {
       setSearchClicked(true)
     } else {
       setSearchClicked(false)
     }
-    // console.log(searchClicked, "CLICKS")
   });
     return (
     <nav>
@@ -106,13 +83,11 @@ const NavBar = () => {
           </div>
         )}
         {user && (
-          // <div className="greeting">
             <div className='helloUserDiv'>
               <NavLink to='/' exact={true} activeClassName='active' id="navOptions">
                 Hello, {user.username}
               </NavLink>
             </div>
-          // </div>
         )}
         <div className="cart">
           <NavLink to='/cart' exact={true} activeClassName='active' id="navOptions">

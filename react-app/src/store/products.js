@@ -18,7 +18,6 @@ export const getAllProducts = () => async dispatch => {
     const response = await fetch (`/api/products/`)
     if (response.ok) {
         const data = await response.json();
-        // console.log(data)
         if (data.errors) {
             return;
         };
@@ -29,12 +28,9 @@ export const getAllProducts = () => async dispatch => {
 }
 
 export const getSingleProduct = (productId) => async (dispatch) => {
-    // console.log("INSIDE")
     const response = await fetch(`/api/products/${productId}`);
-    // console.log(response, "RES")
     if (response.ok) {
         const data = await response.json();
-        // console.log("DATA", data)
         if (data.errors) {
             return;
         };
@@ -48,7 +44,6 @@ export const getSingleProduct = (productId) => async (dispatch) => {
 const initialState = {}
 
 export default function productsReducer(state = initialState, action) {
-    // console.log("PRODUCTSREDUCER", action)
     let newState;
     switch(action.type) {
         case GET_PRODUCTS:
@@ -60,8 +55,6 @@ export default function productsReducer(state = initialState, action) {
         case GET_ONE_PRODUCT:
             newState = {
                 ...state,
-                // 'id': action.payload
-                // [action.payload.post.id]: action.payload.post
             };
             return newState;
 

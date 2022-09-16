@@ -17,18 +17,14 @@ const ProductPage = () => {
     useEffect(() => {
         dispatch(getSingleProduct(id))
         dispatch(getAllReviews(id))
-        // getStarsForReview()
     }, [dispatch, id])
     const product = useSelector(state => state.products)
-    // console.log(product, id, Object.keys(product), Object.keys(product)[id - 1])
     if (product) {
-        // console.log("jjjjjj", product[Object.keys(product)[id - 1]])
         productObj = product[Object.keys(product)[id - 1]];
     }
     const state = useSelector(state => state)
     const reviews = useSelector(state => state.reviews)
     const user= useSelector(state => state.session.user.id)
-    // const [hasReview, setHasReview] = useState(false)
     let hasReview = false
 
     useEffect(() => {
@@ -42,11 +38,8 @@ const ProductPage = () => {
         if (Object.keys(reviews)) {
             for (let i = 0; i < 1; i++) {
                 let count = 0
-                // console.log(Object.keys(reviews))
                 let key = reviews[Object.keys(reviews)[i]]
-                // console.log(key, "THIS")
                 if (key) {
-                    // console.log(key.reviewer_id === user)
                     if (key.reviewer_id === user) {
                         hasReview = true
                     }
@@ -55,37 +48,25 @@ const ProductPage = () => {
         }
     }, [])
     let averageRating = 0
-    // console.log("reviews", reviews)
-    // console.log(product, "BEFORE!")
-    // console.log("KEYSsSSSS", Object.keys(reviews))
-    // console.log(id)
     let reviewObj = {}
     let amountReviews = 0
 
     if (Object.keys(reviews)) {
         let count = 0
         for (let i = 0; i < Object.keys(reviews).length; i++) {
-            // console.log(Object.keys(reviews).length)
             let key = reviews[Object.keys(reviews)[i]]
-            // console.log(key, "THIS")
             if (key) {
-                // console.log(key.reviewer_id === user)
                 if (key.reviewer_id === user) {
                     hasReview = true
                 }
-                // for (let j = 0; j < key.length; j++) {
-                    // // console.log(key[j])
                     if (!reviewObj[key.rating]) reviewObj[key.rating] = 1
                     else reviewObj[key.rating]++
                     averageRating += key.rating
                     count++
                     amountReviews++
-                // }
             }
         }
-        // console.log(count, averageRating/count)
         averageRating = Math.round((averageRating/count) * 10) / 10
-        // console.log(averageRating)
     }
     let rating5 = reviewObj[5] ? Math.round((reviewObj[5]/amountReviews) * 100) : 0
     let rating4 = reviewObj[4] ? Math.round((reviewObj[4]/amountReviews) * 100) : 0
@@ -94,8 +75,6 @@ const ProductPage = () => {
     let rating1 = reviewObj[1] ? Math.round((reviewObj[1]/amountReviews) * 100) : 0
     let starImg = '&#9733;'
     let starDiv = document.querySelector('.starsCustomers')
-    // console.log(starDiv, averageRating, ";;;;;;;;;")
-    // if (starDiv) starDiv.innerHTML = ''
     let fiveBool = false
     let fourBool = false
     let threeBool = false
@@ -104,11 +83,6 @@ const ProductPage = () => {
     let zeroBool = false
 
     if (averageRating >= 4.5) {
-        // const star = document.createElement('img')
-        // star.src = 'https://www.clipartmax.com/middle/m2H7K9m2b1K9m2m2_3-star-reviews-five-stars-rating/'
-        // star.style.color = 'blue'
-        // star.id = 'averageReviewStar'
-        // starDiv.appendChild(star)
         fiveBool = true
         fourBool = false
         threeBool = false
@@ -117,11 +91,6 @@ const ProductPage = () => {
         zeroBool = false
     }
     if (averageRating >= 3.5 && averageRating < 4.5) {
-        // const star = document.createElement('img')
-        // star.src = 'https://www.clipartmax.com/middle/m2i8H7A0A0Z5b1d3_4-stars-four-out-of-five-stars/'
-        // star.style.color = 'blue'
-        // star.id = 'averageReviewStar'
-        // starDiv.appendChild(star)
         fiveBool = false
         fourBool = true
         threeBool = false
@@ -130,11 +99,6 @@ const ProductPage = () => {
         zeroBool = false
     }
     if (averageRating >= 2.5 && averageRating < 3.5) {
-        // const star = document.createElement('img')
-        // star.src = 'https://www.clipartmax.com/png/small/253-2532437_3-star-reviews-five-stars-rating.png'
-        // star.style.color = 'blue'
-        // star.id = 'averageReviewStar'
-        // starDiv.appendChild(star)
         fiveBool = false
         fourBool = false
         threeBool = true
@@ -143,11 +107,6 @@ const ProductPage = () => {
         zeroBool = false
     }
     if (averageRating >= 1.5 && averageRating < 2.5) {
-        // const star = document.createElement('img')
-        // star.src = 'https://i.ibb.co/JRbbH09/Screen-Shot-2022-08-12-at-9-28-33-PM-removebg-preview.jpg'
-        // star.style.color = 'blue'
-        // star.id = 'averageReviewStar'
-        // starDiv.appendChild(star)
         fiveBool = false
         fourBool = false
         threeBool = false
@@ -156,11 +115,6 @@ const ProductPage = () => {
         zeroBool = false
     }
     if (averageRating < 1.5) {
-        // const star = document.createElement('img')
-        // star.src = 'https://s3.amazonaws.com/hoth.bizango/images/414129/one-star_rating_feature.jpg'
-        // star.style.color = 'blue'
-        // star.id = 'averageReviewStar'
-        // starDiv.appendChild(star)
         fiveBool = false
         fourBool = false
         threeBool = false
@@ -177,35 +131,13 @@ const ProductPage = () => {
         zeroBool = true
     }
 
-    function getStarsForReview () {
-        // for (let i = 1; i <= 5; i++) {
-        //     // console.log(starDiv, i, Math.round(averageRating))
-        //     if (i < Math.round(averageRating) && starDiv) {
-        //         const star = document.createElement('img')
-        //         star.innerHTML = 'https://cdn.pixabay.com/photo/2020/04/26/11/56/amazon-stars-5094895_1280.png'
-        //         star.style.color = 'orange'
-        //         starDiv.appendChild(star)
-        //         // console.log(starDiv)
-        //     } else if (i >= Math.round(averageRating) && starDiv) {
-        //         const star = document.createElement('span')
-        //         star.innerText = starImg
-        //         star.style.color = 'grey'
-        //         starDiv.appendChild(star)
-        //         // console.log(starDiv)
-        //     }
-        // }
-    }
-    // console.log(averageRating, "AVERAGE")
-    // console.log(reviewObj, "OBJ")
     const addCart = async() => {
         await dispatch(addtoCart(id))
         await dispatch(getCarts(user))
     }
 
     const deleteReview = (e) => {
-        // console.log(e.target)
         dispatch(deleteOneReview(e.target.id))
-        // window.location.href = `/sports/${id}`
     }
 
     const five = document.querySelector('.rating5')
@@ -219,9 +151,6 @@ const ProductPage = () => {
     if (three) three.style.backgroundImage = 'linear-gradient(90deg, #FFA41D ' + rating3 + '%, #FFFFFF 0%)'
     if (two) two.style.backgroundImage = 'linear-gradient(90deg, #FFA41D ' + rating2 + '%, #FFFFFF 0%)'
     if (one) one.style.backgroundImage = 'linear-gradient(90deg, #FFA41D ' + rating1 + '%, #FFFFFF 0%)'
-
-        // // console.log(reviewObj[5] ? Math.round((reviewObj[5]/amountReviews) * 100) : 0)
-        // four.style.backgroundImage = 'linear-gradient(90deg, #FFA41D 50%, #FFFFFF 50%)'
 
     document.addEventListener('DOMContentLoaded', function() {
         getStarsForReview()
@@ -293,7 +222,6 @@ const ProductPage = () => {
                             <h1 id='title'>Customer Reviews</h1>
                             <div className='starsCustomers'>
                                 {fiveBool && (
-                                    // <h1>5</h1>
                                     <img id='averageReviewStar' src="https://i.ibb.co/23qphks/Screen-Shot-2022-08-21-at-8-26-27-PM-removebg-preview.jpg" alt="4 Stars - Four Out Of Five Stars @clipartmax.com"></img>
                                 )}
                                 {fourBool && (

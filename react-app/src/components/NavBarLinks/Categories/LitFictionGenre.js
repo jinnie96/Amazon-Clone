@@ -28,7 +28,7 @@ const LitFictionGenre = () => {
             Object.keys(products).map((key, i) => {
                 if(products[key].category.includes(window.location.pathname.slice(10).toLowerCase())) deal.push(products[key])
             })
-            // console.log(deal)
+
             setDeals(deal)
         })();
       }, [products]);
@@ -53,7 +53,6 @@ const LitFictionGenre = () => {
 
                     <div className='listofDeals'>
                     {deals.map((oneKey, i) => (
-                                // {// console.log('fffffffffff', oneKey)}
                                     <NavLink className='productGenreBox' to={'/books/' + oneKey.id}>
                                     <div className='bookDiv' key={i}>
                                         <div className='bookPic'>
@@ -91,9 +90,6 @@ const LitFictionGenre = () => {
 
                                     </div>
                                 </NavLink>
-                                    // }
-
-                                    // )}
                                     ))}
                                     </div>
                 )}

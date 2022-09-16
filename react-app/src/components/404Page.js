@@ -15,7 +15,6 @@ const Handle404 = () => {
     const user= useSelector(state => state.session.user)
     const cart = useSelector(state => state.cart);
 
-    // console.log('addedtocart', cart)
     return (
         <div className='handleError'>
             <NavLink to='/'>

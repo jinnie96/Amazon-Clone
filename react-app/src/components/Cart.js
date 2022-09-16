@@ -7,7 +7,6 @@ import { deleteCarts, editCartQuantity, getCarts, deleteAllCart } from '../store
 const Cart = () => {
     const cart = useSelector(state => state.cart);
     const user= useSelector(state => state.session.user.id)
-    // console.log(cart, "@@@")
     const dispatch = useDispatch()
     let total = 0
     let subTotal = 0
@@ -15,7 +14,6 @@ const Cart = () => {
     useEffect(() => {
         if (cart) {
             Object.keys(cart).map((oneKey,i)=>{
-                // console.log("ONEKEY", cart[oneKey].quantity)
                 subTotal += (cart[oneKey].quantity)
                 total += parseFloat(cart[oneKey].price * cart[oneKey].quantity)
             })
@@ -46,7 +44,6 @@ const Cart = () => {
     const deleteAllCarts = async(e) => {
         await dispatch(deleteAllCart(e.target.id))
         await dispatch(getCarts(user))
-        // window.location.href = '/'
     }
 
     return (

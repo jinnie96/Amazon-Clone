@@ -27,10 +27,8 @@ const BiographyGenre = () => {
         (async() => {
             const deal = []
             Object.keys(products).map((key, i) => {
-                // console.log('vvvvvvvvvvv', products[key])
                 if(products[key].category.includes(window.location.pathname.slice(10).toLowerCase())) deal.push(products[key])
             })
-            // console.log(deal)
             setDeals(deal)
         })();
       }, [products]);
