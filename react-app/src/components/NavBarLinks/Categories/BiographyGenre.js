@@ -96,8 +96,6 @@ const BiographyGenre = () => {
                                     </div>
                 )}
 
-                    {/* </div> */}
-
                 </div>
             </div>
         </div>

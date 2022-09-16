@@ -96,7 +96,7 @@ const CookBookGenre = () => {
                                     </div>
                 )}
 
-                    {/* </div> */}
+
 
                 </div>
             </div>

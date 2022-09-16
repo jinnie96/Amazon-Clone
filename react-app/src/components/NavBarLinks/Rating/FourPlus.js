@@ -44,7 +44,6 @@ const FourPlus = () => {
                 <SideBar />
             </div>
             <div className='dealWholePage'>
-                {/* <h1 id='genreType'>{window.location.pathname.slice(10)}</h1> */}
                 <div>
                     <h2 id='bestSellers'>{4}+ star rated books</h2>
 
@@ -95,7 +94,7 @@ const FourPlus = () => {
                                     </div>
                 )}
 
-                    {/* </div> */}
+
 
                 </div>
             </div>

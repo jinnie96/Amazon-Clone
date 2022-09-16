@@ -86,7 +86,6 @@ const NavBar = () => {
                     {term[1]}
                 </NavLink>
         ))}
-            {/* <h1 id='listSearch'>hi</h1> */}
           </div>
           )
         }

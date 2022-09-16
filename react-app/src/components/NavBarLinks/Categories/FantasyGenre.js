@@ -96,7 +96,7 @@ const FantasyGenre = () => {
                                     </div>
                 )}
 
-                    {/* </div> */}
+
 
                 </div>
             </div>

@@ -3,8 +3,6 @@
     flex-direction: column;
     align-items: center;
     padding-bottom: 20px;
-    /* position: absolute; */
-    /* height: 100%; */
 }
 
 #signUpLogo {
@@ -20,8 +18,6 @@
     display: flex;
     flex-direction: column;
     padding-bottom: 10px;
-    /* height: 31px;
-    width: 312px; */
 }
 
 #nameLabel, #userLabel, #emailLabel, #passwordLabel, #reEnterLabel {
@@ -44,7 +40,6 @@
 #conditions {
     font-size: 12px;
     font-family: "Amazon Ember",Arial,sans-serif;
-    /* width: 306px; */
     margin-left: 39px;
 }
 
@@ -55,8 +50,6 @@
 
 .signInDirectDiv {
     display: flex;
-    /* padding: 10px; */
-    /* margin-left: -20px; */
 }
 
 #signInLink {
@@ -73,14 +66,12 @@ hr {
 }
 
 .fullFormDiv {
-    /* border: solid 1px black; */
     overflow:hidden;
 
 }
 
 .footerLinks {
     display: flex;
-    /* fle */
 }
 
 .footerLinks * {
@@ -100,9 +91,7 @@ hr {
     flex-direction: column;
     align-items: center;
     background-color: #FAFAFA;
-    /* position: absolute; */
     height: 175px;
-    /* min-height: 100px; */
     position:relative;
     bottom: 0;
     overflow:hidden;
@@ -127,10 +116,6 @@ hr {
     cursor: pointer;
 }
 
-/* #signupBtn:hover {
-    opacity: 90%;
-} */
-
 #conditionSpan, #privacySpan {
     color:#5B95D2;
     cursor: pointer;
@@ -152,6 +137,5 @@ hr {
 }
 
 #signupBtn:hover {
-    /* opacity: 90%; */
     background-image: linear-gradient(#F2CB71, #F2CB71);
 }

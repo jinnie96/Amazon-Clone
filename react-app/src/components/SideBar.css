@@ -21,7 +21,6 @@
 }
 
 .sideBar {
-    /* width: 35%; */
     min-width: 200px;
     margin-top: 10px;
     margin-left: 10px;
@@ -58,5 +57,4 @@
 
 #navLink:hover {
     text-decoration: none;
-    /* text-decoration-color: black; */
 }

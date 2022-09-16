@@ -73,152 +73,152 @@ function App() {
           <NavBar />
           <Homepage />
           <Footer />
-          {/* <LinksFooter /> */}
+
         </Route>
         <ProtectedRoute path='/books/:id' exact={true}>
           <NavBar />
           <ProductPage />
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
         <ProtectedRoute path='/fiction/:id' exact={true}>
           <NavBar />
           <ProductPage />
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
         <ProtectedRoute path='/cart' exact={true} >
           <NavBar />
           <Cart/>
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
         <ProtectedRoute path='/review/:id' exact={true} >
           <NavBar />
           <NewReview/>
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
         <ProtectedRoute path='/books/edit-review/:id' exact={true} >
           <NavBar />
           <EditReview/>
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
         <ProtectedRoute path='/confirmation' exact={true} >
           <NavBar />
           <OrderConfirmation/>
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
         <ProtectedRoute path='/added' exact={true} >
           <NavBar />
           <AddedToCart/>
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
         <ProtectedRoute path='/category/Fantasy' exact={true} >
           <NavBar />
           <FantasyGenre/>
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
         <ProtectedRoute path='/category/Mystery' exact={true} >
           <NavBar />
           <MysteryGenre/>
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
         <ProtectedRoute path='/category/Action' exact={true} >
           <NavBar />
           <ActionGenre/>
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
         <ProtectedRoute path='/category/Biography' exact={true} >
           <NavBar />
           <BiographyGenre/>
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
         <ProtectedRoute path='/category/Childrens' exact={true} >
           <NavBar />
           <ChildrensGenre/>
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
         <ProtectedRoute path='/category/CookBooks' exact={true} >
           <NavBar />
           <CookBookGenre/>
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
         <ProtectedRoute path='/category/History' exact={true} >
           <NavBar />
           <HistoryGenre/>
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
         <ProtectedRoute path='/category/Horror' exact={true} >
           <NavBar />
           <HorrorGenre/>
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
         <ProtectedRoute path='/category/Literary-Fiction' exact={true} >
           <NavBar />
           <LitFictionGenre/>
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
         <ProtectedRoute path='/category/Manga' exact={true} >
           <NavBar />
           <MangaGenre/>
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
         <ProtectedRoute path='/category/Poetry' exact={true} >
           <NavBar />
           <PoetryGenre/>
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
         <ProtectedRoute path='/category/Sci-Fi' exact={true} >
           <NavBar />
           <SciFiGenre/>
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
 
         <ProtectedRoute path='/deals' exact={true} >
           <NavBar />
           <BestDeals />
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
         <ProtectedRoute path='/byRating/FourStars' exact={true} >
           <NavBar />
           <FourPlus />
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
         <ProtectedRoute path='/byRating/ThreeStars' exact={true} >
           <NavBar />
           <ThreePlus />
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
         <ProtectedRoute path='/byRating/TwoStars' exact={true} >
           <NavBar />
           <TwoPlus />
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
         <ProtectedRoute path='/byRating/OneStar' exact={true} >
           <NavBar />
           <OnePlus />
           <Footer />
-          {/* <LinksFooter /> */}
+
         </ProtectedRoute>
         <Route path='*' >
           <NavBar />

@@ -96,8 +96,6 @@ const ActionGenre = () => {
                                     </div>
                 )}
 
-                    {/* </div> */}
-
                 </div>
             </div>
         </div>

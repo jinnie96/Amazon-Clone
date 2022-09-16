@@ -118,7 +118,6 @@ const NewReview = () => {
                     <h3 id='editProductName'>{product[Object.keys(product)[0]].name}</h3>
                 </div>
                 <hr id='reviewLine'></hr>
-                {/* <hr id='line'></hr> */}
                 <div className='rating' name='rating'>
                     {errors.map((error, ind) => (
                         <div key={ind}>{error}</div>
@@ -143,7 +142,6 @@ const NewReview = () => {
                     required
                     ></input>
                 </div>
-                {/* <hr></hr> */}
                 <div className='details'>
                     <h1 id='editReview'>Written review</h1>
                     <input

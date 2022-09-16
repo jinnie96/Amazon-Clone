@@ -1,15 +1,3 @@
-/* .categoryBooks {
-    display: flex;
-    flex-wrap: wrap;
-} */
-
-/* .categoryBooks div {
-    flex-basis: 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-} */
 .dealWholePage {
     width: 100%;
 }
@@ -27,20 +15,4 @@
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-}
-
-/* .productGenreBox {
-    flex-basis: 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    border: solid 1px #D5DBDB;
-    width: 210px;
-    height: 263px;
-} */
-
-div:empty {
-    /* display: none */
 }

@@ -96,7 +96,7 @@ const MysteryGenre = () => {
                                     </div>
                 )}
 
-                    {/* </div> */}
+
 
                 </div>
             </div>

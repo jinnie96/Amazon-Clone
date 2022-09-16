@@ -96,7 +96,7 @@ const HorrorGenre = () => {
                                     </div>
                 )}
 
-                    {/* </div> */}
+
 
                 </div>
             </div>

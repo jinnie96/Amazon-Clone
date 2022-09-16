@@ -17,7 +17,6 @@
 .orderIsConfirmed {
     display: flex;
     align-items: center;
-    /* border: solid 1px #007600; */
 }
 
 .confirmationPage {
