@@ -29,14 +29,12 @@ const ByReview = () => {
             Object.keys(products).map((key, i) => {
                 if(products[key].rating >= window.location.pathname.slice(-1)) deal.push(products[key])
             })
-            // console.log(deal)
             setDeals(deal)
         })();
       }, [products]);
 
 
 
-    // console.log(user)
     return (
         <div className='categoryPage'>
             <div className='sideBarDiv'>

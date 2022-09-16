@@ -13,7 +13,7 @@ const FourPlus = () => {
     const products=useSelector(state => state.products)
 
     const [deals, setDeals] = useState([])
-    // console.log(window.location.pathname.slice(-1))
+
 
     useEffect(() => {
         (async() => {
@@ -27,17 +27,17 @@ const FourPlus = () => {
         (async() => {
             const deal = []
             Object.keys(products).map((key, i) => {
-                // console.log('vvvvvvvvvvv', products[key])
+
                 if(products[key].rating >= 4) deal.push(products[key])
             })
-            // console.log(deal)
+
             setDeals(deal)
         })();
       }, [products]);
 
 
 
-    // console.log(user)
+
     return (
         <div className='categoryPage'>
             <div className='sideBarDiv'>

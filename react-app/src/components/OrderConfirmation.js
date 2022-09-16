@@ -13,7 +13,6 @@ const OrderConfirmation = () => {
     const state = useSelector(state => state)
     const reviews = useSelector(state => state.reviews)
     const user= useSelector(state => state.session.user)
-    // console.log(user)
     return (
         <div className='confirmationPage'>
             <div className='usernameConfirmation'>

@@ -27,10 +27,8 @@ useEffect(() => {
     (async() => {
         const deal = []
         Object.keys(products).map((key, i) => {
-            // console.log('vvvvvvvvvvv', products[key])
             deal.push(products[key])
         })
-        // console.log(deal)
         setDeals(deal)
     })();
   }, [products]);
@@ -38,7 +36,6 @@ useEffect(() => {
 
   const productComponents = productsArr.map((product, i) => {
     return (
-        // <h1>hi</h1>
       <li key={product.id}>
         <NavLink to={`/products/${product.id}`}>hi</NavLink>
       </li>

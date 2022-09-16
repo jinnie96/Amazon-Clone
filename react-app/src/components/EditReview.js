@@ -21,7 +21,6 @@ const EditReview = () => {
         const response = await fetch (`/api/reviews/single/${id}`)
         if (response.ok) {
             const data = await response.json();
-            // console.log("ADDED", data)
             setTitle(data.title)
             setDescription(data.description)
             setProductId(data.product_id)
@@ -92,12 +91,10 @@ const EditReview = () => {
 
         dispatch(editOneReview(id, form))
         dispatch(getAllReviews(id))
-        // console.log(rating, title, description)
         window.location.href = `/books/${productId}`
     }
 
     return (
-        // <h1>hi</h1>
         <div className='reviewForm'>
             <div className='nameDiv'>
                 <div className='picAndName'>

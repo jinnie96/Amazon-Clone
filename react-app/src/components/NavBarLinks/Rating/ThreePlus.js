@@ -13,13 +13,12 @@ const ThreePlus = () => {
     const products=useSelector(state => state.products)
 
     const [deals, setDeals] = useState([])
-    // console.log(window.location.pathname.slice(-1))
+
 
     useEffect(() => {
         (async() => {
           window.scrollTo(0,0);
           await dispatch(getAllProducts());
-        //   console.log(products)
         })();
       }, []);
 
@@ -27,17 +26,17 @@ const ThreePlus = () => {
         (async() => {
             const deal = []
             Object.keys(products).map((key, i) => {
-                // console.log('vvvvvvvvvvv', products[key])
+
                 if(products[key].rating >= 3) deal.push(products[key])
             })
-            // console.log(deal)
+
             setDeals(deal)
         })();
       }, [products]);
 
 
 
-    // console.log(user)
+
     return (
         <div className='categoryPage'>
             <div className='sideBarDiv'>

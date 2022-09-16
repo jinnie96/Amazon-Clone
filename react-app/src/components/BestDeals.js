@@ -28,10 +28,8 @@ const BestDeals = () => {
         (async() => {
             const deal = []
             Object.keys(products).map((key, i) => {
-                // console.log('vvvvvvvvvvv', products[key])
                 if(products[key].price < 10) deal.push(products[key])
             })
-            // console.log(deal)
             setDeals(deal)
         })();
       }, [products]);
