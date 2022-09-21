@@ -153,7 +153,7 @@ const ProductPage = () => {
     if (one) one.style.backgroundImage = 'linear-gradient(90deg, #FFA41D ' + rating1 + '%, #FFFFFF 0%)'
 
     document.addEventListener('DOMContentLoaded', function() {
-        getStarsForReview()
+        // getStarsForReview()
     }, false);
 
     return (
