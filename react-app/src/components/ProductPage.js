@@ -73,8 +73,8 @@ const ProductPage = () => {
     let rating3 = reviewObj[3] ? Math.round((reviewObj[3]/amountReviews) * 100) : 0
     let rating2 = reviewObj[2] ? Math.round((reviewObj[2]/amountReviews) * 100) : 0
     let rating1 = reviewObj[1] ? Math.round((reviewObj[1]/amountReviews) * 100) : 0
-    let starImg = '&#9733;'
-    let starDiv = document.querySelector('.starsCustomers')
+    // let starImg = '&#9733;'
+    // let starDiv = document.querySelector('.starsCustomers')
     let fiveBool = false
     let fourBool = false
     let threeBool = false
