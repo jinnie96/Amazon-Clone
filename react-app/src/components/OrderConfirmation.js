@@ -1,17 +1,9 @@
 import React, { useEffect } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
-import LogoutButton from './auth/LogoutButton';
-import DemoButton from './auth/DemoButton'
 import { useDispatch, useSelector } from 'react-redux';
 import './OrderConfirmation.css'
-import { getSingleProduct } from '../store/products';
-import { addtoCart, getCarts } from '../store/carts';
-import { getAllReviews, deleteOneReview } from '../store/reviews';
 
 const OrderConfirmation = () => {
     const dispatch = useDispatch()
-    const state = useSelector(state => state)
-    const reviews = useSelector(state => state.reviews)
     const user= useSelector(state => state.session.user)
     return (
         <div className='confirmationPage'>

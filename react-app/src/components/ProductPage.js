@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
-import LogoutButton from './auth/LogoutButton';
-import DemoButton from './auth/DemoButton'
 import { useDispatch, useSelector } from 'react-redux';
 import './ProductPage.css'
 import { getSingleProduct } from '../store/products';
@@ -151,10 +149,6 @@ const ProductPage = () => {
     if (three) three.style.backgroundImage = 'linear-gradient(90deg, #FFA41D ' + rating3 + '%, #FFFFFF 0%)'
     if (two) two.style.backgroundImage = 'linear-gradient(90deg, #FFA41D ' + rating2 + '%, #FFFFFF 0%)'
     if (one) one.style.backgroundImage = 'linear-gradient(90deg, #FFA41D ' + rating1 + '%, #FFFFFF 0%)'
-
-    document.addEventListener('DOMContentLoaded', function() {
-        // getStarsForReview()
-    }, false);
 
     return (
         <>
