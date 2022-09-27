@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
-import LogoutButton from './auth/LogoutButton';
-import DemoButton from './auth/DemoButton'
 import { useDispatch, useSelector } from 'react-redux';
 import './BestDeals.css'
 import SideBar from './SideBar';
 import { getAllProducts } from '../store/products';
 const ByReview = () => {
     const dispatch = useDispatch()
-    const state = useSelector(state => state)
-    const reviews = useSelector(state => state.reviews)
-    const user= useSelector(state => state.session.user)
     const products=useSelector(state => state.products)
 
     const [deals, setDeals] = useState([])

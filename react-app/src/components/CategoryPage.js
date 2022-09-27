@@ -1,21 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
-import LogoutButton from './auth/LogoutButton';
-import DemoButton from './auth/DemoButton'
 import { useDispatch, useSelector } from 'react-redux';
 import './CategoryPage.css'
-import { getSingleProduct } from '../store/products';
-import { addtoCart, getCarts } from '../store/carts';
 import { getAllProducts } from '../store/products';
-import { getAllReviews, deleteOneReview } from '../store/reviews';
 import SideBar from './SideBar';
 const CategoryPage = () => {
     const dispatch = useDispatch()
     const [deals, setDeals] = useState([])
-    const state = useSelector(state => state)
-    const reviews = useSelector(state => state.reviews)
-    const user= useSelector(state => state.session.user)
-    const cart = useSelector(state => state.cart);
     const products = useSelector(state =>state.products)
 
     useEffect(() => {
