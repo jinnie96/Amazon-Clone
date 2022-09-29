@@ -17,7 +17,6 @@ const MangaGenre = () => {
         (async() => {
           window.scrollTo(0,0);
           await dispatch(getAllProducts());
-          console.log(products)
         })();
       }, []);
 

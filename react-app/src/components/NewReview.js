@@ -97,7 +97,6 @@ const NewReview = () => {
 
     return (
         <div className='reviewForm'>
-            {console.log('kkkkkkk', product)}
             <div className='nameDiv'>
                 <div className='picAndName'>
                     <img id='profilePicture' src='https://i.ibb.co/7n9xYnF/default-CR0-0-1024-1024-SX48-removebg-preview.jpg'></img>
