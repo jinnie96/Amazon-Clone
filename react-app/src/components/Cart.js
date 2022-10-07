@@ -62,7 +62,6 @@ const Cart = () => {
             <div>
                 {
                 Object.keys(cart).map((oneKey,i)=>{
-                    {console.log(cart[oneKey])}
                     {if(parseInt(oneKey)) {
                         return (
                             <div>

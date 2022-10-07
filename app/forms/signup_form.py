@@ -17,14 +17,12 @@ def user_exists(form, field):
 def username_exists(form, field):
     # Checking if username is already in use
     username = field.data
-    # print(username)
     user = User.query.filter(User.username == username).first()
     if user:
         raise ValidationError('Username is already in use.')
 
 def email_format(form, field):
     email = field.data
-    # print(email, "EEEEMMMM")
     if not "@" in email:
         raise ValidationError("Invalid Email")
 
