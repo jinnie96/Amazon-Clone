@@ -115,7 +115,7 @@ useEffect(() => {
                 </NavLink>
                 <NavLink id='navLink' to='/category/Literary-Fiction'>
                     <div className='litFictionDiv>'>
-                        <img src='https://48b6yd3iigex2rv7g41h5sts-wpengine.netdna-ssl.com/wp-content/uploads/2020/02/what-is-literary-fiction.jpg'></img>
+                        <img src='https://blog-cdn.reedsy.com/directories/admin/featured_image/579/large_what-is-literary-fiction-28dfaa.jpg'></img>
                         <div className='litFictionName'>
 
                             <h3 id='categoryName'>Literary Fiction</h3>
