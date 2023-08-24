@@ -1,7 +1,15 @@
-.addedToCartDiv {
+.addedToCartDiv{
     display: flex;
     align-items: center;
 }
+
+.subTotal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 
 #greenCheck {
     height: 18px;
@@ -28,4 +36,16 @@
     margin-top: 14px;
     border-radius: 5px;
     cursor: pointer;
+}
+
+#addedCartPic {
+    width: 150px;
+    height: 300px;
+}
+
+#cartpic {
+    height: 100%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
 }
